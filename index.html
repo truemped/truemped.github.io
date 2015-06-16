@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>My Awesome Blog</title>
+    <title>all things considered</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
-          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,600,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
     <link href="css/screen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -23,20 +22,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/blog/index.html">My Awesome Blog</a>
+            <a class="navbar-brand" href="/index.html">all things considered</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li  class="active" ><a href="/blog/index.html">Home</a></li>
                 <li
-                ><a href="/blog/archives.html">Archives</a></li>
+                ><a href="/archives.html"><i class="fa fa-archive"></i> Archives</a></li>
                 
                 <li
                 >
-                <a href="/blog/pages/about.html">About</a>
+                    <a href="/pages/about.html">
+                        
+                        <i class="fa fa-info"></i>&nbsp;
+                        
+                        About
+                    </a>
                 </li>
                 
-                <li><a href="/blog/feed.xml">RSS</a></li>
+                <li><a href="/feed.xml"><i class="fa fa-rss"></i> RSS</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
@@ -44,7 +47,6 @@
 
 
 <div class="container">
-
 
     <div class="row">
         <div class="col-lg-9">
@@ -56,11 +58,11 @@
         <div class="col-lg-6">June 10, 2015</div>
         
     </div>
-    <h2>(init blog)</h2>
+    <h2>Start a blog</h2>
 </div>
 <div>
     
-    <h2><a name="about"></a>About</h2><p>This is my blog. I haven't really blogged ever. I so far did not think that I have something interesting to say. Given my experience at several customers and the work I am doing there I feel it might be different at least for them.</p><p>So why am I blogging then? Two things are of interest to me personally: one, I can express my opinions about different matters in a written form with more time to actually formulate my points rather than in a heated discussion. In these discussions I usually don't talk too much as I really hate being interrupted. Take aside that this is really bad behaviour during discussions I often see this and rather get me out of this as soon as possible; usually these are pointless and will not lead anywhere.</p><p>Second, I hope to make it a habit in order to get stuff out of my head.</p><p>The main topics on this blog will be information retrieval, software architecture, programming languages and agile methods. I am a professional software developer for eight years now working in the fields of information retrieval and machine learning. I stopped counting the number of projects I was involved in but the number of customers</p><p>a field I am professionally working in for eight years now</p>
+    <p>This is my blog. I haven't really blogged ever. Few people near me do. I so far did not think that I have something interesting to say. And there are already tons of blogs out there which probably have the same contents as this one.</p><p>So why do I blog now? First, maybe I'm wrong. And by not blogging I will just never find out. Also, occasionally leaving your comfort zone might not be the worst idea.</p><p>Second, I hope to be better at expressing thoughts, ideas and arguments in written form rather than longer discussions over beers or in meetings ad work. Unfortunately I have the habit of basically stop listening when the discussion is getting too long. Talking for the sake of talking is not my business.</p><p>Finally, I want to make it a habit. In the past 18 months or so there were ups and downs but overall life is pretty good to me. I've learnt a new programming language (<a href='http://clojure.org'>Clojure</a>), I'm at <a href='http://www.newyorker.com/culture/culture-desk/zero-dark-inbox'>inbox zero</a> constantly and just recently I started organizing life and work using <a href='http://orgmode.org/'>org-mode</a> and <a href='http://gtdfh.branchable.com/'>getting things done</a>. The next step for me is to flush my head whenever possible and maybe something interesting will be produced as well.</p>
 </div>
 
 
@@ -78,11 +80,9 @@
         <div class="col-md-3">
             <div id="sidebar">
                 <h3>Links</h3>
-                <ul id="links">
-                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
-                    <li><a href="http://carmenla.me/blog/index.html">Carmen's Blog</a></li>
-                    
-                    <li><a href="/blog/pages/another-page.html">Another Page</a></li>
+                <ul id="links" class="list-unstyled">
+                    <li><a href="https://twitter.com/truemped"><i class="fa fa-twitter"></i> @truemped</a></li>
+                    <li><a href="https://github.com/truemped"><i class="fa fa-github"></i> truemped</a></li>
                     
                 </ul>
                 
@@ -90,7 +90,7 @@
                     <h3>Recent Posts</h3>
                     <ul>
                         
-                        <li><a href="/blog/posts/2015-06-10-init.html">(init blog)</a></li>
+                        <li><a href="/posts/2015-06-10-init.html">Start a blog</a></li>
                         
                     </ul>
                 </div>
@@ -99,7 +99,7 @@
             </div>
         </div>
     </div>
-    <footer>Copyright &copy; 2014 BLOGAWESOME
+    <footer>Copyright &copy; 2015 Daniel Truemper
         <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -108,4 +108,3 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
-

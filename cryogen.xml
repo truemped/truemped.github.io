@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://blogawesome.com/' rel='self' type='application/rss+xml'/>
+<atom:link href='http://truemped.github.io/' rel='self' type='application/rss+xml'/>
 <generator>
 clj-rss
 </generator>
 <title>
-My Awesome Blog
+all things considered
 </title>
 <link>
-http://blogawesome.com/
+http://truemped.github.io/
 </link>
 <description>
-This blog is awesome
+yet another blog
 </description>
 <lastBuildDate>
-Wed, 10 Jun 2015 15:04:10 +0200
+Tue, 16 Jun 2015 18:54:55 +0200
 </lastBuildDate>
 </channel>
 </rss>

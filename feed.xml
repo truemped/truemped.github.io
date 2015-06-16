@@ -1,34 +1,34 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://blogawesome.com/' rel='self' type='application/rss+xml'/>
+<atom:link href='http://truemped.github.io/' rel='self' type='application/rss+xml'/>
 <generator>
 clj-rss
 </generator>
 <title>
-My Awesome Blog
+all things considered
 </title>
 <link>
-http://blogawesome.com/
+http://truemped.github.io/
 </link>
 <description>
-This blog is awesome
+yet another blog
 </description>
 <lastBuildDate>
-Wed, 10 Jun 2015 15:04:10 +0200
+Tue, 16 Jun 2015 18:54:55 +0200
 </lastBuildDate>
 <item>
 <guid>
-http://blogawesome.com/blog/posts/2015-06-10-init.html
+http://truemped.github.io/posts/2015-06-10-init.html
 </guid>
 <link>
-http://blogawesome.com/blog/posts/2015-06-10-init.html
+http://truemped.github.io/posts/2015-06-10-init.html
 </link>
 <title>
-(init blog)
+Start a blog
 </title>
 <description>
-&lt;h2&gt;&lt;a name=&quot;about&quot;&gt;&lt;/a&gt;About&lt;/h2&gt;&lt;p&gt;This is my blog. I haven't really blogged ever. I so far did not think that I have something interesting to say. Given my experience at several customers and the work I am doing there I feel it might be different at least for them.&lt;/p&gt;&lt;p&gt;So why am I blogging then? Two things are of interest to me personally: one, I can express my opinions about different matters in a written form with more time to actually formulate my points rather than in a heated discussion. In these discussions I usually don't talk too much as I really hate being interrupted. Take aside that this is really bad behaviour during discussions I often see this and rather get me out of this as soon as possible; usually these are pointless and will not lead anywhere.&lt;/p&gt;&lt;p&gt;Second, I hope to make it a habit in order to get stuff out of my head.&lt;/p&gt;&lt;p&gt;The main topics on this blog will be information retrieval, software architecture, programming languages and agile methods. I am a professional software developer for eight years now working in the fields of information retrieval and machine learning. I stopped counting the number of projects I was involved in but the number of customers&lt;/p&gt;&lt;p&gt;a field I am professionally working in for eight years now&lt;/p&gt;
+&lt;p&gt;This is my blog. I haven't really blogged ever. Few people near me do. I so far did not think that I have something interesting to say. And there are already tons of blogs out there which probably have the same contents as this one.&lt;/p&gt;&lt;p&gt;So why do I blog now? First, maybe I'm wrong. And by not blogging I will just never find out. Also, occasionally leaving your comfort zone might not be the worst idea.&lt;/p&gt;&lt;p&gt;Second, I hope to be better at expressing thoughts, ideas and arguments in written form rather than longer discussions over beers or in meetings ad work. Unfortunately I have the habit of basically stop listening when the discussion is getting too long. Talking for the sake of talking is not my business.&lt;/p&gt;&lt;p&gt;Finally, I want to make it a habit. In the past 18 months or so there were ups and downs but overall life is pretty good to me. I've learnt a new programming language (&lt;a href='http://clojure.org'&gt;Clojure&lt;/a&gt;), I'm at &lt;a href='http://www.newyorker.com/culture/culture-desk/zero-dark-inbox'&gt;inbox zero&lt;/a&gt; constantly and just recently I started organizing life and work using &lt;a href='http://orgmode.org/'&gt;org-mode&lt;/a&gt; and &lt;a href='http://gtdfh.branchable.com/'&gt;getting things done&lt;/a&gt;. The next step for me is to flush my head whenever possible and maybe something interesting will be produced as well.&lt;/p&gt;
 </description>
 <pubDate>
 Wed, 10 Jun 2015 00:00:00 +0200
