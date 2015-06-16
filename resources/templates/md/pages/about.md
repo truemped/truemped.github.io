@@ -3,6 +3,7 @@
  :page-index 0
  :navbar? true}
 
-## Write something about something
-
-wow wow wow
+I write code, architect larger backend applications and have a degree in
+economics. I am working with information retrieval, machine learning and I try
+to keep things simple. Find me on [Github](https://github.com/truemped),
+[Twitter](https://twitter.com/truemped) or [LinkedIn]().

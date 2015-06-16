@@ -1,11 +1,11 @@
-{:site-title       "My Awesome Blog"
- :author           "Bob Bobbert"
- :description      "This blog is awesome"
- :site-url         "http://blogawesome.com/"
+{:site-title       "all things considered"
+ :author           "Daniel Truemper"
+ :description      "yet another blog"
+ :site-url         "http://truemped.github.io/"
  :post-root        "posts"
  :tag-root         "tags"
  :page-root        "pages"
- :blog-prefix      "/blog"
+ :blog-prefix      ""
  :rss-name         "feed.xml"
  :rss-filters      ["cryogen"]
  :recent-posts     3
