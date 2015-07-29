@@ -15,14 +15,14 @@ http://truemped.github.io/
 yet another blog
 </description>
 <lastBuildDate>
-Wed, 29 Jul 2015 22:59:51 +0200
+Wed, 29 Jul 2015 23:09:27 +0200
 </lastBuildDate>
 <item>
 <guid>
-http://truemped.github.io/posts/2015-07-10-elastic-dsl.html
+http://truemped.github.io/posts/2015-07-29-elastic-dsl.html
 </guid>
 <link>
-http://truemped.github.io/posts/2015-07-10-elastic-dsl.html
+http://truemped.github.io/posts/2015-07-29-elastic-dsl.html
 </link>
 <title>
 Elasticsearch DSL-DSL
@@ -149,7 +149,7 @@ Elasticsearch DSL-DSL
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which I can execute in the backend and display the results. With all the domain functions in place I can then keep on improving the DSL or the frontend and enable the PO to experiment at lot easier without my direct involvement, at least in parts that I am not really interested in.&lt;/p&gt;
 </description>
 <pubDate>
-Fri, 10 Jul 2015 00:00:00 +0200
+Wed, 29 Jul 2015 00:00:00 +0200
 </pubDate>
 </item>
 <item>
