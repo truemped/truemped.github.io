@@ -2,9 +2,6 @@
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
 <atom:link href='http://truemped.github.io/' rel='self' type='application/rss+xml'/>
-<generator>
-clj-rss
-</generator>
 <title>
 all things considered
 </title>
@@ -15,8 +12,94 @@ http://truemped.github.io/
 yet another blog
 </description>
 <lastBuildDate>
-Wed, 29 Jul 2015 23:09:27 +0200
+Mon, 01 Feb 2016 13:56:16 +0100
 </lastBuildDate>
+<generator>
+clj-rss
+</generator>
+<item>
+<guid>
+http://truemped.github.io/posts/2016-02-01-varnish-all-the-things.html
+</guid>
+<link>
+http://truemped.github.io/posts/2016-02-01-varnish-all-the-things.html
+</link>
+<title>
+Varnish all the things
+</title>
+<description>
+&lt;p&gt;My usual web application stack for the past years was based on  a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.&lt;/p&gt;&lt;p&gt;What I have added to this lately was &lt;a href='https://www.varnish-cache.org/'&gt;Varnish&lt;/a&gt;, a powerful proxying cache. The first that comes in mind could be &quot;there are two problems in computer science: naming things and cache invalidation&quot;.  Agreed, invalidation is tricky. But there are several tricks at hand that make this not so bad at all.&lt;/p&gt;&lt;p&gt;Note: all examples should work with Varnish 4.0 and greater. If not, drop me a line!&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;caching&amp;#95;for&amp;#95;a&amp;#95;very&amp;#95;short&amp;#95;period&quot;&gt;&lt;/a&gt;Caching for a very short period&lt;/h3&gt;&lt;p&gt;The first trick is to cache for only a very short amount of time, say 10 seconds or maybe even only 1:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Cache-Control: public, max-age=10&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Say you have a resource that is being hammered a lot and it should be &quot;near real-time&quot;. Varnish will cache this response for 10 seconds. Now after the 10 seconds a new version must be computed. At this point Varnish will queue the incoming requests and only forward one of them to the backend. All &quot;parked&quot; requests will then get the response from the backend. Only one request to the backend every 10 seconds, but there could be billions to Varnish that don't bother you.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;grace&amp;#95;time&quot;&gt;&lt;/a&gt;Grace time&lt;/h3&gt;&lt;p&gt;Say you chose to cache for only one second. Everything will be fine then if the backend is able to compute a new version within one second. If it occasionally takes longer then users will have to wait for the backend response. Having users to wait is bad as you might be blocking the browser to render (which you should be avoiding by other means!) or the user sees the loading symbol even though all other elements are already loaded.&lt;/p&gt;&lt;p&gt;Here the grace time helps. It basically means that Varnish will return a stale cache object until the backend is done computing the new version. So let's say the backend sets this header:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Cache-Control: public, max-age=1&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In the Varnish VCL you then add:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sub vcl&amp;#95;backend&amp;#95;response {
+    set beresp.grace = 1m;
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will allow your backend to take up to one minute to compute the new version. During this time Varnish will deliver the old version to all incoming requests. As soon as the backend is finished the new version will be delivered.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;grace&amp;#95;in&amp;#95;times&amp;#95;of&amp;#95;unhealthy&amp;#95;backends&quot;&gt;&lt;/a&gt;Grace in times of unhealthy backends&lt;/h3&gt;&lt;p&gt;Grace time can also be extended in order to serve content while the backend is down. For this you need to enable health checking for the backend like so:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;backend server1 {
+    .host = &amp;quot;server1.example.com&amp;quot;;
+    .probe {
+        .url = &amp;quot;/&amp;#95;health&amp;quot;;
+        .timeout = 1s;
+        .interval = 5s;
+        .window = 5;
+        .threshold = 3;
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This tells varnish to check the &lt;strong&gt;/_health&lt;/strong&gt; endpoint every five seconds. The backend needs to answer within one second. If three of the last five checks were successful Varnish considers this backend to be healthy.&lt;/p&gt;&lt;p&gt;Now Varnish needs to detect failure and deliver stale content in order to have some time fixing backends. For this we need to modify the &lt;em&gt;vcl_hit&lt;/em&gt; method to increase the grace time to a very large value during times no healthy backend is available.&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sub vcl&amp;#95;hit {
+    # a cache hit
+    if &amp;#40;obj.ttl &amp;gt;= 0s&amp;#41; {
+        return &amp;#40;deliver&amp;#41;;
+    }
+    # object is expired
+    if &amp;#40;std.healthy&amp;#40;req.backend&amp;#95;hint&amp;#41;&amp;#41; {
+        # but we have a healthy backend
+        if &amp;#40;obj.ttl + obj.grace &amp;gt; 0s&amp;#41; {
+            # object is within the grace period
+            return &amp;#40;deliver&amp;#41;;
+        } else {
+            # object is outside the grace persiod, fetch a new version
+            return&amp;#40;fetch&amp;#41;;
+        }
+    } else {
+        # no healthy backend available, deliver old version for two hours
+        if &amp;#40;obj.ttl + 2h &amp;gt; 0s&amp;#41; {
+            return &amp;#40;deliver&amp;#41;;
+        } else {
+            # after two hours we still have no healthy backend, now signal
+            # the failure to the user
+            return &amp;#40;fetch&amp;#41;;
+        }
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you now manage to repair the backend within two hours the user will not &lt;em&gt;see&lt;/em&gt; the outage except maybe for old content.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;purging&amp;#95;the&amp;#95;cache&quot;&gt;&lt;/a&gt;Purging the cache&lt;/h3&gt;&lt;p&gt;In order to remove a cache object a special HTTP verb can be used.  By simply accessing the resource that should be removed with a &lt;em&gt;PURGE&lt;/em&gt; verb, e.g., Varnish can dismiss the object. Again this is controlled in the VCL itself:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sub vcl&amp;#95;hit {
+    if &amp;#40;req.request == &amp;quot;PURGE&amp;quot;&amp;#41; {
+        return&amp;#40;purge&amp;#41;;
+        return&amp;#40;synth&amp;#40;200, &amp;quot;Purged&amp;quot;&amp;#41;&amp;#41;;
+    }
+}
+sub vcl&amp;#95;miss {
+    if &amp;#40;req.request == &amp;quot;PURGE&amp;quot;&amp;#41; {
+        return&amp;#40;purge&amp;#41;;
+        return&amp;#40;synth&amp;#40;200, &amp;quot;Purged&amp;quot;&amp;#41;&amp;#41;;
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now executing something like&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ curl -XPURGE &amp;quot;http://www.example.com/recent&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;would purge the cached object. The next &lt;strong&gt;GET&lt;/strong&gt; request issues a new fetch from the backend. Obviously not everyone should be allowed to purge the cache so a simple ACL with white listed IPs blocks unwanted access:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;acl purge {
+    &amp;quot;localhost&amp;quot;;
+    # add a list of allowed IPs here
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then use it to block access from any other machine:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sub vcl&amp;#95;hit {
+    if &amp;#40;req.request == &amp;quot;PURGE&amp;quot;&amp;#41; {
+        if &amp;#40;!client.ip &amp;#126; purge&amp;#41; {
+            return&amp;#40;synth&amp;#40;405, &amp;quot;Not allowed.&amp;quot;&amp;#41;&amp;#41;;
+        }
+        return&amp;#40;purge&amp;#41;;
+        return&amp;#40;synth&amp;#40;200, &amp;quot;Purged&amp;quot;&amp;#41;&amp;#41;;
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;h3&gt;&lt;a name=&quot;cache&amp;#95;invalidation&amp;#95;based&amp;#95;on&amp;#95;content&quot;&gt;&lt;/a&gt;Cache invalidation based on content&lt;/h3&gt;&lt;p&gt;Sometimes invalidation based on URLs is not sufficient. Let's say one of the articles from the big publishing house had to be removed for legal reasons and you absolutely don't want to show it anymore. Invalidating the whole cache would place quite some load on the backend. Maybe even too much load. In this case banning objects based on its content enables one to only invalidate the &lt;em&gt;affected&lt;/em&gt; objects.&lt;/p&gt;&lt;p&gt;For this we need to introduce a custom HTTP response header from the backend. This could be something like a list of article ids:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Content-Articles: 1,2,3,4,5&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Varnish will store this header along with the object. In order to invalidate all cached objects containing article 3 an artificial endpoint in the VCL is introduced:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;sub vcl&amp;#95;recv {
+    if &amp;#40;req.url &amp;#126; &amp;quot;/&amp;#95;ban&amp;quot; &amp;amp;&amp;amp; req.method == &amp;quot;BAN&amp;quot;&amp;#41; {
+        ban&amp;#40;&amp;quot;obj.http.Content-Articles &amp;#126; &amp;quot; + req.http.Ban-Article&amp;#41;;
+        return&amp;#40;synth&amp;#40;204, &amp;quot;NO CONTENT&amp;quot;&amp;#41;&amp;#41;;
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The request to ban article 3 would now be:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ curl -XBAN -H 'Ban-Article: 3' 'http://www.example.com/&amp;#95;ban'&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Again securing via ACL is trivial and left out for clarity.&lt;/p&gt;&lt;p&gt;Banning works slightly different from purging. With purging the object is removed instantly. For each call to ban, Varnish keeps a list of banning statements that live for a longer period of time. When a cached object is requested all of the banning statements are executed against the cached object. If one matches, the object is fetched from the backend and not served. Once all objects have been visited, the banned statement is removed.&lt;/p&gt;&lt;p&gt;In the case of rarely accessed objects, this might never happen. For this the &lt;strong&gt;ban lurker&lt;/strong&gt; thread will iterate over the otherwise missed objects and remove them when necessary.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h3&gt;&lt;p&gt;I hope interest was raised if it has not been present so far. Varnish has helped me a lot over the years and saved a lot of money by reducing the amount of servers necessary for the individual project.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;resources&quot;&gt;&lt;/a&gt;Resources&lt;/h4&gt;&lt;p&gt;* &lt;a href='https://www.varnish-cache.org/docs/4.0/'&gt;Varnish 4 documentation&lt;/a&gt;&lt;/p&gt;&lt;p&gt;* &lt;a href='http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish'&gt;Grace time in Varnish 4&lt;/a&gt;&lt;/p&gt;&lt;p&gt;* &lt;a href='https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks'&gt;Health checks&lt;/a&gt;&lt;/p&gt;&lt;p&gt;* &lt;a href='http://info.varnish-software.com/blog/ban-lurker'&gt;Ban lurker&lt;/a&gt;&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Mon, 01 Feb 2016 00:00:00 +0100
+</pubDate>
+</item>
 <item>
 <guid>
 http://truemped.github.io/posts/2015-07-29-elastic-dsl.html
@@ -148,6 +231,9 @@ Elasticsearch DSL-DSL
  :aggregations {}}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;which I can execute in the backend and display the results. With all the domain functions in place I can then keep on improving the DSL or the frontend and enable the PO to experiment at lot easier without my direct involvement, at least in parts that I am not really interested in.&lt;/p&gt;
 </description>
+<enclosure>
+
+</enclosure>
 <pubDate>
 Wed, 29 Jul 2015 00:00:00 +0200
 </pubDate>
@@ -165,6 +251,9 @@ Start a blog
 <description>
 &lt;p&gt;This is my blog. I haven't really blogged ever. Few people near me do. I so far did not think that I have something interesting to say. And there are already tons of blogs out there which probably have the same contents as this one.&lt;/p&gt;&lt;p&gt;So why do I blog now? First, maybe I'm wrong. And by not blogging I will just never find out. Also, occasionally leaving your comfort zone might not be the worst idea.&lt;/p&gt;&lt;p&gt;Second, I hope to be better at expressing thoughts, ideas and arguments in written form rather than longer discussions over beers or in meetings ad work. Unfortunately I have the habit of basically stop listening when the discussion is getting too long. Talking for the sake of talking is not my business.&lt;/p&gt;&lt;p&gt;Finally, I want to make it a habit. In the past 18 months or so there were ups and downs but overall life is pretty good to me. I've learnt a new programming language (&lt;a href='http://clojure.org'&gt;Clojure&lt;/a&gt;), I'm at &lt;a href='http://www.newyorker.com/culture/culture-desk/zero-dark-inbox'&gt;inbox zero&lt;/a&gt; constantly and just recently I started organizing life and work using &lt;a href='http://orgmode.org/'&gt;org-mode&lt;/a&gt; and &lt;a href='http://gtdfh.branchable.com/'&gt;getting things done&lt;/a&gt;. The next step for me is to flush my head whenever possible and maybe something interesting will be produced as well.&lt;/p&gt;
 </description>
+<enclosure>
+
+</enclosure>
 <pubDate>
 Wed, 10 Jun 2015 00:00:00 +0200
 </pubDate>
