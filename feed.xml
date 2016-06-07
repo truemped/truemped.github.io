@@ -12,11 +12,38 @@ http://truemped.github.io/
 yet another blog
 </description>
 <lastBuildDate>
-Mon, 01 Feb 2016 13:56:16 +0100
+Tue, 07 Jun 2016 13:11:18 +0200
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://truemped.github.io/posts/2016-06-07-failover-continuous-deployment.html
+</guid>
+<link>
+http://truemped.github.io/posts/2016-06-07-failover-continuous-deployment.html
+</link>
+<title>
+Continuous delivery with automatic failover
+</title>
+<description>
+&lt;p&gt;This post is kicking of a little blog series about my adventures into building a fault tolerant Python based web site. The goals are simple:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;two VMs with automatic failover and floating IP&lt;/li&gt;&lt;li&gt;shared filesystem&lt;/li&gt;&lt;li&gt;Debian packages for the Python project&lt;/li&gt;&lt;li&gt;continuous integration&lt;/li&gt;&lt;li&gt;continuous delivery&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In addition to this series of blog posts there will be an example Ansible playbook on Github containing all the relevant roles.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;agenda&quot;&gt;&lt;/a&gt;Agenda&lt;/h3&gt;&lt;p&gt;The series is divided into 7 posts. With every new post I will update the links here. They are also available under the tag &lt;a href='/devops-series.html'&gt;devops-series&lt;/a&gt;.&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;a href='/posts/2016-06-07-failover-continuous-deployment.html'&gt;Basics: Debian VM, security and common packages&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Corosync, Pacemaker, Floating IP&lt;/li&gt;&lt;li&gt;Private Networking: TINC&lt;/li&gt;&lt;li&gt;GlusterFS: shared filesystem&lt;/li&gt;&lt;li&gt;Debian package for a Python project&lt;/li&gt;&lt;li&gt;Gitlab, Gitlab-CI and Docker Hub&lt;/li&gt;&lt;li&gt;Gitlab Webhook receiver for deployment&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Obviously this is &lt;strong&gt;a lot&lt;/strong&gt;. So be patient while I write this down.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;digital&amp;#95;ocean&quot;&gt;&lt;/a&gt;Digital Ocean&lt;/h3&gt;&lt;p&gt;I chose &lt;a href='https://m.do.co/c/dd5d931d13ce'&gt;Digital Ocean (referral)&lt;/a&gt; for this. There are no particular reasons for it, except a datacenter in Frankfurt, Germany and their great support for APIs. Nothing you wouldn't get at Amazon but maybe a little less &lt;em&gt;enterpsisy&lt;/em&gt; &amp;ndash; whatever that means.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;gitlab&quot;&gt;&lt;/a&gt;Gitlab&lt;/h3&gt;&lt;p&gt;Github would be the obvious choice. But budget is small and I need a private repository. Gitlab-CI is integrated directly so I wouldn't need to pay extra for continuous integration. Also Gitlab-CI features build artifacts, which will be the Debian package I then only need to download.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;docker&amp;#95;you&amp;#95;say&quot;&gt;&lt;/a&gt;Docker you say&lt;/h3&gt;&lt;p&gt;Another possibility for deployment would be to run everything inside Docker containers. Only for reasons as running out of time I chose not to do this now. It would mean to run everything in containers beginning from Nginx and Varnish down to the databases. Nothing too spectacular but then again I already have the necessary Ansible roles for all components and you shouldn't run Docker in production anyways. At least that is what the Internet tells me. Something like Kubernetes or Docker Swarm would certainly be too much for this.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;debian&amp;#95;vm,&amp;#95;security&amp;#95;and&amp;#95;common&amp;#95;packages&quot;&gt;&lt;/a&gt;Debian VM, security and common packages&lt;/h3&gt;&lt;p&gt;Debian is my default solution for running a server. Tons of resources, battle tested and I've been using Debian and/or Ubuntu for more than ten years now. There are however a few things one needs to do in order to secure a server.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;firewall&quot;&gt;&lt;/a&gt;Firewall&lt;/h4&gt;&lt;p&gt;I used to write my IPTables rules by hand, nowadays the &lt;a href='https://launchpad.net/ufw'&gt;UFW (uncomplicated firewall)&lt;/a&gt; does a decent job at creating these rules for you in a pretty easy manner. The base setup usually involves disabling all incoming traffic and then only allow the ports you care about:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ ufw default deny incoming&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can even add simple connection rate limiting. Basically this will track connection attempts and if there are more than 6 attempts in the last 30 seconds the connecting IP is automatically banned:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ ufw limit ssh/tcp&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Enable the firewall with:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ ufw enable&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;fail2ban&quot;&gt;&lt;/a&gt;Fail2ban&lt;/h4&gt;&lt;p&gt;Now that we have a rate-limiting firewall the next step is to add &lt;a href='http://www.fail2ban.org/'&gt;fail2ban&lt;/a&gt;. Rate limiting is good but you do see many bots that try to guess passwords that are not doing this trying to max-out your bandwidth. This is what fail2ban is for.&lt;/p&gt;&lt;p&gt;It is a simple Python daemon that tails through logfiles and searches for regular expressions. In the SSHD case this might be failed login attempts in &lt;code&gt;/var/log/auth.log&lt;/code&gt;, for NGINX you might find users trying all possible URLs for attacking a Wordpress site, e.g. The default installation comes with many predefined rules that you can enable in &lt;code&gt;/etc/fail2ban/jail.local&lt;/code&gt;.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;secure&amp;#95;sshd&quot;&gt;&lt;/a&gt;Secure SSHD&lt;/h4&gt;&lt;p&gt;SSH is already pretty secure but you should follow some additional rules. First we declare the allowed key exchange algorithms, ciphers and macs that the daemon should use in &lt;code&gt;/etc/ssh/sshd&amp;#95;config&lt;/code&gt;. Then you really don't want &lt;strong&gt;root&lt;/strong&gt; to be able to login via SSH and to be really safe we only want to use key-based authentication and disable passwords:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;KexAlgorithms diffie-hellman-group-exchange-sha256
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
+PermitRootLogin no
+PubkeyAuthentication yes
+PasswordAuthentication no&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;rootkithunter&quot;&gt;&lt;/a&gt;RootkitHunter&lt;/h4&gt;&lt;p&gt;The final barrier is a locally running root kit hunter. Of course you do your best to not allow anyone gain access to your system but you can never be sure. The &lt;a href='http://rkhunter.sourceforge.net/'&gt;RootkitHunter&lt;/a&gt; is a simple package that scans for known root kits. You can weekly update the database and have a cron job running once a day to scan your system:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ rkhunter --update
+$ rkhunter --cron-job&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;&lt;a name=&quot;common&amp;#95;packages&quot;&gt;&lt;/a&gt;Common packages&lt;/h4&gt;&lt;p&gt;Obviously YMMV at this point but my list of common packages I always install contains:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ apt-get install apt-transport-https debian-goodies git htop iftop iotop \\
+    atop python-software-properties sudo unattended-upgrades&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This is the basic setup of a new VM. Two of them will be used for our production system. The next part will add corosync and pacemaker to both systems in order to automatically set the floating IP to one of the VMs.&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Tue, 07 Jun 2016 00:00:00 +0200
+</pubDate>
+</item>
 <item>
 <guid>
 http://truemped.github.io/posts/2016-02-01-varnish-all-the-things.html
