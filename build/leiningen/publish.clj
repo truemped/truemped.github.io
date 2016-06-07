@@ -1,4 +1,4 @@
-(ns leiningen.circle
+(ns leiningen.publish
   (:require [leiningen.run :as run]
             [leiningen.rsync :as rsync]))
 
