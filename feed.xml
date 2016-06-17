@@ -12,11 +12,31 @@ http://truemped.github.io/
 yet another blog
 </description>
 <lastBuildDate>
-Tue, 07 Jun 2016 13:11:18 +0200
+Fri, 17 Jun 2016 10:09:55 +0200
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://truemped.github.io/posts/2016-06-18-whatsapp.html
+</guid>
+<link>
+http://truemped.github.io/posts/2016-06-18-whatsapp.html
+</link>
+<title>
+WhatsApp or not
+</title>
+<description>
+&lt;p&gt;I am not using WhatsApp. I also do not have a Facebook account. For Facebook it is easy: I'm just not into sharing my personal life online and keeping in touch with friends can be done without it. WhatsApp is somewhat different. It's basically a replacement of text messages on steroids because you can have groups.&lt;/p&gt;&lt;p&gt;My primary reasons for not using it are: encryption, sharing my phone number with Facebook and open source. For this reason I was and still am promoting &lt;a href='https://whispersystems.org/'&gt;Signal&lt;/a&gt;. The &lt;a href='https://github.com/WhisperSystems'&gt;code&lt;/a&gt; is available for anyone to read and audit and cryptography scientists have reviewed it. You can run your own &lt;a href='https://github.com/WhisperSystems/TextSecure-Server'&gt;server&lt;/a&gt; so you don't rely on any organization to run the server for you.&lt;/p&gt;&lt;p&gt;With the latest news of WhatsApp adding encryption by default and using the Signal protocol this argument is void. So it boils down to the one question: do I trust Facebook with my data? I have no way to check their code and see if there is a backdoor that circumvent the encryption.&lt;/p&gt;&lt;p&gt;But here is the thing: Facebook already has my data. Since WhatsApp downloads the address book of all my friends that have it installed, they already know my phone number. They can even guess what my social network roughly looks like.&lt;/p&gt;&lt;p&gt;So I'm doomed. And I'm asking myself: do I keep being the one person in the room not using WhatsApp?&lt;/p&gt;
+</description>
+<enclosure>
+
+</enclosure>
+<pubDate>
+Sat, 18 Jun 2016 00:00:00 +0200
+</pubDate>
+</item>
 <item>
 <guid>
 http://truemped.github.io/posts/2016-06-07-failover-continuous-deployment.html
@@ -118,7 +138,7 @@ sub vcl&amp;#95;miss {
         ban&amp;#40;&amp;quot;obj.http.Content-Articles &amp;#126; &amp;quot; + req.http.Ban-Article&amp;#41;;
         return&amp;#40;synth&amp;#40;204, &amp;quot;NO CONTENT&amp;quot;&amp;#41;&amp;#41;;
     }
-}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The request to ban article 3 would now be:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ curl -XBAN -H 'Ban-Article: 3' 'http://www.example.com/&amp;#95;ban'&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Again securing via ACL is trivial and left out for clarity.&lt;/p&gt;&lt;p&gt;Banning works slightly different from purging. With purging the object is removed instantly. For each call to ban, Varnish keeps a list of banning statements that live for a longer period of time. When a cached object is requested all of the banning statements are executed against the cached object. If one matches, the object is fetched from the backend and not served. Once all objects have been visited, the banned statement is removed.&lt;/p&gt;&lt;p&gt;In the case of rarely accessed objects, this might never happen. For this the &lt;strong&gt;ban lurker&lt;/strong&gt; thread will iterate over the otherwise missed objects and remove them when necessary.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h3&gt;&lt;p&gt;I hope interest was raised if it has not been present so far. Varnish has helped me a lot over the years and saved a lot of money by reducing the amount of servers necessary for the individual project.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;resources&quot;&gt;&lt;/a&gt;Resources&lt;/h4&gt;&lt;p&gt;* &lt;a href='https://www.varnish-cache.org/docs/4.0/'&gt;Varnish 4 documentation&lt;/a&gt;&lt;/p&gt;&lt;p&gt;* &lt;a href='http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish'&gt;Grace time in Varnish 4&lt;/a&gt;&lt;/p&gt;&lt;p&gt;* &lt;a href='https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks'&gt;Health checks&lt;/a&gt;&lt;/p&gt;&lt;p&gt;* &lt;a href='http://info.varnish-software.com/blog/ban-lurker'&gt;Ban lurker&lt;/a&gt;&lt;/p&gt;
+}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The request to ban article 3 would now be:&lt;/p&gt;&lt;pre&gt;&lt;code&gt;$ curl -XBAN -H 'Ban-Article: 3' 'http://www.example.com/&amp;#95;ban'&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Again securing via ACL is trivial and left out for clarity.&lt;/p&gt;&lt;p&gt;Banning works slightly different from purging. With purging the object is removed instantly. For each call to ban, Varnish keeps a list of banning statements that live for a longer period of time. When a cached object is requested all of the banning statements are executed against the cached object. If one matches, the object is fetched from the backend and not served. Once all objects have been visited, the banned statement is removed.&lt;/p&gt;&lt;p&gt;In the case of rarely accessed objects, this might never happen. For this the &lt;strong&gt;ban lurker&lt;/strong&gt; thread will iterate over the otherwise missed objects and remove them when necessary.&lt;/p&gt;&lt;h3&gt;&lt;a name=&quot;conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h3&gt;&lt;p&gt;I hope interest was raised if it has not been present so far. Varnish has helped me a lot over the years and saved a lot of money by reducing the amount of servers necessary for the individual project.&lt;/p&gt;&lt;h4&gt;&lt;a name=&quot;resources&quot;&gt;&lt;/a&gt;Resources&lt;/h4&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='https://www.varnish-cache.org/docs/4.0/'&gt;Varnish 4 documentation&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish'&gt;Grace time in Varnish 4&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks'&gt;Health checks&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='http://info.varnish-software.com/blog/ban-lurker'&gt;Ban lurker&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 </description>
 <enclosure>
 

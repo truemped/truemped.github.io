@@ -123,7 +123,7 @@ sub vcl&#95;miss {
         ban&#40;&quot;obj.http.Content-Articles &#126; &quot; + req.http.Ban-Article&#41;;
         return&#40;synth&#40;204, &quot;NO CONTENT&quot;&#41;&#41;;
     }
-}</code></pre><p>The request to ban article 3 would now be:</p><pre><code>$ curl -XBAN -H 'Ban-Article: 3' 'http://www.example.com/&#95;ban'</code></pre><p>Again securing via ACL is trivial and left out for clarity.</p><p>Banning works slightly different from purging. With purging the object is removed instantly. For each call to ban, Varnish keeps a list of banning statements that live for a longer period of time. When a cached object is requested all of the banning statements are executed against the cached object. If one matches, the object is fetched from the backend and not served. Once all objects have been visited, the banned statement is removed.</p><p>In the case of rarely accessed objects, this might never happen. For this the <strong>ban lurker</strong> thread will iterate over the otherwise missed objects and remove them when necessary.</p><h3><a name="conclusion"></a>Conclusion</h3><p>I hope interest was raised if it has not been present so far. Varnish has helped me a lot over the years and saved a lot of money by reducing the amount of servers necessary for the individual project.</p><h4><a name="resources"></a>Resources</h4><p>* <a href='https://www.varnish-cache.org/docs/4.0/'>Varnish 4 documentation</a></p><p>* <a href='http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish'>Grace time in Varnish 4</a></p><p>* <a href='https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks'>Health checks</a></p><p>* <a href='http://info.varnish-software.com/blog/ban-lurker'>Ban lurker</a></p>
+}</code></pre><p>The request to ban article 3 would now be:</p><pre><code>$ curl -XBAN -H 'Ban-Article: 3' 'http://www.example.com/&#95;ban'</code></pre><p>Again securing via ACL is trivial and left out for clarity.</p><p>Banning works slightly different from purging. With purging the object is removed instantly. For each call to ban, Varnish keeps a list of banning statements that live for a longer period of time. When a cached object is requested all of the banning statements are executed against the cached object. If one matches, the object is fetched from the backend and not served. Once all objects have been visited, the banned statement is removed.</p><p>In the case of rarely accessed objects, this might never happen. For this the <strong>ban lurker</strong> thread will iterate over the otherwise missed objects and remove them when necessary.</p><h3><a name="conclusion"></a>Conclusion</h3><p>I hope interest was raised if it has not been present so far. Varnish has helped me a lot over the years and saved a lot of money by reducing the amount of servers necessary for the individual project.</p><h4><a name="resources"></a>Resources</h4><ul><li><a href='https://www.varnish-cache.org/docs/4.0/'>Varnish 4 documentation</a></li><li><a href='http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish'>Grace time in Varnish 4</a></li><li><a href='https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks'>Health checks</a></li><li><a href='http://info.varnish-software.com/blog/ban-lurker'>Ban lurker</a></li></ul>
 </div>
 
 <div id="post-tags">
@@ -168,11 +168,11 @@ sub vcl&#95;miss {
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2016-06-18-whatsapp.html">WhatsApp or not</a></li>
+                        
                         <li><a href="/posts/2016-06-07-failover-continuous-deployment.html">Continuous delivery with automatic failover</a></li>
                         
                         <li><a href="/posts/2016-02-01-varnish-all-the-things.html">Varnish all the things</a></li>
-                        
-                        <li><a href="/posts/2015-07-29-elastic-dsl.html">Elasticsearch DSL-DSL</a></li>
                         
                     </ul>
                 </div>
@@ -182,21 +182,25 @@ sub vcl&#95;miss {
                     <h3>Tags</h3>
                     <ul>
                         
-                        <li><a href="/devops-series.html">devops-series</a></li>
-                        
-                        <li><a href="/digitalocean.html">digitalocean</a></li>
+                        <li><a href="/dsl.html">dsl</a></li>
                         
                         <li><a href="/varnish.html">varnish</a></li>
                         
-                        <li><a href="/caching.html">caching</a></li>
-                        
-                        <li><a href="/infrastructure.html">infrastructure</a></li>
-                        
-                        <li><a href="/dsl.html">dsl</a></li>
-                        
                         <li><a href="/clojure.html">clojure</a></li>
                         
+                        <li><a href="/privacy.html">privacy</a></li>
+                        
+                        <li><a href="/caching.html">caching</a></li>
+                        
+                        <li><a href="/devops-series.html">devops-series</a></li>
+                        
+                        <li><a href="/whatsapp.html">whatsapp</a></li>
+                        
+                        <li><a href="/digitalocean.html">digitalocean</a></li>
+                        
                         <li><a href="/elasticsearch.html">elasticsearch</a></li>
+                        
+                        <li><a href="/infrastructure.html">infrastructure</a></li>
                         
                     </ul>
                 </div>

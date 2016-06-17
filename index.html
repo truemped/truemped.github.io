@@ -53,29 +53,22 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta" class="row">
-        <div class="col-lg-6">June 7, 2016</div>
+        <div class="col-lg-6">June 18, 2016</div>
         
     </div>
-    <h2>Continuous delivery with automatic failover</h2>
+    <h2>WhatsApp or not</h2>
 </div>
 <div>
     
-    <p>This post is kicking of a little blog series about my adventures into building a fault tolerant Python based web site. The goals are simple:</p><ul><li>two VMs with automatic failover and floating IP</li><li>shared filesystem</li><li>Debian packages for the Python project</li><li>continuous integration</li><li>continuous delivery</li></ul><p>In addition to this series of blog posts there will be an example Ansible playbook on Github containing all the relevant roles.</p><h3><a name="agenda"></a>Agenda</h3><p>The series is divided into 7 posts. With every new post I will update the links here. They are also available under the tag <a href='/devops-series.html'>devops-series</a>.</p><ol><li><a href='/posts/2016-06-07-failover-continuous-deployment.html'>Basics: Debian VM, security and common packages</a></li><li>Corosync, Pacemaker, Floating IP</li><li>Private Networking: TINC</li><li>GlusterFS: shared filesystem</li><li>Debian package for a Python project</li><li>Gitlab, Gitlab-CI and Docker Hub</li><li>Gitlab Webhook receiver for deployment</li></ol><p>Obviously this is <strong>a lot</strong>. So be patient while I write this down.</p><h3><a name="digital&#95;ocean"></a>Digital Ocean</h3><p>I chose <a href='https://m.do.co/c/dd5d931d13ce'>Digital Ocean (referral)</a> for this. There are no particular reasons for it, except a datacenter in Frankfurt, Germany and their great support for APIs. Nothing you wouldn't get at Amazon but maybe a little less <em>enterpsisy</em> &ndash; whatever that means.</p><h3><a name="gitlab"></a>Gitlab</h3><p>Github would be the obvious choice. But budget is small and I need a private repository. Gitlab-CI is integrated directly so I wouldn't need to pay extra for continuous integration. Also Gitlab-CI features build artifacts, which will be the Debian package I then only need to download.</p><h3><a name="docker&#95;you&#95;say"></a>Docker you say</h3><p>Another possibility for deployment would be to run everything inside Docker containers. Only for reasons as running out of time I chose not to do this now. It would mean to run everything in containers beginning from Nginx and Varnish down to the databases. Nothing too spectacular but then again I already have the necessary Ansible roles for all components and you shouldn't run Docker in production anyways. At least that is what the Internet tells me. Something like Kubernetes or Docker Swarm would certainly be too much for this.</p><h3><a name="debian&#95;vm,&#95;security&#95;and&#95;common&#95;packages"></a>Debian VM, security and common packages</h3><p>Debian is my default solution for running a server. Tons of resources, battle tested and I've been using Debian and/or Ubuntu for more than ten years now. There are however a few things one needs to do in order to secure a server.</p><h4><a name="firewall"></a>Firewall</h4><p>I used to write my IPTables rules by hand, nowadays the <a href='https://launchpad.net/ufw'>UFW (uncomplicated firewall)</a> does a decent job at creating these rules for you in a pretty easy manner. The base setup usually involves disabling all incoming traffic and then only allow the ports you care about:</p><pre><code>$ ufw default deny incoming</code></pre><p>You can even add simple connection rate limiting. Basically this will track connection attempts and if there are more than 6 attempts in the last 30 seconds the connecting IP is automatically banned:</p><pre><code>$ ufw limit ssh/tcp</code></pre><p>Enable the firewall with:</p><pre><code>$ ufw enable</code></pre><h4><a name="fail2ban"></a>Fail2ban</h4><p>Now that we have a rate-limiting firewall the next step is to add <a href='http://www.fail2ban.org/'>fail2ban</a>. Rate limiting is good but you do see many bots that try to guess passwords that are not doing this trying to max-out your bandwidth. This is what fail2ban is for.</p><p>It is a simple Python daemon that tails through logfiles and searches for regular expressions. In the SSHD case this might be failed login attempts in <code>/var/log/auth.log</code>, for NGINX you might find users trying all possible URLs for attacking a Wordpress site, e.g. The default installation comes with many predefined rules that you can enable in <code>/etc/fail2ban/jail.local</code>.</p><h4><a name="secure&#95;sshd"></a>Secure SSHD</h4><p>SSH is already pretty secure but you should follow some additional rules. First we declare the allowed key exchange algorithms, ciphers and macs that the daemon should use in <code>/etc/ssh/sshd&#95;config</code>. Then you really don't want <strong>root</strong> to be able to login via SSH and to be really safe we only want to use key-based authentication and disable passwords:</p><pre><code>KexAlgorithms diffie-hellman-group-exchange-sha256
-Ciphers aes256-ctr,aes192-ctr,aes128-ctr
-MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
-PermitRootLogin no
-PubkeyAuthentication yes
-PasswordAuthentication no</code></pre><h4><a name="rootkithunter"></a>RootkitHunter</h4><p>The final barrier is a locally running root kit hunter. Of course you do your best to not allow anyone gain access to your system but you can never be sure. The <a href='http://rkhunter.sourceforge.net/'>RootkitHunter</a> is a simple package that scans for known root kits. You can weekly update the database and have a cron job running once a day to scan your system:</p><pre><code>$ rkhunter --update
-$ rkhunter --cron-job</code></pre><h4><a name="common&#95;packages"></a>Common packages</h4><p>Obviously YMMV at this point but my list of common packages I always install contains:</p><pre><code>$ apt-get install apt-transport-https debian-goodies git htop iftop iotop \\
-    atop python-software-properties sudo unattended-upgrades</code></pre><p>This is the basic setup of a new VM. Two of them will be used for our production system. The next part will add corosync and pacemaker to both systems in order to automatically set the floating IP to one of the VMs.</p>
+    <p>I am not using WhatsApp. I also do not have a Facebook account. For Facebook it is easy: I'm just not into sharing my personal life online and keeping in touch with friends can be done without it. WhatsApp is somewhat different. It's basically a replacement of text messages on steroids because you can have groups.</p><p>My primary reasons for not using it are: encryption, sharing my phone number with Facebook and open source. For this reason I was and still am promoting <a href='https://whispersystems.org/'>Signal</a>. The <a href='https://github.com/WhisperSystems'>code</a> is available for anyone to read and audit and cryptography scientists have reviewed it. You can run your own <a href='https://github.com/WhisperSystems/TextSecure-Server'>server</a> so you don't rely on any organization to run the server for you.</p><p>With the latest news of WhatsApp adding encryption by default and using the Signal protocol this argument is void. So it boils down to the one question: do I trust Facebook with my data? I have no way to check their code and see if there is a backdoor that circumvent the encryption.</p><p>But here is the thing: Facebook already has my data. Since WhatsApp downloads the address book of all my friends that have it installed, they already know my phone number. They can even guess what my social network roughly looks like.</p><p>So I'm doomed. And I'm asking myself: do I keep being the one person in the room not using WhatsApp?</p>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/devops-series.html">devops-series</a>
+    <a href="/privacy.html">privacy</a>
     
-    <a href="/digitalocean.html">digitalocean</a>
+    <a href="/whatsapp.html">whatsapp</a>
     
 </div>
 
@@ -85,7 +78,7 @@ $ rkhunter --cron-job</code></pre><h4><a name="common&#95;packages"></a>Common p
     <div id="prev-next">
         
         
-        <a class="right" href="/posts/2016-02-01-varnish-all-the-things.html">Varnish all the things &raquo;</a>
+        <a class="right" href="/posts/2016-06-07-failover-continuous-deployment.html">Continuous delivery with automatic failover &raquo;</a>
         
     </div>
 </div>
@@ -106,11 +99,11 @@ $ rkhunter --cron-job</code></pre><h4><a name="common&#95;packages"></a>Common p
                     <h3>Recent Posts</h3>
                     <ul>
                         
+                        <li><a href="/posts/2016-06-18-whatsapp.html">WhatsApp or not</a></li>
+                        
                         <li><a href="/posts/2016-06-07-failover-continuous-deployment.html">Continuous delivery with automatic failover</a></li>
                         
                         <li><a href="/posts/2016-02-01-varnish-all-the-things.html">Varnish all the things</a></li>
-                        
-                        <li><a href="/posts/2015-07-29-elastic-dsl.html">Elasticsearch DSL-DSL</a></li>
                         
                     </ul>
                 </div>
@@ -120,21 +113,25 @@ $ rkhunter --cron-job</code></pre><h4><a name="common&#95;packages"></a>Common p
                     <h3>Tags</h3>
                     <ul>
                         
-                        <li><a href="/devops-series.html">devops-series</a></li>
-                        
-                        <li><a href="/digitalocean.html">digitalocean</a></li>
+                        <li><a href="/dsl.html">dsl</a></li>
                         
                         <li><a href="/varnish.html">varnish</a></li>
                         
-                        <li><a href="/caching.html">caching</a></li>
-                        
-                        <li><a href="/infrastructure.html">infrastructure</a></li>
-                        
-                        <li><a href="/dsl.html">dsl</a></li>
-                        
                         <li><a href="/clojure.html">clojure</a></li>
                         
+                        <li><a href="/privacy.html">privacy</a></li>
+                        
+                        <li><a href="/caching.html">caching</a></li>
+                        
+                        <li><a href="/devops-series.html">devops-series</a></li>
+                        
+                        <li><a href="/whatsapp.html">whatsapp</a></li>
+                        
+                        <li><a href="/digitalocean.html">digitalocean</a></li>
+                        
                         <li><a href="/elasticsearch.html">elasticsearch</a></li>
+                        
+                        <li><a href="/infrastructure.html">infrastructure</a></li>
                         
                     </ul>
                 </div>
