@@ -5,10 +5,10 @@
                       :url "http://www.eclipse.org/legal/epl-v10.html"}
             :dependencies [[org.clojure/clojure "1.7.0"]
                            [ring/ring-devel "1.4.0"]
-                           [compojure "1.4.0"]
+                           [compojure "1.5.0"]
                            [ring-server "0.4.0"]
-                           [cryogen-markdown "0.1.2"]
-                           [cryogen-core "0.1.31"]]
+                           [cryogen-markdown "0.1.4"]
+                           [cryogen-core "0.1.41"]]
             :plugins [[lein-ring "0.8.13"]]
             :main cryogen.core
             :ring {:init cryogen.server/init
