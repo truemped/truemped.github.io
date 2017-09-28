@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <title>all things considered: Elasticsearch DSL-DSL</title>
+    <link rel="canonical" href="http://truemped.github.io/posts/2015-07-29-elastic-dsl.html">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
     <link href="/css/screen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -71,7 +72,7 @@
     :timestamp &quot;2015-07-28T10:00:00Z&quot;
     :category &#91;&quot;politics&quot;&#93;
 }
-</code></pre><p>This post is my story of how I implemented this. Publishing this as a library might be an idea but in the end all of this is tied to an exact mapping, index structure and use case. If there is interest though, starting something similar in a library could be interesting, if there is interest.</p><h2><a name="dsls&#95;in&#95;clojure"></a>DSLs in Clojure</h2><p>Creating a Domain Specific Language is pretty straight forward in Clojure assuming you expose Clojure or Lisp syntax to the user. Using the clojure reader and <code>eval</code> parsing a DSL into Clojure code is simple and defining the DSL itself does then only involve implementing the functions.</p><p>In the next part I focus on the DSL implementation itself and the functions for manipulating the query. In the last section, parsing and evaluating the DSL into a real Elasticsearch query finishes.</p><h2><a name="the&#95;dsl"></a>The DSL</h2><p>For the custom DSL I started with a base query structure upon which all other functions build. It has four parts: query, scoring, filtering and aggregations:</p><pre><code class="clojure">&#40;def default-query
+</code></pre><p>This post is my story of how I implemented this. Publishing this as a library might be an idea but in the end all of this is tied to an exact mapping, index structure and use case. If there is interest though, starting something similar in a library could be interesting, if there is interest.</p><h2 id="dsls&#95;in&#95;clojure">DSLs in Clojure</h2><p>Creating a Domain Specific Language is pretty straight forward in Clojure assuming you expose Clojure or Lisp syntax to the user. Using the clojure reader and <code>eval</code> parsing a DSL into Clojure code is simple and defining the DSL itself does then only involve implementing the functions.</p><p>In the next part I focus on the DSL implementation itself and the functions for manipulating the query. In the last section, parsing and evaluating the DSL into a real Elasticsearch query finishes.</p><h2 id="the&#95;dsl">The DSL</h2><p>For the custom DSL I started with a base query structure upon which all other functions build. It has four parts: query, scoring, filtering and aggregations:</p><pre><code class="clojure">&#40;def default-query
  {:query
   {:filtered
    {:query {:function&#95;score {:query {}
@@ -117,7 +118,7 @@
  &#40;append-in-nested-list query
                         &#91;:query :filtered :filter :bool :must&#95;not&#93;
                         &#91;must-filter&#93;&#41;&#41;
-</code></pre><h3><a name="dsl&#95;functions"></a>DSL functions</h3><p>The individual functions now basically compose the DSL. Being able to add <code>&#40;q &quot;merkel&quot;&#41;</code> is translated into the following Clojure function:</p><pre><code class="clojure">&#40;defn q
+</code></pre><h3 id="dsl&#95;functions">DSL functions</h3><p>The individual functions now basically compose the DSL. Being able to add <code>&#40;q &quot;merkel&quot;&#41;</code> is translated into the following Clojure function:</p><pre><code class="clojure">&#40;defn q
   &quot;Simple query&quot;
   &#91;query user-query&#93;
   &#40;set-query query
@@ -152,7 +153,7 @@
      &#126;@body&#41;&#41;
 </code></pre><p>Using this macro a query can now be defined like this:</p><pre><code class="clojure">&#40;def simple-query &#40;query
                    &#40;q &quot;test&quot;&#41;&#41;
-</code></pre><h2><a name="parsing&#95;the&#95;dsl"></a>Parsing the DSL</h2><p>Doing this is Clojure is nice and easy for me but then again I want the PO not to contact me about getting into the repl. So in the final step I need a function that converts a string to Clojure code. First I need to parse the string using <code>read-string</code> and then I can <code>eval</code> the resulting code. For this to work as expected I need to set the special var <code>&#42;ns&#42;</code> to the namespace of my DSL functions above using the <code>the-ns</code> function.</p><pre><code class="clojure">&#40;ns demo.dsl&#41;
+</code></pre><h2 id="parsing&#95;the&#95;dsl">Parsing the DSL</h2><p>Doing this is Clojure is nice and easy for me but then again I want the PO not to contact me about getting into the repl. So in the final step I need a function that converts a string to Clojure code. First I need to parse the string using <code>read-string</code> and then I can <code>eval</code> the resulting code. For this to work as expected I need to set the special var <code>&#42;ns&#42;</code> to the namespace of my DSL functions above using the <code>the-ns</code> function.</p><pre><code class="clojure">&#40;ns demo.dsl&#41;
 
 &#40;defn dsl
  &quot;Compile the DSL string into code&quot;
@@ -160,7 +161,7 @@
  &#40;binding &#91;&#42;ns&#42; &#40;the-ns 'demo.dsl-functions&#41;
            &#42;read-eval&#42; false&#93;
   &#40;eval &#40;read-string dsl-string&#41;&#41;&#41;&#41;
-</code></pre><p>The <code>binding</code> form binds the special var <code>&#42;ns&#42;</code> to the namespace containing my dsl functions. I also bind <code>&#42;read-eval&#42;</code> to false and by this disable the <code>eval</code> function inside the string. The parsed string will have access to all functions declared in there. <code>read-string</code> converts a string into Clojure code and <code>eval</code> will execute it. In this case it will simply return the final Elasticsearch query.</p><h2><a name="result"></a>Result</h2><p>In essence this allows me to have a web frontend where a user can input the query from the beginning</p><pre><code class="clojure">&#40;query
+</code></pre><p>The <code>binding</code> form binds the special var <code>&#42;ns&#42;</code> to the namespace containing my dsl functions. I also bind <code>&#42;read-eval&#42;</code> to false and by this disable the <code>eval</code> function inside the string. The parsed string will have access to all functions declared in there. <code>read-string</code> converts a string into Clojure code and <code>eval</code> will execute it. In this case it will simply return the final Elasticsearch query.</p><h2 id="result">Result</h2><p>In essence this allows me to have a web frontend where a user can input the query from the beginning</p><pre><code class="clojure">&#40;query
  &#40;freshness &quot;1h&quot;&#41;
  &#40;tags &#91;&quot;politics&quot; &quot;sports&quot;&#93;&#41;
  &#40;prefer-category {&quot;politics&quot; 2,
@@ -184,11 +185,11 @@
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/dsl.html">dsl</a>
+    <a href="/tags-output/dsl.html">dsl</a>
     
-    <a href="/clojure.html">clojure</a>
+    <a href="/tags-output/clojure.html">clojure</a>
     
-    <a href="/elasticsearch.html">elasticsearch</a>
+    <a href="/tags-output/elasticsearch.html">elasticsearch</a>
     
 </div>
 
@@ -237,25 +238,23 @@
                     <h3>Tags</h3>
                     <ul>
                         
-                        <li><a href="/dsl.html">dsl</a></li>
+                        <li><a href="/tags-output/privacy.html">privacy</a></li>
                         
-                        <li><a href="/varnish.html">varnish</a></li>
+                        <li><a href="/tags-output/whatsapp.html">whatsapp</a></li>
                         
-                        <li><a href="/clojure.html">clojure</a></li>
+                        <li><a href="/tags-output/digitalocean.html">digitalocean</a></li>
                         
-                        <li><a href="/privacy.html">privacy</a></li>
+                        <li><a href="/tags-output/varnish.html">varnish</a></li>
                         
-                        <li><a href="/caching.html">caching</a></li>
+                        <li><a href="/tags-output/caching.html">caching</a></li>
                         
-                        <li><a href="/devops-series.html">devops-series</a></li>
+                        <li><a href="/tags-output/infrastructure.html">infrastructure</a></li>
                         
-                        <li><a href="/whatsapp.html">whatsapp</a></li>
+                        <li><a href="/tags-output/dsl.html">dsl</a></li>
                         
-                        <li><a href="/digitalocean.html">digitalocean</a></li>
+                        <li><a href="/tags-output/clojure.html">clojure</a></li>
                         
-                        <li><a href="/elasticsearch.html">elasticsearch</a></li>
-                        
-                        <li><a href="/infrastructure.html">infrastructure</a></li>
+                        <li><a href="/tags-output/elasticsearch.html">elasticsearch</a></li>
                         
                     </ul>
                 </div>
@@ -263,7 +262,7 @@
             </div>
         </div>
     </div>
-    <footer>Copyright &copy;  Daniel Truemper
+    <footer>Copyright &copy; 2017 Daniel Truemper
         <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -280,6 +279,12 @@
   ga('create', 'UA-64224815-1', 'auto');
   ga('send', 'pageview');
 </script>
+
+ <link rel="stylesheet" type="text/css" href=nil>
+<script>
+window.klipse_settings = null;
+</script>
+<script src=nil></script> 
 
 </body>
 </html>

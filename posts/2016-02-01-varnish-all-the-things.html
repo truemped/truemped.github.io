@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <title>all things considered: Varnish all the things</title>
+    <link rel="canonical" href="http://truemped.github.io/posts/2016-02-01-varnish-all-the-things.html">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
     <link href="/css/screen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -60,9 +61,9 @@
 </div>
 <div>
     
-    <p>My usual web application stack for the past years was based on  a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.</p><p>What I have added to this lately was <a href='https://www.varnish-cache.org/'>Varnish</a>, a powerful proxying cache. The first that comes in mind could be "there are two problems in computer science: naming things and cache invalidation".  Agreed, invalidation is tricky. But there are several tricks at hand that make this not so bad at all.</p><p>Note: all examples should work with Varnish 4.0 and greater. If not, drop me a line!</p><h3><a name="caching&#95;for&#95;a&#95;very&#95;short&#95;period"></a>Caching for a very short period</h3><p>The first trick is to cache for only a very short amount of time, say 10 seconds or maybe even only 1:</p><pre><code>Cache-Control: public, max-age=10</code></pre><p>Say you have a resource that is being hammered a lot and it should be "near real-time". Varnish will cache this response for 10 seconds. Now after the 10 seconds a new version must be computed. At this point Varnish will queue the incoming requests and only forward one of them to the backend. All "parked" requests will then get the response from the backend. Only one request to the backend every 10 seconds, but there could be billions to Varnish that don't bother you.</p><h3><a name="grace&#95;time"></a>Grace time</h3><p>Say you chose to cache for only one second. Everything will be fine then if the backend is able to compute a new version within one second. If it occasionally takes longer then users will have to wait for the backend response. Having users to wait is bad as you might be blocking the browser to render (which you should be avoiding by other means!) or the user sees the loading symbol even though all other elements are already loaded.</p><p>Here the grace time helps. It basically means that Varnish will return a stale cache object until the backend is done computing the new version. So let's say the backend sets this header:</p><pre><code>Cache-Control: public, max-age=1</code></pre><p>In the Varnish VCL you then add:</p><pre><code>sub vcl&#95;backend&#95;response {
+    <p>My usual web application stack for the past years was based on  a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.</p><p>What I have added to this lately was <a href='https://www.varnish-cache.org/'>Varnish</a>, a powerful proxying cache. The first that comes in mind could be "there are two problems in computer science: naming things and cache invalidation".  Agreed, invalidation is tricky. But there are several tricks at hand that make this not so bad at all.</p><p>Note: all examples should work with Varnish 4.0 and greater. If not, drop me a line!</p><h3 id="caching&#95;for&#95;a&#95;very&#95;short&#95;period">Caching for a very short period</h3><p>The first trick is to cache for only a very short amount of time, say 10 seconds or maybe even only 1:</p><pre><code>Cache-Control: public, max-age=10</code></pre><p>Say you have a resource that is being hammered a lot and it should be "near real-time". Varnish will cache this response for 10 seconds. Now after the 10 seconds a new version must be computed. At this point Varnish will queue the incoming requests and only forward one of them to the backend. All "parked" requests will then get the response from the backend. Only one request to the backend every 10 seconds, but there could be billions to Varnish that don't bother you.</p><h3 id="grace&#95;time">Grace time</h3><p>Say you chose to cache for only one second. Everything will be fine then if the backend is able to compute a new version within one second. If it occasionally takes longer then users will have to wait for the backend response. Having users to wait is bad as you might be blocking the browser to render (which you should be avoiding by other means!) or the user sees the loading symbol even though all other elements are already loaded.</p><p>Here the grace time helps. It basically means that Varnish will return a stale cache object until the backend is done computing the new version. So let's say the backend sets this header:</p><pre><code>Cache-Control: public, max-age=1</code></pre><p>In the Varnish VCL you then add:</p><pre><code>sub vcl&#95;backend&#95;response {
     set beresp.grace = 1m;
-}</code></pre><p>This will allow your backend to take up to one minute to compute the new version. During this time Varnish will deliver the old version to all incoming requests. As soon as the backend is finished the new version will be delivered.</p><h3><a name="grace&#95;in&#95;times&#95;of&#95;unhealthy&#95;backends"></a>Grace in times of unhealthy backends</h3><p>Grace time can also be extended in order to serve content while the backend is down. For this you need to enable health checking for the backend like so:</p><pre><code>backend server1 {
+}</code></pre><p>This will allow your backend to take up to one minute to compute the new version. During this time Varnish will deliver the old version to all incoming requests. As soon as the backend is finished the new version will be delivered.</p><h3 id="grace&#95;in&#95;times&#95;of&#95;unhealthy&#95;backends">Grace in times of unhealthy backends</h3><p>Grace time can also be extended in order to serve content while the backend is down. For this you need to enable health checking for the backend like so:</p><pre><code>backend server1 {
     .host = &quot;server1.example.com&quot;;
     .probe {
         .url = &quot;/&#95;health&quot;;
@@ -96,7 +97,7 @@
             return &#40;fetch&#41;;
         }
     }
-}</code></pre><p>If you now manage to repair the backend within two hours the user will not <em>see</em> the outage except maybe for old content.</p><h3><a name="purging&#95;the&#95;cache"></a>Purging the cache</h3><p>In order to remove a cache object a special HTTP verb can be used.  By simply accessing the resource that should be removed with a <em>PURGE</em> verb, e.g., Varnish can dismiss the object. Again this is controlled in the VCL itself:</p><pre><code>sub vcl&#95;hit {
+}</code></pre><p>If you now manage to repair the backend within two hours the user will not <em>see</em> the outage except maybe for old content.</p><h3 id="purging&#95;the&#95;cache">Purging the cache</h3><p>In order to remove a cache object a special HTTP verb can be used.  By simply accessing the resource that should be removed with a <em>PURGE</em> verb, e.g., Varnish can dismiss the object. Again this is controlled in the VCL itself:</p><pre><code>sub vcl&#95;hit {
     if &#40;req.request == &quot;PURGE&quot;&#41; {
         return&#40;purge&#41;;
         return&#40;synth&#40;200, &quot;Purged&quot;&#41;&#41;;
@@ -118,22 +119,22 @@ sub vcl&#95;miss {
         return&#40;purge&#41;;
         return&#40;synth&#40;200, &quot;Purged&quot;&#41;&#41;;
     }
-}</code></pre><h3><a name="cache&#95;invalidation&#95;based&#95;on&#95;content"></a>Cache invalidation based on content</h3><p>Sometimes invalidation based on URLs is not sufficient. Let's say one of the articles from the big publishing house had to be removed for legal reasons and you absolutely don't want to show it anymore. Invalidating the whole cache would place quite some load on the backend. Maybe even too much load. In this case banning objects based on its content enables one to only invalidate the <em>affected</em> objects.</p><p>For this we need to introduce a custom HTTP response header from the backend. This could be something like a list of article ids:</p><pre><code>Content-Articles: 1,2,3,4,5</code></pre><p>Varnish will store this header along with the object. In order to invalidate all cached objects containing article 3 an artificial endpoint in the VCL is introduced:</p><pre><code>sub vcl&#95;recv {
+}</code></pre><h3 id="cache&#95;invalidation&#95;based&#95;on&#95;content">Cache invalidation based on content</h3><p>Sometimes invalidation based on URLs is not sufficient. Let's say one of the articles from the big publishing house had to be removed for legal reasons and you absolutely don't want to show it anymore. Invalidating the whole cache would place quite some load on the backend. Maybe even too much load. In this case banning objects based on its content enables one to only invalidate the <em>affected</em> objects.</p><p>For this we need to introduce a custom HTTP response header from the backend. This could be something like a list of article ids:</p><pre><code>Content-Articles: 1,2,3,4,5</code></pre><p>Varnish will store this header along with the object. In order to invalidate all cached objects containing article 3 an artificial endpoint in the VCL is introduced:</p><pre><code>sub vcl&#95;recv {
     if &#40;req.url &#126; &quot;/&#95;ban&quot; &amp;&amp; req.method == &quot;BAN&quot;&#41; {
         ban&#40;&quot;obj.http.Content-Articles &#126; &quot; + req.http.Ban-Article&#41;;
         return&#40;synth&#40;204, &quot;NO CONTENT&quot;&#41;&#41;;
     }
-}</code></pre><p>The request to ban article 3 would now be:</p><pre><code>$ curl -XBAN -H 'Ban-Article: 3' 'http://www.example.com/&#95;ban'</code></pre><p>Again securing via ACL is trivial and left out for clarity.</p><p>Banning works slightly different from purging. With purging the object is removed instantly. For each call to ban, Varnish keeps a list of banning statements that live for a longer period of time. When a cached object is requested all of the banning statements are executed against the cached object. If one matches, the object is fetched from the backend and not served. Once all objects have been visited, the banned statement is removed.</p><p>In the case of rarely accessed objects, this might never happen. For this the <strong>ban lurker</strong> thread will iterate over the otherwise missed objects and remove them when necessary.</p><h3><a name="conclusion"></a>Conclusion</h3><p>I hope interest was raised if it has not been present so far. Varnish has helped me a lot over the years and saved a lot of money by reducing the amount of servers necessary for the individual project.</p><h4><a name="resources"></a>Resources</h4><ul><li><a href='https://www.varnish-cache.org/docs/4.0/'>Varnish 4 documentation</a></li><li><a href='http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish'>Grace time in Varnish 4</a></li><li><a href='https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks'>Health checks</a></li><li><a href='http://info.varnish-software.com/blog/ban-lurker'>Ban lurker</a></li></ul>
+}</code></pre><p>The request to ban article 3 would now be:</p><pre><code>$ curl -XBAN -H 'Ban-Article: 3' 'http://www.example.com/&#95;ban'</code></pre><p>Again securing via ACL is trivial and left out for clarity.</p><p>Banning works slightly different from purging. With purging the object is removed instantly. For each call to ban, Varnish keeps a list of banning statements that live for a longer period of time. When a cached object is requested all of the banning statements are executed against the cached object. If one matches, the object is fetched from the backend and not served. Once all objects have been visited, the banned statement is removed.</p><p>In the case of rarely accessed objects, this might never happen. For this the <strong>ban lurker</strong> thread will iterate over the otherwise missed objects and remove them when necessary.</p><h3 id="conclusion">Conclusion</h3><p>I hope interest was raised if it has not been present so far. Varnish has helped me a lot over the years and saved a lot of money by reducing the amount of servers necessary for the individual project.</p><h4 id="resources">Resources</h4><ul><li><a href='https://www.varnish-cache.org/docs/4.0/'>Varnish 4 documentation</a></li><li><a href='http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish'>Grace time in Varnish 4</a></li><li><a href='https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks'>Health checks</a></li><li><a href='http://info.varnish-software.com/blog/ban-lurker'>Ban lurker</a></li></ul>
 </div>
 
 <div id="post-tags">
     <b>Tags: </b>
     
-    <a href="/varnish.html">varnish</a>
+    <a href="/tags-output/varnish.html">varnish</a>
     
-    <a href="/caching.html">caching</a>
+    <a href="/tags-output/caching.html">caching</a>
     
-    <a href="/infrastructure.html">infrastructure</a>
+    <a href="/tags-output/infrastructure.html">infrastructure</a>
     
 </div>
 
@@ -182,25 +183,23 @@ sub vcl&#95;miss {
                     <h3>Tags</h3>
                     <ul>
                         
-                        <li><a href="/dsl.html">dsl</a></li>
+                        <li><a href="/tags-output/privacy.html">privacy</a></li>
                         
-                        <li><a href="/varnish.html">varnish</a></li>
+                        <li><a href="/tags-output/whatsapp.html">whatsapp</a></li>
                         
-                        <li><a href="/clojure.html">clojure</a></li>
+                        <li><a href="/tags-output/digitalocean.html">digitalocean</a></li>
                         
-                        <li><a href="/privacy.html">privacy</a></li>
+                        <li><a href="/tags-output/varnish.html">varnish</a></li>
                         
-                        <li><a href="/caching.html">caching</a></li>
+                        <li><a href="/tags-output/caching.html">caching</a></li>
                         
-                        <li><a href="/devops-series.html">devops-series</a></li>
+                        <li><a href="/tags-output/infrastructure.html">infrastructure</a></li>
                         
-                        <li><a href="/whatsapp.html">whatsapp</a></li>
+                        <li><a href="/tags-output/dsl.html">dsl</a></li>
                         
-                        <li><a href="/digitalocean.html">digitalocean</a></li>
+                        <li><a href="/tags-output/clojure.html">clojure</a></li>
                         
-                        <li><a href="/elasticsearch.html">elasticsearch</a></li>
-                        
-                        <li><a href="/infrastructure.html">infrastructure</a></li>
+                        <li><a href="/tags-output/elasticsearch.html">elasticsearch</a></li>
                         
                     </ul>
                 </div>
@@ -208,7 +207,7 @@ sub vcl&#95;miss {
             </div>
         </div>
     </div>
-    <footer>Copyright &copy;  Daniel Truemper
+    <footer>Copyright &copy; 2017 Daniel Truemper
         <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -225,6 +224,12 @@ sub vcl&#95;miss {
   ga('create', 'UA-64224815-1', 'auto');
   ga('send', 'pageview');
 </script>
+
+ <link rel="stylesheet" type="text/css" href=nil>
+<script>
+window.klipse_settings = null;
+</script>
+<script src=nil></script> 
 
 </body>
 </html>

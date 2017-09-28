@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>all things considered</title>
-    <link rel="canonical" href="http://truemped.github.io">
+    <title>all things considered: Posts Tagged &quot;infrastructure&quot;</title>
+    <link rel="canonical" href="http://truemped.github.io/tags-output/infrastructure.html">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet'
           type='text/css'>
@@ -28,7 +28,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li  class="active" ><a href="/index.html">Home</a></li>
+                <li ><a href="/index.html">Home</a></li>
                 <li
                 ><a href="/archives.html">Archives</a></li>
                 
@@ -51,68 +51,17 @@
         <div class="col-lg-9">
             <div id="content">
                 
-<div id="post">
-    
-    <div class="post-header">
-        <h2>WhatsApp or not</h2>
-        <div id="post-meta">
-            
-            <div class="date">June 18, 2016</div>
-        </div>
+<div id="posts-by-tag">
+    <div id="page-header">
+        <h2>Posts Tagged &quot;infrastructure&quot;</h2>
     </div>
-    <p>I am not using WhatsApp. I also do not have a Facebook account. For Facebook it is easy: I'm just not into sharing my personal life online and keeping in touch with friends can be done without it. WhatsApp is somewhat different. It's basically a replacement of text messages on steroids because you can have groups.</p><p>My primary reasons for not using it are: encryption, sharing my phone number with Facebook and open source. For this reason I was and still am promoting <a href="https://whispersystems.org/">Signal</a>. The <a href="https://github.com/WhisperSystems">code</a> is available for anyone to read and audit and cryptography scientists have reviewed it. You can run your own <a href="https://github.com/WhisperSystems/TextSecure-Server">server</a> so you don't rely on any organization to run the server for you.</p>
-    <a href="/posts/2016-06-18-whatsapp.html">Continue reading &#8594;</a>
-    <hr>
+    <ul>
     
-    <div class="post-header">
-        <h2>Continuous delivery with automatic failover</h2>
-        <div id="post-meta">
-            
-            <div class="date">June 7, 2016</div>
-        </div>
-    </div>
-    <p>This post is kicking of a little blog series about my adventures into building a fault tolerant Python based web site. The goals are simple:</p><ul><li>two VMs with automatic failover and floating IP</li><li>shared filesystem</li><li>Debian packages for the Python project</li><li>continuous integration</li><li>continuous delivery</li></ul>
-    <a href="/posts/2016-06-07-failover-continuous-deployment.html">Continue reading &#8594;</a>
-    <hr>
+        <li>
+            <a href="/posts/2016-02-01-varnish-all-the-things.html">Varnish all the things</a>
+        </li>
     
-    <div class="post-header">
-        <h2>Varnish all the things</h2>
-        <div id="post-meta">
-            
-            <div class="date">February 1, 2016</div>
-        </div>
-    </div>
-    <p>My usual web application stack for the past years was based on  a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.</p><p>What I have added to this lately was <a href="https://www.varnish-cache.org/">Varnish</a>, a powerful proxying cache. The first that comes in mind could be "there are two problems in computer science: naming things and cache invalidation".  Agreed, invalidation is tricky. But there are several tricks at hand that make this not so bad at all.</p>
-    <a href="/posts/2016-02-01-varnish-all-the-things.html">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Elasticsearch DSL-DSL</h2>
-        <div id="post-meta">
-            
-            <div class="date">July 29, 2015</div>
-        </div>
-    </div>
-    <p>Elasticsearch is a search server based on Apache Lucene. As a developer it is easy to use, has an expressive query DSL and all is based on JSON serialization. Often though I find myself in a position where I need to adapt queries frequently and non-trivially, say in a demonstration in front of customers or product owners.</p><p>The questions are mostly similar: "what if I also filter for X", "how does the ranking change, when I add a freshness function", "do I get a better result if I boost document types Y" and so on. While these are easy to add, two things bother me: first, I need to come up with the queries during a presentation, which adds pauses to the meetings. When I'm finished with the query the discussion has evolved. Second, I don't want to be the enabler. If they can find out what they want without me it also means a faster feedback loop for them. In brainstorming sessions it is easy to focus on arguments and skip the sometimes lengthy query finding pauses. Win win for everyone it seems.</p>
-    <a href="/posts/2015-07-29-elastic-dsl.html">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>Start a blog</h2>
-        <div id="post-meta">
-            
-            <div class="date">June 10, 2015</div>
-        </div>
-    </div>
-    <p>This is my blog. I haven't really blogged ever. Few people near me do. I so far did not think that I have something interesting to say. And there are already tons of blogs out there which probably have the same contents as this one.</p><p>So why do I blog now? First, maybe I'm wrong. And by not blogging I will just never find out. Also, occasionally leaving your comfort zone might not be the worst idea.</p>
-    <a href="/posts/2015-06-10-init.html">Continue reading &#8594;</a>
-    <hr>
-    
-
-    <div id="prev-next">
-        
-        
-    </div>
+    </ul>
 </div>
 
             </div>
