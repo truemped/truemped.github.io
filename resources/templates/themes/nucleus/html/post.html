@@ -5,10 +5,10 @@
     {% include "/html/post-content.html" %}
     <div id="prev-next">
         {% if post.prev %}
-        <a href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
+        <a class="button" href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
         {% endif %}
         {% if post.next %}
-        <a class="right" href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>
+        <a class="right button" href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>
         {% endif %}
     </div>
 
