@@ -1,6 +1,6 @@
 {:title "Continuous delivery with automatic failover"
  :layout :post
- :tags ["digitalocean" "devops-series"]}
+ :tags ["digitalocean"]}
 
 This post is kicking of a little blog series about my adventures into building a
 fault tolerant Python based web site. The goals are simple:
