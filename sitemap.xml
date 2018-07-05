@@ -5,7 +5,7 @@
 http://truemped.github.io/index.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -13,7 +13,7 @@ http://truemped.github.io/index.html
 http://truemped.github.io/404.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -21,7 +21,7 @@ http://truemped.github.io/404.html
 http://truemped.github.io/tags.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -29,7 +29,7 @@ http://truemped.github.io/tags.html
 http://truemped.github.io/posts/2015-06-10-init.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -37,7 +37,7 @@ http://truemped.github.io/posts/2015-06-10-init.html
 http://truemped.github.io/posts/2016-02-01-varnish-all-the-things.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -45,7 +45,7 @@ http://truemped.github.io/posts/2016-02-01-varnish-all-the-things.html
 http://truemped.github.io/posts/2016-06-07-failover-continuous-deployment.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -53,7 +53,7 @@ http://truemped.github.io/posts/2016-06-07-failover-continuous-deployment.html
 http://truemped.github.io/posts/2016-06-18-whatsapp.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -61,7 +61,15 @@ http://truemped.github.io/posts/2016-06-18-whatsapp.html
 http://truemped.github.io/posts/2015-07-29-elastic-dsl.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
+</lastmod>
+</url>
+<url>
+<loc>
+http://truemped.github.io/posts/2018-07-05-lets-do-this-again.html
+</loc>
+<lastmod>
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -69,7 +77,7 @@ http://truemped.github.io/posts/2015-07-29-elastic-dsl.html
 http://truemped.github.io/authors-output/Daniel Truemper.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -77,7 +85,7 @@ http://truemped.github.io/authors-output/Daniel Truemper.html
 http://truemped.github.io/pages/about.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -85,7 +93,7 @@ http://truemped.github.io/pages/about.html
 http://truemped.github.io/archives.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -93,7 +101,7 @@ http://truemped.github.io/archives.html
 http://truemped.github.io/tags-output/clojure.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -101,7 +109,7 @@ http://truemped.github.io/tags-output/clojure.html
 http://truemped.github.io/tags-output/dsl.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -109,7 +117,7 @@ http://truemped.github.io/tags-output/dsl.html
 http://truemped.github.io/tags-output/whatsapp.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -117,7 +125,7 @@ http://truemped.github.io/tags-output/whatsapp.html
 http://truemped.github.io/tags-output/digitalocean.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -125,7 +133,7 @@ http://truemped.github.io/tags-output/digitalocean.html
 http://truemped.github.io/tags-output/infrastructure.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -133,7 +141,7 @@ http://truemped.github.io/tags-output/infrastructure.html
 http://truemped.github.io/tags-output/caching.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -141,7 +149,7 @@ http://truemped.github.io/tags-output/caching.html
 http://truemped.github.io/tags-output/varnish.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -149,7 +157,7 @@ http://truemped.github.io/tags-output/varnish.html
 http://truemped.github.io/tags-output/elasticsearch.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
 </lastmod>
 </url>
 <url>
@@ -157,7 +165,15 @@ http://truemped.github.io/tags-output/elasticsearch.html
 http://truemped.github.io/tags-output/privacy.html
 </loc>
 <lastmod>
-2017-09-28
+2018-07-05
+</lastmod>
+</url>
+<url>
+<loc>
+http://truemped.github.io/p/2.html
+</loc>
+<lastmod>
+2018-07-05
 </lastmod>
 </url>
 </urlset>

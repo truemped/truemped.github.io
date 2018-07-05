@@ -12,11 +12,28 @@ http://truemped.github.io/
 yet another blog
 </description>
 <lastBuildDate>
-Thu, 28 Sep 2017 22:23:25 +0200
+Thu, 05 Jul 2018 19:48:35 +0200
 </lastBuildDate>
 <generator>
 clj-rss
 </generator>
+<item>
+<guid>
+http://truemped.github.io/posts/2018-07-05-lets-do-this-again.html
+</guid>
+<link>
+http://truemped.github.io/posts/2018-07-05-lets-do-this-again.html
+</link>
+<title>
+Let's do this again
+</title>
+<description>
+&lt;p&gt;Yeah, well that did not end well. Let's do this again. This &lt;em&gt;blogging&lt;/em&gt; thing.&lt;/p&gt;&lt;p&gt;First of all, let's get rid of google analytics. I don't care about that data. Should I delete the old posts? Nah, I stand by my past. It got me here, whatever you think about it.&lt;/p&gt;&lt;p&gt;What's next? Good question. I'm currently transitioning into management and became an engineering lead. It is an interesting opportunity for me as I more and more learned that some things cannot be fixed with code.&lt;/p&gt;&lt;p&gt;That being said, I still fundamentally believe in Search being the fix point around modern sites need to circle. The possibilities of Elasticsearch or even Solr today are hard to beat by SQL databases. The advancement of the Mircoservice architecture is a short distraction that eventually might help in delivering a better &lt;em&gt;buy&lt;/em&gt; button or nicer teasers.&lt;/p&gt;&lt;p&gt;In order to present the user with a consistent UX however the only &lt;em&gt;microservice&lt;/em&gt; showing products or articles on the web page has to be a single search based (micro?-)system. Having such a system as the central source of data when serving products enables an almost unlimited amount of features.&lt;/p&gt;&lt;p&gt;So, to summarize. My plan is to write some blog posts more frequently now. I know, been there, done that. But this time it will work.&lt;/p&gt;
+</description>
+<pubDate>
+Thu, 05 Jul 2018 00:00:00 +0200
+</pubDate>
+</item>
 <item>
 <guid>
 http://truemped.github.io/posts/2016-06-18-whatsapp.html
