@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clojure on Daniel Truemper</title>
+    <link>https://truemped.github.io/tags/clojure/</link>
+    <description>Recent content in Clojure on Daniel Truemper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Jul 2015 10:19:47 +0100</lastBuildDate>
+    
+	<atom:link href="https://truemped.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elasticsearch DSL-DSL</title>
+      <link>https://truemped.github.io/posts/elastic-dsl/</link>
+      <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/posts/elastic-dsl/</guid>
+      <description>Elasticsearch is a search server based on Apache Lucene. As a developer it is easy to use, has an expressive query DSL and all is based on JSON serialization. Often though I find myself in a position where I need to adapt queries frequently and non-trivially, say in a demonstration in front of customers or product owners.
+The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if I boost document types Y&amp;rdquo; and so on.</description>
+    </item>
+    
+  </channel>
+</rss>

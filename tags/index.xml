@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Daniel Truemper</title>
+    <link>https://truemped.github.io/tags/</link>
+    <description>Recent content in Tags on Daniel Truemper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Feb 2016 12:15:09 +0100</lastBuildDate>
+    
+	<atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Caching</title>
+      <link>https://truemped.github.io/tags/caching/</link>
+      <pubDate>Mon, 01 Feb 2016 12:15:09 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/tags/caching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clojure</title>
+      <link>https://truemped.github.io/tags/clojure/</link>
+      <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch</title>
+      <link>https://truemped.github.io/tags/elasticsearch/</link>
+      <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infrastructure</title>
+      <link>https://truemped.github.io/tags/infrastructure/</link>
+      <pubDate>Mon, 01 Feb 2016 12:15:09 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Varnish</title>
+      <link>https://truemped.github.io/tags/varnish/</link>
+      <pubDate>Mon, 01 Feb 2016 12:15:09 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/tags/varnish/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

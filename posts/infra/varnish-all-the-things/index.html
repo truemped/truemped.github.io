@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="Varnish All the Things">
+<meta itemprop="description" content="My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.">
+
+
+<meta itemprop="datePublished" content="2016-02-01T12:15:09&#43;01:00" />
+<meta itemprop="dateModified" content="2016-02-01T12:15:09&#43;01:00" />
+<meta itemprop="wordCount" content="1193">
+
+
+
+<meta itemprop="keywords" content="varnish,caching,infrastructure," />
+<meta property="og:title" content="Varnish All the Things" />
+<meta property="og:description" content="My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://truemped.github.io/posts/infra/varnish-all-the-things/" /><meta property="article:published_time" content="2016-02-01T12:15:09&#43;01:00"/>
+<meta property="article:modified_time" content="2016-02-01T12:15:09&#43;01:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Varnish All the Things"/>
+<meta name="twitter:description" content="My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications."/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Varnish All the Things</title>
+	<link rel="stylesheet" href="https://truemped.github.io/css/style.min.b7620e512c50d304a35bc56080a7c71cf37e6d436788004505845869e99aca61.css" integrity="sha256-t2IOUSxQ0wSjW8VggKfHHPN+bUNniABFBYRYaemaymE=">
+	
+	<link rel="stylesheet" href="https://truemped.github.io/css/syntax.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://truemped.github.io">Daniel Truemper</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://truemped.github.io/posts/">Posts</a>
+					<a href="https://truemped.github.io/about/">About</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/truemped" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/truemped" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/daniel-truemper-78571015/" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://truemped.github.io/posts/">Posts</a></li>
+			<li><a href="https://truemped.github.io/about/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Feb 1, 2016</span></div>
+				<h1>Varnish All the Things</h1>
+			</header>
+			<div class="content">
+				
+
+<p>My usual web application stack for the past years was based on  a nginx as
+reverse proxy in front of a number of Python processes. Static resources were
+served by nginx. Each Python process was stateless, state was stored in some
+kind of database. If the processes needed some shared ephemeral state like
+counters a local redis instance solved that. A battle tested common ground for
+Python based web applications.</p>
+
+<p>What I have added to this lately was <a href="https://www.varnish-cache.org/">Varnish</a>,
+a powerful proxying cache. The first that comes in mind could be &ldquo;there are two
+problems in computer science: naming things and cache invalidation&rdquo;.  Agreed,
+invalidation is tricky. But there are several tricks at hand that make this not
+so bad at all.</p>
+
+<p>Note: all examples should work with Varnish 4.0 and greater. If not, drop me a
+line!</p>
+
+<h3 id="caching-for-a-very-short-period">Caching for a very short period</h3>
+
+<p>The first trick is to cache for only a very short amount of time, say 10
+seconds or maybe even only 1:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age<span class="o">=</span><span class="m">10</span></code></pre></div>
+<p>Say you have a resource that is being hammered a lot and it should be &ldquo;near
+real-time&rdquo;. Varnish will cache this response for 10 seconds. Now after the 10
+seconds a new version must be computed. At this point Varnish will queue the
+incoming requests and only forward one of them to the backend. All &ldquo;parked&rdquo;
+requests will then get the response from the backend. Only one request to the
+backend every 10 seconds, but there could be billions to Varnish that don&rsquo;t
+bother you.</p>
+
+<h3 id="grace-time">Grace time</h3>
+
+<p>Say you chose to cache for only one second. Everything will be fine then if the
+backend is able to compute a new version within one second. If it occasionally
+takes longer then users will have to wait for the backend response. Having
+users to wait is bad as you might be blocking the browser to render (which
+you should be avoiding by other means!) or the user sees the loading symbol
+even though all other elements are already loaded.</p>
+
+<p>Here the grace time helps. It basically means that Varnish will return a stale
+cache object until the backend is done computing the new version. So let&rsquo;s say
+the backend sets this header:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age<span class="o">=</span><span class="m">1</span></code></pre></div>
+<p>In the Varnish VCL you then add:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_backend_response <span class="o">{</span>
+    <span class="nb">set</span> beresp.grace <span class="o">=</span> 1m<span class="p">;</span>
+<span class="o">}</span></code></pre></div>
+<p>This will allow your backend to take up to one minute to compute the new
+version. During this time Varnish will deliver the old version to all incoming
+requests. As soon as the backend is finished the new version will be delivered.</p>
+
+<h3 id="grace-in-times-of-unhealthy-backends">Grace in times of unhealthy backends</h3>
+
+<p>Grace time can also be extended in order to serve content while the backend is
+down. For this you need to enable health checking for the backend like so:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">backend server1 <span class="o">{</span>
+    .host <span class="o">=</span> <span class="s2">&#34;server1.example.com&#34;</span><span class="p">;</span>
+    .probe <span class="o">{</span>
+        .url <span class="o">=</span> <span class="s2">&#34;/_health&#34;</span><span class="p">;</span>
+        .timeout <span class="o">=</span> 1s<span class="p">;</span>
+        .interval <span class="o">=</span> 5s<span class="p">;</span>
+        .window <span class="o">=</span> <span class="m">5</span><span class="p">;</span>
+        .threshold <span class="o">=</span> <span class="m">3</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<p>This tells varnish to check the <strong>/_health</strong> endpoint every five seconds. The
+backend needs to answer within one second. If three of the last five checks
+were successful Varnish considers this backend to be healthy.</p>
+
+<p>Now Varnish needs to detect failure and deliver stale content in order to have
+some time fixing backends. For this we need to modify the <em>vcl_hit</em> method to
+increase the grace time to a very large value during times no healthy backend
+is available.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_hit <span class="o">{</span>
+    <span class="c1"># a cache hit</span>
+    <span class="k">if</span> <span class="o">(</span>obj.ttl &gt;<span class="o">=</span> 0s<span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span>deliver<span class="o">)</span><span class="p">;</span>
+    <span class="o">}</span>
+    <span class="c1"># object is expired</span>
+    <span class="k">if</span> <span class="o">(</span>std.healthy<span class="o">(</span>req.backend_hint<span class="o">))</span> <span class="o">{</span>
+        <span class="c1"># but we have a healthy backend</span>
+        <span class="k">if</span> <span class="o">(</span>obj.ttl + obj.grace &gt; 0s<span class="o">)</span> <span class="o">{</span>
+            <span class="c1"># object is within the grace period</span>
+            <span class="k">return</span> <span class="o">(</span>deliver<span class="o">)</span><span class="p">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1"># object is outside the grace persiod, fetch a new version</span>
+            <span class="k">return</span><span class="o">(</span>fetch<span class="o">)</span><span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="c1"># no healthy backend available, deliver old version for two hours</span>
+        <span class="k">if</span> <span class="o">(</span>obj.ttl + 2h &gt; 0s<span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">(</span>deliver<span class="o">)</span><span class="p">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1"># after two hours we still have no healthy backend, now signal</span>
+            <span class="c1"># the failure to the user</span>
+            <span class="k">return</span> <span class="o">(</span>fetch<span class="o">)</span><span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<p>If you now manage to repair the backend within two hours the user will not
+<em>see</em> the outage except maybe for old content.</p>
+
+<h3 id="purging-the-cache">Purging the cache</h3>
+
+<p>In order to remove a cache object a special HTTP verb can be used.  By simply
+accessing the resource that should be removed with a <em>PURGE</em> verb, e.g.,
+Varnish can dismiss the object. Again this is controlled in the VCL itself:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_hit <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span>req.request <span class="o">==</span> <span class="s2">&#34;PURGE&#34;</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">(</span>purge<span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">200</span>, <span class="s2">&#34;Purged&#34;</span><span class="o">))</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+sub vcl_miss <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span>req.request <span class="o">==</span> <span class="s2">&#34;PURGE&#34;</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span><span class="o">(</span>purge<span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">200</span>, <span class="s2">&#34;Purged&#34;</span><span class="o">))</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<p>Now executing something like</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -XPURGE <span class="s2">&#34;http://www.example.com/recent&#34;</span></code></pre></div>
+<p>would purge the cached object. The next <strong>GET</strong> request issues a new fetch from
+the backend. Obviously not everyone should be allowed to purge the cache so a
+simple ACL with white listed IPs blocks unwanted access:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">acl purge <span class="o">{</span>
+    <span class="s2">&#34;localhost&#34;</span><span class="p">;</span>
+    <span class="c1"># add a list of allowed IPs here</span>
+<span class="o">}</span></code></pre></div>
+<p>Then use it to block access from any other machine:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_hit <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span>req.request <span class="o">==</span> <span class="s2">&#34;PURGE&#34;</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span>!client.ip ~ purge<span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">405</span>, <span class="s2">&#34;Not allowed.&#34;</span><span class="o">))</span><span class="p">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span><span class="o">(</span>purge<span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">200</span>, <span class="s2">&#34;Purged&#34;</span><span class="o">))</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<h3 id="cache-invalidation-based-on-content">Cache invalidation based on content</h3>
+
+<p>Sometimes invalidation based on URLs is not sufficient. Let&rsquo;s say one of the
+articles from the big publishing house had to be removed for legal reasons and
+you absolutely don&rsquo;t want to show it anymore. Invalidating the whole cache
+would place quite some load on the backend. Maybe even too much load. In this
+case banning objects based on its content enables one to only invalidate the
+<em>affected</em> objects.</p>
+
+<p>For this we need to introduce a custom HTTP response header from the backend.
+This could be something like a list of article ids:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Content-Articles: <span class="m">1</span>,2,3,4,5</code></pre></div>
+<p>Varnish will store this header along with the object. In order to invalidate
+all cached objects containing article 3 an artificial endpoint in the VCL is
+introduced:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_recv <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span>req.url ~ <span class="s2">&#34;/_ban&#34;</span> <span class="o">&amp;&amp;</span> req.method <span class="o">==</span> <span class="s2">&#34;BAN&#34;</span><span class="o">)</span> <span class="o">{</span>
+        ban<span class="o">(</span><span class="s2">&#34;obj.http.Content-Articles ~ &#34;</span> + req.http.Ban-Article<span class="o">)</span><span class="p">;</span>
+        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">204</span>, <span class="s2">&#34;NO CONTENT&#34;</span><span class="o">))</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<p>The request to ban article 3 would now be:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -XBAN -H <span class="s1">&#39;Ban-Article: 3&#39;</span> <span class="s1">&#39;http://www.example.com/_ban&#39;</span></code></pre></div>
+<p>Again securing via ACL is trivial and left out for clarity.</p>
+
+<p>Banning works slightly different from purging. With purging the object is
+removed instantly. For each call to ban, Varnish keeps a list of banning
+statements that live for a longer period of time. When a cached object is
+requested all of the banning statements are executed against the cached object.
+If one matches, the object is fetched from the backend and not served. Once all
+objects have been visited, the banned statement is removed.</p>
+
+<p>In the case of rarely accessed objects, this might never happen. For this the
+<strong>ban lurker</strong> thread will iterate over the otherwise missed objects and remove
+them when necessary.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>I hope interest was raised if it has not been present so far. Varnish has
+helped me a lot over the years and saved a lot of money by reducing the amount
+of servers necessary for the individual project.</p>
+
+<h4 id="resources">Resources</h4>
+
+<ul>
+<li><p><a href="https://www.varnish-cache.org/docs/4.0/">Varnish 4 documentation</a></p></li>
+
+<li><p><a href="http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish">Grace time in Varnish 4</a></p></li>
+
+<li><p><a href="https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks">Health checks</a></p></li>
+
+<li><p><a href="http://info.varnish-software.com/blog/ban-lurker">Ban lurker</a></p></li>
+</ul>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://truemped.github.io/tags/varnish">varnish</a></span><span class="tag"><a href="https://truemped.github.io/tags/caching">caching</a></span><span class="tag"><a href="https://truemped.github.io/tags/infrastructure">infrastructure</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1193 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2016-02-01 12:15 &#43;0100</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://truemped.github.io/posts/elastic-dsl/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Elasticsearch DSL-DSL</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://truemped.github.io">Daniel Truemper</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://truemped.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://truemped.github.io/js/main.min.8f39f24808e9d0a9b02da58c2d2838da859dc0b7bdfadbdb1883aae8b6adacfe.js" integrity="sha256-jznySAjp0KmwLaWMLSg42oWdwLe9+tvbGIOq6LatrP4="></script>
+
+</body>
+
+</html>
