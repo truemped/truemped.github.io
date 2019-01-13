@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://truemped.github.io/posts/favorite-talks/</loc>
+    <lastmod>2019-01-13T10:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://truemped.github.io/about/</loc>
     <lastmod>2019-01-07T09:41:34+01:00</lastmod>
   </url>
@@ -36,7 +41,7 @@
   
   <url>
     <loc>https://truemped.github.io/</loc>
-    <lastmod>2019-01-07T09:41:34+01:00</lastmod>
+    <lastmod>2019-01-13T10:00:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -54,7 +59,7 @@
   
   <url>
     <loc>https://truemped.github.io/posts/</loc>
-    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
+    <lastmod>2019-01-13T10:00:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   

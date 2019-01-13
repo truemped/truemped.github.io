@@ -6,8 +6,71 @@
 		<description>Recent content in Posts on Daniel Truemper</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Mon, 01 Feb 2016 12:15:09 +0100</lastBuildDate>
+		<lastBuildDate>Sun, 13 Jan 2019 10:00:00 +0100</lastBuildDate>
 		<atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Favorite Talks</title>
+			<link>https://truemped.github.io/posts/favorite-talks/</link>
+			<pubDate>Sun, 13 Jan 2019 10:00:00 +0100</pubDate>
+			
+			<guid>https://truemped.github.io/posts/favorite-talks/</guid>
+			<description>Earlier this month Monica Lent published a list of Tech talks that&amp;rsquo;ll change how you think. Every one on this list is awesome and some have influenced me pretty heavily. Especially Simple made Easy by Rich Hickey. To these I&amp;rsquo;d like to add a few from my list of favorite talks.
+Full Stack Awareness In this, Arthur Bergman rants about how everything is broken. We, as engineers, are so used to just connect a few systems and the new feature is working.</description>
+			<content type="html"><![CDATA[
+
+<p>Earlier this month Monica Lent published a list of
+<a href="https://monicalent.com/blog/2019/01/01/favorite-programming-talks/">Tech talks that&rsquo;ll change how you think</a>. Every one on this list is awesome
+and some have influenced me pretty heavily. Especially <a href="https://www.infoq.com/presentations/Simple-Made-Easy">Simple made Easy</a> by
+Rich Hickey. To these I&rsquo;d like to add a few from my list of favorite talks.</p>
+
+<h2 id="full-stack-awareness-1"><a href="https://youtu.be/oebqlzblfyo">Full Stack Awareness</a></h2>
+
+<p>In this, Arthur Bergman rants about how everything is broken. We, as engineers,
+are so used to just connect a few systems and the new feature is working. We
+take so many things for granted that we forget how underlying systems down to
+the operating system work.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/oebqlzblfyo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="stop-rate-limiting-capacity-management-done-right-2"><a href="https://youtu.be/m64SWl9bfvk">Stop Rate Limiting! Capacity Management Done Right</a></h2>
+
+<p>A very nice introduction into <a href="https://en.wikipedia.org/wiki/Little%27s_law">Little&rsquo;s Law</a> and how often times rate
+limiting your backend is actually a bad idea. When protecting your backend
+system usually you limit the RPS per customer. Initially you negotiate the rate
+limits during onboarding and then forget about the exact numbers. In normal
+operations you then discover that client A needs more RPS while client B needs
+less. So you limit requests for client A even though you have spare capacity.</p>
+
+<p>There is also a nice implementation of the algorithm in Elasticsearch called
+<a href="https://www.elastic.co/blog/improving-response-latency-in-elasticsearch-with-adaptive-replica-selection">Adaptive Replica Selection</a> that we are using in production for a while now.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/m64SWl9bfvk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="how-not-to-measure-latency-4"><a href="https://youtu.be/lJ8ydIuPFeU">How NOT to Measure Latency</a></h2>
+
+<p>Measuring and reporting latency is commonly based on percentiles. The problem
+here is that we are happy with reporting this one data point for our system.
+In today&rsquo;s Microservices architectures this is problematic though. A real user&rsquo;s
+request usually triggers multiple calls to our backend systems. But that means
+the chances of a user experiencing the p99 latency or even the maximum latency
+is very high.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/lJ8ydIuPFeU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+]]></content>
+		</item>
 		
 		<item>
 			<title>Varnish All the Things</title>
