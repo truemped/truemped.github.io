@@ -1,0 +1,22 @@
+{:title "Haystack Europe 2018"
+ :layout :post
+ :tags ["search" "relevance" "haystack"]}
+
+Early this month I visited the inaugural [Haystack Europe](XXX) conference in
+London. It's main focus is on all topics related to search relevance. It was not
+a surprise that Doug Turnbull, author of [Relevant Search](), held the keynote.
+In it he concentrated on looking back to the moment machine learning entered the
+domain of search. Specifically the
+[talk introducing Learning to Rank (LTR)](https://www.youtube.com/watch?v=M7BKwJoh96s)
+at the Lucene/Solr Revolution 2015 was described as a milestone that finally
+lead to [SOLR-8542](https://issues.apache.org/jira/browse/SOLR-8542), the
+original ticket integrating LTR to SOLR. Just about a year later,
+Andrew Clegg gave the first
+[talk at Berlin Buzzwords](https://berlinbuzzwords.de/session/learning-rank-where-search-meets-machine-learning)
+about the topic. Since then talks about LTR at Berlin Buzzwords have increased
+steadily. When also considering machine learning for search talks, the number
+seems to be even higher. Today, Learning to Rank seems to be the pyramid of
+relevance engineering.
+
+But another -- maybe unpopular -- truth appears to be that many projects working
+on LTR are not very successful.
