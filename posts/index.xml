@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on all things considered...</title>
@@ -6,8 +5,77 @@
 		<description>Recent content in Posts on all things considered...</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
-		<lastBuildDate>Wed, 23 Jan 2019 17:30:00 +0100</lastBuildDate>
+		<lastBuildDate>Mon, 10 Jun 2019 16:25:00 +0200</lastBuildDate>
 		<atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>First Retrospection</title>
+			<link>https://truemped.github.io/posts/retrospection/cw23/</link>
+			<pubDate>Mon, 10 Jun 2019 16:25:00 +0200</pubDate>
+			
+			<guid>https://truemped.github.io/posts/retrospection/cw23/</guid>
+			<description>I am trying different things at the moment about retro- or introspection for myself. One thing that I know others are doing are weekly mails to all their directs1. I&amp;rsquo;ve also seen this via some form of weekly blog post. My default working mode is transparency so why sending mails to only a few select people when I can also just give them the link. Whomever might be interested later might find this useful - or not.</description>
+			<content type="html"><![CDATA[
+
+<p>I am trying different things at the moment about retro- or introspection for
+myself. One thing that I know others are doing are weekly mails to all their
+<em>directs</em><sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>. I&rsquo;ve also seen this via some form of
+weekly blog post. My default working mode is <strong>transparency</strong> so why sending
+mails to only a few select people when I can also just give them the link.
+Whomever might be interested later might find this useful - or not.</p>
+
+<p>So I&rsquo;m giving this a try now.</p>
+
+<h2 id="challenges">Challenges</h2>
+
+<p>Meetings continue to be too many. At this point I&rsquo;m not sure if this is a
+company wide problem or me being &ldquo;new&rdquo; to management and not saying <strong>no</strong>
+enough. At one point this week I had a total of 10 meetings on one single day.
+Obviously this is not sustainable.</p>
+
+<p>A full-day offsite about the next company-wide re-org was intense. On one hand
+simple things like the acoustic in the room was difficult and on the other hand
+the topic was very important. The discussions have been very productive but also
+intense. The devil is in the detail of course so how all of this will be
+implemented is now crucial.</p>
+
+<p>But also regarding the re-org I now for the first time I am not transparent
+towards others. This is something I never really wanted to do but I do
+acknowledge that sometimes it is better to not share information too early.
+Everyone knows that the re-org will happen but the exact details are still
+confidential.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<p>There are a number of different initiatives right now that I feel all share the
+same technical solution. This week we started a proposal on how to tackle this
+in a more structured way instead of adding hack over hack. It is not yet
+finished and far from being able to be implemented, but at least we now share
+similar understanding of the possible solution. I especially need to get my team
+involved in the solution finding.</p>
+
+<p>I have learned about <a href="https://medium.com/@mirceavlaicu/what-type-of-leader-are-you-a-multiplier-or-a-diminisher-1e2806428f6">multiplier and diminisher</a> type of leaders. It is
+interesting how much a <em>lead</em><sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup> influences the team. A fairly recent episode
+on the <em>Soft Skills Engineering</em> Podcast about
+<a href="2" title="Not every *lead* is also a **leader**
+">fighting the imposter syndrome</a> resonated a lot with me. In my opinion
+everyone is subject to it except for diminishing leads maybe. In a similar kind
+of manner the episode about <a href="https://www.greaterthancode.com/hope-and-suffering">hope and suffering</a> on the <em>Greater than Code</em>
+Podcast was good. Essentially not everything is always great and suffering is
+also an essential part of life.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">I hate the term &ldquo;direct&rdquo; but I don&rsquo;t know a better one. If you know one, please reach out
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Not every <em>lead</em> is also a <strong>leader</strong>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+</ol>
+</div>
+]]></content>
+		</item>
 		
 		<item>
 			<title>New Year Resolutions</title>

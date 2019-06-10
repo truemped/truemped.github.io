@@ -3,8 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://truemped.github.io/posts/retrospection/cw23/</loc>
+    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/posts/</loc>
+    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/</loc>
+    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/</loc>
+    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/introspection/</loc>
+    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/manager-readme/</loc>
+    <lastmod>2019-06-10T16:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://truemped.github.io/posts/new-year-resolutions-2019/</loc>
     <lastmod>2019-01-23T17:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/new-year-resolutions/</loc>
+    <lastmod>2019-01-23T17:30:00+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -23,19 +63,26 @@
   </url>
   
   <url>
-    <loc>https://truemped.github.io/posts/elastic-dsl/</loc>
-    <lastmod>2015-07-29T10:19:47+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://truemped.github.io/tags/caching/</loc>
     <lastmod>2016-02-01T12:15:09+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/infrastructure/</loc>
+    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/varnish/</loc>
+    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/posts/elastic-dsl/</loc>
+    <lastmod>2015-07-29T10:19:47+01:00</lastmod>
   </url>
   
   <url>
@@ -51,38 +98,7 @@
   </url>
   
   <url>
-    <loc>https://truemped.github.io/tags/infrastructure/</loc>
-    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/new-year-resolutions/</loc>
-    <lastmod>2019-01-23T17:30:00+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/posts/</loc>
-    <lastmod>2019-01-23T17:30:00+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/</loc>
-    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/varnish/</loc>
-    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/</loc>
-    <lastmod>2019-01-23T17:30:00+01:00</lastmod>
+    <loc>https://truemped.github.io/index.html</loc>
     <priority>0</priority>
   </url>
   
