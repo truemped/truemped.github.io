@@ -11,10 +11,11 @@ secret passion is working with [Apache Kafka][3] and especially
 
 Since my transition into management started I discovered my passion for working
 with and for people. There is something special about helping people and teams
-succeed.
+succeed. Find out more about me in my [Manager Readme][5].
 
 [0]: https://elastic.co
 [1]: https://lucene.apache.org/solr
 [2]: https://clojure.org
 [3]: https://kafka.apache.org
 [4]: https://kafka.apache.org/documentation/streams/
+[5]: {{< ref "/manager-readme" >}}
