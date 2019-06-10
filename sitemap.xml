@@ -3,102 +3,102 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://truemped.github.io/posts/retrospection/cw23/</loc>
+    <loc>/posts/retrospection/cw23/</loc>
     <lastmod>2019-06-10T16:25:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/posts/</loc>
-    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/</loc>
+    <loc>/posts/</loc>
     <lastmod>2019-06-10T16:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/</loc>
+    <loc>/tags/</loc>
     <lastmod>2019-06-10T16:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/tags/introspection/</loc>
+    <loc>/</loc>
     <lastmod>2019-06-10T16:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/manager-readme/</loc>
+    <loc>/tags/introspection/</loc>
+    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/manager-readme/</loc>
     <lastmod>2019-06-10T16:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/posts/new-year-resolutions-2019/</loc>
+    <loc>/posts/new-year-resolutions-2019/</loc>
     <lastmod>2019-01-23T17:30:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/tags/new-year-resolutions/</loc>
+    <loc>/tags/new-year-resolutions/</loc>
     <lastmod>2019-01-23T17:30:00+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/posts/favorite-talks/</loc>
+    <loc>/posts/favorite-talks/</loc>
     <lastmod>2019-01-13T10:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2019-01-07T09:41:34+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/posts/infra/varnish-all-the-things/</loc>
+    <loc>/posts/infra/varnish-all-the-things/</loc>
     <lastmod>2016-02-01T12:15:09+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/tags/caching/</loc>
-    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/infrastructure/</loc>
+    <loc>/tags/caching/</loc>
     <lastmod>2016-02-01T12:15:09+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/tags/varnish/</loc>
+    <loc>/tags/infrastructure/</loc>
     <lastmod>2016-02-01T12:15:09+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/posts/elastic-dsl/</loc>
+    <loc>/tags/varnish/</loc>
+    <lastmod>2016-02-01T12:15:09+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/elastic-dsl/</loc>
     <lastmod>2015-07-29T10:19:47+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/tags/clojure/</loc>
-    <lastmod>2015-07-29T10:19:47+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/elasticsearch/</loc>
+    <loc>/tags/clojure/</loc>
     <lastmod>2015-07-29T10:19:47+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://truemped.github.io/index.html</loc>
+    <loc>/tags/elasticsearch/</loc>
+    <lastmod>2015-07-29T10:19:47+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/index.html</loc>
     <priority>0</priority>
   </url>
   
