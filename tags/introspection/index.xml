@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>introspection on all things considered...</title>
-    <link>/tags/introspection/</link>
+    <link>https://truemped.github.io/tags/introspection/</link>
     <description>Recent content in introspection on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Jun 2019 16:25:00 +0200</lastBuildDate>
     
-	<atom:link href="/tags/introspection/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://truemped.github.io/tags/introspection/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>First Retrospection</title>
-      <link>/posts/retrospection/cw23/</link>
+      <link>https://truemped.github.io/posts/retrospection/cw23/</link>
       <pubDate>Mon, 10 Jun 2019 16:25:00 +0200</pubDate>
       
-      <guid>/posts/retrospection/cw23/</guid>
+      <guid>https://truemped.github.io/posts/retrospection/cw23/</guid>
       <description>I am trying different things at the moment about retro- or introspection for myself. One thing that I know others are doing are weekly mails to all their directs1. I&amp;rsquo;ve also seen this via some form of weekly blog post. My default working mode is transparency so why sending mails to only a few select people when I can also just give them the link. Whomever might be interested later might find this useful - or not.</description>
     </item>
     

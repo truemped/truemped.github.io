@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>new-year-resolutions on all things considered...</title>
-    <link>/tags/new-year-resolutions/</link>
+    <link>https://truemped.github.io/tags/new-year-resolutions/</link>
     <description>Recent content in new-year-resolutions on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 23 Jan 2019 17:30:00 +0100</lastBuildDate>
     
-	<atom:link href="/tags/new-year-resolutions/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://truemped.github.io/tags/new-year-resolutions/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New Year Resolutions</title>
-      <link>/posts/new-year-resolutions-2019/</link>
+      <link>https://truemped.github.io/posts/new-year-resolutions-2019/</link>
       <pubDate>Wed, 23 Jan 2019 17:30:00 +0100</pubDate>
       
-      <guid>/posts/new-year-resolutions-2019/</guid>
+      <guid>https://truemped.github.io/posts/new-year-resolutions-2019/</guid>
       <description>So here I am, again claiming to stick to blogging. This time I&amp;rsquo;ll start with a look back at 2018 and my New Year resolutions that will make sure 2019 will be a blast.
 Last year was a challenge for me as so many things happened that impacted my work-life. I transitioned into management and became Engineering Lead in the Search department at Zalando. I was surprised at how much I actually like working with people.</description>
     </item>
