@@ -2,82 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>all things considered...</title>
-    <link>truemped.github.io/</link>
+    <link>https://truemped.github.io/index.html</link>
     <description>Recent content on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Jun 2019 16:25:00 +0200</lastBuildDate>
     
-	<atom:link href="truemped.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://truemped.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>First Retrospection</title>
-      <link>truemped.github.io/posts/retrospection/cw23/</link>
-      <pubDate>Mon, 10 Jun 2019 16:25:00 +0200</pubDate>
-      
-      <guid>truemped.github.io/posts/retrospection/cw23/</guid>
-      <description>I am trying different things at the moment about retro- or introspection for myself. One thing that I know others are doing are weekly mails to all their directs1. I&amp;rsquo;ve also seen this via some form of weekly blog post. My default working mode is transparency so why sending mails to only a few select people when I can also just give them the link. Whomever might be interested later might find this useful - or not.</description>
-    </item>
-    
-    <item>
-      <title>Manager Readme</title>
-      <link>truemped.github.io/manager-readme/</link>
-      <pubDate>Mon, 10 Jun 2019 16:00:00 +0200</pubDate>
-      
-      <guid>truemped.github.io/manager-readme/</guid>
-      <description>I&amp;rsquo;m am an Engineering Lead in the Search department at Zalando. I joined the company in July 2016 and started as a senior Backend Engineer building the new search infrastructure with my team.
-I started working professionally in the Search domain in 2008 after I graduated with a Diploma in Economics. In University the interest for Search started to grow and I took courses building inverted indices from scratch.</description>
-    </item>
-    
-    <item>
-      <title>New Year Resolutions</title>
-      <link>truemped.github.io/posts/new-year-resolutions-2019/</link>
-      <pubDate>Wed, 23 Jan 2019 17:30:00 +0100</pubDate>
-      
-      <guid>truemped.github.io/posts/new-year-resolutions-2019/</guid>
-      <description>So here I am, again claiming to stick to blogging. This time I&amp;rsquo;ll start with a look back at 2018 and my New Year resolutions that will make sure 2019 will be a blast.
-Last year was a challenge for me as so many things happened that impacted my work-life. I transitioned into management and became Engineering Lead in the Search department at Zalando. I was surprised at how much I actually like working with people.</description>
-    </item>
-    
-    <item>
-      <title>Favorite Talks</title>
-      <link>truemped.github.io/posts/favorite-talks/</link>
-      <pubDate>Sun, 13 Jan 2019 10:00:00 +0100</pubDate>
-      
-      <guid>truemped.github.io/posts/favorite-talks/</guid>
-      <description>Earlier this month Monica Lent published a list of Tech talks that&amp;rsquo;ll change how you think. Every one on this list is awesome and some have influenced me pretty heavily. Especially Simple made Easy by Rich Hickey. To these I&amp;rsquo;d like to add a few from my list of favorite talks.
-Full Stack Awareness In this, Arthur Bergman rants about how everything is broken. We, as engineers, are so used to just connect a few systems and the new feature is working.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>truemped.github.io/about/</link>
-      <pubDate>Mon, 07 Jan 2019 09:41:34 +0100</pubDate>
-      
-      <guid>truemped.github.io/about/</guid>
-      <description>I&amp;rsquo;m an Engineering Lead with a strong background in Search and Backend engineering. Working with Elasticsearch or Solr/Lucene is my passion and if I get to choose the programming language it&amp;rsquo;s Clojure. My third secret passion is working with Apache Kafka and especially Kafka Streams.
-Since my transition into management started I discovered my passion for working with and for people. There is something special about helping people and teams succeed.</description>
-    </item>
-    
-    <item>
-      <title>Varnish All the Things</title>
-      <link>truemped.github.io/posts/infra/varnish-all-the-things/</link>
-      <pubDate>Mon, 01 Feb 2016 12:15:09 +0100</pubDate>
-      
-      <guid>truemped.github.io/posts/infra/varnish-all-the-things/</guid>
-      <description>My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.</description>
-    </item>
-    
-    <item>
-      <title>Elasticsearch DSL-DSL</title>
-      <link>truemped.github.io/posts/elastic-dsl/</link>
-      <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
-      
-      <guid>truemped.github.io/posts/elastic-dsl/</guid>
-      <description>Elasticsearch is a search server based on Apache Lucene. As a developer it is easy to use, has an expressive query DSL and all is based on JSON serialization. Often though I find myself in a position where I need to adapt queries frequently and non-trivially, say in a demonstration in front of customers or product owners.
-The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if I boost document types Y&amp;rdquo; and so on.</description>
-    </item>
     
   </channel>
 </rss>
