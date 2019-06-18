@@ -81,7 +81,7 @@
   </url>
   
   <url>
-    <loc>https://truemped.github.io/posts/elastic-dsl/</loc>
+    <loc>https://truemped.github.io/posts/search/elastic-dsl/</loc>
     <lastmod>2015-07-29T10:19:47+01:00</lastmod>
   </url>
   
@@ -94,6 +94,22 @@
   <url>
     <loc>https://truemped.github.io/tags/elasticsearch/</loc>
     <lastmod>2015-07-29T10:19:47+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/search/</loc>
+    <lastmod>2015-07-29T10:19:47+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/series/</loc>
     <priority>0</priority>
   </url>
   

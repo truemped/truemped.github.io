@@ -1,81 +1,127 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta itemprop="name" content="Varnish All the Things">
-<meta itemprop="description" content="My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.">
+    <meta name="author" content="Daniel Truemper">
+    <meta name="description" content="Daniel Truemper&#39;s personal blog">
+    <meta name="keywords" content="blog,developer,personal">
 
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Varnish All the Things"/>
+<meta name="twitter:description" content="My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications."/>
 
-<meta itemprop="datePublished" content="2016-02-01T12:15:09&#43;01:00" />
-<meta itemprop="dateModified" content="2016-02-01T12:15:09&#43;01:00" />
-<meta itemprop="wordCount" content="1193">
-
-
-
-<meta itemprop="keywords" content="varnish,caching,infrastructure," />
-<meta property="og:title" content="Varnish All the Things" />
+    <meta property="og:title" content="Varnish All the Things" />
 <meta property="og:description" content="My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://truemped.github.io/posts/infra/varnish-all-the-things/" />
 <meta property="article:published_time" content="2016-02-01T12:15:09&#43;01:00"/>
 <meta property="article:modified_time" content="2016-02-01T12:15:09&#43;01:00"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Varnish All the Things"/>
-<meta name="twitter:description" content="My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications."/>
-
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
-
-	<title>Varnish All the Things</title>
-	<link rel="stylesheet" href="https://truemped.github.io/css/style.min.bbdfdbe22b04b310c3c2a48b7765d865ceff19c9989b1c578cb0c10b12c1cda8.css" integrity="sha256-u9/b4isEsxDDwqSLd2XYZc7/GcmYmxxXjLDBCxLBzag=">
-	
-	<link rel="stylesheet" href="https://truemped.github.io/css/syntax.css">
-</head>
-
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://truemped.github.io">all things considered...</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://truemped.github.io/posts/">Posts</a>
-					<a href="https://truemped.github.io/about/">About</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/truemped" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/truemped" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/daniel-truemper-78571015/" target="_blank" rel="noopener me" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://truemped.github.io/posts/">Posts</a></li>
-			<li><a href="https://truemped.github.io/about/">About</a></li>
-		</ul>
-	</div>
 
 
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
-			<header class="post-header">
-				<div class="post-meta"><span>Feb 1, 2016</span></div>
-				<h1>Varnish All the Things</h1>
-			</header>
-			<div class="content">
-				
+    
+      <base href="https://truemped.github.io/posts/infra/varnish-all-the-things/">
+    
+    <title>
+  Varnish All the Things · all things considered...
+</title>
+
+    
+      <link rel="canonical" href="https://truemped.github.io/posts/infra/varnish-all-the-things/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://truemped.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.55.6" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://truemped.github.io">
+      all things considered...
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://truemped.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://truemped.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://truemped.github.io/manager-readme/">Manager Readme</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Varnish All the Things</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2016-02-01T12:15:09&#43;01:00'>
+                February 1, 2016
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              6 minutes read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://truemped.github.io/tags/varnish/">varnish</a>
+      <span class="separator">•</span>
+    <a href="https://truemped.github.io/tags/caching/">caching</a>
+      <span class="separator">•</span>
+    <a href="https://truemped.github.io/tags/infrastructure/">infrastructure</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
 
 <p>My usual web application stack for the past years was based on  a nginx as
 reverse proxy in front of a number of Python processes. Static resources were
@@ -93,11 +139,11 @@ so bad at all.</p>
 <p>Note: all examples should work with Varnish 4.0 and greater. If not, drop me a
 line!</p>
 
-<h3 id="caching-for-a-very-short-period">Caching for a very short period<a href="#caching-for-a-very-short-period" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h3 id="caching-for-a-very-short-period">Caching for a very short period</h3>
 
 <p>The first trick is to cache for only a very short amount of time, say 10
 seconds or maybe even only 1:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age<span class="o">=</span><span class="m">10</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age=<span style="color:#ff0;font-weight:bold">10</span></code></pre></div>
 <p>Say you have a resource that is being hammered a lot and it should be &ldquo;near
 real-time&rdquo;. Varnish will cache this response for 10 seconds. Now after the 10
 seconds a new version must be computed. At this point Varnish will queue the
@@ -106,7 +152,7 @@ requests will then get the response from the backend. Only one request to the
 backend every 10 seconds, but there could be billions to Varnish that don&rsquo;t
 bother you.</p>
 
-<h3 id="grace-time">Grace time<a href="#grace-time" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h3 id="grace-time">Grace time</h3>
 
 <p>Say you chose to cache for only one second. Everything will be fine then if the
 backend is able to compute a new version within one second. If it occasionally
@@ -118,29 +164,29 @@ even though all other elements are already loaded.</p>
 <p>Here the grace time helps. It basically means that Varnish will return a stale
 cache object until the backend is done computing the new version. So let&rsquo;s say
 the backend sets this header:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age<span class="o">=</span><span class="m">1</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age=<span style="color:#ff0;font-weight:bold">1</span></code></pre></div>
 <p>In the Varnish VCL you then add:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_backend_response <span class="o">{</span>
-    <span class="nb">set</span> beresp.grace <span class="o">=</span> 1m<span class="p">;</span>
-<span class="o">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_backend_response {
+    <span style="color:#fff;font-weight:bold">set</span> beresp.grace = 1m;
+}</code></pre></div>
 <p>This will allow your backend to take up to one minute to compute the new
 version. During this time Varnish will deliver the old version to all incoming
 requests. As soon as the backend is finished the new version will be delivered.</p>
 
-<h3 id="grace-in-times-of-unhealthy-backends">Grace in times of unhealthy backends<a href="#grace-in-times-of-unhealthy-backends" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h3 id="grace-in-times-of-unhealthy-backends">Grace in times of unhealthy backends</h3>
 
 <p>Grace time can also be extended in order to serve content while the backend is
 down. For this you need to enable health checking for the backend like so:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">backend server1 <span class="o">{</span>
-    .host <span class="o">=</span> <span class="s2">&#34;server1.example.com&#34;</span><span class="p">;</span>
-    .probe <span class="o">{</span>
-        .url <span class="o">=</span> <span class="s2">&#34;/_health&#34;</span><span class="p">;</span>
-        .timeout <span class="o">=</span> 1s<span class="p">;</span>
-        .interval <span class="o">=</span> 5s<span class="p">;</span>
-        .window <span class="o">=</span> <span class="m">5</span><span class="p">;</span>
-        .threshold <span class="o">=</span> <span class="m">3</span><span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">backend server1 {
+    .host = <span style="color:#0ff;font-weight:bold">&#34;server1.example.com&#34;</span>;
+    .probe {
+        .url = <span style="color:#0ff;font-weight:bold">&#34;/_health&#34;</span>;
+        .timeout = 1s;
+        .interval = 5s;
+        .window = <span style="color:#ff0;font-weight:bold">5</span>;
+        .threshold = <span style="color:#ff0;font-weight:bold">3</span>;
+    }
+}</code></pre></div>
 <p>This tells varnish to check the <strong>/_health</strong> endpoint every five seconds. The
 backend needs to answer within one second. If three of the last five checks
 were successful Varnish considers this backend to be healthy.</p>
@@ -149,72 +195,72 @@ were successful Varnish considers this backend to be healthy.</p>
 some time fixing backends. For this we need to modify the <em>vcl_hit</em> method to
 increase the grace time to a very large value during times no healthy backend
 is available.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_hit <span class="o">{</span>
-    <span class="c1"># a cache hit</span>
-    <span class="k">if</span> <span class="o">(</span>obj.ttl &gt;<span class="o">=</span> 0s<span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="o">(</span>deliver<span class="o">)</span><span class="p">;</span>
-    <span class="o">}</span>
-    <span class="c1"># object is expired</span>
-    <span class="k">if</span> <span class="o">(</span>std.healthy<span class="o">(</span>req.backend_hint<span class="o">))</span> <span class="o">{</span>
-        <span class="c1"># but we have a healthy backend</span>
-        <span class="k">if</span> <span class="o">(</span>obj.ttl + obj.grace &gt; 0s<span class="o">)</span> <span class="o">{</span>
-            <span class="c1"># object is within the grace period</span>
-            <span class="k">return</span> <span class="o">(</span>deliver<span class="o">)</span><span class="p">;</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="c1"># object is outside the grace persiod, fetch a new version</span>
-            <span class="k">return</span><span class="o">(</span>fetch<span class="o">)</span><span class="p">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-        <span class="c1"># no healthy backend available, deliver old version for two hours</span>
-        <span class="k">if</span> <span class="o">(</span>obj.ttl + 2h &gt; 0s<span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="o">(</span>deliver<span class="o">)</span><span class="p">;</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="c1"># after two hours we still have no healthy backend, now signal</span>
-            <span class="c1"># the failure to the user</span>
-            <span class="k">return</span> <span class="o">(</span>fetch<span class="o">)</span><span class="p">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_hit {
+    <span style="color:#007f7f"># a cache hit</span>
+    <span style="color:#fff;font-weight:bold">if</span> (obj.ttl &gt;= 0s) {
+        <span style="color:#fff;font-weight:bold">return</span> (deliver);
+    }
+    <span style="color:#007f7f"># object is expired</span>
+    <span style="color:#fff;font-weight:bold">if</span> (std.healthy(req.backend_hint)) {
+        <span style="color:#007f7f"># but we have a healthy backend</span>
+        <span style="color:#fff;font-weight:bold">if</span> (obj.ttl + obj.grace &gt; 0s) {
+            <span style="color:#007f7f"># object is within the grace period</span>
+            <span style="color:#fff;font-weight:bold">return</span> (deliver);
+        } <span style="color:#fff;font-weight:bold">else</span> {
+            <span style="color:#007f7f"># object is outside the grace persiod, fetch a new version</span>
+            <span style="color:#fff;font-weight:bold">return</span>(fetch);
+        }
+    } <span style="color:#fff;font-weight:bold">else</span> {
+        <span style="color:#007f7f"># no healthy backend available, deliver old version for two hours</span>
+        <span style="color:#fff;font-weight:bold">if</span> (obj.ttl + 2h &gt; 0s) {
+            <span style="color:#fff;font-weight:bold">return</span> (deliver);
+        } <span style="color:#fff;font-weight:bold">else</span> {
+            <span style="color:#007f7f"># after two hours we still have no healthy backend, now signal</span>
+            <span style="color:#007f7f"># the failure to the user</span>
+            <span style="color:#fff;font-weight:bold">return</span> (fetch);
+        }
+    }
+}</code></pre></div>
 <p>If you now manage to repair the backend within two hours the user will not
 <em>see</em> the outage except maybe for old content.</p>
 
-<h3 id="purging-the-cache">Purging the cache<a href="#purging-the-cache" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h3 id="purging-the-cache">Purging the cache</h3>
 
 <p>In order to remove a cache object a special HTTP verb can be used.  By simply
 accessing the resource that should be removed with a <em>PURGE</em> verb, e.g.,
 Varnish can dismiss the object. Again this is controlled in the VCL itself:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_hit <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span>req.request <span class="o">==</span> <span class="s2">&#34;PURGE&#34;</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span><span class="o">(</span>purge<span class="o">)</span><span class="p">;</span>
-        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">200</span>, <span class="s2">&#34;Purged&#34;</span><span class="o">))</span><span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-sub vcl_miss <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span>req.request <span class="o">==</span> <span class="s2">&#34;PURGE&#34;</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span><span class="o">(</span>purge<span class="o">)</span><span class="p">;</span>
-        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">200</span>, <span class="s2">&#34;Purged&#34;</span><span class="o">))</span><span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_hit {
+    <span style="color:#fff;font-weight:bold">if</span> (req.request == <span style="color:#0ff;font-weight:bold">&#34;PURGE&#34;</span>) {
+        <span style="color:#fff;font-weight:bold">return</span>(purge);
+        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">200</span>, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
+    }
+}
+sub vcl_miss {
+    <span style="color:#fff;font-weight:bold">if</span> (req.request == <span style="color:#0ff;font-weight:bold">&#34;PURGE&#34;</span>) {
+        <span style="color:#fff;font-weight:bold">return</span>(purge);
+        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">200</span>, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
+    }
+}</code></pre></div>
 <p>Now executing something like</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -XPURGE <span class="s2">&#34;http://www.example.com/recent&#34;</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XPURGE <span style="color:#0ff;font-weight:bold">&#34;http://www.example.com/recent&#34;</span></code></pre></div>
 <p>would purge the cached object. The next <strong>GET</strong> request issues a new fetch from
 the backend. Obviously not everyone should be allowed to purge the cache so a
 simple ACL with white listed IPs blocks unwanted access:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">acl purge <span class="o">{</span>
-    <span class="s2">&#34;localhost&#34;</span><span class="p">;</span>
-    <span class="c1"># add a list of allowed IPs here</span>
-<span class="o">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">acl purge {
+    <span style="color:#0ff;font-weight:bold">&#34;localhost&#34;</span>;
+    <span style="color:#007f7f"># add a list of allowed IPs here</span>
+}</code></pre></div>
 <p>Then use it to block access from any other machine:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_hit <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span>req.request <span class="o">==</span> <span class="s2">&#34;PURGE&#34;</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span>!client.ip ~ purge<span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">405</span>, <span class="s2">&#34;Not allowed.&#34;</span><span class="o">))</span><span class="p">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span><span class="o">(</span>purge<span class="o">)</span><span class="p">;</span>
-        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">200</span>, <span class="s2">&#34;Purged&#34;</span><span class="o">))</span><span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
-<h3 id="cache-invalidation-based-on-content">Cache invalidation based on content<a href="#cache-invalidation-based-on-content" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_hit {
+    <span style="color:#fff;font-weight:bold">if</span> (req.request == <span style="color:#0ff;font-weight:bold">&#34;PURGE&#34;</span>) {
+        <span style="color:#fff;font-weight:bold">if</span> (!client.ip ~ purge) {
+            <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">405</span>, <span style="color:#0ff;font-weight:bold">&#34;Not allowed.&#34;</span>));
+        }
+        <span style="color:#fff;font-weight:bold">return</span>(purge);
+        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">200</span>, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
+    }
+}</code></pre></div>
+<h3 id="cache-invalidation-based-on-content">Cache invalidation based on content</h3>
 
 <p>Sometimes invalidation based on URLs is not sufficient. Let&rsquo;s say one of the
 articles from the big publishing house had to be removed for legal reasons and
@@ -225,18 +271,18 @@ case banning objects based on its content enables one to only invalidate the
 
 <p>For this we need to introduce a custom HTTP response header from the backend.
 This could be something like a list of article ids:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">Content-Articles: <span class="m">1</span>,2,3,4,5</code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Content-Articles: <span style="color:#ff0;font-weight:bold">1</span>,2,3,4,5</code></pre></div>
 <p>Varnish will store this header along with the object. In order to invalidate
 all cached objects containing article 3 an artificial endpoint in the VCL is
 introduced:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sub vcl_recv <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span>req.url ~ <span class="s2">&#34;/_ban&#34;</span> <span class="o">&amp;&amp;</span> req.method <span class="o">==</span> <span class="s2">&#34;BAN&#34;</span><span class="o">)</span> <span class="o">{</span>
-        ban<span class="o">(</span><span class="s2">&#34;obj.http.Content-Articles ~ &#34;</span> + req.http.Ban-Article<span class="o">)</span><span class="p">;</span>
-        <span class="k">return</span><span class="o">(</span>synth<span class="o">(</span><span class="m">204</span>, <span class="s2">&#34;NO CONTENT&#34;</span><span class="o">))</span><span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_recv {
+    <span style="color:#fff;font-weight:bold">if</span> (req.url ~ <span style="color:#0ff;font-weight:bold">&#34;/_ban&#34;</span> &amp;&amp; req.method == <span style="color:#0ff;font-weight:bold">&#34;BAN&#34;</span>) {
+        ban(<span style="color:#0ff;font-weight:bold">&#34;obj.http.Content-Articles ~ &#34;</span> + req.http.Ban-Article);
+        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">204</span>, <span style="color:#0ff;font-weight:bold">&#34;NO CONTENT&#34;</span>));
+    }
+}</code></pre></div>
 <p>The request to ban article 3 would now be:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -XBAN -H <span class="s1">&#39;Ban-Article: 3&#39;</span> <span class="s1">&#39;http://www.example.com/_ban&#39;</span></code></pre></div>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XBAN -H <span style="color:#0ff;font-weight:bold">&#39;Ban-Article: 3&#39;</span> <span style="color:#0ff;font-weight:bold">&#39;http://www.example.com/_ban&#39;</span></code></pre></div>
 <p>Again securing via ACL is trivial and left out for clarity.</p>
 
 <p>Banning works slightly different from purging. With purging the object is
@@ -250,13 +296,13 @@ objects have been visited, the banned statement is removed.</p>
 <strong>ban lurker</strong> thread will iterate over the otherwise missed objects and remove
 them when necessary.</p>
 
-<h3 id="conclusion">Conclusion<a href="#conclusion" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h3 id="conclusion">Conclusion</h3>
 
 <p>I hope interest was raised if it has not been present so far. Varnish has
 helped me a lot over the years and saved a lot of money by reducing the amount
 of servers necessary for the individual project.</p>
 
-<h4 id="resources">Resources<a href="#resources" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<h4 id="resources">Resources</h4>
 
 <ul>
 <li><p><a href="https://www.varnish-cache.org/docs/4.0/">Varnish 4 documentation</a></p></li>
@@ -268,38 +314,37 @@ of servers necessary for the individual project.</p>
 <li><p><a href="http://info.varnish-software.com/blog/ban-lurker">Ban lurker</a></p></li>
 </ul>
 
-			</div>
-			<hr class="post-end">
-			<footer class="post-info">
-				<p>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://truemped.github.io/tags/varnish">varnish</a></span><span class="tag"><a href="https://truemped.github.io/tags/caching">caching</a></span><span class="tag"><a href="https://truemped.github.io/tags/infrastructure">infrastructure</a></span>
-				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1193 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2016-02-01 12:15 &#43;0100</p>
-			</footer>
-		</article>
-		<div class="post-nav thin">
-			<a class="next-post" href="https://truemped.github.io/posts/favorite-talks/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Favorite Talks</span>
-			</a>
-			<a class="prev-post" href="https://truemped.github.io/posts/elastic-dsl/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Elasticsearch DSL-DSL</span>
-			</a>
-		</div>
-		<div id="comments" class="thin">
-</div>
-	</main>
+      </div>
 
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2019 <a href="https://truemped.github.io">Daniel Truemper</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://truemped.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
+      <footer>
+        
 
 
-	<script src="https://truemped.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
+        
+      </footer>
+    </article>
 
-</body>
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
 
 </html>

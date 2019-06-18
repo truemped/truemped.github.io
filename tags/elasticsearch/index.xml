@@ -5,8 +5,7 @@
     <link>https://truemped.github.io/tags/elasticsearch/</link>
     <description>Recent content in elasticsearch on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <language>en</language>
     <lastBuildDate>Wed, 29 Jul 2015 10:19:47 +0100</lastBuildDate>
     
 	<atom:link href="https://truemped.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +13,10 @@
     
     <item>
       <title>Elasticsearch DSL-DSL</title>
-      <link>https://truemped.github.io/posts/elastic-dsl/</link>
+      <link>https://truemped.github.io/posts/search/elastic-dsl/</link>
       <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
       
-      <guid>https://truemped.github.io/posts/elastic-dsl/</guid>
+      <guid>https://truemped.github.io/posts/search/elastic-dsl/</guid>
       <description>Elasticsearch is a search server based on Apache Lucene. As a developer it is easy to use, has an expressive query DSL and all is based on JSON serialization. Often though I find myself in a position where I need to adapt queries frequently and non-trivially, say in a demonstration in front of customers or product owners.
 The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if I boost document types Y&amp;rdquo; and so on.</description>
     </item>
