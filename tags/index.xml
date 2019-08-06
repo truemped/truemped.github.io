@@ -6,7 +6,7 @@
     <description>Recent content in Tags on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Jun 2019 16:25:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 04 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>introspection</title>
       <link>https://truemped.github.io/tags/introspection/</link>
-      <pubDate>Mon, 10 Jun 2019 16:25:00 +0200</pubDate>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
       
       <guid>https://truemped.github.io/tags/introspection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mgmt</title>
+      <link>https://truemped.github.io/tags/mgmt/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://truemped.github.io/tags/mgmt/</guid>
       <description></description>
     </item>
     

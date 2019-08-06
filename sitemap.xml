@@ -3,32 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://truemped.github.io/posts/retrospection/cw23/</loc>
-    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <loc>https://truemped.github.io/posts/retrospection/first-year/</loc>
+    <lastmod>2019-08-04T09:00:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://truemped.github.io/posts/</loc>
-    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <lastmod>2019-08-04T09:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://truemped.github.io/tags/</loc>
-    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <lastmod>2019-08-04T09:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://truemped.github.io/</loc>
-    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <lastmod>2019-08-04T09:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://truemped.github.io/tags/introspection/</loc>
-    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+    <lastmod>2019-08-04T09:00:00+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/mgmt/</loc>
+    <lastmod>2019-08-04T09:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/posts/retrospection/cw23/</loc>
+    <lastmod>2019-06-10T16:25:00+02:00</lastmod>
   </url>
   
   <url>

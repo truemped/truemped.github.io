@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mgmt on all things considered...</title>
+    <link>https://truemped.github.io/tags/mgmt/</link>
+    <description>Recent content in mgmt on all things considered...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://truemped.github.io/tags/mgmt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My first year in Management</title>
+      <link>https://truemped.github.io/posts/retrospection/first-year/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://truemped.github.io/posts/retrospection/first-year/</guid>
+      <description>About a year ago I transitioned into management. I changed my role from Senior Software Developer to Engineering Lead in Zalando. In this post I want to share my experience, good and bad, things that went well, where I screwed up and what I&amp;rsquo;m taking from it.
+A difficult first year As my manager put it in my performance review: the last year was one of my most challenging ones.</description>
+    </item>
+    
+  </channel>
+</rss>
