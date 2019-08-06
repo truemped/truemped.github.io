@@ -1,6 +1,6 @@
 ---
 title: "On Search Organizational Structure"
-date: 2019-02-09T10:24:11+01:00
+date: 2019-08-09T10:24:11+01:00
 draft: true
 toc: false
 images:

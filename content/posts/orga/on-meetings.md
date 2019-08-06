@@ -1,12 +1,15 @@
 ---
-title: "On Meetings and how to make them effective"
-date: 2019-04-17T11:38:21+02:00
+title: "Running effective meetings at work"
+date: 2019-06-17T11:38:21+02:00
 draft: true
 toc: false
 images:
 tags: 
   - meetings
+  - organization
 ---
+
+In many organizations meetings dominate the day-to-day work life.
 
 In my role as Engineering Lead I am now spending a lot of time in meetings. I
 have observed roughly three different types of meetings: *knowledge exchange*,

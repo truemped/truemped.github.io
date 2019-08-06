@@ -7,8 +7,10 @@ images:
 tags: 
   - clojure
   - elasticsearch
+  - search
 aliases:
   - "/posts/2015-07-29-elastic-dsl.html"
+  - "/posts/elastic-dsl/"
 ---
 
 Elasticsearch is a search server based on Apache Lucene. As a developer it is
