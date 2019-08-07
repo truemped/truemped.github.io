@@ -35,8 +35,8 @@ So there I was, left with a "team" of one engineer and another re-org about to
 happen. This resulted in me being asked to take care of another team of 4
 people. What was about to come was even worst. From a company perspective the
 teams mandate, vision and mission was seen as too big and was supposed to be
-shared between two teams, in different countries. The nature of the topic is
-really complex and my technical background allows me to judge that separating
+shared between two teams, in different countries. The nature of the topic was
+really complex and my technical background allowed me to judge that separating
 this customer problem between multiple teams and components was a bad idea.
 
 In result I spent most of my time discussing and arguing about this topic. The
@@ -79,7 +79,7 @@ into the micromanagement trap. This was mostly due to the fact that my teams are
 mostly senior engineers and grown up people. I did not have to be the one
 telling them each and every day what to do. And I do think that micromanagement
 does not fit my personality and experience very well. My worst managers were
-themselves micro-managing so why would I do this myself?
+themselves micromanaging so why would I do this myself?
 
 I started to spend some significant time with hiring. I did not count the number
 of interviews I did but I was able to hire three new engineers to the teams.
@@ -103,7 +103,7 @@ for getting things done. I recently read that instead of naming this *process*
 a better term could be *rituals*. Sounds small but worth a try.
 
 Another team related topic is team identity. What makes my team a *team*? What
-are it's strengths, growth opportunities and aspirations?
+are its strengths, growth opportunities and aspirations?
 
 My main learning though is the value of constant feedback. One of my main
 mistakes was to not systematically check in about my report's development
