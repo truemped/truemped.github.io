@@ -27,7 +27,7 @@ long until the next engineer from this team said he would leave the company.
 This was a real setback because I value him tremendously as an engineer and
 enjoyed the interactions we had. Sadly he had made up his mind even before I
 became manager and for me there was no way to keep him. Back then and still
-today I was not under the impression that it was because of me transitioning.
+today I was not under the impression that it was because of my transition.
 
 ## High level discussions
 
