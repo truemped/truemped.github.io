@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on all things considered...</title>
@@ -6,10 +6,19 @@
     <description>Recent content in Tags on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 14:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>1-on-1</title>
+      <link>https://truemped.github.io/tags/1-on-1/</link>
+      <pubDate>Tue, 17 Dec 2019 14:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/tags/1-on-1/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>introspection</title>

@@ -53,7 +53,7 @@
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
   </head>
 
   <body class=" ">
@@ -69,7 +69,7 @@
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://truemped.github.io/about/">About</a>
+            <a class="navigation-link" href="https://truemped.github.io/about/">About Me</a>
           </li>
         
           <li class="navigation-item">
@@ -121,60 +121,49 @@
       </header>
 
       <div>
-        
-
-<p>My usual web application stack for the past years was based on  a nginx as
+        <p>My usual web application stack for the past years was based on  a nginx as
 reverse proxy in front of a number of Python processes. Static resources were
 served by nginx. Each Python process was stateless, state was stored in some
 kind of database. If the processes needed some shared ephemeral state like
 counters a local redis instance solved that. A battle tested common ground for
 Python based web applications.</p>
-
 <p>What I have added to this lately was <a href="https://www.varnish-cache.org/">Varnish</a>,
 a powerful proxying cache. The first that comes in mind could be &ldquo;there are two
 problems in computer science: naming things and cache invalidation&rdquo;.  Agreed,
 invalidation is tricky. But there are several tricks at hand that make this not
 so bad at all.</p>
-
 <p>Note: all examples should work with Varnish 4.0 and greater. If not, drop me a
 line!</p>
-
 <h3 id="caching-for-a-very-short-period">Caching for a very short period</h3>
-
 <p>The first trick is to cache for only a very short amount of time, say 10
 seconds or maybe even only 1:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age=<span style="color:#ff0;font-weight:bold">10</span></code></pre></div>
-<p>Say you have a resource that is being hammered a lot and it should be &ldquo;near
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age=<span style="color:#ff0;font-weight:bold">10</span>
+</code></pre></div><p>Say you have a resource that is being hammered a lot and it should be &ldquo;near
 real-time&rdquo;. Varnish will cache this response for 10 seconds. Now after the 10
 seconds a new version must be computed. At this point Varnish will queue the
 incoming requests and only forward one of them to the backend. All &ldquo;parked&rdquo;
 requests will then get the response from the backend. Only one request to the
-backend every 10 seconds, but there could be billions to Varnish that don&rsquo;t
+backend every 10 seconds, but there could be billions to Varnish that don't
 bother you.</p>
-
 <h3 id="grace-time">Grace time</h3>
-
 <p>Say you chose to cache for only one second. Everything will be fine then if the
 backend is able to compute a new version within one second. If it occasionally
 takes longer then users will have to wait for the backend response. Having
 users to wait is bad as you might be blocking the browser to render (which
 you should be avoiding by other means!) or the user sees the loading symbol
 even though all other elements are already loaded.</p>
-
 <p>Here the grace time helps. It basically means that Varnish will return a stale
-cache object until the backend is done computing the new version. So let&rsquo;s say
+cache object until the backend is done computing the new version. So let's say
 the backend sets this header:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age=<span style="color:#ff0;font-weight:bold">1</span></code></pre></div>
-<p>In the Varnish VCL you then add:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age=<span style="color:#ff0;font-weight:bold">1</span>
+</code></pre></div><p>In the Varnish VCL you then add:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_backend_response {
     <span style="color:#fff;font-weight:bold">set</span> beresp.grace = 1m;
-}</code></pre></div>
-<p>This will allow your backend to take up to one minute to compute the new
+}
+</code></pre></div><p>This will allow your backend to take up to one minute to compute the new
 version. During this time Varnish will deliver the old version to all incoming
 requests. As soon as the backend is finished the new version will be delivered.</p>
-
 <h3 id="grace-in-times-of-unhealthy-backends">Grace in times of unhealthy backends</h3>
-
 <p>Grace time can also be extended in order to serve content while the backend is
 down. For this you need to enable health checking for the backend like so:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">backend server1 {
@@ -183,14 +172,13 @@ down. For this you need to enable health checking for the backend like so:</p>
         .url = <span style="color:#0ff;font-weight:bold">&#34;/_health&#34;</span>;
         .timeout = 1s;
         .interval = 5s;
-        .window = <span style="color:#ff0;font-weight:bold">5</span>;
-        .threshold = <span style="color:#ff0;font-weight:bold">3</span>;
+        .window = 5;
+        .threshold = 3;
     }
-}</code></pre></div>
-<p>This tells varnish to check the <strong>/_health</strong> endpoint every five seconds. The
+}
+</code></pre></div><p>This tells varnish to check the <strong>/_health</strong> endpoint every five seconds. The
 backend needs to answer within one second. If three of the last five checks
 were successful Varnish considers this backend to be healthy.</p>
-
 <p>Now Varnish needs to detect failure and deliver stale content in order to have
 some time fixing backends. For this we need to modify the <em>vcl_hit</em> method to
 increase the grace time to a very large value during times no healthy backend
@@ -220,98 +208,93 @@ is available.</p>
             <span style="color:#fff;font-weight:bold">return</span> (fetch);
         }
     }
-}</code></pre></div>
-<p>If you now manage to repair the backend within two hours the user will not
+}
+</code></pre></div><p>If you now manage to repair the backend within two hours the user will not
 <em>see</em> the outage except maybe for old content.</p>
-
 <h3 id="purging-the-cache">Purging the cache</h3>
-
 <p>In order to remove a cache object a special HTTP verb can be used.  By simply
 accessing the resource that should be removed with a <em>PURGE</em> verb, e.g.,
 Varnish can dismiss the object. Again this is controlled in the VCL itself:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_hit {
     <span style="color:#fff;font-weight:bold">if</span> (req.request == <span style="color:#0ff;font-weight:bold">&#34;PURGE&#34;</span>) {
         <span style="color:#fff;font-weight:bold">return</span>(purge);
-        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">200</span>, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
+        <span style="color:#fff;font-weight:bold">return</span>(synth(200, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
     }
 }
 sub vcl_miss {
     <span style="color:#fff;font-weight:bold">if</span> (req.request == <span style="color:#0ff;font-weight:bold">&#34;PURGE&#34;</span>) {
         <span style="color:#fff;font-weight:bold">return</span>(purge);
-        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">200</span>, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
+        <span style="color:#fff;font-weight:bold">return</span>(synth(200, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
     }
-}</code></pre></div>
-<p>Now executing something like</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XPURGE <span style="color:#0ff;font-weight:bold">&#34;http://www.example.com/recent&#34;</span></code></pre></div>
-<p>would purge the cached object. The next <strong>GET</strong> request issues a new fetch from
+}
+</code></pre></div><p>Now executing something like</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XPURGE <span style="color:#0ff;font-weight:bold">&#34;http://www.example.com/recent&#34;</span>
+</code></pre></div><p>would purge the cached object. The next <strong>GET</strong> request issues a new fetch from
 the backend. Obviously not everyone should be allowed to purge the cache so a
 simple ACL with white listed IPs blocks unwanted access:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">acl purge {
     <span style="color:#0ff;font-weight:bold">&#34;localhost&#34;</span>;
     <span style="color:#007f7f"># add a list of allowed IPs here</span>
-}</code></pre></div>
-<p>Then use it to block access from any other machine:</p>
+}
+</code></pre></div><p>Then use it to block access from any other machine:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_hit {
     <span style="color:#fff;font-weight:bold">if</span> (req.request == <span style="color:#0ff;font-weight:bold">&#34;PURGE&#34;</span>) {
         <span style="color:#fff;font-weight:bold">if</span> (!client.ip ~ purge) {
-            <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">405</span>, <span style="color:#0ff;font-weight:bold">&#34;Not allowed.&#34;</span>));
+            <span style="color:#fff;font-weight:bold">return</span>(synth(405, <span style="color:#0ff;font-weight:bold">&#34;Not allowed.&#34;</span>));
         }
         <span style="color:#fff;font-weight:bold">return</span>(purge);
-        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">200</span>, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
+        <span style="color:#fff;font-weight:bold">return</span>(synth(200, <span style="color:#0ff;font-weight:bold">&#34;Purged&#34;</span>));
     }
-}</code></pre></div>
-<h3 id="cache-invalidation-based-on-content">Cache invalidation based on content</h3>
-
-<p>Sometimes invalidation based on URLs is not sufficient. Let&rsquo;s say one of the
+}
+</code></pre></div><h3 id="cache-invalidation-based-on-content">Cache invalidation based on content</h3>
+<p>Sometimes invalidation based on URLs is not sufficient. Let's say one of the
 articles from the big publishing house had to be removed for legal reasons and
-you absolutely don&rsquo;t want to show it anymore. Invalidating the whole cache
+you absolutely don't want to show it anymore. Invalidating the whole cache
 would place quite some load on the backend. Maybe even too much load. In this
 case banning objects based on its content enables one to only invalidate the
 <em>affected</em> objects.</p>
-
 <p>For this we need to introduce a custom HTTP response header from the backend.
 This could be something like a list of article ids:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Content-Articles: <span style="color:#ff0;font-weight:bold">1</span>,2,3,4,5</code></pre></div>
-<p>Varnish will store this header along with the object. In order to invalidate
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Content-Articles: 1,2,3,4,5
+</code></pre></div><p>Varnish will store this header along with the object. In order to invalidate
 all cached objects containing article 3 an artificial endpoint in the VCL is
 introduced:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sub vcl_recv {
     <span style="color:#fff;font-weight:bold">if</span> (req.url ~ <span style="color:#0ff;font-weight:bold">&#34;/_ban&#34;</span> &amp;&amp; req.method == <span style="color:#0ff;font-weight:bold">&#34;BAN&#34;</span>) {
         ban(<span style="color:#0ff;font-weight:bold">&#34;obj.http.Content-Articles ~ &#34;</span> + req.http.Ban-Article);
-        <span style="color:#fff;font-weight:bold">return</span>(synth(<span style="color:#ff0;font-weight:bold">204</span>, <span style="color:#0ff;font-weight:bold">&#34;NO CONTENT&#34;</span>));
+        <span style="color:#fff;font-weight:bold">return</span>(synth(204, <span style="color:#0ff;font-weight:bold">&#34;NO CONTENT&#34;</span>));
     }
-}</code></pre></div>
-<p>The request to ban article 3 would now be:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XBAN -H <span style="color:#0ff;font-weight:bold">&#39;Ban-Article: 3&#39;</span> <span style="color:#0ff;font-weight:bold">&#39;http://www.example.com/_ban&#39;</span></code></pre></div>
-<p>Again securing via ACL is trivial and left out for clarity.</p>
-
+}
+</code></pre></div><p>The request to ban article 3 would now be:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -XBAN -H <span style="color:#0ff;font-weight:bold">&#39;Ban-Article: 3&#39;</span> <span style="color:#0ff;font-weight:bold">&#39;http://www.example.com/_ban&#39;</span>
+</code></pre></div><p>Again securing via ACL is trivial and left out for clarity.</p>
 <p>Banning works slightly different from purging. With purging the object is
 removed instantly. For each call to ban, Varnish keeps a list of banning
 statements that live for a longer period of time. When a cached object is
 requested all of the banning statements are executed against the cached object.
 If one matches, the object is fetched from the backend and not served. Once all
 objects have been visited, the banned statement is removed.</p>
-
 <p>In the case of rarely accessed objects, this might never happen. For this the
 <strong>ban lurker</strong> thread will iterate over the otherwise missed objects and remove
 them when necessary.</p>
-
 <h3 id="conclusion">Conclusion</h3>
-
 <p>I hope interest was raised if it has not been present so far. Varnish has
 helped me a lot over the years and saved a lot of money by reducing the amount
 of servers necessary for the individual project.</p>
-
 <h4 id="resources">Resources</h4>
-
 <ul>
-<li><p><a href="https://www.varnish-cache.org/docs/4.0/">Varnish 4 documentation</a></p></li>
-
-<li><p><a href="http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish">Grace time in Varnish 4</a></p></li>
-
-<li><p><a href="https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks">Health checks</a></p></li>
-
-<li><p><a href="http://info.varnish-software.com/blog/ban-lurker">Ban lurker</a></p></li>
+<li>
+<p><a href="https://www.varnish-cache.org/docs/4.0/">Varnish 4 documentation</a></p>
+</li>
+<li>
+<p><a href="http://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish">Grace time in Varnish 4</a></p>
+</li>
+<li>
+<p><a href="https://www.varnish-cache.org/docs/4.0/users-guide/vcl-backends.html#health-checks">Health checks</a></p>
+</li>
+<li>
+<p><a href="http://info.varnish-software.com/blog/ban-lurker">Ban lurker</a></p>
+</li>
 </ul>
 
       </div>

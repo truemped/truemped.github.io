@@ -55,7 +55,7 @@ The questions are mostly similar: &ldquo;what if I also filter for X&rdquo;, &ld
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
   </head>
 
   <body class=" ">
@@ -71,7 +71,7 @@ The questions are mostly similar: &ldquo;what if I also filter for X&rdquo;, &ld
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://truemped.github.io/about/">About</a>
+            <a class="navigation-link" href="https://truemped.github.io/about/">About Me</a>
           </li>
         
           <li class="navigation-item">
@@ -123,39 +123,34 @@ The questions are mostly similar: &ldquo;what if I also filter for X&rdquo;, &ld
       </header>
 
       <div>
-        
-
-<p>Elasticsearch is a search server based on Apache Lucene. As a developer it is
+        <p>Elasticsearch is a search server based on Apache Lucene. As a developer it is
 easy to use, has an expressive query DSL and all is based on JSON
 serialization. Often though I find myself in a position where I need to adapt
 queries frequently and non-trivially, say in a demonstration in front of
 customers or product owners.</p>
-
 <p>The questions are mostly similar: &ldquo;what if I also filter for X&rdquo;, &ldquo;how does the
 ranking change, when I add a freshness function&rdquo;, &ldquo;do I get a better result if
 I boost document types Y&rdquo; and so on. While these are easy to add, two things
 bother me: first, I need to come up with the queries during a presentation,
-which adds pauses to the meetings. When I&rsquo;m finished with the query the
-discussion has evolved. Second, I don&rsquo;t want to be the enabler. If they can
+which adds pauses to the meetings. When I'm finished with the query the
+discussion has evolved. Second, I don't want to be the enabler. If they can
 find out what they want without me it also means a faster feedback loop for
 them. In brainstorming sessions it is easy to focus on arguments and skip the
 sometimes lengthy query finding pauses. Win win for everyone it seems.</p>
-
 <p>For this I have startet working on <strong>meta-DSLs</strong> for Elasticsearch projects.
 The idea is simple: given a base query I want to be able to quickly alter or
 enhance it using simple functions that are aligned with the mapping and index
-structure. Given my current addiction towards Clojure, this is what I&rsquo;ve come
+structure. Given my current addiction towards Clojure, this is what I've come
 up with:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(query
  (freshness <span style="color:#0ff;font-weight:bold">&#34;1h&#34;</span>)
  (tags [<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span>])
  (prefer-category {<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span> <span style="color:#ff0;font-weight:bold">2</span>,
-                   <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span> <span style="color:#ff0;font-weight:bold">0.5</span>}))</code></pre></div>
-<p>Ok, it&rsquo;s not yet a graphical interface, but it is a start. And it&rsquo;s intuitive.
+                   <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span> <span style="color:#ff0;font-weight:bold">0.5</span>}))
+</code></pre></div><p>Ok, it's not yet a graphical interface, but it is a start. And it's intuitive.
 After demonstrating this to customers a few times they like it and request more
 features. Their own feedback loop has shortened considerably. And the best of
 it is that I am out of the loop and can focus on adding features.</p>
-
 <p>In this example the domain will be news articles. They have a title, tags, a
 published time and categories. Something like this:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{
@@ -163,25 +158,20 @@ published time and categories. Something like this:</p>
     <span style="color:#0ff;font-weight:bold">:tags</span> [<span style="color:#0ff;font-weight:bold">&#34;obama&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;kerry&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;merkel&#34;</span>]
     <span style="color:#0ff;font-weight:bold">:timestamp</span> <span style="color:#0ff;font-weight:bold">&#34;2015-07-28T10:00:00Z&#34;</span>
     <span style="color:#0ff;font-weight:bold">:category</span> [<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span>]
-}</code></pre></div>
-<p>This post is my story of how I implemented this. Publishing this as a library
+}
+</code></pre></div><p>This post is my story of how I implemented this. Publishing this as a library
 might be an idea but in the end all of this is tied to an exact mapping, index
 structure and use case. If there is interest though, starting something similar
 in a library could be interesting, if there is interest.</p>
-
 <h2 id="dsls-in-clojure">DSLs in Clojure</h2>
-
 <p>Creating a Domain Specific Language is pretty straight forward in Clojure
 assuming you expose Clojure or Lisp syntax to the user. Using the clojure
 reader and <code>eval</code> parsing a DSL into Clojure code is simple and defining the
 DSL itself does then only involve implementing the functions.</p>
-
 <p>In the next part I focus on the DSL implementation itself and the functions for
 manipulating the query. In the last section, parsing and evaluating the DSL
 into a real Elasticsearch query finishes.</p>
-
 <h2 id="the-dsl">The DSL</h2>
-
 <p>For the custom DSL I started with a base query structure upon which all other
 functions build. It has four parts: query, scoring, filtering and aggregations:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">def </span>default-query
@@ -191,11 +181,10 @@ functions build. It has four parts: query, scoring, filtering and aggregations:<
                              <span style="color:#0ff;font-weight:bold">:functions</span> []}}
     <span style="color:#0ff;font-weight:bold">:filter</span> {<span style="color:#0ff;font-weight:bold">:bool</span> {<span style="color:#0ff;font-weight:bold">:must</span> []
                     <span style="color:#0ff;font-weight:bold">:must_not</span> []}}}}
-  <span style="color:#0ff;font-weight:bold">:aggregations</span> {}})</code></pre></div>
-<p>For all functions I am assuming the query to be the first argument in all
+  <span style="color:#0ff;font-weight:bold">:aggregations</span> {}})
+</code></pre></div><p>For all functions I am assuming the query to be the first argument in all
 functions working with it. This simplifies the code later on as I can use the
 <code>thread-first</code> macro to chain the individual function call.</p>
-
 <p>Defining a function to add a <code>query</code> and for adding aggregations is straight
 forward and does not even need a helper function:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn- </span>set-query
@@ -207,8 +196,8 @@ forward and does not even need a helper function:</p>
 (<span style="color:#fff;font-weight:bold">defn- </span>add-aggregation
  <span style="color:#0ff;font-weight:bold">&#34;Add a new aggregation to the query&#34;</span>
  [query agg]
- (assoc-in query [<span style="color:#0ff;font-weight:bold">:query</span> <span style="color:#0ff;font-weight:bold">:aggregations</span>] agg))</code></pre></div>
-<p>To work with this data structure a few helper methods come in handy when
+ (assoc-in query [<span style="color:#0ff;font-weight:bold">:query</span> <span style="color:#0ff;font-weight:bold">:aggregations</span>] agg))
+</code></pre></div><p>To work with this data structure a few helper methods come in handy when
 developing the individual DSL functions. The first function helps when
 manipulating lists in a nested map. Basically each scoring function or filter
 needs to be added like this:</p>
@@ -217,10 +206,10 @@ needs to be added like this:</p>
  [q ks elm]
  (assoc-in q                        <span style="color:#007f7f">; the query</span>
            ks                       <span style="color:#007f7f">; the list of keys in the query</span>
-           (<span style="color:#fff;font-weight:bold">apply conj </span>             <span style="color:#007f7f">; append</span>
+           (<span style="color:#fff;font-weight:bold">apply </span><span style="color:#fff;font-weight:bold">conj </span>             <span style="color:#007f7f">; append</span>
                   (get-in q ks)     <span style="color:#007f7f">; to the list</span>
-                  elm)))            <span style="color:#007f7f">; the new element</span></code></pre></div>
-<p>With this basic function adding more expressive functions to manipulate the
+                  elm)))            <span style="color:#007f7f">; the new element</span>
+</code></pre></div><p>With this basic function adding more expressive functions to manipulate the
 specific parts of the query are easy:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn- </span>add-function-score-function
  <span style="color:#0ff;font-weight:bold">&#34;Add a function score function to the query&#34;</span>
@@ -241,9 +230,8 @@ specific parts of the query are easy:</p>
  [query must-filter]
  (append-in-nested-list query
                         [<span style="color:#0ff;font-weight:bold">:query</span> <span style="color:#0ff;font-weight:bold">:filtered</span> <span style="color:#0ff;font-weight:bold">:filter</span> <span style="color:#0ff;font-weight:bold">:bool</span> <span style="color:#0ff;font-weight:bold">:must_not</span>]
-                        [must-filter]))</code></pre></div>
-<h3 id="dsl-functions">DSL functions</h3>
-
+                        [must-filter]))
+</code></pre></div><h3 id="dsl-functions">DSL functions</h3>
 <p>The individual functions now basically compose the DSL. Being able to add
 <code>(q &quot;merkel&quot;)</code> is translated into the following Clojure function:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>q
@@ -251,14 +239,14 @@ specific parts of the query are easy:</p>
   [query user-query]
   (set-query query
              {<span style="color:#0ff;font-weight:bold">:query_string</span> {<span style="color:#0ff;font-weight:bold">:query</span> user-query
-                             <span style="color:#0ff;font-weight:bold">:default_operator</span> <span style="color:#0ff;font-weight:bold">&#34;AND&#34;</span>}}))</code></pre></div>
-<p>Filtering for tags in our dataset (<code>(tags [&quot;merkel&quot;])</code>) is equally trivial:</p>
+                             <span style="color:#0ff;font-weight:bold">:default_operator</span> <span style="color:#0ff;font-weight:bold">&#34;AND&#34;</span>}}))
+</code></pre></div><p>Filtering for tags in our dataset (<code>(tags [&quot;merkel&quot;])</code>) is equally trivial:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>tags
   <span style="color:#0ff;font-weight:bold">&#34;Filter for a list of tags&#34;</span>
   [query tags]
-  (add-must-filter query {<span style="color:#0ff;font-weight:bold">:terms</span> {<span style="color:#0ff;font-weight:bold">:tags</span> tags}}))</code></pre></div>
-<p>Freshness seems more complicated but in the end I can simply add a function
-score function using an [exponential decay](). With this the user can even
+  (add-must-filter query {<span style="color:#0ff;font-weight:bold">:terms</span> {<span style="color:#0ff;font-weight:bold">:tags</span> tags}}))
+</code></pre></div><p>Freshness seems more complicated but in the end I can simply add a function
+score function using an <a href="">exponential decay</a>. With this the user can even
 change parameters and see the effects:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>freshness
   <span style="color:#0ff;font-weight:bold">&#34;Add freshness preferences to the query. When called with query and hours as
@@ -266,8 +254,8 @@ change parameters and see the effects:</p>
   [query hours]
   (add-function-score-function query
                                {<span style="color:#0ff;font-weight:bold">:exp</span> {<span style="color:#0ff;font-weight:bold">:publishTime</span> {<span style="color:#0ff;font-weight:bold">:decay</span> <span style="color:#ff0;font-weight:bold">0.9</span>
-                                                    <span style="color:#0ff;font-weight:bold">:scale</span> hours}}}))</code></pre></div>
-<p>Prefering categories over other categories is another function score function.
+                                                    <span style="color:#0ff;font-weight:bold">:scale</span> hours}}}))
+</code></pre></div><p>Prefering categories over other categories is another function score function.
 Basically I add a boost (<code>weight</code>) to all documents matching a certain query:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>prefer-category
   <span style="color:#0ff;font-weight:bold">&#34;Prefer categories over all other categories.&#34;</span>
@@ -277,24 +265,23 @@ Basically I add a boost (<code>weight</code>) to all documents matching a certai
                                <span style="color:#0ff;font-weight:bold">:weight</span> (<span style="color:#fff;font-weight:bold">second </span>x)})
                        (<span style="color:#fff;font-weight:bold">seq </span>category-preferences))
         existing (get-in query nested-keys)]
-    (assoc-in query nested-keys (<span style="color:#fff;font-weight:bold">apply conj </span>existing functions))))</code></pre></div>
-<p>Aggregations help in understanding the data there is. Classical example in this
+    (assoc-in query nested-keys (<span style="color:#fff;font-weight:bold">apply </span><span style="color:#fff;font-weight:bold">conj </span>existing functions))))
+</code></pre></div><p>Aggregations help in understanding the data there is. Classical example in this
 case would be getting the number of documents in the result set in a category.
 In ES this is a simple terms aggregation:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defn </span>aggregate-categories
  <span style="color:#0ff;font-weight:bold">&#34;Aggregate the result by categories.&#34;</span>
  [query]
- (add-aggregation query {<span style="color:#0ff;font-weight:bold">:terms</span> {<span style="color:#0ff;font-weight:bold">:field</span> <span style="color:#0ff;font-weight:bold">:category</span>}}))</code></pre></div>
-<p>To tie everything up I need to be able to wrap all functions into one
+ (add-aggregation query {<span style="color:#0ff;font-weight:bold">:terms</span> {<span style="color:#0ff;font-weight:bold">:field</span> <span style="color:#0ff;font-weight:bold">:category</span>}}))
+</code></pre></div><p>To tie everything up I need to be able to wrap all functions into one
 expression. For this I create a new macro called <code>query</code>:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">defmacro </span>query [&amp; body]
 `(<span style="color:#fff;font-weight:bold">-&gt; </span>default-query
-     ~@body))</code></pre></div>
-<p>Using this macro a query can now be defined like this:</p>
+     ~@body))
+</code></pre></div><p>Using this macro a query can now be defined like this:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#fff;font-weight:bold">def </span>simple-query (query
-                   (q <span style="color:#0ff;font-weight:bold">&#34;test&#34;</span>))</code></pre></div>
-<h2 id="parsing-the-dsl">Parsing the DSL</h2>
-
+                   (q <span style="color:#0ff;font-weight:bold">&#34;test&#34;</span>))
+</code></pre></div><h2 id="parsing-the-dsl">Parsing the DSL</h2>
 <p>Doing this is Clojure is nice and easy for me but then again I want the PO not
 to contact me about getting into the repl. So in the final step I need a
 function that converts a string to Clojure code. First I need to parse the
@@ -308,24 +295,22 @@ DSL functions above using the <code>the-ns</code> function.</p>
  [dsl-string]
  (<span style="color:#fff;font-weight:bold">binding </span>[*ns* (the-ns <span style="color:#0ff;font-weight:bold">&#39;demo.dsl-functions</span>)
            *read-eval* false]
-  (<span style="color:#fff;font-weight:bold">eval </span>(read-string dsl-string))))</code></pre></div>
-<p>The <code>binding</code> form binds the special var <code>*ns*</code> to the namespace containing my
+  (<span style="color:#fff;font-weight:bold">eval </span>(read-string dsl-string))))
+</code></pre></div><p>The <code>binding</code> form binds the special var <code>*ns*</code> to the namespace containing my
 dsl functions. I also bind <code>*read-eval*</code> to false and by this disable the
 <code>eval</code> function inside the string. The parsed string will have access to all
 functions declared in there. <code>read-string</code> converts a string into Clojure code
 and <code>eval</code> will execute it. In this case it will simply return the final
 Elasticsearch query.</p>
-
 <h2 id="result">Result</h2>
-
 <p>In essence this allows me to have a web frontend where a user can input
 the query from the beginning</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(query
  (freshness <span style="color:#0ff;font-weight:bold">&#34;1h&#34;</span>)
  (tags [<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span>])
  (prefer-category {<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span> <span style="color:#ff0;font-weight:bold">2</span>,
-                   <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span> <span style="color:#ff0;font-weight:bold">0.5</span>}))</code></pre></div>
-<p>get back the equivalent Elasticsearch query:</p>
+                   <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span> <span style="color:#ff0;font-weight:bold">0.5</span>}))
+</code></pre></div><p>get back the equivalent Elasticsearch query:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#0ff;font-weight:bold">:query</span>
  {<span style="color:#0ff;font-weight:bold">:filtered</span>
   {<span style="color:#0ff;font-weight:bold">:query</span>
@@ -338,8 +323,8 @@ the query from the beginning</p>
    <span style="color:#0ff;font-weight:bold">:filter</span>
    {<span style="color:#0ff;font-weight:bold">:bool</span>
     {<span style="color:#0ff;font-weight:bold">:must</span> [{<span style="color:#0ff;font-weight:bold">:terms</span> {<span style="color:#0ff;font-weight:bold">:tags</span> [<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span>]}}], <span style="color:#0ff;font-weight:bold">:must_not</span> []}}}},
- <span style="color:#0ff;font-weight:bold">:aggregations</span> {}}</code></pre></div>
-<p>which I can execute in the backend and display the results. With all the domain
+ <span style="color:#0ff;font-weight:bold">:aggregations</span> {}}
+</code></pre></div><p>which I can execute in the backend and display the results. With all the domain
 functions in place I can then keep on improving the DSL or the frontend and
 enable the PO to experiment at lot easier without my direct involvement, at
 least in parts that I am not really interested in.</p>
