@@ -10,11 +10,10 @@ tags:
 ---
 
 When moving from an individual contributor role into management, the biggest
-challenge for me was to provide **difficult feedback**. I started my management
-career in the **ruinous empathy** quadrant of *Radical Candor*. This challenge
-might have been bigger for me compared to others as within a very short period
-of time a number of my colleagues suddenly started to report to me. Looking back
-at 2019 overcoming this has been my biggest personal achievement.
+challenge for me was to provide **difficult feedback**. This challenge might
+have been bigger for me compared to others as within a very short period of time
+a number of my colleagues suddenly started to report to me. Looking back at 2019
+overcoming this has been my biggest personal achievement.
 
 ## What is ruinous empathy?
 
@@ -37,11 +36,12 @@ there is only one solution: run.
 
 What happens to most leaders around the globe is being in the **ruinous
 empathy** quadrant. They do care about people and their success, but they cannot
-challenge them. For me personally this also included being confident enough to
-provide negative feedback. Most of my directs being former colleagues it was
-very difficult for me to start tough and difficult conversation. I leaned too
-much towards *duck and cover* when people behaved in ways that are against my
-own moral compass.
+challenge them. I started my management career in the **ruinous empathy**
+quadrant of *Radical Candor*. For me, this also included not being confident
+enough to provide negative feedback. Most of my directs being former colleagues,
+it was very difficult for me to start tough and difficult conversation. I leaned
+too much towards *duck and cover* when people behaved in ways that are against
+my own moral compass.
 
 Finally in the **radical candor** quadrant you overcome this and not only care
 for people but also challenge them. Give them opportunities to develop their own
