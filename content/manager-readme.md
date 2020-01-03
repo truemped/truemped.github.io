@@ -173,7 +173,6 @@ Not more, not less. There will be weeks where you work more, I do try to keep
 an eye on you working less afterwards but you are also accountable for this
 yourself.
 
-
 [1]: https://www.16personalities.com/esfp-personality
 [2]: https://getlighthouse.com/blog/effective-1-on-1-meetings/
 [3]: https://m.signalvnoise.com/the-4-questions-you-should-stop-asking-during-your-one-on-one-meetings-ed7431da11aa
