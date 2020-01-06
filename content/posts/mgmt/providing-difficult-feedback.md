@@ -10,10 +10,10 @@ tags:
 ---
 
 When moving from an individual contributor role into management, the biggest
-challenge for me was to provide **difficult feedback**. This challenge might
-have been bigger for me compared to others as within a very short period of time
-a number of my colleagues suddenly started to report to me. Looking back at 2019
-overcoming this has been my biggest personal achievement.
+challenge for me was to provide **difficult feedback**. This might have been
+bigger for me compared to others as within a very short period of time a number
+of my colleagues and peers suddenly started to report to me. Looking back at
+2019 overcoming this has been my biggest personal achievement.
 
 ## What is ruinous empathy?
 
