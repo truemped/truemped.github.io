@@ -1,0 +1,29 @@
+#+TITLE: This is my private blog
+#+AUTHOR: Daniel Truemper
+#+EMAIL: truemped@gmail.com
+
+This is the repository hosting my private blog.
+
+* Operations
+  This is to document how to run, build and serve the blog. First, clone the
+  repository including submodules like so:
+
+  ```bash
+  $ git clone --recurse-submodules https://github.com/truemped/truemped.github.io.git
+  $ cd truemped.github.io/
+  ```
+
+** Run locally
+
+   This blog is built using [[https://gohugo.io/][Hugo]]. To run locally, simply run `$ hugo server`.
+
+** Building
+
+   To build the final result, simply run `$ hugo`.
+
+** Publishing
+
+   The `public` directory is, well, public. All files in there will be publicly
+   available at https://truemped.github.io. This directory is also a special
+   branch in the Github repository. Committing the changes and pushing them will
+   publish them.
