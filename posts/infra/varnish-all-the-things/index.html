@@ -53,7 +53,7 @@
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.62.0" />
+    <meta name="generator" content="Hugo 0.65.2" />
   </head>
 
   <body class=" ">
@@ -143,7 +143,7 @@ real-time&rdquo;. Varnish will cache this response for 10 seconds. Now after the
 seconds a new version must be computed. At this point Varnish will queue the
 incoming requests and only forward one of them to the backend. All &ldquo;parked&rdquo;
 requests will then get the response from the backend. Only one request to the
-backend every 10 seconds, but there could be billions to Varnish that don't
+backend every 10 seconds, but there could be billions to Varnish that don&rsquo;t
 bother you.</p>
 <h3 id="grace-time">Grace time</h3>
 <p>Say you chose to cache for only one second. Everything will be fine then if the
@@ -153,7 +153,7 @@ users to wait is bad as you might be blocking the browser to render (which
 you should be avoiding by other means!) or the user sees the loading symbol
 even though all other elements are already loaded.</p>
 <p>Here the grace time helps. It basically means that Varnish will return a stale
-cache object until the backend is done computing the new version. So let's say
+cache object until the backend is done computing the new version. So let&rsquo;s say
 the backend sets this header:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cache-Control: public, max-age=<span style="color:#ff0;font-weight:bold">1</span>
 </code></pre></div><p>In the Varnish VCL you then add:</p>
@@ -247,9 +247,9 @@ simple ACL with white listed IPs blocks unwanted access:</p>
     }
 }
 </code></pre></div><h3 id="cache-invalidation-based-on-content">Cache invalidation based on content</h3>
-<p>Sometimes invalidation based on URLs is not sufficient. Let's say one of the
+<p>Sometimes invalidation based on URLs is not sufficient. Let&rsquo;s say one of the
 articles from the big publishing house had to be removed for legal reasons and
-you absolutely don't want to show it anymore. Invalidating the whole cache
+you absolutely don&rsquo;t want to show it anymore. Invalidating the whole cache
 would place quite some load on the backend. Maybe even too much load. In this
 case banning objects based on its content enables one to only invalidate the
 <em>affected</em> objects.</p>

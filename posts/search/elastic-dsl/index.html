@@ -55,7 +55,7 @@ The questions are mostly similar: &ldquo;what if I also filter for X&rdquo;, &ld
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.62.0" />
+    <meta name="generator" content="Hugo 0.65.2" />
   </head>
 
   <body class=" ">
@@ -132,22 +132,22 @@ customers or product owners.</p>
 ranking change, when I add a freshness function&rdquo;, &ldquo;do I get a better result if
 I boost document types Y&rdquo; and so on. While these are easy to add, two things
 bother me: first, I need to come up with the queries during a presentation,
-which adds pauses to the meetings. When I'm finished with the query the
-discussion has evolved. Second, I don't want to be the enabler. If they can
+which adds pauses to the meetings. When I&rsquo;m finished with the query the
+discussion has evolved. Second, I don&rsquo;t want to be the enabler. If they can
 find out what they want without me it also means a faster feedback loop for
 them. In brainstorming sessions it is easy to focus on arguments and skip the
 sometimes lengthy query finding pauses. Win win for everyone it seems.</p>
 <p>For this I have startet working on <strong>meta-DSLs</strong> for Elasticsearch projects.
 The idea is simple: given a base query I want to be able to quickly alter or
 enhance it using simple functions that are aligned with the mapping and index
-structure. Given my current addiction towards Clojure, this is what I've come
+structure. Given my current addiction towards Clojure, this is what I&rsquo;ve come
 up with:</p>
 <div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(query
  (freshness <span style="color:#0ff;font-weight:bold">&#34;1h&#34;</span>)
  (tags [<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span> <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span>])
  (prefer-category {<span style="color:#0ff;font-weight:bold">&#34;politics&#34;</span> <span style="color:#ff0;font-weight:bold">2</span>,
                    <span style="color:#0ff;font-weight:bold">&#34;sports&#34;</span> <span style="color:#ff0;font-weight:bold">0.5</span>}))
-</code></pre></div><p>Ok, it's not yet a graphical interface, but it is a start. And it's intuitive.
+</code></pre></div><p>Ok, it&rsquo;s not yet a graphical interface, but it is a start. And it&rsquo;s intuitive.
 After demonstrating this to customers a few times they like it and request more
 features. Their own feedback loop has shortened considerably. And the best of
 it is that I am out of the loop and can focus on adding features.</p>
@@ -206,7 +206,7 @@ needs to be added like this:</p>
  [q ks elm]
  (assoc-in q                        <span style="color:#007f7f">; the query</span>
            ks                       <span style="color:#007f7f">; the list of keys in the query</span>
-           (<span style="color:#fff;font-weight:bold">apply </span><span style="color:#fff;font-weight:bold">conj </span>             <span style="color:#007f7f">; append</span>
+           (<span style="color:#fff;font-weight:bold">apply conj </span>             <span style="color:#007f7f">; append</span>
                   (get-in q ks)     <span style="color:#007f7f">; to the list</span>
                   elm)))            <span style="color:#007f7f">; the new element</span>
 </code></pre></div><p>With this basic function adding more expressive functions to manipulate the
@@ -265,7 +265,7 @@ Basically I add a boost (<code>weight</code>) to all documents matching a certai
                                <span style="color:#0ff;font-weight:bold">:weight</span> (<span style="color:#fff;font-weight:bold">second </span>x)})
                        (<span style="color:#fff;font-weight:bold">seq </span>category-preferences))
         existing (get-in query nested-keys)]
-    (assoc-in query nested-keys (<span style="color:#fff;font-weight:bold">apply </span><span style="color:#fff;font-weight:bold">conj </span>existing functions))))
+    (assoc-in query nested-keys (<span style="color:#fff;font-weight:bold">apply conj </span>existing functions))))
 </code></pre></div><p>Aggregations help in understanding the data there is. Classical example in this
 case would be getting the number of documents in the result set in a category.
 In ES this is a simple terms aggregation:</p>

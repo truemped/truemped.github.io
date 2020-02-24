@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://truemped.github.io/</loc>
-    <lastmod>2020-01-03T11:25:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/leading-people/</loc>
-    <lastmod>2020-01-03T11:25:00+01:00</lastmod>
+    <loc>https://truemped.github.io/posts/my-new-writing-habit/</loc>
+    <lastmod>2020-02-26T10:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://truemped.github.io/posts/</loc>
+    <lastmod>2020-02-26T10:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/</loc>
+    <lastmod>2020-02-26T10:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/writing/</loc>
+    <lastmod>2020-02-26T10:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/tags/leading-people/</loc>
     <lastmod>2020-01-03T11:25:00+01:00</lastmod>
   </url>
   
@@ -24,11 +34,6 @@
   
   <url>
     <loc>https://truemped.github.io/tags/radical-candor/</loc>
-    <lastmod>2020-01-03T11:25:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/tags/</loc>
     <lastmod>2020-01-03T11:25:00+01:00</lastmod>
   </url>
   
@@ -50,6 +55,11 @@
   <url>
     <loc>https://truemped.github.io/posts/retrospection/cw23/</loc>
     <lastmod>2019-06-10T16:25:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/</loc>
+    <lastmod>2019-06-10T16:00:00+02:00</lastmod>
   </url>
   
   <url>
