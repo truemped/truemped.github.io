@@ -40,9 +40,9 @@ pygmentscodefencesguesssyntax = true
 
 [params]
     author = "Daniel Truemper"
-    description = "Daniel Truemper's personal blog"
-    keywords = "blog,developer,personal"
-    info = "Passionate about Search, Data and People"
+    description = "Daniel Truemper's personal space"
+    keywords = "blog,developer,personal,engineering management,leadership"
+    info = "Passionate about People, Data and Search"
     #avatarurl = "images/avatar.jpg"
     #footercontent = "Enter a text here."
 
@@ -50,6 +50,7 @@ pygmentscodefencesguesssyntax = true
 
     hideCredits = false
     hideCopyright = false
+    since = 2015
 
     # Git Commit in Footer, uncomment the line below to enable it.
     #commit = "https://github.com/luizdepra/hugo-coder/tree/"
@@ -58,6 +59,13 @@ pygmentscodefencesguesssyntax = true
 
     # Use inverted colors
     inverted = false
+
+    # Specify light/dark colorscheme
+    # Supported values:
+    # "auto" (use preference set by browser)
+    # "dark" (dark background, light foreground)
+    # "light" (light background, dark foreground) (default)
+    colorscheme = "auto"
 
     # Series see also post count
     maxSeeAlsoItems = 5
