@@ -6,15 +6,24 @@
     <description>Recent content in Tags on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 26 Feb 2020 10:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 11:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>alignment</title>
+      <link>https://truemped.github.io/tags/alignment/</link>
+      <pubDate>Thu, 05 Mar 2020 11:00:00 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/tags/alignment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>writing</title>
       <link>https://truemped.github.io/tags/writing/</link>
-      <pubDate>Wed, 26 Feb 2020 10:00:00 +0100</pubDate>
+      <pubDate>Thu, 05 Mar 2020 11:00:00 +0100</pubDate>
       
       <guid>https://truemped.github.io/tags/writing/</guid>
       <description></description>
