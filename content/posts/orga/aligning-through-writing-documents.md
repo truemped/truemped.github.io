@@ -1,6 +1,7 @@
 ---
 title: "Aligning through writing documents"
 date: 2020-03-05T11:00:00+01:00
+lastmod: 2020-03-06T16:30:00+01:00
 draft: false
 toc: false
 images:
@@ -27,12 +28,12 @@ aligning beginning with the executive board down to the teams.
 The first time I was involved in trying to align teams with a written narrative
 was a total disaster. Not because we as the authors were cruel or *not well
 intended*. We created a four page document about how we want to change our
-systems architecture. This change would also have an impact on another team that
-would have had to change some of their architecture. After we shared this paper
-however it was not unfolding the way we were hoping. A lot of push back was
-given to our ideas and weeks of follow-up meetings followed. We were not able to
-reach consensus and eventually the idea and the paper ended up in the virtual
-drawer under our desks.
+system's architecture. This change would also have an impact on another team
+that would have had to change some of their architecture. After we shared this
+paper however it was not unfolding the way we were hoping. A lot of push back
+was given to our ideas and weeks of follow-up meetings followed. We were not
+able to reach consensus and eventually the idea and the paper ended up in the
+virtual drawer under our desks.
 
 So what happened? I later realized that the *working backwards* PDP contains
 multiple steps. You begin with writing a high level **press release** about the
@@ -83,9 +84,9 @@ details were left open and no questions came up that we had not heard before. A
 completely different experience than the paper before.
 
 Again one might have noticed the [Good Strategy/Bad Strategy][1] background in
-the way the paper was written. Again a very insightful book about why most
-strategies are not ones and why they fail. The execution of the strategy has not
-been a complete success but that is a different story.
+the way the paper was written. A very insightful book about why most strategies
+are not ones and why they fail. The execution of the strategy has not been a
+complete success but that is a different story.
 
 # Takeaways
 
