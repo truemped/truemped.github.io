@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://truemped.github.io/posts/onto-new-horizons/</loc>
+    <lastmod>2020-04-05T17:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://truemped.github.io/posts/</loc>
+    <lastmod>2020-04-05T17:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://truemped.github.io/posts/orga/aligning-through-writing-documents/</loc>
     <lastmod>2020-03-06T16:30:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://truemped.github.io/tags/alignment/</loc>
-    <lastmod>2020-03-06T16:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/posts/</loc>
     <lastmod>2020-03-06T16:30:00+01:00</lastmod>
   </url>
   

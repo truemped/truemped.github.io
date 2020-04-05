@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Onto new Horizons</title>
+      <link>https://truemped.github.io/posts/onto-new-horizons/</link>
+      <pubDate>Sun, 05 Apr 2020 17:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/onto-new-horizons/</guid>
+      <description>The date slowly approached and then it just happened. After almost four years I left Zalando end of March. I joined Zalando as Senior Engineer in the search team. In this role I helped migrate the search systems from the old monolith (Jimmy) to a microservice based architecture. In those times, microservices where meant literally and a lot of them were created.
+The system was based on SolrCloud and basically a home-grown Kafka like messaging system based on SQS and DynamoDB.</description>
+    </item>
+    
+    <item>
       <title>Aligning through writing documents</title>
       <link>https://truemped.github.io/posts/orga/aligning-through-writing-documents/</link>
       <pubDate>Thu, 05 Mar 2020 11:00:00 +0100</pubDate>
