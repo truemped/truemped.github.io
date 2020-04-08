@@ -4,7 +4,7 @@ date: 2020-04-05T17:00:00+02:00
 raft: false
 toc: false
 images:
-tags: 
+tags:
 ---
 
 The date slowly approached and then it just happened. After almost four years I
@@ -42,7 +42,7 @@ the company at that point, but then a lot of things changed. So much so that I
 got energized again and stayed another year. It was well worth it, I learned a
 lot and it helped me understand management much better.
 
-My shields never went up again completely. And then, at some point, an
+Still, my shields never went up again completely. And then, at some point, an
 interesting opportunity came up. Interesting enough that I approached them and
 found out about their plans and how I might contribute. Many things matched, the
 interviews were great and I am now happy to say that I joined GetYourGuide on
