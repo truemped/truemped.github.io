@@ -9,13 +9,15 @@ aliases:
 ---
 
 # Purpose
+
 In this document I am storing and collecting my preferred ways of working and
 what is important to me. The idea is to help me reflect and to jump-start our
 working relationship by giving you some information about me.
 
 # My role
-I am working as Engineering Manager in the Discovery organisation. In this role
-I am evaluated based on the expectations described in How to Excel as
+
+I am working as Engineering Manager in the Search and Discovery organisation. In
+this role I am evaluated based on the expectations described in How to Excel as
 Engineering Manager. It contains details about the five main themes of Business
 Impact, Productivity, Team Health, Systems Health and Stakeholder happiness.
 
@@ -28,8 +30,8 @@ point. I am curious to see what will be added over time.
 and evolve. Simple things are easy to reason about. In contrast, complex things
 are difficult to understand and invite for hero, 10x programmer anti-patterns.
 
-**Make it work, make it right, make it fast**. Premature optimization is the root
-of all evil. When we start working on something, we usually do not know the
+**Make it work, make it right, make it fast**. Premature optimization is the
+root of all evil. When we start working on something, we usually do not know the
 domain and all the edge cases upfront. Only through solving a given problem we
 truly understand it. Then, and only then, it is time to optimize the solution.
 
@@ -71,7 +73,7 @@ This meeting is for you and you are driving the agenda. The goal of the meeting
 is to work on challenges, goals and priorities to support you playing out your
 strengths. It is not the time for status updates, instead I want to support you
 in the role you have and the goals you have set for yourself. Hopefully you
-bring up things you otherwise would not do in a group setting.
+bring up [things you otherwise would not do][0] in a group setting.
 
 Urgent matters should not wait for a 1:1.
 
@@ -84,3 +86,5 @@ on weekends, when the kids are asleep and I’m able to focus. When I message yo
 I never expect to get an answer from you at this time. I will mostly rely on
 emails with Google’s scheduled sending feature when I’m communicating outside
 office or working hours.
+
+[0]: https://medium.com/@mrabkin/the-art-of-the-awkward-1-1-f4e1dcbd1c5c
