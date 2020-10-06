@@ -15,13 +15,8 @@ together", e.g. I believe this to be even more relevant today. While you can win
 as an individual or a very small team this does not necessarily mean winning
 for the company.
 
-If I happen to be your manager or we happen to work in the same company, please
-have a look at [How to: Daniel][5]. This hopefully provides some context and
-kick start our relationship.
-
 [0]: https://elastic.co
 [1]: https://lucene.apache.org/solr
 [2]: https://clojure.org
 [3]: https://kafka.apache.org
 [4]: https://kafka.apache.org/documentation/streams/
-[5]: {{< ref "/how-to-daniel.md" >}}
