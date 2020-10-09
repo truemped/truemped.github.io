@@ -6,11 +6,7 @@
     <description>Recent content on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Jun 2019 16:00:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://truemped.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 13 Apr 2020 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Campaigns in Elasticsearch</title>
       <link>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</link>
@@ -77,16 +73,6 @@ A difficult first year As my manager put it in my performance review: the last y
       
       <guid>https://truemped.github.io/posts/retrospection/cw23/</guid>
       <description>I am trying different things at the moment about retro- or introspection for myself. One thing that I know others are doing are weekly mails to all their directs1. I&amp;rsquo;ve also seen this via some form of weekly blog post. My default working mode is transparency so why sending mails to only a few select people when I can also just give them the link. Whomever might be interested later might find this useful - or not.</description>
-    </item>
-    
-    <item>
-      <title>How to: Daniel</title>
-      <link>https://truemped.github.io/how-to-daniel/</link>
-      <pubDate>Mon, 10 Jun 2019 16:00:00 +0200</pubDate>
-      
-      <guid>https://truemped.github.io/how-to-daniel/</guid>
-      <description>Purpose In this document I am storing and collecting my preferred ways of working and what is important to me. The idea is to help me reflect and to jump-start our working relationship by giving you some information about me.
-My role I am working as Engineering Manager in the Search and Discovery organisation. In this role I am evaluated based on the expectations described in How to Excel as Engineering Manager.</description>
     </item>
     
     <item>

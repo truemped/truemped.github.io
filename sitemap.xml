@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://truemped.github.io/</loc>
+    <lastmod>2020-04-13T17:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</loc>
     <lastmod>2020-04-13T17:00:00+02:00</lastmod>
   </url>
@@ -85,16 +90,6 @@
   <url>
     <loc>https://truemped.github.io/posts/retrospection/cw23/</loc>
     <lastmod>2019-06-10T16:25:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/</loc>
-    <lastmod>2019-06-10T16:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://truemped.github.io/how-to-daniel/</loc>
-    <lastmod>2019-06-10T16:00:00+02:00</lastmod>
   </url>
   
   <url>
