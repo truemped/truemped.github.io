@@ -6,7 +6,25 @@
     <description>Recent content in Tags on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2020 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Oct 2020 10:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lean</title>
+      <link>https://truemped.github.io/tags/lean/</link>
+      <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/tags/lean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>limit wip</title>
+      <link>https://truemped.github.io/tags/limit-wip/</link>
+      <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/tags/limit-wip/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>elasticsearch</title>
       <link>https://truemped.github.io/tags/elasticsearch/</link>

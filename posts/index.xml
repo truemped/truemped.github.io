@@ -6,7 +6,16 @@
     <description>Recent content in Posts on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Apr 2020 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Oct 2020 10:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Limiting Work In Progress</title>
+      <link>https://truemped.github.io/posts/mgmt/limiting-wip/</link>
+      <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid>
+      <description>In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it? This is so predominant, that it almost is too easy to just claim:</description>
+    </item>
+    
     <item>
       <title>Campaigns in Elasticsearch</title>
       <link>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</link>
