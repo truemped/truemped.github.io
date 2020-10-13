@@ -1,7 +1,7 @@
 ---
 title: "Limiting Work In Progress"
 date: 2020-10-13T10:00:00+02:00
-draft: true
+draft: false
 toc: false
 images:
 tags: 
@@ -10,50 +10,35 @@ tags:
 ---
 
 In many organizations today there is one thing that almost always is true: there
-are too many things done in parallel and there is too much *work-in-progress*.
-If this is so ubiquitous why is no one doing anything about it? Are people not
-aware or do they not know how to fix it? This is so predominant, that it almost
-is too easy to just claim:
+are too many things done in parallel, there is too much *work-in-progress*,
+everyone is busy but nothing gets done. If this is so ubiquitous why is no one
+doing anything about it? Are people not aware or do they not know how to fix it?
+This is so predominant, that it almost is too easy to just claim:
 
 {{< tweet 1305436790157762563 >}}
 
-After spending quite some time on reading books and articles on this subject I
-conclude for myself that most managers today do not understand that software
-engineering and tech organizations are forms of production lines. As engineers
-we of course reject this narrative, it's creative work and not some stubborn
-repetition of the same task over and over again. But the analogies made in [The
-Phoenix Project][0] and [The Unicorn Project][1] are way too convincing. Having
-gone through what in hindsight almost feels like a text book example of a
-manager applying **exactly** [The Phoenix Project][0] I come to believe that
-this is in fact true.
+One aspect I keep getting back to is the notion of software engineering
+organizations as production lines. As engineer I certainly refused this notion
+because software engineering is *creative* work, not repetitive moves in an
+assembly line. But the analogies made in [The Phoenix Project][0] and [The
+Unicorn Project][1] are way too convincing. Having gone through what in
+hindsight almost feels like a text book example of a manager applying
+**exactly** [The Phoenix Project][0] I come to believe that this is in fact the
+perfect analogy. Today, I fundamentally believe that the difference between a
+manager and a good manager is their level of understanding of it.
 
 One simple blog post is surely not enough to dive into this topic. Many books
 have been written on the subject by people much more experienced than I am. This
 post is about an introduction to the topic, my own experience on it, and an
 invitation to read more about the topic.
 
-# Symptoms of too much WIP
+# Why is too much WIP bad?
 
-The first step to limiting WIP is of course to identify that you are affected by
-it. In the context of a team the first indicator usually is that everyone in the
-team is working on something different. For every engineer in the team there is
-a separate task or even project. Daily stand ups are centered around people not
-work. There are also very few interactions between people during the stand up,
-so everyone just pushes their current status to the group.
-
-The next obvious symptom is that everyone is busy but nothing gets done. In
-Scrum or Kanban you can easily visualize this by introducing a *Waiting for
-Review* state for example. Watch how it will grow over time as people are
-starting new tasks before reviewing other's work.
-
-Usually starting the next task is more important that finishing what is
-basically already finished but just needs a quick *looks good to me (LGTM)*.
-Another side effect of having too much WIP is a decline in the quality of work
-produced. If everyone just quickly adds a *LGTM* to a PR, we miss things and
-certainly do not have the code in the best possible way. Only one person has
-worked on it in an opinionated way.
-
-# Systems Thinking to the rescue
+The first and most important question of course is to understand that having too
+much WIP is in fact bad. With too many projects in flight, the communication
+between individuals increases. Decision making is getting more complex with each
+additional stake-holder involved. And eventually everyone ends up working on the
+topic where the fire is burning most.
 
 I want to illustrate the issue and it's effects using [systems thinking][4] and
 a little turn-based game. This is modeled using Will Larson's [Systems][3]
@@ -138,6 +123,10 @@ This time we are finishing 48 projects!
 
 ![Limiting WIP](limit-wip.png)
 
+Reducing the number of projects started even more does not have any effect at
+this point. The only way to improve the system's output is by adding more
+development effort.
+
 # Key Insights
 
 I want to highlight two key insights here. The first one is that we can improve
@@ -164,6 +153,26 @@ flight will have two effects: there will inherently be a higher quality bar on
 the projects started and there will be more room for small batches to occur
 within teams.
 
+# Symptoms of too much WIP
+
+In the context of a team the first indicator of too much WIP usually is that
+everyone in the team is working on something different. For every engineer in
+the team there is a separate task or even project. Daily stand ups are centered
+around people not work. There are also very few interactions between people
+during the stand up, so everyone just pushes their current status to the group.
+
+The next obvious symptom is that everyone is busy but nothing gets done. In
+Scrum or Kanban you can easily visualize this by introducing a *Waiting for
+Review* state for example. Watch how it will grow over time as people are
+starting new tasks before reviewing other's work.
+
+Usually starting the next task is more important that finishing what is
+basically already finished but just needs a quick *looks good to me (LGTM)*.
+Another side effect of having too much WIP is a decline in the quality of work
+produced. If everyone just quickly adds a *LGTM* to a PR, we miss things and
+certainly do not have the code in the best possible way. Only one person has
+worked on it in an opinionated way.
+
 # Fixing WIP in real life
 
 The practical fixes are of course not as simple as described in the models
@@ -184,7 +193,7 @@ increases which leads to a smaller number of incidents, fewer bugs, and less
 After a few iterations and having recorded the learnings in retrospectives, we
 collectively decided to increase the WIP. This was an important step for me and
 the team: we were slowly learning to work on more than one topic in parallel
-while not sacrificing quality.
+while not sacrificing quality. From there on: rinse and repeat.
 
 # Conclusion
 
