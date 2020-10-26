@@ -14,16 +14,17 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 # disqusShortname = "yourdiscussshortname"
+googleAnalytics = "UA-64224815-1"
 
 # respect some privacy
 [privacy]
   [privacy.disqus]
     disable = true
   [privacy.googleAnalytics]
-    anonymizeIP = false
-    disable = true
-    respectDoNotTrack = false
-    useSessionStorage = false
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+    useSessionStorage = true
   [privacy.instagram]
     disable = false
     simple = false
@@ -83,19 +84,19 @@ pygmentscodefencesguesssyntax = true
 
 [[params.social]]
     name = "Github"
-    icon = "fab fa-github"
+    icon = "fa fa-github"
     weight = 1
     url = "https://github.com/truemped"
 
 [[params.social]]
     name = "Twitter"
-    icon = "fab fa-twitter"
+    icon = "fa fa-twitter"
     weight = 3
     url = "https://twitter.com/truemped"
 
 [[params.social]]
     name = "LinkedIn"
-    icon = "fab fa-linkedin"
+    icon = "fa fa-linkedin"
     weight = 4
     url = "https://www.linkedin.com/in/daniel-truemper"
 
