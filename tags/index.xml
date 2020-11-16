@@ -6,7 +6,25 @@
     <description>Recent content in Tags on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Oct 2020 10:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Nov 2020 11:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>microservice</title>
+      <link>https://truemped.github.io/tags/microservice/</link>
+      <pubDate>Mon, 16 Nov 2020 11:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monolith</title>
+      <link>https://truemped.github.io/tags/monolith/</link>
+      <pubDate>Mon, 16 Nov 2020 11:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/tags/monolith/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>lean</title>
       <link>https://truemped.github.io/tags/lean/</link>

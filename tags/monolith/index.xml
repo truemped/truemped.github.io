@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>monolith on all things considered...</title>
+    <link>https://truemped.github.io/tags/monolith/</link>
+    <description>Recent content in monolith on all things considered...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 16 Nov 2020 11:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/monolith/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monolith to Microservice</title>
+      <link>https://truemped.github.io/posts/engineering/monolith-to-microservice/</link>
+      <pubDate>Mon, 16 Nov 2020 11:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/engineering/monolith-to-microservice/</guid>
+      <description>Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run.</description>
+    </item>
+    
+  </channel>
+</rss>
