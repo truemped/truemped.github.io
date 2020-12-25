@@ -7,6 +7,8 @@ images:
 tags: 
   - microservice
   - monolith
+aliases:
+  - "/posts/engineering/monolith-to-microservice/"
 ---
 
 Why is moving from a monolithic architecture to a microservices based one so
