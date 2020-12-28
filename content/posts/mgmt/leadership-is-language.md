@@ -103,7 +103,7 @@ two-way street and if you want to *get* feedback, especially as a leader, the
 first step is to *provide* feedback.
 
 If the leader needs to tell their subordinates, that they "are open to feedback"
-this might show the opossite. It seems like they do not receive regular feedback
+this might show the opposite. It seems like they do not receive regular feedback
 and maybe need to tell their subordinates to give them feedback. Either way:
 this statement alone made from *a boss* is a the prime example that there
 probably is not a feedback culture.
