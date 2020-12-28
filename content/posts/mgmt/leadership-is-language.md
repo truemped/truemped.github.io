@@ -26,7 +26,7 @@ the subordinates were not capable of convincing the captain to change route. The
 ship sank and all 35 people on board died.
 
 In the domain of tech the consequences usually are not that drastic on an
-individual level. Hopefully no one gets killed because of a bad running projcet.
+individual level. Hopefully no one gets killed because of a bad running project.
 Exceptions like writing software for medical equipment persist of course.
 
 On an organizational level though, the consequences might just be that: life or
