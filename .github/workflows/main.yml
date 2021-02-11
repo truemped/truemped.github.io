@@ -8,6 +8,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: 'source'
+          submodules: 'recursive'
 
       #- name: Update theme
         # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
