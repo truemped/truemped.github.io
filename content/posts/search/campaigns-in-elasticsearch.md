@@ -12,8 +12,8 @@ tags:
 In e-commerce search enabling dynamic prices or campaigns requires some
 attributes to be more volatile than others. A discount on Black Friday that is
 should only be valid between 7 PM and midnight. The flags that promote the
-discount. The teasers on product listings showing what products will be
-discounted, before the discount is in effect. Products that are only discounted
+discount. The teasers on product listings showing what products will have a
+discount, before the discount is in effect. Products that are only discounted
 for a certain customer group.
 
 Traditionally this is solved by updating the documents in the search index.
