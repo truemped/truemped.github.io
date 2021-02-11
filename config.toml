@@ -49,6 +49,7 @@ pygmentscodefencesguesssyntax = true
     info = "Passionate about People, Data and Search"
     #avatarurl = "images/avatar.jpg"
     #footercontent = "Enter a text here."
+    gravatar = "truemped@gmail.com"
 
     dateformat = "January 2, 2006"
 
