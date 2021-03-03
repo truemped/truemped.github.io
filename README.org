@@ -23,7 +23,5 @@ To build the final result, simply run `$ hugo --minify`.
 
 ** Publishing
 
-The `public` directory is, well, public. All files in there will be publicly
-available at https://truemped.github.io. This directory is also a special branch
-in the Github repository. Committing the changes and pushing them will publish
-them.
+The Github Action workflow in `.github/workflows/main.yml` is automatically
+publishing the site when I'm pushing to the repo. So easy!
