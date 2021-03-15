@@ -9,22 +9,21 @@ tags:
   - stream processing
 ---
 
-One of the main concepts I learned when working with services (micro or not) is
-*stateful stream joining*. When moving from a monolithic architecture a new
-problem emerges right away: how do the new services get their data?
+One of the most influential concepts I learned when working with services (micro
+or not) is *stateful stream joining*. When moving to a service oriented
+architecture a new problem emerges right away: how do the new services get their
+data? Instead of one single main database, data governance is distributed
+across the organizational landscape. Multiple teams are responsible for
+different parts of the data. In an e-commerce environment there might be one
+team responsible for the raw product data and another one for the prices. In
+another organization there could be a team responsible for managing product
+visibility for customers.
 
-A naive solution would be to set up read replicas. But in contrast of the
-monolithic architecture where one central piece of code is *writing* data, now a
-lot of services write data into their local databases. Different read replicas
-would need to be setup and custom code would perform the actual data merging.
-This has a number of critical challenges though. The first is the complexity
-inherent in the solution. And complexity begets failure.
-
-The second is how data consumers notice changes and react to it. I have actually
-seen someone publish a *change* event to a queue and then reading the value from
-a read replica. This is obviously a bad idea! Two asynchronous systems involved
-in reacting to change. The event in the queue contains an ID for example which
-is then read from a read replica. At this point it is impossible to know that
-the data contained in the read replica contains the changes from the event in
-the queue.
+There are as many solutions to this issue as there are choices for queuing
+technology today. I have actually seen someone publish a *change* event to a
+queue and then reading the value from a database read replica. This is obviously
+a bad idea! Two asynchronous systems involved in reacting to change. The event
+in the queue contains an ID for example which is then read from a read replica.
+At this point it is impossible to know that the data contained in the read
+replica contains the changes from the event in the queue.
 
