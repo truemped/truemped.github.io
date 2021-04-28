@@ -1,6 +1,7 @@
 ---
 title: "Limiting Work In Progress"
 date: 2020-10-13T10:00:00+02:00
+lastmod: 2020-04-28T10:00:00+02:00
 draft: false
 toc: false
 images:
@@ -8,6 +9,9 @@ tags:
   - limit wip
   - lean
 ---
+
+> **Update**: This post was trending on Hackernews in April 2021. See the
+> [discussion][5].
 
 In many organizations today there is one thing that almost always is true: there
 are too many things done in parallel, there is too much *work-in-progress*,
@@ -211,3 +215,5 @@ It just feels good to always be busy.
 [1]: https://www.goodreads.com/book/show/44333183-the-unicorn-project
 [2]: https://lethain.com/limiting-wip/
 [3]: https://github.com/lethain/systems
+
+[5]: https://news.ycombinator.com/item?id=26759903
