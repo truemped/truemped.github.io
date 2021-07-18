@@ -1,22 +1,24 @@
 ---
 title: "About Me"
 date: 2019-01-07T09:41:34+01:00
+lastmod: 2021-07-18T10:00:00+02:00
 ---
 
-I'm an Engineering Manager with a strong background in Search and Backend
-engineering. Working with [Elasticsearch][0] or [Solr/Lucene][1] is my passion
-and if I get to choose the programming language it's [Clojure][2], although I
-also liked some level of Scala with Finch. Finally, my secret passion is working
-with [Apache Kafka][3] and especially [KafkaStreams][4].
+I'm a Principal Engineer at [Zalando][5] with 13 years of experience as Software
+Engineer, Architect, and Engineering Manager.
 
-In 2018 I transitioned into management. What I had previously considered empty
-phrases became something I value more and more. Things like "we can only win
-together", e.g. I believe this to be even more relevant today. While you can win
-as an individual or a very small team this does not necessarily mean winning
-for the company.
+For the longest time Search is my passion. I have experience in consulting,
+implementing small and large and complex Search systems. Another passion of mine
+is event streaming. Today I'm helping teams to understand, architect, and implement
+tracking systems.
 
-[0]: https://elastic.co
-[1]: https://lucene.apache.org/solr
-[2]: https://clojure.org
-[3]: https://kafka.apache.org
-[4]: https://kafka.apache.org/documentation/streams/
+In 2018 I transitioned into management and worked as Engineering Manager.
+Working with and for people is still the most rewarding thing for me. Helping
+someone grow and uncovering their potential is extremely gratifying.
+
+After learning about the [Theory of Constraints][6] I am trying to understand
+how we can work better and more effectively in the IT industry. This blog is my
+personal effort towards understanding this better.
+
+[5]: https://www.zalando.de
+[6]: https://en.wikipedia.org/wiki/Theory_of_constraints
