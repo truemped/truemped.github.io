@@ -12,3 +12,4 @@ pom.xml.asc
 .lein-failures
 **.swp
 .DS_Store
+/public/
