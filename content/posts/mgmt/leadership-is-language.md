@@ -89,7 +89,7 @@ because a number of factors were at play.
 
 But:
 
-{{< tweet 1144152536808611840 >}}
+{{< tweet ebowman 1144152536808611840 >}}
 
 And it's true. If the broader organization is not good at post-incident handling
 and improving the systems, *not* doing 5-why's is an invitation for getting
@@ -115,7 +115,7 @@ tech][0], "The loudest, most bombastic engineer states their case with
 certainty, and that shuts down discussion." In the presence of a power dynamic I
 would go even further though:
 
-{{< tweet 1292324824530878474 >}}
+{{< tweet shreyas 1292324824530878474 >}}
 
 If the top executive in the company has "strong opinions" it effectively
 destroys creativity.  Everyone will always only want to do things that fit the
