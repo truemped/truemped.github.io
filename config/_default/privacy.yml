@@ -1,0 +1,23 @@
+
+# respect some privacy
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    anonymizeIP: true
+    disable:  false
+    respectDoNotTrack:  true
+    useSessionStorage:  true
+  instagram:
+    disable:  false
+    simple:  false
+  twitter:
+    disable:  false
+    enableDNT:  true
+    simple:  false
+  vimeo:
+    disable:  false
+    simple:  false
+  youtube:
+    disable:  false
+    privacyEnhanced:  false

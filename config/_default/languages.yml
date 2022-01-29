@@ -1,0 +1,13 @@
+
+en:
+  languagename: "English"
+
+  menu:
+    main:
+      - name: "Blog"
+        weight: 1
+        url: "/posts/"
+
+      - name: "About Me"
+        weight: 2
+        url: "/about/"

@@ -1,0 +1,4 @@
+
+# on live I want to track impressions using the goatcounter
+goatCounter:
+  code: "truemped"
