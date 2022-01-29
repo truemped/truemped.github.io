@@ -15,3 +15,8 @@ pygmentscodefences: true
 pygmentscodefencesguesssyntax: true
 
 theme: "hugo-coder"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
