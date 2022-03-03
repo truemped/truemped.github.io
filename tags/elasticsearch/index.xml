@@ -1,3 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>elasticsearch on all things considered...</title><link>https://truemped.github.io/tags/elasticsearch/</link><description>Recent content in elasticsearch on all things considered...</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 13 Apr 2020 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml"/><item><title>Campaigns in Elasticsearch</title><link>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</link><pubDate>Mon, 13 Apr 2020 17:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</guid><description>In e-commerce search enabling dynamic prices or campaigns requires some attributes to be more volatile than others. A discount on Black Friday that is should only be valid between 7 PM and midnight. The flags that promote the discount. The teasers on product listings showing what products will have a discount, before the discount is in effect. Products that are only discounted for a certain customer group.
-Traditionally this is solved by updating the documents in the search index.</description></item><item><title>Elasticsearch DSL-DSL</title><link>https://truemped.github.io/posts/search/elastic-dsl/</link><pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate><guid>https://truemped.github.io/posts/search/elastic-dsl/</guid><description>Elasticsearch is a search server based on Apache Lucene. As a developer it is easy to use, has an expressive query DSL and all is based on JSON serialization. Often though I find myself in a position where I need to adapt queries frequently and non-trivially, say in a demonstration in front of customers or product owners.
-The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if I boost document types Y&amp;rdquo; and so on.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elasticsearch on all things considered...</title>
+    <link>https://truemped.github.io/tags/elasticsearch/</link>
+    <description>Recent content in elasticsearch on all things considered...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 13 Apr 2020 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/elasticsearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Campaigns in Elasticsearch</title>
+      <link>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</link>
+      <pubDate>Mon, 13 Apr 2020 17:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</guid>
+      <description>In e-commerce search enabling dynamic prices or campaigns requires some attributes to be more volatile than others. A discount on Black Friday that is should only be valid between 7 PM and midnight. The flags that promote the discount. The teasers on product listings showing what products will have a discount, before the discount is in effect. Products that are only discounted for a certain customer group.
+Traditionally this is solved by updating the documents in the search index.</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch DSL-DSL</title>
+      <link>https://truemped.github.io/posts/search/elastic-dsl/</link>
+      <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/posts/search/elastic-dsl/</guid>
+      <description>Elasticsearch is a search server based on Apache Lucene. As a developer it is easy to use, has an expressive query DSL and all is based on JSON serialization. Often though I find myself in a position where I need to adapt queries frequently and non-trivially, say in a demonstration in front of customers or product owners.
+The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if I boost document types Y&amp;rdquo; and so on.</description>
+    </item>
+    
+  </channel>
+</rss>

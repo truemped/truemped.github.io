@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>psychological safety on all things considered...</title><link>https://truemped.github.io/tags/psychological-safety/</link><description>Recent content in psychological safety on all things considered...</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 07 Apr 2021 09:50:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/psychological-safety/index.xml" rel="self" type="application/rss+xml"/><item><title>On Psychological Safety</title><link>https://truemped.github.io/posts/mgmt/psychological-safety/</link><pubDate>Wed, 07 Apr 2021 09:50:00 +0200</pubDate><guid>https://truemped.github.io/posts/mgmt/psychological-safety/</guid><description>More and more work involves collaboration. Multiple people working in a team on the same thing that is becoming ever more complex. What does this mean for an organization? Information and knowledge, especially in the technology domain, is becoming a commodity. All the best technical tools to build your next Google is just a Google search away. In the age of digital products, market access is getting cheaper every day. This increases the importance of the team and their effectiveness as it becomes a company&amp;rsquo;s unique selling point.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>psychological safety on all things considered...</title>
+    <link>https://truemped.github.io/tags/psychological-safety/</link>
+    <description>Recent content in psychological safety on all things considered...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 Apr 2021 09:50:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/psychological-safety/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Psychological Safety</title>
+      <link>https://truemped.github.io/posts/mgmt/psychological-safety/</link>
+      <pubDate>Wed, 07 Apr 2021 09:50:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/mgmt/psychological-safety/</guid>
+      <description>More and more work involves collaboration. Multiple people working in a team on the same thing that is becoming ever more complex. What does this mean for an organization? Information and knowledge, especially in the technology domain, is becoming a commodity. All the best technical tools to build your next Google is just a Google search away. In the age of digital products, market access is getting cheaper every day. This increases the importance of the team and their effectiveness as it becomes a company&amp;rsquo;s unique selling point.</description>
+    </item>
+    
+  </channel>
+</rss>

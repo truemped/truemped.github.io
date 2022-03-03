@@ -1,2 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lean on all things considered...</title><link>https://truemped.github.io/tags/lean/</link><description>Recent content in lean on all things considered...</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 13 Oct 2020 10:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/lean/index.xml" rel="self" type="application/rss+xml"/><item><title>Limiting Work In Progress</title><link>https://truemped.github.io/posts/mgmt/limiting-wip/</link><pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid><description>Update: This post was trending on Hackernews in April 2021. See the discussion.
-In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lean on all things considered...</title>
+    <link>https://truemped.github.io/tags/lean/</link>
+    <description>Recent content in lean on all things considered...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 13 Oct 2020 10:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/lean/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Limiting Work In Progress</title>
+      <link>https://truemped.github.io/posts/mgmt/limiting-wip/</link>
+      <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid>
+      <description>Update: This post was trending on Hackernews in April 2021. See the discussion.
+ In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
+    </item>
+    
+  </channel>
+</rss>
