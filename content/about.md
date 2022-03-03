@@ -21,9 +21,9 @@ After learning about the [Theory of Constraints][6] I am trying to understand
 how we can work better and more effectively in the IT industry. This blog is my
 personal effort towards understanding this better.
 
-I am collecting core [Ideas & Concepts]({{< relref "/ideas-concepts.md" >}})
-that influenced my thinking and my actions. I use them as reference in my blog
-posts.
+I am collecting core [Ideas & Concepts][0] that influenced my thinking and my
+actions. I use them as reference in my blog posts.
 
+[0]: {{< relref "/ideas-concepts.md" >}}
 [5]: https://www.zalando.de
 [6]: https://en.wikipedia.org/wiki/Theory_of_constraints

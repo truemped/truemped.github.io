@@ -21,8 +21,7 @@ and establishing itself as an e-commerce store.  Through the story the main
 character learns and describes different aspects of managing teams and projects.
 The influences are obvious: the Toyota Production System, Lean Processes, the
 Theory of Constraints. And the novel itself was heavily influenced by Eliyahu
-Goldratt's [The Goal][2] and the [Theory of Constraints]({{<
-relref "#theory-of-constraints" >}}).
+Goldratt's [The Goal][2] and the [Theory of Constraints][5].
 
 ## Fast Flow
 
@@ -242,6 +241,14 @@ from *custom-built* to *commodity* by productizing the custom solutions. And
 finally the *town planners* are working with commodity products and scale
 products across the whole organization or maybe even industry.
 
+# Small Batches
+
+This idea is highly connected to the [Theory of Constraints][5]. The larger
+batches you send through a system, the more difficult it is to deliver. This
+works in so many different areas that I'll cover in different aspects in my
+posts.
+
+
 [0]: https://www.goodreads.com/book/show/44333183-the-unicorn-project
 
 [1]: https://www.goodreads.com/book/show/17255186-the-phoenix-project
@@ -251,3 +258,5 @@ products across the whole organization or maybe even industry.
 [3]: https://www.goodreads.com/book/show/44135420-team-topologies
 
 [4]: https://medium.com/wardleymaps
+
+[5]: {{< relref "#theory-of-constraints" >}}
