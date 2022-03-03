@@ -3,7 +3,6 @@ title: "Ideas and Concepts"
 date: 2022-03-03T08:30:00+01:00
 draft: false
 comments: false
-toc: true
 images:
 ---
 
