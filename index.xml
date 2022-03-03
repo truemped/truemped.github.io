@@ -8,6 +8,16 @@
     <language>en</language>
     <lastBuildDate>Wed, 07 Apr 2021 09:50:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ideas and Concepts</title>
+      <link>https://truemped.github.io/ideas-concepts/</link>
+      <pubDate>Thu, 03 Mar 2022 08:30:00 +0100</pubDate>
+      
+      <guid>https://truemped.github.io/ideas-concepts/</guid>
+      <description>I have come across a number of ideas and core concepts that have influenced my thinking. They cover areas of building Software, designing teams and organizations, decision-making, and mental models. On this page I&amp;rsquo;m keeping a reference to them and will link to background material. My idea is to keep references to the in my blog posts.
+The Three Ways    The three ways are a concept or idea introduced in The Phoenix Project, by Gene Kim, Kevin Behr, and George Spafford.</description>
+    </item>
+    
+    <item>
       <title>On Psychological Safety</title>
       <link>https://truemped.github.io/posts/mgmt/psychological-safety/</link>
       <pubDate>Wed, 07 Apr 2021 09:50:00 +0200</pubDate>
