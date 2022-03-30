@@ -1,7 +1,7 @@
 ---
 title: "Cities of Software"
-date: 2022-03-30T8:50:00+01:00
-draft: true
+date: 2022-03-30T17:00:00+01:00
+draft: false
 toc: false
 images:
 tags: 
@@ -39,10 +39,10 @@ streets within a block, but by design small ones.
 
 # The design of the streets dictate the effectiveness of the city
 
-A too small street between two important blocks, limits the interaction between
+A too small street between two important blocks limits the interaction between
 the blocks and has crippling effects on other blocks. If the trucks and cars
 cannot use the street between two blocks, they might have to make detours to get
-to their destination. If the street does not even exist, it needs to be build,
+to their destination. If the street does not even exist, it needs to be built,
 possibly replacing other infrastructure or even blocks.
 
 Some trucks might have been designed in another country and are not even allowed
@@ -51,10 +51,17 @@ cross that bridge?
 
 # How streets look like in Software
 
-In Software (-architecture for that matter) there are two different types of
+Just as the streets of a city define it's shape for decades, the design of the
+data flow in an organization defines it's shape for a considerable amount of
+time. This part of the architecture must have a careful design and not manifest
+itself by accident and happenstance. The result of this design will outlast a
+number of organizational changes in the future. And even enable them, or make
+them hard.
+
+In software (-architecture for that matter) there are two different types of
 streets that people build: APIs and Event Streams. APIs are a simple way for
 system A to provide a service for other systems to consume or leverage. For
-example a system that exposes if an article is in stock, or the current price of
+example, a system that exposes if an article is in stock, or the current price of
 that article.
 
 In an Event Streaming environment, system A would publish an event describing
@@ -92,16 +99,16 @@ What happens over time is as we move on, build new features, change strategies
 and course, we keep adding more APIs. We add more calls to the system in order
 to get the data we need for the new feature to work.
 
-Eventually we end up with a call graph so complex, that hardly any single
+Eventually we end up with a call graph so complex that hardly any single
 engineer can still understand how all of this actually works. Suddenly, this one
 request the user issued, is calling 10, 20, 30 different APIs. How do you debug
-latency issues? Evolve the different SLOs over time is a challenge -- they all
+latency issues? Evolving the different SLOs over time is a challenge -- they all
 depend on one another. And how do you remove this one API in the middle?
 
 Debugging latency is simple: we add distributed tracing. Another vendor,
 additional technology that provides us a filtered view on what is going on,
-because the amount of tracing data would explode any cloud storage. And those
-systems are not really cheap as well.
+because the amount of tracing data would explode any cloud storage. Those
+systems are not really cheap as well. And you need all teams to implement it.
 
 Teams negotiate their SLOs and their rate limits. Maybe we reach a stable state
 and everything works. But then the next change is around the corner. SLOs and
@@ -115,15 +122,15 @@ it is required. The complexity for the API provider increases with every new
 feature. Maintenance and improvements are getting more difficult. And for use
 case A the latency profile might be a match, but use case B requires the
 response in a tenth of the latency. The technology choices might not match
-anymore, only a different storage systems for the two use cases can match the
+anymore, only a different storage system for the two use cases can match the
 competing requirements.
 
 ## Events first
 
 An alternative to this is to design the streets as a stream of events. These
 events describe the data when it was created, updated, or deleted. And they
-follow a centrally available schema model. Clients that require the data can simply
-pull this schema from the "schema registry".
+follow a centrally available schema model. Clients that require the data need
+the schema which they can simply pull from the "schema registry".
 
 Clever schema implementations can even allow for decentralized schema changes as
 long as they are compatible.  Depending on how careful you design and evolve
@@ -158,13 +165,13 @@ city block.
 # What now?
 
 Over time, we have created these literate _big balls of mud_, an illusion of a
-Microservices architecture, that promised autonomy. Instead, we got endless
+microservice architecture, that promised autonomy. Instead, we got endless
 alignment. We need to untangle this if we want to enable change. The more we
 bake our assumptions into code and relationships between APIs, the harder change
 becomes.
 
 The gist of this is: focus on designing the streets. The way data flows through
-an organization and its systems is the bottleneck in regards to change. The more
+an organization and its systems is the bottleneck in regard to change. The more
 complex this flow is, the more difficult change becomes. And change is
 inevitable.
 
