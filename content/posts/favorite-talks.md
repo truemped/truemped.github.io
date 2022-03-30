@@ -11,7 +11,7 @@ Earlier this month Monica Lent published a list of
 and some have influenced me pretty heavily. Especially [Simple made Easy][3] by
 Rich Hickey. To these I'd like to add a few from my list of favorite talks.
 
-## [Full Stack Awareness][1]
+## Full Stack Awareness
 
 In this, Arthur Bergman rants about how everything is broken. We, as engineers,
 are so used to just connect a few systems and the new feature is working. We
@@ -20,7 +20,7 @@ the operating system work.
 
 {{< youtube oebqlzblfyo >}}
 
-## [Stop Rate Limiting! Capacity Management Done Right][2]
+## Stop Rate Limiting! Capacity Management Done Right
 
 A very nice introduction into [Little's Law][5] and how often times rate
 limiting your backend is actually a bad idea. When protecting your backend
@@ -34,7 +34,7 @@ There is also a nice implementation of the algorithm in Elasticsearch called
 
 {{< youtube m64SWl9bfvk >}}
 
-## [How NOT to Measure Latency][4]
+## How NOT to Measure Latency
 
 Measuring and reporting latency is commonly based on percentiles. The problem
 here is that we are happy with reporting this one data point for our system.
@@ -45,6 +45,14 @@ is very high.
 
 {{< youtube lJ8ydIuPFeU >}}
 
+## Turning the database inside out with Apache Samza
+
+To my knowledge the first talk describing a event streaming system based on
+Change Data Capture. It shaped the way I'm thinking about how data flows through
+an organization.
+
+{{< youtube fU9hR3kiOK0 >}}
+
 [0]: https://monicalent.com/blog/2019/01/01/favorite-programming-talks/
 [1]: https://youtu.be/oebqlzblfyo
 [2]: https://youtu.be/m64SWl9bfvk
@@ -52,3 +60,4 @@ is very high.
 [4]: https://youtu.be/lJ8ydIuPFeU
 [5]: https://en.wikipedia.org/wiki/Little%27s_law
 [6]: https://www.elastic.co/blog/improving-response-latency-in-elasticsearch-with-adaptive-replica-selection
+[7]: https://www.youtube.com/watch?v=fU9hR3kiOK0
