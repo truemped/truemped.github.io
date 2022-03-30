@@ -2,19 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://truemped.github.io/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/change/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/posts/engineering/cities-of-software/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/event-streaming/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/lean/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/microservice/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/posts/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/</loc>
+    <lastmod>2022-03-30T17:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://truemped.github.io/posts/a-year-of-silence/</loc>
     <lastmod>2022-03-03T14:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/</loc>
-    <lastmod>2022-03-03T14:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://truemped.github.io/posts/</loc>
-    <lastmod>2022-03-03T14:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://truemped.github.io/tags/small-batches/</loc>
-    <lastmod>2022-03-03T14:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://truemped.github.io/tags/</loc>
     <lastmod>2022-03-03T14:00:00+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/writing/</loc>
@@ -53,17 +68,11 @@
     <loc>https://truemped.github.io/posts/mgmt/leadership-is-language/</loc>
     <lastmod>2020-12-28T17:50:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/tags/microservice/</loc>
-    <lastmod>2020-11-16T11:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://truemped.github.io/tags/monolith/</loc>
     <lastmod>2020-11-16T11:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/posts/mgmt/monolith-to-microservice/</loc>
     <lastmod>2020-11-16T11:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://truemped.github.io/tags/lean/</loc>
-    <lastmod>2020-04-28T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/limit-wip/</loc>
     <lastmod>2020-04-28T10:00:00+02:00</lastmod>

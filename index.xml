@@ -6,7 +6,17 @@
     <description>Recent content on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Mar 2022 14:00:00 +0100</lastBuildDate><atom:link href="https://truemped.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Mar 2022 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cities of Software</title>
+      <link>https://truemped.github.io/posts/engineering/cities-of-software/</link>
+      <pubDate>Wed, 30 Mar 2022 17:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/engineering/cities-of-software/</guid>
+      <description>Cities are an interesting way to think about Software. Cities have foundations, like infrastructure for cars, electricity. Housing for people to live and work. Stores to sell and buy goods. Also, Cities are often referred to as an organism. Just like a large organization, a department, or a team are an organism. But these organisms are building software.
+I first came across this idea in Mikio Braun&amp;rsquo;s post on Everyone Is Still Terrible At Creating Software:</description>
+    </item>
+    
     <item>
       <title>A Year of Silence</title>
       <link>https://truemped.github.io/posts/a-year-of-silence/</link>
