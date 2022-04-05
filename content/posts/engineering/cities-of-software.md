@@ -4,12 +4,16 @@ date: 2022-03-30T17:00:00+02:00
 draft: false
 toc: false
 images:
+  - https://cdn-images-1.medium.com/max/1600/0*etrPjJWOCu7ZNlDa
 tags: 
   - change
   - lean
   - event-streaming
   - microservice
 ---
+
+{{< figure src="https://cdn-images-1.medium.com/max/1600/0*etrPjJWOCu7ZNlDa" caption="Photo by [Adrian Schwarz](https://unsplash.com/@aeschwarz) on [Unsplash](https://unsplash.com)">}}
+
 
 Cities are an interesting way to think about Software. Cities have foundations,
 like infrastructure for cars, electricity. Housing for people to live and work.
