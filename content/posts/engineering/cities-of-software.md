@@ -12,7 +12,8 @@ tags:
   - microservice
 ---
 
-{{< figure src="https://cdn-images-1.medium.com/max/1600/0*etrPjJWOCu7ZNlDa" caption="Photo by [Adrian Schwarz](https://unsplash.com/@aeschwarz) on [Unsplash](https://unsplash.com)">}}
+{{< figure src="/images/posts/engineering/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash.jpg"
+    caption="Photo by [Adrian Schwarz](https://unsplash.com/@aeschwarz) on [Unsplash](https://unsplash.com)">}}
 
 
 Cities are an interesting way to think about Software. Cities have foundations,
