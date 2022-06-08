@@ -4,7 +4,7 @@ date: 2022-03-30T17:00:00+02:00
 draft: false
 toc: false
 images:
-  - https://cdn-images-1.medium.com/max/1600/0*etrPjJWOCu7ZNlDa
+  - /posts/engineering/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash.jpg
 tags: 
   - change
   - lean
@@ -12,8 +12,8 @@ tags:
   - microservice
 ---
 
-{{< figure src="/images/posts/engineering/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash.jpg"
-    caption="Photo by [Adrian Schwarz](https://unsplash.com/@aeschwarz) on [Unsplash](https://unsplash.com)">}}
+{{< figure src="/posts/engineering/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash.jpg"
+    caption="Photo by [Adrian Schwarz](https://unsplash.com/@aeschwarz) on [Unsplash](https://unsplash.com/photos/XS7q-baZrmE)">}}
 
 
 Cities are an interesting way to think about Software. Cities have foundations,
