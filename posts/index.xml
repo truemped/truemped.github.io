@@ -6,7 +6,18 @@
     <description>Recent content in Posts on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Mar 2022 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jul 2022 15:28:45 +0200</lastBuildDate><atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buy versus Build</title>
+      <link>https://truemped.github.io/posts/mgmt/buy-vs-build/</link>
+      <pubDate>Tue, 26 Jul 2022 15:28:45 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/mgmt/buy-vs-build/</guid>
+      <description>Photo by Ivan Henao on Unsplash
+  This is maybe the most complex question that is never asked in the interview process in tech. And to my understanding not even on a managerial level. But it is such an interesting one to discuss! There might be no right or wrong. But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.
+This one here is mine.</description>
+    </item>
+    
     <item>
       <title>Cities of Software</title>
       <link>https://truemped.github.io/posts/engineering/cities-of-software/</link>
