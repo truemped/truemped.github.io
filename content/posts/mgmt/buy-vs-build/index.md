@@ -4,6 +4,7 @@ date: 2022-07-26T15:28:45+02:00
 draft: false
 toc: false
 images:
+  - /posts/mgmt/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash.jpg
 tags: 
   - strategy
   - business
@@ -46,6 +47,7 @@ A good introduction to Wardley mapping is this thread by the man himself:
 
 {{< tweet swardley 1550514919530934273 >}}
 
+How does this all translate into a buy versus build decision?
 Capabilities that exist and are easy to get access to are nothing you would want to build yourself.
 _Cloud Computing_ is giving access to data centers for everyone and you are likely much better off not building a data center before writing code.
 The same is true for project planning _products_ that are easy to use and buy.
@@ -54,18 +56,19 @@ You should concentrate your building efforts on the left side of the map.
 Focus on the **genesis**, or **custom build** capabilities.
 Capabilities that exist and are freely available to buy, will likely not differentiate you from the rest.
 
+{{< figure src="/posts/mgmt/buy-vs-build/wardley.png" caption="Buy vs. Build in a Wardley Map" >}}
+
 # Evolution
 
 What is sometimes overlooked is that a Wardley map is always a visualization of a specific point in time.
 Evolution is visible on the horizontal axis.
 But evolution, well, it evolves.
-What is a custom built solution today, can become a commodity in a year.
+What is a custom built solution today, can become a product in a year.
 
-But if you have now built the whole system too integrated, it is complicated to replace parts of it.
+But if you have now built the system too integrated, replacing it is complex.
 And I don't mean microservices.
 Basic abstractions.
 Those you also have in a large single repo code base.
-The biggest myth I have ever seen is that microservices solve your execution problems.
 
 Make sure you design the system with the right fracture planes in place.
 Between the different capabilities.
