@@ -230,6 +230,10 @@ customer. Trivial examples for this could be the decision to invest into a cloud
 solution, or build your own data center. I would argue there are only select
 companies in the world that should actually build their own data centers.
 
+A good introduction to Wardley mapping is this thread by the man himself:
+
+{{< tweet swardley 1550514919530934273 >}}
+
 ## Pioneers, Settlers, Town Planners
 
 Similarly to the notion of component maturity, Wardley introduces the different

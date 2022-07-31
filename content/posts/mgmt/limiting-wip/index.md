@@ -8,6 +8,7 @@ images:
 tags: 
   - limit wip
   - lean
+  - engineering effectiveness
 ---
 
 > **Update**: This post was trending on Hackernews in April 2021. See the
