@@ -63,7 +63,7 @@ Capabilities that exist and are freely available to buy, will likely not differe
 What is sometimes overlooked is that a Wardley map is always a visualization of a specific point in time.
 Evolution is visible on the horizontal axis.
 But evolution, well, it evolves.
-What is a custom built solution today, can become a product in a year.
+What is a custom-built solution today, can become a product in a year.
 
 If we now have built the system too integrated, replacing it later becomes complex.
 And I don't mean microservices.
@@ -95,12 +95,12 @@ The amount of work required to keep the capability from deteriorating.
 The technical debt incurred by not working on the code.
 Not Updating libraries.
 Not Fixing security problems.
-Until we have to and then it becomes a tricky problem.
+Until we have to, and then it becomes a tricky problem.
 Likely the engineers that originally built this moved on to other teams or companies.
 We need to decide to either pay back an enormous amount of tech debt, rebuild it again, or buy it this time.
 
 But when we buy, *costs* can become as well.
-The first contract runs out and we have to negotiate a new one.
+The first contract runs out, and we have to negotiate a new one.
 I mean: if we are the vendor, we would likely increase our price after the first contract runs out.
 We as the vendor are fully aware of the costs of change for the client.
 
@@ -109,26 +109,26 @@ We as the vendor are fully aware of the costs of change for the client.
 By using a vendor we also incur risks that would otherwise not be present.
 Risks of a vendor going bankrupt.
 Or being acquired.
-The management might change and the new contract has a drastically increased price structure.
+The management might change, and the new contract has a drastically increased price structure.
 
 But I think there will always be risks.
 In both cases actually: buying **and** building.
 But if we focus too much on the risks of buying, we underestimate the risks of building.
 And then suffer from the **not invented here syndrome**
 
-# Take Aways
+# Takeaways
 
-The most important part of this decision is too look at the value creation.
+The most important part of this decision is to look at the value creation.
 Where and how is value (aka money) created in our business?
 Those in _genesis_ we definitely build ourselves.
-And capabilities somewhere in or between _custom built_ and _product_ are worth exploring further.
+And capabilities somewhere in or between _custom-built_ and _product_ are worth exploring further.
 
 With this at hand we should also be able to put a price tag on a certain capability.
 This price tag should allow us to compare offerings on the market.
 And assess our capability and willingness to invest into building it ourselves.
 
 But when we build, we have to use all the clever tech available to us.
-Of course it is important to use good technologies, great algorithms and data structures.
+Of course, it is important to use good technologies, great algorithms and data structures.
 But I think they mainly control our cost structure.
 The bottom line.
 Use them where they bring the most value.
