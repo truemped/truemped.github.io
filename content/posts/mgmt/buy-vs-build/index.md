@@ -1,7 +1,7 @@
 ---
 title: "Buy versus Build"
 date: 2022-07-26T15:28:45+02:00
-lastmod: 2022-07-31T11:55:45+02:00
+lastmod: 2022-08-06T21:05:45+02:00
 draft: false
 toc: false
 images:
@@ -9,6 +9,19 @@ images:
 tags: 
   - strategy
   - business
+description:
+  A post in which I describe my mental model for what to buy and what to build in software and technology business.
+  Analysis using Wardley Maps helps us understand how we can be most effective in business.
+  I claim we underestimate the total cost of ownership.
+  And over-index on risks of buying so we end up in a not-invented-here syndrome.
+keywords:
+  - buy
+  - build
+  - buy vs build
+  - business
+  - strategy
+  - technology
+  - analysis
 ---
 
 {{< figure src="/posts/mgmt/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash.jpg"
