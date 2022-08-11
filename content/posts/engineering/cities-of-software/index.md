@@ -12,7 +12,7 @@ tags:
   - microservice
 ---
 
-{{< figure src="/posts/engineering/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash.jpg"
+{{< figure src="adrian-schwarz-XS7q-baZrmE-unsplash.jpg"
     caption="Photo by [Adrian Schwarz](https://unsplash.com/@aeschwarz) on [Unsplash](https://unsplash.com/photos/XS7q-baZrmE)">}}
 
 

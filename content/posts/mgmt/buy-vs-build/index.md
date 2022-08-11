@@ -24,7 +24,7 @@ keywords:
   - analysis
 ---
 
-{{< figure src="/posts/mgmt/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash.jpg"
+{{< figure src="ivan-henao-04rZ7R1fKhY-unsplash.jpg"
     caption="Photo by [Ivan Henao](https://unsplash.com/@ivanchenao) on [Unsplash](https://unsplash.com/photos/04rZ7R1fKhY)">}}
 
 This is maybe the most complex question that is never asked in the interview process in tech.
@@ -69,7 +69,7 @@ We have to concentrate our building efforts on the left side of the map.
 Focus on the **genesis**, or **custom build** capabilities.
 Capabilities that exist and are freely available to buy, will likely not differentiate us from the rest.
 
-{{< figure src="/posts/mgmt/buy-vs-build/wardley.png" caption="Buy vs. Build in a Wardley Map" >}}
+{{< figure src="wardley.png" caption="Buy vs. Build in a Wardley Map" >}}
 
 # Evolution
 
