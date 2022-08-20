@@ -14,8 +14,8 @@
       
       <guid>https://truemped.github.io/posts/mgmt/buy-vs-build/</guid>
       <description>Photo by Ivan Henao on Unsplash
-This is maybe the most complex question that is never asked in the interview process in tech. And often not even on a managerial level. But: it is such an interesting one to discuss! There might be no right or wrong. But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.
-This one here is mine. Today. One that might change in the years to come.</description>
+  This is maybe the most complex question that is never asked in the interview process in tech. And often not even on a managerial level. But: it is such an interesting one to discuss! There might be no right or wrong. But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.
+This one here is mine.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@ This one here is mine. Today. One that might change in the years to come.</descr
       
       <guid>https://truemped.github.io/posts/engineering/cities-of-software/</guid>
       <description>Photo by Adrian Schwarz on Unsplash
-Cities are an interesting way to think about Software. Cities have foundations, like infrastructure for cars, electricity. Housing for people to live and work. Stores to sell and buy goods. Also, Cities are often referred to as an organism. Just like a large organization, a department, or a team are an organism. But these organisms are building software.
+  Cities are an interesting way to think about Software. Cities have foundations, like infrastructure for cars, electricity. Housing for people to live and work. Stores to sell and buy goods. Also, Cities are often referred to as an organism. Just like a large organization, a department, or a team are an organism. But these organisms are building software.
 I first came across this idea in Mikio Braun&amp;rsquo;s post on Everyone Is Still Terrible At Creating Software:</description>
     </item>
     
@@ -46,7 +46,7 @@ To be honest, right now it feels strange to think about how we could build softw
       
       <guid>https://truemped.github.io/ideas-concepts/</guid>
       <description>I have come across a number of ideas and core concepts that have influenced my thinking. They cover areas of building Software, designing teams and organizations, decision-making, and mental models. On this page I&amp;rsquo;m keeping a reference to them and will link to background material. My idea is to keep references to the in my blog posts.
-The Three Ways The three ways are a concept or idea introduced in The Phoenix Project, by Gene Kim, Kevin Behr, and George Spafford.</description>
+The Three Ways    The three ways are a concept or idea introduced in The Phoenix Project, by Gene Kim, Kevin Behr, and George Spafford.</description>
     </item>
     
     <item>
@@ -66,7 +66,7 @@ The Three Ways The three ways are a concept or idea introduced in The Phoenix Pr
       <guid>https://truemped.github.io/posts/engineering/tailscale/</guid>
       <description>Last Friday I got to know Tailscale by a complete coincidence. Someone I follow on twitter mentioned it:
 Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like how git was compared to previous scm. And Tailscale is Wireguard&amp;#39;s Github. Makes it accessible to the masses.
-&amp;mdash; Carlo Cabanilla 🌻 (@clofresh) February 12, 2021 What can I say: it blew my mind! I always wanted to setup a VPN connection between my droplet and my NAS at home for backups.</description>
+&amp;mdash; Carlo Cabanilla 🌻 (@clofresh) February 12, 2021  What can I say: it blew my mind! I always wanted to setup a VPN connection between my droplet and my NAS at home for backups.</description>
     </item>
     
     <item>
@@ -95,7 +95,7 @@ The main theme across the book is the sinking of a ship called El Faro caused by
       
       <guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid>
       <description>Update: This post was trending on Hackernews in April 2021. See the discussion.
-In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
+ In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
     </item>
     
     <item>
@@ -144,7 +144,7 @@ Until now I have mostly been the reading type of person. Back in school I&amp;rs
       
       <guid>https://truemped.github.io/posts/mgmt/providing-difficult-feedback/</guid>
       <description>When moving from an individual contributor role into management, the biggest challenge for me was to provide difficult feedback. This might have been bigger for me compared to others as within a very short period of time a number of my colleagues and peers suddenly started to report to me. Looking back at 2019 overcoming this has been my biggest personal achievement.
-What is ruinous empathy? One of the books I read in 2019 is Radical Candor, a &amp;ldquo;new management philosophy&amp;rdquo;.</description>
+What is ruinous empathy?    One of the books I read in 2019 is Radical Candor, a &amp;ldquo;new management philosophy&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -154,7 +154,7 @@ What is ruinous empathy? One of the books I read in 2019 is Radical Candor, a &a
       
       <guid>https://truemped.github.io/posts/retrospection/first-year/</guid>
       <description>About a year ago I transitioned into management. I changed my role from Senior Software Developer to Engineering Lead in Zalando. In this post I want to share my experience, good and bad, things that went well, where I screwed up and what I&amp;rsquo;m taking from it.
-A difficult first year As my manager put it in my performance review: the last year was one of my most challenging ones. And he was right.</description>
+A difficult first year    As my manager put it in my performance review: the last year was one of my most challenging ones.</description>
     </item>
     
     <item>
@@ -174,7 +174,7 @@ Last year was a challenge for me as so many things happened that impacted my wor
       
       <guid>https://truemped.github.io/posts/favorite-talks/</guid>
       <description>Earlier this month Monica Lent published a list of Tech talks that&amp;rsquo;ll change how you think. Every one on this list is awesome and some have influenced me pretty heavily. Especially Simple made Easy by Rich Hickey. To these I&amp;rsquo;d like to add a few from my list of favorite talks.
-Full Stack Awareness In this, Arthur Bergman rants about how everything is broken. We, as engineers, are so used to just connect a few systems and the new feature is working.</description>
+Full Stack Awareness    In this, Arthur Bergman rants about how everything is broken. We, as engineers, are so used to just connect a few systems and the new feature is working.</description>
     </item>
     
     <item>
