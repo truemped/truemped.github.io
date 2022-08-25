@@ -1,157 +1,46 @@
-<!doctype html><html lang=en>
-<head>
-<title>
-Monolith to Microservice · all things considered...
-</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=color-scheme content="light dark">
-<meta name=author content="Daniel Truemper">
-<meta name=description content="Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run.">
-<meta name=keywords content="blog,developer,personal,engineering management,leadership">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Monolith to Microservice">
-<meta name=twitter:description content="Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run.">
-<meta property="og:title" content="Monolith to Microservice">
-<meta property="og:description" content="Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://truemped.github.io/posts/mgmt/monolith-to-microservice/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-11-16T11:00:00+02:00">
-<meta property="article:modified_time" content="2020-11-16T11:00:00+02:00">
-<link rel=canonical href=https://truemped.github.io/posts/mgmt/monolith-to-microservice/>
-<link rel=preload href="https://truemped.github.io/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
-<link rel=stylesheet href=https://truemped.github.io/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin=anonymous media=screen>
-<link rel=stylesheet href=https://truemped.github.io/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css integrity="sha256-OeQafxa9+MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin=anonymous media=screen>
-<link rel=icon type=image/png href=https://truemped.github.io/images/favicon-32x32.png sizes=32x32>
-<link rel=icon type=image/png href=https://truemped.github.io/images/favicon-16x16.png sizes=16x16>
-<link rel=apple-touch-icon href=https://truemped.github.io/images/apple-touch-icon.png>
-<link rel=apple-touch-icon sizes=180x180 href=https://truemped.github.io/images/apple-touch-icon.png>
-<link rel=manifest href=https://truemped.github.io/site.webmanifest>
-<link rel=mask-icon href=https://truemped.github.io/images/safari-pinned-tab.svg color=#5bbad5>
-<meta name=generator content="Hugo 0.92.0">
-</head>
-<body class="preload-transitions colorscheme-auto">
-<div class=float-container>
-<a id=dark-mode-toggle class=colorscheme-toggle>
-<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
-</a>
-</div>
-<main class=wrapper>
-<nav class=navigation>
-<section class=container>
-<a class=navigation-title href=https://truemped.github.io/>
-all things considered...
-</a>
+<!doctype html><html lang=en><head><title>Monolith to Microservice · all things considered...</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Daniel Truemper"><meta name=description content="Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run."><meta name=keywords content="blog,developer,personal,engineering management,leadership"><meta name=twitter:card content="summary"><meta name=twitter:title content="Monolith to Microservice"><meta name=twitter:description content="Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run."><meta property="og:title" content="Monolith to Microservice"><meta property="og:description" content="Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run."><meta property="og:type" content="article"><meta property="og:url" content="https://truemped.github.io/posts/mgmt/monolith-to-microservice/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-11-16T11:00:00+02:00"><meta property="article:modified_time" content="2020-11-16T11:00:00+02:00"><link rel=canonical href=https://truemped.github.io/posts/mgmt/monolith-to-microservice/><link rel=preload href="https://truemped.github.io/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://truemped.github.io/css/coder.min.c4d7e93a158eda5a65b3df343745d2092a0a1e2170feeec909b8a89443903c6a.css integrity="sha256-xNfpOhWO2lpls980N0XSCSoKHiFw/u7JCbiolEOQPGo=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://truemped.github.io/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css integrity="sha256-OeQafxa9+MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=https://truemped.github.io/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://truemped.github.io/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=https://truemped.github.io/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=https://truemped.github.io/images/apple-touch-icon.png><link rel=manifest href=https://truemped.github.io/site.webmanifest><link rel=mask-icon href=https://truemped.github.io/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.101.0"></head><body class="preload-transitions colorscheme-auto"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://truemped.github.io/>all things considered...</a>
 <input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle>
-<i class="fa fa-bars fa-fw" aria-hidden=true></i>
-</label>
-<ul class=navigation-list>
-<li class=navigation-item>
-<a class=navigation-link href=https://truemped.github.io/about/>About Me</a>
-</li>
-<li class=navigation-item>
-<a class=navigation-link href=https://truemped.github.io/posts/>Blog</a>
-</li>
-<li class=navigation-item>
-<a class=navigation-link href=https://truemped.github.io/ideas-concepts/>Ideas & Concepts</a>
-</li>
-</ul>
-</section>
-</nav>
-<div class=content>
-<section class="container post">
-<article>
-<header>
-<div class=post-title>
-<h1 class=title>
-<a class=title-link href=https://truemped.github.io/posts/mgmt/monolith-to-microservice/>
-Monolith to Microservice
-</a>
-</h1>
-</div>
-<div class=post-meta>
-<div class=date>
-<span class=posted-on>
-<i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2020-11-16T11:00:00+02:00>
-November 16, 2020
-</time>
-</span>
-<span class=reading-time>
-<i class="fa fa-clock-o" aria-hidden=true></i>
-6-minute read
-</span>
-</div>
-<div class=tags>
-<i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag>
-<a href=https://truemped.github.io/tags/microservice/>microservice</a>
-</span>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/about/>About Me</a></li><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/ideas-concepts/>Ideas & Concepts</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://truemped.github.io/posts/mgmt/monolith-to-microservice/>Monolith to Microservice</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2020-11-16T11:00:00+02:00>November 16, 2020</time></span>
+<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+6-minute read</span></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag><a href=https://truemped.github.io/tags/microservice/>microservice</a></span>
 <span class=separator>•</span>
-<span class=tag>
-<a href=https://truemped.github.io/tags/monolith/>monolith</a>
-</span></div>
-</div>
-</header>
-<div>
-<p>Why is moving from a monolithic architecture to a microservices based one so
+<span class=tag><a href=https://truemped.github.io/tags/monolith/>monolith</a></span></div></div></header><div><p>Why is moving from a monolithic architecture to a microservices based one so
 hard? And is it worth it? Often those projects happen in organizations that
 were successful in the past and now enter a phase of scaling. This can be
 scaling by adding lots and lots of developers, or by allowing individual scaling
 of sub-components, because the system is screaming under load and is getting
-more and more expensive to run.</p>
-<p>In both microservice transitions I&rsquo;ve participated in I would argue that the
+more and more expensive to run.</p><p>In both microservice transitions I&rsquo;ve participated in I would argue that the
 project did not achieve the returns everyone hoped for. Instead, they added a
 lot of complexity that kept everyone moving forward slow and painstaking. I see
 three main reasons for both: 1/ focus on tech not people, 2/ messing with
-physics, and 3/ Conway&rsquo;s Law.</p>
-<h1 id=its-the-people-not-the-tech>
-It&rsquo;s the people, not the tech
-<a class=heading-link href=#its-the-people-not-the-tech>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h1>
-<p>The aspect I don&rsquo;t think is getting enough attention is the organization&rsquo;s
+physics, and 3/ Conway&rsquo;s Law.</p><h1 id=its-the-people-not-the-tech>It&rsquo;s the people, not the tech
+<a class=heading-link href=#its-the-people-not-the-tech><i class="fa fa-link" aria-hidden=true></i></a></h1><p>The aspect I don&rsquo;t think is getting enough attention is the organization&rsquo;s
 culture. There is a reason why the monolith became unmanageable: the
 accumulation of missed code refactoring, no cleaning up of failed experiments,
 no boundaries between subsystems, and finally the layers of <em>hacks</em> on top of
-one another.</p>
-<p>Culture is the sum of all actions and in this case the lack of action. Moving to
+one another.</p><p>Culture is the sum of all actions and in this case the lack of action. Moving to
 a microservice architecture will not change this behavior. On the contrary,
 while building the new services, the same lack of action will bring the same
 problems to the new systems. People are creatures of habit and changing habits
 is hard. Ignoring this will eventually lead to the same mess as in the monolith.
-Only this time a lot worse as it now is a distributed monolith.</p>
-<p>Before starting the microservice transition the leadership team must take
+Only this time a lot worse as it now is a distributed monolith.</p><p>Before starting the microservice transition the leadership team must take
 deliberate steps to change those habits and behaviors. The Shopify engineering
-team wrote a great <a href=https://shopify.engineering/shopify-monolith>article</a> on how they address this in their organization:</p>
-<blockquote>
-<p>That’s why making a fundamental architecture change to a system that’s being
-actively worked on is in large part a people problem.</p>
-</blockquote>
-<p>As described in the first of the <a href=https://www.goodreads.com/book/show/18249372-six-simple-rules>Six Simple Rules</a> it is important to
+team wrote a great <a href=https://shopify.engineering/shopify-monolith>article</a> on how they address this in their organization:</p><blockquote><p>That’s why making a fundamental architecture change to a system that’s being
+actively worked on is in large part a people problem.</p></blockquote><p>As described in the first of the <a href=https://www.goodreads.com/book/show/18249372-six-simple-rules>Six Simple Rules</a> it is important to
 <em>Understand what people do</em>. Only then one can reason about behavior and provide
 ways to change them. All of this can even be done before the migration is
-started. There is no reason to wait changing this behavior.</p>
-<h1 id=messing-with-physics>
-Messing with physics
-<a class=heading-link href=#messing-with-physics>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h1>
-<p>Another aspect is the lack of understanding of the hard truths about a
-microservice architecture, especially in management.</p>
-<p>A key part of any software system is the data it stores and serves. In the
+started. There is no reason to wait changing this behavior.</p><h1 id=messing-with-physics>Messing with physics
+<a class=heading-link href=#messing-with-physics><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Another aspect is the lack of understanding of the hard truths about a
+microservice architecture, especially in management.</p><p>A key part of any software system is the data it stores and serves. In the
 monolith there was one system running code and one (sometimes two, when adding
 search capabilities) serving data. The new architecture needs multiple systems
-to store, manage, and serve data.</p>
-<p>The interesting question is to organize the <em>flow</em> of data across services and
+to store, manage, and serve data.</p><p>The interesting question is to organize the <em>flow</em> of data across services and
 the organization? What parts of the organization are responsible to create and
 manage what data? What other parts of the organization need that data and how to
 get it to them? What are the responsibilities of the data producing team and
-what are those of the consumers?</p>
-<p>In my experience the best system to create this data foundation is using <a href=https://kafka.apache.org/>Apache
+what are those of the consumers?</p><p>In my experience the best system to create this data foundation is using <a href=https://kafka.apache.org/>Apache
 Kafka</a> and the ideas expressed in the talk <a href="https://www.youtube.com/watch?v=fU9hR3kiOK0">Turning the Database inside
 out</a>. At it&rsquo;s core, Kafka is what Databases have used for decades to
 replicate data in order to scale read traffic: a log. Every event creates a new
@@ -161,79 +50,40 @@ provides solutions to all the questions raised before. Every event in the system
 is idempotent and since the order is preserved, the latest event is always the
 correct one. Log compaction keeps the data at rest manageable as only the latest
 version(s) of each datum is stored. And stateful stream processing enables teams
-to build on top of other team&rsquo;s output.</p>
-<p>When not starting with breaking up the data layer, there will be at least two
+to build on top of other team&rsquo;s output.</p><p>When not starting with breaking up the data layer, there will be at least two
 steps in the migration. First, moving the serving or reading layer out of the
 monolith. While this is happening, the data providing teams are busy building
 the new data layer for the new architecture. The reading systems still call the
-underlying existing databases.</p>
-<p>The second migration will then be moving all the new services to the new data
+underlying existing databases.</p><p>The second migration will then be moving all the new services to the new data
 layer. For many teams this means another re-write of their service. The data
 acquisition is not a call to a data base anymore and teams need to create their
-own <em>materialized view</em> off of Kafka.</p>
-<p>Finally I believe it is critically to state that one needs to use Kafka as a
+own <em>materialized view</em> off of Kafka.</p><p>Finally I believe it is critically to state that one needs to use Kafka as a
 Database and not an event broker. The difference is subtle, but the consequences
 are dramatic. I once worked on a system where locally, in the teams, people were
 using stateful stream joining. Between the teams though, data was just
 forwarded. Essentially it was a chain of updates and not multiple different
 tables that consuming teams could re-arrange to create a representation they
 required. Teams always had to consume everything, even if they were only
-interested in parts of the data.</p>
-<h1 id=team-topologies>
-Team Topologies
-<a class=heading-link href=#team-topologies>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h1>
-<p>The final aspect I want to mention is <em>Conway&rsquo;s law</em>. The organization
+interested in parts of the data.</p><h1 id=team-topologies>Team Topologies
+<a class=heading-link href=#team-topologies><i class="fa fa-link" aria-hidden=true></i></a></h1><p>The final aspect I want to mention is <em>Conway&rsquo;s law</em>. The organization
 leadership creates resembles the architecture it will come up with. This
 requires clear communication of the team&rsquo;s objectives and what they are
 responsible for. But not only for the team alone, also for the interactions
-between teams and other parts of the organization. As Russell Ackoff states:</p>
-<blockquote>
-<p>Performance of a system depends on how the parts interact, not on how they act
-taken separately.</p>
-</blockquote>
-<p>What does that mean for the Microservice transition? First, start building the
+between teams and other parts of the organization. As Russell Ackoff states:</p><blockquote><p>Performance of a system depends on how the parts interact, not on how they act
+taken separately.</p></blockquote><p>What does that mean for the Microservice transition? First, start building the
 organization based on the target architecture that was agreed upon. This usually
 requires a re-organization for which requires buy-in from the people in the
 organization. Not having this buy-in ruins the project from the start as
-management will not have everyone working for, but against them.</p>
-<h1 id=microservices-dont-solve-the-problems>
-Microservices don&rsquo;t solve the problems
-<a class=heading-link href=#microservices-dont-solve-the-problems>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h1>
-<p>The transition to microservices does not necessarily solve problems, but create
+management will not have everyone working for, but against them.</p><h1 id=microservices-dont-solve-the-problems>Microservices don&rsquo;t solve the problems
+<a class=heading-link href=#microservices-dont-solve-the-problems><i class="fa fa-link" aria-hidden=true></i></a></h1><p>The transition to microservices does not necessarily solve problems, but create
 new ones. Understanding the people/company/culture side of the organization
 before pushing through with such a (company-)life changing project is critical
-to success.</p>
-<blockquote>
-<p>Spreading an understanding of what we’re aiming for, and why, is critical.</p>
-<p>Philipp Müller in <a href=https://shopify.engineering/shopify-monolith>Under Deconstruction: The State of Shopify’s Monolith</a></p>
-</blockquote>
-<p>First, start changing the habits and behaviors of the people, then the tech
+to success.</p><blockquote><p>Spreading an understanding of what we’re aiming for, and why, is critical.</p><p>Philipp Müller in <a href=https://shopify.engineering/shopify-monolith>Under Deconstruction: The State of Shopify’s Monolith</a></p></blockquote><p>First, start changing the habits and behaviors of the people, then the tech
 stack. Don&rsquo;t fall prey to <em>trying to solve people issues with tech</em>. That never
-works.</p>
-</div>
-<footer>
-</footer>
-</article>
-</section>
-</div>
-<footer class=footer>
-<section class=container>
-©
+works.</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
 2015 -
 2022
 Daniel Truemper
 ·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
-</section>
-</footer>
-</main>
-<script src=https://truemped.github.io/js/coder.min.08fc7a7924db1ae6786408cb68e12ff953e6329376a469f5f517f3769c19194d.js integrity="sha256-CPx6eSTbGuZ4ZAjLaOEv+VPmMpN2pGn19RfzdpwZGU0="></script>
-<script data-goatcounter=https://truemped.goatcounter.com/count async src=//gc.zgo.at/count.js></script>
-</body>
-</html>
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=https://truemped.github.io/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js integrity="sha256-I2BJOV3DaC+ycZZAhylY4S8fJAZ7sJwyeyM+YpDH7aw="></script>
+<script data-goatcounter=https://truemped.goatcounter.com/count async src=//gc.zgo.at/count.js></script></body></html>
