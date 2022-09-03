@@ -18,10 +18,12 @@ keywords:
   - buy
   - build
   - buy vs build
+  - software
   - business
   - strategy
   - technology
   - analysis
+  - decision
 ---
 
 {{< figure src="ivan-henao-04rZ7R1fKhY-unsplash.jpg"
