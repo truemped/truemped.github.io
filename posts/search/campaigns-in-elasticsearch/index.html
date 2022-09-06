@@ -6,7 +6,7 @@ Traditionally this is solved by updating the documents in the search index."><me
 <label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/about/>About Me</a></li><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/ideas-concepts/>Ideas & Concepts</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://truemped.github.io/posts/search/campaigns-in-elasticsearch/>Campaigns in Elasticsearch</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
 <time datetime=2020-04-13T17:00:00+02:00>April 13, 2020</time></span>
 <span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-8-minute read</span></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
+9-minute read</span></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
 <span class=tag><a href=https://truemped.github.io/tags/elasticsearch/>elasticsearch</a></span>
 <span class=separator>•</span>
 <span class=tag><a href=https://truemped.github.io/tags/howto/>howto</a></span></div></div></header><div><p>In e-commerce search enabling dynamic prices or campaigns requires some
@@ -30,7 +30,8 @@ sourced system, the exact time at which a certain update is finished, may be
 impossible to define. Additionally this operation is potentially heavy as you
 might be reloading the whole index. Queries to this index then experience a time
 of high latency as all caches need to be filled again.</p><h1 id=modeling-dynamic-information-as-nested-documents>Modeling dynamic information as nested documents
-<a class=heading-link href=#modeling-dynamic-information-as-nested-documents><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Another solution to this is to model the data in a way that information becomes
+<a class=heading-link href=#modeling-dynamic-information-as-nested-documents><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h1><p>Another solution to this is to model the data in a way that information becomes
 <code>true</code> based on the time of the users request. The idea is quite simple: instead
 of updating all documents, the times at which information is valid is encoded in
 the documents themselves. Using Elasticsearch&rsquo;s nested documents the relevant
@@ -40,7 +41,8 @@ low traffic.</p><p>I will describe the idea using a toy example. Two <em>product
 they both have a list of <code>prices</code> as objects. These <em>price objects</em> contain the
 price as well as the start and end date. Filtering and aggregating (aka
 faceting) are then achieved using nested filters and aggregations.</p><h2 id=index-setup>Index Setup
-<a class=heading-link href=#index-setup><i class="fa fa-link" aria-hidden=true></i></a></h2><p>The index mapping describes the list of <code>prices</code> indexed as nested documents:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+<a class=heading-link href=#index-setup><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>The index mapping describes the list of <code>prices</code> indexed as nested documents:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
 </span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
@@ -148,7 +150,8 @@ the discounted price is 12.</p><div class=highlight><div style=color:#f8f8f2;bac
 </span></span><span style=display:flex><span>  ]
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></td></tr></table></div></div><h2 id=constructing-the-price-facet>Constructing the price facet
-<a class=heading-link href=#constructing-the-price-facet><i class="fa fa-link" aria-hidden=true></i></a></h2><p>All examples have a simulated time. In reality one would simply change the time
+<a class=heading-link href=#constructing-the-price-facet><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>All examples have a simulated time. In reality one would simply change the time
 to something like <em>now/m</em>. This would allow for price changes to take effect
 every minute while enabling internal caches in Elasticsearch. In the following
 examples, <em>now</em> is explicitly set to a certain point in time.</p><p>The Elasticsearch query to retrieve the correct price contains a boolean filter.
@@ -328,7 +331,8 @@ returns the following:</p><div class=highlight><div style=color:#f8f8f2;backgrou
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></td></tr></table></div></div><p>Beginning in line 11 there are now the correct prices returned: 10 and 12.</p><h2 id=filtering-for-price-ranges>Filtering for price ranges
-<a class=heading-link href=#filtering-for-price-ranges><i class="fa fa-link" aria-hidden=true></i></a></h2><p>Based on the information the user has seen, they now want to filter for a
+<a class=heading-link href=#filtering-for-price-ranges><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Based on the information the user has seen, they now want to filter for a
 certain price range. For this to work the main <code>query</code> part of the query above
 needs to filter for all documents, that contain a price within the range at a
 given point in time. Again this is achieved using nested filters. The query from
@@ -522,7 +526,8 @@ in the number of nested documents used for the aggregation (line 12). For the
 final nested aggregation only one price object is used (line 14). Both, the
 filtering for documents with a specific price and the aggregation at a certain
 time work.</p><h2 id=conclusion>Conclusion
-<a class=heading-link href=#conclusion><i class="fa fa-link" aria-hidden=true></i></a></h2><p>This method allows the modeling of dynamic information that changes based on the
+<a class=heading-link href=#conclusion><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>This method allows the modeling of dynamic information that changes based on the
 time a user issued a query. In the example above only prices were used but other
 information like flags or availability can me modeled accordingly.</p><p>I see two drawbacks of this method. In case of quick adjustments to campaign
 plans from commercial teams a full re-index is still required. There is just no

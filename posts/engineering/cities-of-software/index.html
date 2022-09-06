@@ -36,14 +36,16 @@ block with a large bank for the checkout, a mall for the catalog and search, and
 so on. The streets between the blocks depict the data that flows between the
 different parts. Some streets are big, others small. There might even be
 streets within a block, but by design small ones.</p><h1 id=the-design-of-the-streets-dictate-the-effectiveness-of-the-city>The design of the streets dictate the effectiveness of the city
-<a class=heading-link href=#the-design-of-the-streets-dictate-the-effectiveness-of-the-city><i class="fa fa-link" aria-hidden=true></i></a></h1><p>A too small street between two important blocks limits the interaction between
+<a class=heading-link href=#the-design-of-the-streets-dictate-the-effectiveness-of-the-city><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h1><p>A too small street between two important blocks limits the interaction between
 the blocks and has crippling effects on other blocks. If the trucks and cars
 cannot use the street between two blocks, they might have to make detours to get
 to their destination. If the street does not even exist, it needs to be built,
 possibly replacing other infrastructure or even blocks.</p><p>Some trucks might have been designed in another country and are not even allowed
 to use the streets built in your city. Are you making sure the 40t truck can
 cross that bridge?</p><h1 id=how-streets-look-like-in-software>How streets look like in Software
-<a class=heading-link href=#how-streets-look-like-in-software><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Just as the streets of a city define it&rsquo;s shape for decades, the design of the
+<a class=heading-link href=#how-streets-look-like-in-software><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h1><p>Just as the streets of a city define it&rsquo;s shape for decades, the design of the
 data flow in an organization defines it&rsquo;s shape for a considerable amount of
 time. This part of the architecture must have a careful design and not manifest
 itself by accident and happenstance. The result of this design will outlast a
@@ -57,7 +59,8 @@ the fact that the article is in stock. Another system would publish an event
 containing the price. A third system responsible for showing a catalog or
 offering search capabilities, e.g., would then need to merge these streams in
 order to have the final data in shape for the use-case.</p><h2 id=api-first>API-First
-<a class=heading-link href=#api-first><i class="fa fa-link" aria-hidden=true></i></a></h2><p>I believe the core idea of API-first was originally invented by Jeff Bezos&rsquo; API
+<a class=heading-link href=#api-first><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>I believe the core idea of API-first was originally invented by Jeff Bezos&rsquo; API
 mandate:</p><blockquote><ol><li>All teams will henceforth expose their data and functionality through
 service interfaces.</li><li>Teams must communicate with each other through these interfaces.</li><li>There will be no other form of interprocess communication allowed: no
 direct linking, no direct reads of another team’s data store, no
@@ -89,7 +92,8 @@ case A the latency profile might be a match, but use case B requires the
 response in a tenth of the latency. The technology choices might not match
 anymore, only a different storage system for the two use cases can match the
 competing requirements.</p><h2 id=events-first>Events first
-<a class=heading-link href=#events-first><i class="fa fa-link" aria-hidden=true></i></a></h2><p>An alternative to this is to design the streets as a stream of events. These
+<a class=heading-link href=#events-first><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>An alternative to this is to design the streets as a stream of events. These
 events describe the data when it was created, updated, or deleted. And they
 follow a centrally available schema model. Clients that require the data need
 the schema which they can simply pull from the &ldquo;schema registry&rdquo;.</p><p>Clever schema implementations can even allow for decentralized schema changes as
@@ -113,7 +117,8 @@ responsible for their schema and not the producer.</p><p>The city block responsi
 about the customers. The city block responsible for order fulfillment is only
 interested in a subset of the data and can map the data before it enters their
 city block.</p><h1 id=what-now>What now?
-<a class=heading-link href=#what-now><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Over time, we have created these literate <em>big balls of mud</em>, an illusion of a
+<a class=heading-link href=#what-now><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h1><p>Over time, we have created these literate <em>big balls of mud</em>, an illusion of a
 microservice architecture, that promised autonomy. Instead, we got endless
 alignment. We need to untangle this if we want to enable change. The more we
 bake our assumptions into code and relationships between APIs, the harder change
@@ -122,7 +127,8 @@ an organization and its systems is the bottleneck in regard to change. The more
 complex this flow is, the more difficult change becomes. And change is
 inevitable.</p><p>This is also a great point to add a Russel Ackoff (of course!) quote:</p><blockquote><p>Performance of a system depends on how the parts interact, not on how they act
 taken separately.</p></blockquote><h1 id=additional-resources>Additional Resources
-<a class=heading-link href=#additional-resources><i class="fa fa-link" aria-hidden=true></i></a></h1><p>There is a nice interview with Scott Havens on the Idealcast: <a href=https://itrevolution.com/the-idealcast-episode-23>Simplifying The
+<a class=heading-link href=#additional-resources><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h1><p>There is a nice interview with Scott Havens on the Idealcast: <a href=https://itrevolution.com/the-idealcast-episode-23>Simplifying The
 Inventory Management Systems at the World’s Largest Retailer Using Functional
 Programming Principles</a>. In this episode Havens describes their journey from
 migrating a convoluted and nested set of APIs to a system built on event

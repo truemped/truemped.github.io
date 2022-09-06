@@ -46,13 +46,15 @@ published time and categories. Something like this:</p><div class=highlight><pre
 might be an idea but in the end all of this is tied to an exact mapping, index
 structure and use case. If there is interest though, starting something similar
 in a library could be interesting, if there is interest.</p><h2 id=dsls-in-clojure>DSLs in Clojure
-<a class=heading-link href=#dsls-in-clojure><i class="fa fa-link" aria-hidden=true></i></a></h2><p>Creating a Domain Specific Language is pretty straight forward in Clojure
+<a class=heading-link href=#dsls-in-clojure><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Creating a Domain Specific Language is pretty straight forward in Clojure
 assuming you expose Clojure or Lisp syntax to the user. Using the clojure
 reader and <code>eval</code> parsing a DSL into Clojure code is simple and defining the
 DSL itself does then only involve implementing the functions.</p><p>In the next part I focus on the DSL implementation itself and the functions for
 manipulating the query. In the last section, parsing and evaluating the DSL
 into a real Elasticsearch query finishes.</p><h2 id=the-dsl>The DSL
-<a class=heading-link href=#the-dsl><i class="fa fa-link" aria-hidden=true></i></a></h2><p>For the custom DSL I started with a base query structure upon which all other
+<a class=heading-link href=#the-dsl><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>For the custom DSL I started with a base query structure upon which all other
 functions build. It has four parts: query, scoring, filtering and aggregations:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>def </span>default-query
 </span></span><span style=display:flex><span> {<span style=color:#e6db74>:query</span>
 </span></span><span style=display:flex><span>  {<span style=color:#e6db74>:filtered</span>
@@ -107,7 +109,8 @@ specific parts of the query are easy:</p><div class=highlight><pre tabindex=0 st
 </span></span><span style=display:flex><span>                        [<span style=color:#e6db74>:query</span> <span style=color:#e6db74>:filtered</span> <span style=color:#e6db74>:filter</span> <span style=color:#e6db74>:bool</span> <span style=color:#e6db74>:must_not</span>]
 </span></span><span style=display:flex><span>                        [must-filter]))
 </span></span></code></pre></div><h3 id=dsl-functions>DSL functions
-<a class=heading-link href=#dsl-functions><i class="fa fa-link" aria-hidden=true></i></a></h3><p>The individual functions now basically compose the DSL. Being able to add
+<a class=heading-link href=#dsl-functions><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>The individual functions now basically compose the DSL. Being able to add
 <code>(q "merkel")</code> is translated into the following Clojure function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>defn </span>q
 </span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;Simple query&#34;</span>
 </span></span><span style=display:flex><span>  [query user-query]
@@ -150,7 +153,8 @@ expression. For this I create a new macro called <code>query</code>:</p><div cla
 </span></span></code></pre></div><p>Using this macro a query can now be defined like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>def </span>simple-query (<span style=color:#a6e22e>query</span>
 </span></span><span style=display:flex><span>                   (<span style=color:#a6e22e>q</span> <span style=color:#e6db74>&#34;test&#34;</span>))
 </span></span></code></pre></div><h2 id=parsing-the-dsl>Parsing the DSL
-<a class=heading-link href=#parsing-the-dsl><i class="fa fa-link" aria-hidden=true></i></a></h2><p>Doing this is Clojure is nice and easy for me but then again I want the PO not
+<a class=heading-link href=#parsing-the-dsl><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Doing this is Clojure is nice and easy for me but then again I want the PO not
 to contact me about getting into the repl. So in the final step I need a
 function that converts a string to Clojure code. First I need to parse the
 string using <code>read-string</code> and then I can <code>eval</code> the resulting code. For this
@@ -169,7 +173,8 @@ dsl functions. I also bind <code>*read-eval*</code> to false and by this disable
 functions declared in there. <code>read-string</code> converts a string into Clojure code
 and <code>eval</code> will execute it. In this case it will simply return the final
 Elasticsearch query.</p><h2 id=result>Result
-<a class=heading-link href=#result><i class="fa fa-link" aria-hidden=true></i></a></h2><p>In essence this allows me to have a web frontend where a user can input
+<a class=heading-link href=#result><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>In essence this allows me to have a web frontend where a user can input
 the query from the beginning</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>query</span>
 </span></span><span style=display:flex><span> (<span style=color:#a6e22e>freshness</span> <span style=color:#e6db74>&#34;1h&#34;</span>)
 </span></span><span style=display:flex><span> (<span style=color:#a6e22e>tags</span> [<span style=color:#e6db74>&#34;politics&#34;</span> <span style=color:#e6db74>&#34;sports&#34;</span>])
