@@ -23,7 +23,11 @@ $ hugo server
 
 ** Building
 
-To build the final result, simply run `$ hugo`.
+To build the final result, simply run:
+
+#+BEGIN_SRC bash
+$ hugo
+#+END_SRC
 
 ** Publishing
 
