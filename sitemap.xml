@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://truemped.github.io/</loc>
-    <lastmod>2022-08-06T21:05:45+02:00</lastmod>
+    <lastmod>2023-03-06T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/engineering-effectiveness/</loc>
+    <lastmod>2023-03-06T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/feature-flags/</loc>
+    <lastmod>2023-03-06T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/posts/mgmt/on-feature-flags/</loc>
+    <lastmod>2023-03-06T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/posts/</loc>
+    <lastmod>2023-03-06T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/software-engineering/</loc>
+    <lastmod>2023-03-06T22:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://truemped.github.io/tags/</loc>
+    <lastmod>2023-03-06T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/business/</loc>
     <lastmod>2022-08-06T21:05:45+02:00</lastmod>
@@ -11,13 +29,7 @@
     <loc>https://truemped.github.io/posts/mgmt/buy-vs-build/</loc>
     <lastmod>2022-08-06T21:05:45+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/</loc>
-    <lastmod>2022-08-06T21:05:45+02:00</lastmod>
-  </url><url>
     <loc>https://truemped.github.io/tags/strategy/</loc>
-    <lastmod>2022-08-06T21:05:45+02:00</lastmod>
-  </url><url>
-    <loc>https://truemped.github.io/tags/</loc>
     <lastmod>2022-08-06T21:05:45+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/change/</loc>
@@ -46,9 +58,6 @@
   </url><url>
     <loc>https://truemped.github.io/ideas-concepts/</loc>
     <lastmod>2022-03-03T08:30:00+01:00</lastmod>
-  </url><url>
-    <loc>https://truemped.github.io/tags/engineering-effectiveness/</loc>
-    <lastmod>2021-04-07T09:50:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/high-performing-teams/</loc>
     <lastmod>2021-04-07T09:50:00+02:00</lastmod>

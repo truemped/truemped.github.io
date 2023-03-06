@@ -6,7 +6,18 @@
     <description>Recent content in engineering effectiveness on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 Apr 2021 09:50:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/engineering-effectiveness/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Mar 2023 22:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/engineering-effectiveness/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Feature Flags</title>
+      <link>https://truemped.github.io/posts/mgmt/on-feature-flags/</link>
+      <pubDate>Mon, 06 Mar 2023 22:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/mgmt/on-feature-flags/</guid>
+      <description>Photo by Marco Bianchetti on Unsplash
+Continuous delivery is the holy grail of building software. Not just continuous integration, like running your whole test suite on every push or pull request. Deploying multiple times a day improves cycle times.
+But if you are still trying to make this happen in your organization. If you are still trying to workout the details of canary releases , Blue/Green deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.</description>
+    </item>
+    
     <item>
       <title>On Psychological Safety</title>
       <link>https://truemped.github.io/posts/mgmt/psychological-safety/</link>
@@ -22,7 +33,7 @@
       <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
       
       <guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid>
-      <description>Update: This post was trending on Hackernews in April 2021. See the discussion.
+      <description>Update: This post was trending on Hackernews in April 2021. See the discussion .
 In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
     </item>
     

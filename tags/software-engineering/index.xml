@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software engineering on all things considered...</title>
+    <link>https://truemped.github.io/tags/software-engineering/</link>
+    <description>Recent content in software engineering on all things considered...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Mar 2023 22:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Feature Flags</title>
+      <link>https://truemped.github.io/posts/mgmt/on-feature-flags/</link>
+      <pubDate>Mon, 06 Mar 2023 22:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/mgmt/on-feature-flags/</guid>
+      <description>Photo by Marco Bianchetti on Unsplash
+Continuous delivery is the holy grail of building software. Not just continuous integration, like running your whole test suite on every push or pull request. Deploying multiple times a day improves cycle times.
+But if you are still trying to make this happen in your organization. If you are still trying to workout the details of canary releases , Blue/Green deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.</description>
+    </item>
+    
+  </channel>
+</rss>
