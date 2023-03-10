@@ -24,7 +24,7 @@ keywords:
 
 {{< figure src="marco-bianchetti-UOAD9U-TYxc-unsplash.jpg"
     caption="Photo by [Marco Bianchetti](https://unsplash.com/@marcobian) on [Unsplash](https://unsplash.com/photos/UOAD9U-TYxc)">}}
-
+	
 Continuous *delivery* is the holy grail of building software.
 Not just continuous integration, like running your whole test suite on every push or pull request.
 Deploying multiple times a day improves cycle times.
@@ -165,8 +165,11 @@ In delivering features and managing technical debt.
 And to increase developer productivity.
 Because they don't have to coordinate go-lives of features.
 
+Discuss and leave comments on [hacker news][5].
+
 [0]: https://martinfowler.com/bliki/CanaryRelease.html
 [1]: https://martinfowler.com/bliki/BlueGreenDeployment.html
 [2]: https://launchdarkly.com/
 [3]: https://statsig.com/
 [4]: https://www.getunleash.io/
+[5]: https://news.ycombinator.com/item?id=35091792
