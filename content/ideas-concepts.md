@@ -12,6 +12,30 @@ organizations, decision-making, and mental models. On this page I'm keeping a
 reference to them and will link to background material. My idea is to keep
 references to the in my blog posts.
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [The Three Ways](#the-three-ways)
+    - [Fast Flow](#fast-flow)
+    - [Feedback Loops](#feedback-loops)
+    - [Learning Culture](#learning-culture)
+- [The Five Ideals](#the-five-ideals)
+    - [Locality and Simplicity](#locality-and-simplicity)
+    - [Focus, Flow, and Joy](#focus-flow-and-joy)
+    - [Improvement of Daily Work](#improvement-of-daily-work)
+    - [Psychological Safety](#psychological-safety)
+    - [Customer Focus](#customer-focus)
+- [Team Topologies](#team-topologies)
+    - [Four Fundamental Team Topologies](#four-fundamental-team-topologies)
+    - [Cognitive Load](#cognitive-load)
+- [Theory of Constraints](#theory-of-constraints)
+- [Wardley Maps](#wardley-maps)
+    - [Pioneers, Settlers, Town Planners](#pioneers-settlers-town-planners)
+- [Small Batches](#small-batches)
+
+<!-- markdown-toc end -->
+
+
 # The Three Ways
 
 The three ways are a concept or idea introduced in [The Phoenix Project][1], by
@@ -210,8 +234,8 @@ highest possible impact.
 
 # Wardley Maps
 
-Simon Wardley developed the idea of [Wardley Maps][4] idea at Fotango in 2005.
-As CEO of the company he was responsible for the overall strategy of a photo
+Simon Wardley developed the idea of [Wardley Maps][4] at Fotango in 2005.  As
+CEO of the company he was responsible for the overall strategy of a photo
 printing service. The main issue he faced was not knowing where to invest in.
 
 The idea is to create a map that helps identify business strategy. It
