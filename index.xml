@@ -15,7 +15,7 @@
       <guid>https://truemped.github.io/posts/mgmt/on-feature-flags/</guid>
       <description>Photo by Marco Bianchetti on Unsplash
 Continuous delivery is the holy grail of building software. Not just continuous integration, like running your whole test suite on every push or pull request. Deploying multiple times a day improves cycle times.
-But if you are still trying to make this happen in your organization. If you are still trying to workout the details of canary releases , Blue/Green deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.</description>
+But if you are still trying to make this happen in your organization. If you are still trying to workout the details of canary releases, Blue/Green deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.</description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ This one here is mine. Today. One that might change in the years to come.</descr
       <guid>https://truemped.github.io/posts/engineering/cities-of-software/</guid>
       <description>Photo by Adrian Schwarz on Unsplash
 Cities are an interesting way to think about Software. Cities have foundations, like infrastructure for cars, electricity. Housing for people to live and work. Stores to sell and buy goods. Also, Cities are often referred to as an organism. Just like a large organization, a department, or a team are an organism. But these organisms are building software.
-I first came across this idea in Mikio Braun&amp;rsquo;s post on Everyone Is Still Terrible At Creating Software :</description>
+I first came across this idea in Mikio Braun&amp;rsquo;s post on Everyone Is Still Terrible At Creating Software:</description>
     </item>
     
     <item>
@@ -57,7 +57,8 @@ To be honest, right now it feels strange to think about how we could build softw
       
       <guid>https://truemped.github.io/ideas-concepts/</guid>
       <description>I have come across a number of ideas and core concepts that have influenced my thinking. They cover areas of building Software, designing teams and organizations, decision-making, and mental models. On this page I&amp;rsquo;m keeping a reference to them and will link to background material. My idea is to keep references to the in my blog posts.
-The Three Ways Link to heading The three ways are a concept or idea introduced in The Phoenix Project , by Gene Kim, Kevin Behr, and George Spafford.</description>
+Table of Contents
+The Three Ways Fast Flow Feedback Loops Learning Culture The Five Ideals Locality and Simplicity Focus, Flow, and Joy Improvement of Daily Work Psychological Safety Customer Focus Team Topologies Four Fundamental Team Topologies Cognitive Load Theory of Constraints Wardley Maps Pioneers, Settlers, Town Planners Small Batches The Three Ways Link to heading The three ways are a concept or idea introduced in The Phoenix Project, by Gene Kim, Kevin Behr, and George Spafford.</description>
     </item>
     
     <item>
@@ -86,7 +87,8 @@ Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like ho
       <pubDate>Mon, 28 Dec 2020 17:50:00 +0200</pubDate>
       
       <guid>https://truemped.github.io/posts/mgmt/leadership-is-language/</guid>
-      <description>I&amp;rsquo;m currently reading Leadership is language by L. David Marquet, the same author of Turn the Ship Around . In this book, Marquet describes the different ways people communicate and how it influences the outcomes we get. This should not be any news really, but the book explains in much more detail how this happens. Especially when there is a power dynamic between the participants of a conversation or meeting.</description>
+      <description>I&amp;rsquo;m currently reading Leadership is language by L. David Marquet, the same author of Turn the Ship Around. In this book, Marquet describes the different ways people communicate and how it influences the outcomes we get. This should not be any news really, but the book explains in much more detail how this happens. Especially when there is a power dynamic between the participants of a conversation or meeting.
+The main theme across the book is the sinking of a ship called El Faro caused by a hurricane.</description>
     </item>
     
     <item>
@@ -104,7 +106,7 @@ Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like ho
       <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
       
       <guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid>
-      <description>Update: This post was trending on Hackernews in April 2021. See the discussion .
+      <description>Update: This post was trending on Hackernews in April 2021. See the discussion.
 In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
     </item>
     
@@ -183,7 +185,7 @@ Last year was a challenge for me as so many things happened that impacted my wor
       <pubDate>Sun, 13 Jan 2019 10:00:00 +0100</pubDate>
       
       <guid>https://truemped.github.io/posts/favorite-talks/</guid>
-      <description>Earlier this month Monica Lent published a list of Tech talks that&amp;rsquo;ll change how you think . Every one on this list is awesome and some have influenced me pretty heavily. Especially Simple made Easy by Rich Hickey. To these I&amp;rsquo;d like to add a few from my list of favorite talks.
+      <description>Earlier this month Monica Lent published a list of Tech talks that&amp;rsquo;ll change how you think. Every one on this list is awesome and some have influenced me pretty heavily. Especially Simple made Easy by Rich Hickey. To these I&amp;rsquo;d like to add a few from my list of favorite talks.
 Full Stack Awareness Link to heading In this, Arthur Bergman rants about how everything is broken. We, as engineers, are so used to just connect a few systems and the new feature is working.</description>
     </item>
     
@@ -193,9 +195,8 @@ Full Stack Awareness Link to heading In this, Arthur Bergman rants about how eve
       <pubDate>Mon, 07 Jan 2019 09:41:34 +0100</pubDate>
       
       <guid>https://truemped.github.io/about/</guid>
-      <description>I am currently working as Principal Engineer at Zalando and started my professional career in 2008. By now I have gathered experience as Software Engineer, Consultant, Architct, and Engineering Manager.
-For the longest time Search is my passion. I have experience in consulting, implementing small and large and complex Search systems. Another passion of mine is event streaming. Today I&amp;rsquo;m helping teams to understand, architect, and implement tracking systems.
-In 2018 I transitioned into management and worked as Engineering Manager.</description>
+      <description>I am an experienced Engineering Manager working at Zalando. My professional career started in 2008. By now I have gathered experience as Software Engineer, Consultant, Architect, and Engineering Manager.
+For the longest time Search was my passion. I have experience in consulting, implementing small, large, and complex Search systems. Building a Search platform especially in a larger organization formed my passion for event streaming systems. This has helped multiple teams get their data into Search in a simple and scalable way.</description>
     </item>
     
     <item>
