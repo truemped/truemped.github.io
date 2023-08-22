@@ -6,7 +6,17 @@
     <description>Recent content in limit wip on all things considered...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Oct 2020 10:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/limit-wip/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 19:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/limit-wip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trunk Based Development: Stop PR Reviews!</title>
+      <link>https://truemped.github.io/posts/mgmt/trunk-based-development/</link>
+      <pubDate>Tue, 22 Aug 2023 19:00:00 +0200</pubDate>
+      
+      <guid>https://truemped.github.io/posts/mgmt/trunk-based-development/</guid>
+      <description>two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)
+Engineering effectiveness is a prominent topic. Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value. Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process. Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.</description>
+    </item>
+    
     <item>
       <title>Limiting Work In Progress</title>
       <link>https://truemped.github.io/posts/mgmt/limiting-wip/</link>
