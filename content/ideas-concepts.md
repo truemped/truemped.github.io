@@ -256,7 +256,7 @@ companies in the world that should actually build their own data centers.
 
 A good introduction to Wardley mapping is this thread by the man himself:
 
-{{< tweet swardley 1550514919530934273 >}}
+{{< tweet user="swardley" id="1550514919530934273" >}}
 
 ## Pioneers, Settlers, Town Planners
 

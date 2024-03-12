@@ -18,7 +18,7 @@ $ cd truemped.github.io/
 This blog is built using [[https://gohugo.io/][Hugo]]. To run locally, simply run
 
 #+BEGIN_SRC bash
-$ hugo server
+$ hugo serve -F --cleanDestinationDir --enableGitInfo --renderToDisk
 #+END_SRC
 
 ** Building

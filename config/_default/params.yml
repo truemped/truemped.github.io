@@ -44,7 +44,7 @@ social:
     weight: 1
     url: "https://github.com/truemped"
   - name: "Mastodon"
-    icon: "fa fa-mastodon fa-2x"
+    icon: "fa-brands fa-mastodon fa-2x"
     weight: 2
     url: "https://hachyderm.io/@truemped"
     rel: "me"

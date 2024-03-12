@@ -24,7 +24,7 @@ keywords:
 
 {{< figure src="marco-bianchetti-UOAD9U-TYxc-unsplash.jpg"
     caption="Photo by [Marco Bianchetti](https://unsplash.com/@marcobian) on [Unsplash](https://unsplash.com/photos/UOAD9U-TYxc)">}}
-	
+
 Continuous *delivery* is the holy grail of building software.
 Not just continuous integration, like running your whole test suite on every push or pull request.
 Deploying multiple times a day improves cycle times.
