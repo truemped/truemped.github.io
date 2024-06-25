@@ -14,3 +14,4 @@ pom.xml.asc
 .DS_Store
 /public/
 .hugo_build.lock
+resources/_gen
