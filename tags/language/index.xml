@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>language on all things considered...</title>
+    <title>Language on all things considered...</title>
     <link>https://truemped.github.io/tags/language/</link>
-    <description>Recent content in language on all things considered...</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Language on all things considered...</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Dec 2020 17:50:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/language/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Dec 2020 17:50:00 +0200</lastBuildDate>
+    <atom:link href="https://truemped.github.io/tags/language/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leadership is Language</title>
       <link>https://truemped.github.io/posts/mgmt/leadership-is-language/</link>
       <pubDate>Mon, 28 Dec 2020 17:50:00 +0200</pubDate>
-      
       <guid>https://truemped.github.io/posts/mgmt/leadership-is-language/</guid>
-      <description>I&amp;rsquo;m currently reading Leadership is language by L. David Marquet, the same author of Turn the Ship Around. In this book, Marquet describes the different ways people communicate and how it influences the outcomes we get. This should not be any news really, but the book explains in much more detail how this happens. Especially when there is a power dynamic between the participants of a conversation or meeting.
-The main theme across the book is the sinking of a ship called El Faro caused by a hurricane.</description>
+      <description>I&amp;rsquo;m currently reading Leadership is language by L. David Marquet, the same author of Turn the Ship Around. In this book, Marquet describes the different ways people communicate and how it influences the outcomes we get. This should not be any news really, but the book explains in much more detail how this happens. Especially when there is a power dynamic between the participants of a conversation or meeting.&#xA;The main theme across the book is the sinking of a ship called El Faro caused by a hurricane.</description>
     </item>
-    
   </channel>
 </rss>

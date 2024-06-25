@@ -1,51 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>engineering effectiveness on all things considered...</title>
+    <title>Engineering Effectiveness on all things considered...</title>
     <link>https://truemped.github.io/tags/engineering-effectiveness/</link>
-    <description>Recent content in engineering effectiveness on all things considered...</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Engineering Effectiveness on all things considered...</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 22 Aug 2023 19:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/engineering-effectiveness/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 19:00:00 +0200</lastBuildDate>
+    <atom:link href="https://truemped.github.io/tags/engineering-effectiveness/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trunk Based Development: Stop PR Reviews!</title>
       <link>https://truemped.github.io/posts/mgmt/trunk-based-development/</link>
       <pubDate>Tue, 22 Aug 2023 19:00:00 +0200</pubDate>
-      
       <guid>https://truemped.github.io/posts/mgmt/trunk-based-development/</guid>
-      <description>two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)
-Engineering effectiveness is a prominent topic. Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value. Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process. Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.</description>
+      <description>two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&#xA;Engineering effectiveness is a prominent topic. Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value. Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process. Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.</description>
     </item>
-    
     <item>
       <title>On Feature Flags</title>
       <link>https://truemped.github.io/posts/mgmt/on-feature-flags/</link>
       <pubDate>Mon, 06 Mar 2023 22:00:00 +0200</pubDate>
-      
       <guid>https://truemped.github.io/posts/mgmt/on-feature-flags/</guid>
-      <description>Photo by Marco Bianchetti on Unsplash
-Continuous delivery is the holy grail of building software. Not just continuous integration, like running your whole test suite on every push or pull request. Deploying multiple times a day improves cycle times.
-But if you are still trying to make this happen in your organization. If you are still trying to workout the details of canary releases, Blue/Green deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.</description>
+      <description>Photo by Marco Bianchetti on Unsplash&#xA;Continuous delivery is the holy grail of building software. Not just continuous integration, like running your whole test suite on every push or pull request. Deploying multiple times a day improves cycle times.&#xA;But if you are still trying to make this happen in your organization. If you are still trying to workout the details of canary releases, Blue/Green deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.</description>
     </item>
-    
     <item>
       <title>On Psychological Safety</title>
       <link>https://truemped.github.io/posts/mgmt/psychological-safety/</link>
       <pubDate>Wed, 07 Apr 2021 09:50:00 +0200</pubDate>
-      
       <guid>https://truemped.github.io/posts/mgmt/psychological-safety/</guid>
       <description>More and more work involves collaboration. Multiple people working in a team on the same thing that is becoming ever more complex. What does this mean for an organization? Information and knowledge, especially in the technology domain, is becoming a commodity. All the best technical tools to build your next Google is just a Google search away. In the age of digital products, market access is getting cheaper every day. This increases the importance of the team and their effectiveness as it becomes a company&amp;rsquo;s unique selling point.</description>
     </item>
-    
     <item>
       <title>Limiting Work In Progress</title>
       <link>https://truemped.github.io/posts/mgmt/limiting-wip/</link>
       <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
-      
       <guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid>
-      <description>Update: This post was trending on Hackernews in April 2021. See the discussion.
-In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
+      <description>Update: This post was trending on Hackernews in April 2021. See the discussion.&#xA;In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
     </item>
-    
   </channel>
 </rss>

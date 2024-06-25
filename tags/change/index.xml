@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>change on all things considered...</title>
+    <title>Change on all things considered...</title>
     <link>https://truemped.github.io/tags/change/</link>
-    <description>Recent content in change on all things considered...</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Change on all things considered...</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Mar 2022 17:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/change/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Mar 2022 17:00:00 +0200</lastBuildDate>
+    <atom:link href="https://truemped.github.io/tags/change/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cities of Software</title>
       <link>https://truemped.github.io/posts/engineering/cities-of-software/</link>
       <pubDate>Wed, 30 Mar 2022 17:00:00 +0200</pubDate>
-      
       <guid>https://truemped.github.io/posts/engineering/cities-of-software/</guid>
-      <description>Photo by Adrian Schwarz on Unsplash
-Cities are an interesting way to think about Software. Cities have foundations, like infrastructure for cars, electricity. Housing for people to live and work. Stores to sell and buy goods. Also, Cities are often referred to as an organism. Just like a large organization, a department, or a team are an organism. But these organisms are building software.
-I first came across this idea in Mikio Braun&amp;rsquo;s post on Everyone Is Still Terrible At Creating Software:</description>
+      <description>Photo by Adrian Schwarz on Unsplash&#xA;Cities are an interesting way to think about Software. Cities have foundations, like infrastructure for cars, electricity. Housing for people to live and work. Stores to sell and buy goods. Also, Cities are often referred to as an organism. Just like a large organization, a department, or a team are an organism. But these organisms are building software.&#xA;I first came across this idea in Mikio Braun&amp;rsquo;s post on Everyone Is Still Terrible At Creating Software:</description>
     </item>
-    
   </channel>
 </rss>

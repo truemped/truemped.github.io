@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>strategy on all things considered...</title>
+    <title>Strategy on all things considered...</title>
     <link>https://truemped.github.io/tags/strategy/</link>
-    <description>Recent content in strategy on all things considered...</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Strategy on all things considered...</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Jul 2022 15:28:45 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/strategy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Aug 2022 21:05:45 +0200</lastBuildDate>
+    <atom:link href="https://truemped.github.io/tags/strategy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Buy versus Build</title>
       <link>https://truemped.github.io/posts/mgmt/buy-vs-build/</link>
       <pubDate>Tue, 26 Jul 2022 15:28:45 +0200</pubDate>
-      
       <guid>https://truemped.github.io/posts/mgmt/buy-vs-build/</guid>
-      <description>Photo by Ivan Henao on Unsplash
-This is maybe the most complex question that is never asked in the interview process in tech. And often not even on a managerial level. But: it is such an interesting one to discuss! There might be no right or wrong. But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.
-This one here is mine. Today. One that might change in the years to come.</description>
+      <description>Photo by Ivan Henao on Unsplash&#xA;This is maybe the most complex question that is never asked in the interview process in tech. And often not even on a managerial level. But: it is such an interesting one to discuss! There might be no right or wrong. But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.&#xA;This one here is mine. Today. One that might change in the years to come.</description>
     </item>
-    
   </channel>
 </rss>

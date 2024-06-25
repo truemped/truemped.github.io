@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>caching on all things considered...</title>
+    <title>Caching on all things considered...</title>
     <link>https://truemped.github.io/tags/caching/</link>
-    <description>Recent content in caching on all things considered...</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Caching on all things considered...</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Feb 2016 12:15:09 +0100</lastBuildDate><atom:link href="https://truemped.github.io/tags/caching/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Feb 2016 12:15:09 +0100</lastBuildDate>
+    <atom:link href="https://truemped.github.io/tags/caching/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Varnish All the Things</title>
       <link>https://truemped.github.io/posts/infra/varnish-all-the-things/</link>
       <pubDate>Mon, 01 Feb 2016 12:15:09 +0100</pubDate>
-      
       <guid>https://truemped.github.io/posts/infra/varnish-all-the-things/</guid>
       <description>My usual web application stack for the past years was based on a nginx as reverse proxy in front of a number of Python processes. Static resources were served by nginx. Each Python process was stateless, state was stored in some kind of database. If the processes needed some shared ephemeral state like counters a local redis instance solved that. A battle tested common ground for Python based web applications.</description>
     </item>
-    
   </channel>
 </rss>
