@@ -2,7 +2,7 @@
 title: "On Writing Backwards"
 date: 2024-08-24T10:30:00+02:00
 lastmod: 2024-08-24T11:50:00+02:00
-draft: true
+draft: false
 toc: false
 images:
   - /posts/orga/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash.jpg
