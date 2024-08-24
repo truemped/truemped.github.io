@@ -1,98 +1,102 @@
 ---
 title: "On Writing Backwards"
 date: 2024-08-24T10:30:00+02:00
+lastmod: 2024-08-24T11:50:00+02:00
 draft: true
 toc: false
 images:
   - /posts/orga/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash.jpg
 tags: 
   - Writing
+keywords:
+  - Working Backwards
+  - Amazon writing process
+  - Document writing tips
+  - Common writing mistakes
+  - Technical design documents
+  - Clarity in writing
+  - Six-page document limit
+  - Editing process for writing
+  - Writing for alignment
+  - Effective document writing
 ---
 
 {{< figure src="florian-klauer-vintage-typewriter-unsplash.jpg"
     caption="Photo by [Florian Klauer](https://unsplash.com/@florianklauer) on [Unsplash](https://unsplash.com/photos/black-fayorit-typewriter-with-printer-paper-mk7D-4UCfmg)">}}
 
-Five years of working backwards, writing a few and reading even more documents, I have a few thoughts.
-Why writing is hard.
-And the many mistakes I see people making.
+After five years of working backwards, writing some and reading even more documents, I've gathered a few thoughts on why writing is hard and the mistakes I often see people making.
 
 ## On Working Backwards
-"Working Backwards" is a concept created at Amazon, emphasizing starting from the customer and working backward to ensure solutions are relevant.
-This is of course an extremely short introduction into it.
-If you are really interested in the details of how it is working and reasoning behind, get it from the original authors.
-Colin Bryar and Bill Carr wrote about it in [Working Backwards: Insights, Stories, and Secrets from Inside Amazon][1].
 
-It involves three main artifacts:
+"Working Backwards" is a concept developed at Amazon.
+It focuses on starting from the customer and working backward to ensure solutions are relevant.
+This is, of course, just a brief introduction.
+If you're interested in the details, I recommend reading [Working Backwards: Insights, Stories, and Secrets from Inside Amazon][1] by Colin Bryar and Bill Carr.
+
+The approach involves three main artifacts:
 
 1. **Press Release**: Determines if the problem is worth solving.
 1. **Solution Design**: Defines how the product should look.
 1. **Technical Solution Design**: Outlines how to build the product.
 
-Writing these documents in practice is challenging.
-One misconception is that you just need to write the document, get some feedback, and you are done.
-It is about achieving alignment through a well-thought-out process.
+Writing these documents is challenging in practice.
+A common misconception is that you just need to write the document, get some feedback, and you’re done.
+In reality, it’s about achieving alignment through a well-thought-out process.
 
-## Common Mistakes
+## Common Writing Mistakes
 
-The most common and fundamental mistake I see is the lack of understanding of writing itself.
-Good writing follows a certain process.
-You start with an outline, a list of ideas, in rough shape.
-Check what the underlying story line works.
-And then it is a lot about *editing* your writing.
-Removing every word that does not add meaning.
-Bring clarity to your writing and your own thought process.
+The most fundamental mistake I see is a lack of understanding of the writing process itself.
+Good writing follows a structured approach.
+You start with an outline—a list of ideas in rough shape.
+Then, you refine the underlying storyline.
+Editing is crucial: removing every word that doesn’t add meaning, bringing clarity to your writing, and refining your thought process.
 
 > Writing is the process by which we discover we don’t really know what we are talking about.
 > Shane Parrish
 
-In practice, most people stop at *the braindump* and they forget the editing part.
-Arguably this is the most important one.
-We end up with long documents where the reader passes out after 10 pages.
-Sentences filled with implicit context, where the reader cannot understand the words written.
-No real story line.
+In practice, many people stop at the initial brain dump and skip the editing phase, which is arguably the most important part.
+The result is often long documents where the reader loses interest after 10 pages, with sentences full of implicit context that the reader can’t decipher, and no real storyline.
 
 I have collected a few blockers for myself that stop me from reading a document.
 These are in no specific order: **length**, **bullet points**, and **pseudo code**.
 
-A document with 50 pages?
-We are not at university and this is not a PhD.
-In many cases there is just *way* to much detail in those documents.
-Especially in technical design documents.
-It is **not** about laying out what you are specifically going to implement.
-It is **not** a specification.
-No matter how big the project will be, or how many teams will be involved.
-Reduce it to the core properties and design decisions.
-Details can be fletched out in subsequent, local design documents.
+### Length
 
-Paragraphs of *bullet points* in the doc: you must still be drafting the document.
-Take the time and create real sentences.
-Form a story line.
-Remove content.
-In my experience, with lists of bullet points, the likelihood of duplicating information is huge.
-I would love to refuse readgin something like this, especially in a final review stage.
+A 50-page document?
+We’re not in university, and this isn’t a PhD thesis.
+Most of these documents contain far too much detail, especially in technical design documents.
+It’s not about laying out every specific implementation detail—it’s not a specification.
+No matter how large the project or how many teams are involved, focus on core properties and design decisions.
+Details can be fleshed out in subsequent, localized design documents.
 
-The worst is actually writing pseudo code.
-Or even real code.
-I'm not kidding: I have seen documents with actual code lines.
-Google Docs is not an IDE.
-And unless you are doing [literate programming][2], do not add code to your doc.
-You might think it clarifies a topic.
-But the code you write in the doc will be outdated as soon as someone actually starts writing code in an IDE.
+### Bullet Points
+
+If your document is full of bullet points, you’re likely still drafting.
+Take the time to form real sentences and create a coherent storyline.
+In my experience, lists of bullet points often lead to duplicated information.
+I’m tempted to refuse reading such documents, especially in the final review stage.
+
+### Pseudo Code
+
+The worst is seeing pseudo code—or even real code—in a document.
+I’ve seen documents with actual code lines in them.
+Google Docs is not an IDE, and unless you’re doing [literate programming][2], avoid adding code to your doc.
+You might think it clarifies a topic, but it will be outdated as soon as someone starts coding in an IDE.
 
 ## Six Pages
 
-Bezos' 6-page maximum is a really good constraint.
-It helps to focus on key decisions and abstractions without getting bogged down by excessive details.
-It enforces clarity of thinking and precision in articulation.
-However, many are not willing to invest this time.
-But I would argue: *it is worth every second*.
+Bezos’ six-page limit is an excellent constraint.
+It forces you to focus on key decisions and abstractions without getting bogged down by excessive details.
+It enforces clarity of thought and precision in expression.
+However, many people aren’t willing to invest the time.
+I would argue *it’s worth every second*.
 
 ## Conclusion
 
-Writing documents is time-consuming but invaluable for clarifying thoughts and aligning topics in a large organization.
+Writing documents is time-consuming but invaluable for clarifying thoughts and aligning topics within a large organization.
 It’s a skill that enhances communication and decision-making.
 
-Embrace the process, refine your approach, and remember that clarity in writing leads to clarity in thinking.
+Embrace the process, refine your approach, and remember: clarity in writing leads to clarity in thinking.
 
 [0]: {{< relref "/posts/orga/aligning-through-writing-documents" >}}
 [1]: https://www.amazon.de/Working-Backwards-Insights-Stories-Secrets/dp/1529033829
