@@ -4,9 +4,9 @@ date: 2019-01-07T09:41:34+01:00
 lastmod: 2021-07-18T10:00:00+02:00
 ---
 
-I am an experienced Engineering Manager working at [Zalando][5].
+I am an experienced Head of Engineering currently working at [Zalando][5].
 My professional career started in 2008.
-By now I have gathered experience as Software Engineer, Consultant, Architect, and Engineering Manager.
+By now I have gathered experience as Software Engineer, Consultant, Architect, Engineering Manager, and Head of Engineering.
 
 For the longest time Search was my passion.
 I have experience in consulting, implementing small, large, and complex Search systems.

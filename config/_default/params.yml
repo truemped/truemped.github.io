@@ -3,7 +3,8 @@ author: "Daniel Truemper"
 description: "Daniel Truemper's personal space"
 keywords: "blog,developer,personal,engineering management,leadership"
 
-info: "Passionate about People, Data and Search"
+#info: "Passionate about People, Data, and Search"
+info: "From Code to Culture: Engineering Practices that Drive Success"
 #avatarurl: "images/avatar.jpg"
 #footercontent: "Enter a text here."
 gravatar: "truemped@gmail.com"
@@ -33,10 +34,13 @@ colorscheme: "auto"
 maxSeeAlsoItems: 5
 
 # Custom CSS
-custom_css: []
+customCSS: []
+
+# Custom SCSS
+customSCSS: ["css/site.scss"]
 
 # Custom JS
-custom_js: []
+customJS: []
 
 social:
   - name: "Github"
@@ -52,7 +56,3 @@ social:
     icon: "fa fa-linkedin fa-2x"
     weight: 3
     url: "https://www.linkedin.com/in/daniel-truemper"
-  - name: "Twitter"
-    icon: "fa fa-twitter fa-2x"
-    weight: 4
-    url: "https://twitter.com/truemped"

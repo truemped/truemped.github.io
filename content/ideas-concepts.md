@@ -162,7 +162,7 @@ This has obvious connections to:
 > [The Unicorn Project][0]
 
 I wrote [On Psychological Safety]({{< relref
-"/posts/mgmt/psychological-safety.md" >}}) before where I try to highlight how
+"/posts/2021/04/psychological-safety.md" >}}) before where I try to highlight how
 easy it is to destroy and how difficult it is to keep. If people do not feel
 safe to speak up, they will not pull the Andon cord and not tell you about the
 great improvement they would like to make. There is another great quote by
