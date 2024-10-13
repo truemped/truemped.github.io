@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Buy versus Build · all things considered...
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Daniel Truemper">
+<meta name="description" content="A post in which I describe my mental model for what to buy and what to build in software and technology business. Analysis using Wardley Maps helps us understand how we can be most effective in business. I claim we underestimate the total cost of ownership. And over-index on risks of buying so we end up in a not-invented-here syndrome.">
+<meta name="keywords" content="buy, build, buy vs build, business, strategy, technology, analysis">
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://truemped.github.io/posts/mgmt/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash.jpg">
+  <meta name="twitter:title" content="Buy versus Build">
+  <meta name="twitter:description" content="A post in which I describe my mental model for what to buy and what to build in software and technology business. Analysis using Wardley Maps helps us understand how we can be most effective in business. I claim we underestimate the total cost of ownership. And over-index on risks of buying so we end up in a not-invented-here syndrome.">
+
+<meta property="og:url" content="https://truemped.github.io/posts/2022/07/buy-vs-build/">
+  <meta property="og:site_name" content="all things considered...">
+  <meta property="og:title" content="Buy versus Build">
+  <meta property="og:description" content="A post in which I describe my mental model for what to buy and what to build in software and technology business. Analysis using Wardley Maps helps us understand how we can be most effective in business. I claim we underestimate the total cost of ownership. And over-index on risks of buying so we end up in a not-invented-here syndrome.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-07-26T15:28:45+02:00">
+    <meta property="article:modified_time" content="2022-08-06T21:05:45+02:00">
+    <meta property="article:tag" content="Strategy">
+    <meta property="article:tag" content="Business">
+    <meta property="og:image" content="https://truemped.github.io/posts/mgmt/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash.jpg">
+
+
+
+
+<link rel="canonical" href="https://truemped.github.io/posts/2022/07/buy-vs-build/">
+
+
+<link rel="preload" href="https://truemped.github.io/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://truemped.github.io/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://truemped.github.io/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="https://truemped.github.io/css/coder.min.aa5ef26fa979d6793724ae2dbd71efa94fd16cb1c5c7db3b6651f21f9892a5fd.css" integrity="sha256-ql7yb6l51nk3JK4tvXHvqU/RbLHFx9s7ZlHyH5iSpf0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="https://truemped.github.io/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+  
+  
+    
+    <link rel="stylesheet" href="https://truemped.github.io/css/site.min.0915f18709b4e94fd851da12960ae3eefedf449e13a734b434be6e790ed5659b.css" integrity="sha256-CRXxhwm06U/YUdoSlgrj7v7fRJ4TpzS0NL5ueQ7VZZs=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://truemped.github.io/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="https://truemped.github.io/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://truemped.github.io/images/apple-touch-icon.png">
+
+<link rel="manifest" href="https://truemped.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://truemped.github.io/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://truemped.github.io/">
+      all things considered...
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://truemped.github.io/about/">About Me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://truemped.github.io/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://truemped.github.io/ideas-concepts/">Ideas &amp; Concepts</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://truemped.github.io/posts/2022/07/buy-vs-build/">
+              Buy versus Build
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-07-26T15:28:45&#43;02:00">
+                July 26, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://truemped.github.io/tags/strategy/">Strategy</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://truemped.github.io/tags/business/">Business</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        
+
+
+
+
+
+
+
+<figure>
+    <img
+        
+            sizes="(min-width: 35em) 1200px, 100vw"
+            
+            srcset='
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu10036057903675757488.webp 480w,
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp 800w,
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu12004049385056749749.webp 1200w,
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu1668302165911667270.webp 1500w,
+            '
+
+            
+            
+            src="https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp"
+            
+
+        
+            alt="Photo by Ivan Henao on Unsplash"/> <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@ivanchenao"  class="external-link" target="_blank" rel="noopener">Ivan Henao</a> on <a href="https://unsplash.com/photos/04rZ7R1fKhY"  class="external-link" target="_blank" rel="noopener">Unsplash</a></p>
+        </figcaption>
+</figure>
+
+<p>This is maybe the most complex question that is never asked in the interview process in tech.
+And often not even on a managerial level.
+But: it is such an interesting one to discuss!
+There might be no right or wrong.
+But it does reveal a lot about people&rsquo;s thought processes and mental models they have collected.</p>
+<p>This one here is mine.
+Today.
+One that might change in the years to come.</p>
+<p>I want to start with describing the factors that drive this decision.
+Some of them are of technical nature, but they are not important.
+A red herring to distract us from the real issue.
+The main driver of this decision has to be the business and the value we bring to customers.
+This is what will get us paid.
+And not that we have built everything on our own.
+Literally everything.</p>
+<h1 id="the-business">
+  The business
+  <a class="heading-link" href="#the-business">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Before we even go into the decision of buying or building, we first have to establish <strong>what</strong> to do.
+A great tool to discuss this is by using <a href="https://truemped.github.io/ideas-concepts/#wardley-maps" >Wardley Maps</a>.
+It is an elegant way to discuss the value stream of how we fulfill customer needs and the capabilities we need for that.
+In a large organization this means we need to understand who our customer is!
+This can be the real customer, the one giving us money for the service.
+But it can also be all the teams building software.</p>
+<p>With the value stream at hand we can now depict the evolution of those capabilities: <em>genesis</em>, <em>custom build</em>, <em>product</em>, and <em>commodity</em>.
+Are the required capabilities commonly available like electricity?
+Or something never seen before?
+Genesis, or commodity?</p>
+<p>How does this all translate into a buy versus build decision?
+Capabilities that exist and are easy to get access to are nothing we would want to build ourselves.
+For example <em>Cloud Computing</em> is giving access to data centers for everyone.
+We are likely much better off not building a data center before writing code.
+The same is true for project planning <em>products</em> that are easy to use and buy.</p>
+<p>We have to concentrate our building efforts on the left side of the map.
+Focus on the <strong>genesis</strong>, or <strong>custom build</strong> capabilities.
+Capabilities that exist and are freely available to buy, will likely not differentiate us from the rest.</p>
+
+
+
+
+
+
+
+
+<figure>
+    <img
+        
+            sizes="(min-width: 35em) 1200px, 100vw"
+            
+            srcset='
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/wardley_hu11389411661192130322.webp 480w,
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/wardley_hu6600812904461587159.webp 800w,
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/wardley_hu1213548383953140268.webp 1200w,
+            
+                   https://truemped.github.io/posts/2022/07/buy-vs-build/wardley_hu4202137807436599748.webp 1500w,
+            '
+
+            
+            
+            src="https://truemped.github.io/posts/2022/07/buy-vs-build/wardley_hu6600812904461587159.webp"
+            
+
+        
+            alt="Buy vs. Build in a Wardley Map"/> <figcaption>
+            <p>Buy vs. Build in a Wardley Map</p>
+        </figcaption>
+</figure>
+
+<h1 id="evolution">
+  Evolution
+  <a class="heading-link" href="#evolution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>What is sometimes overlooked is that a Wardley map is always a visualization of a specific point in time.
+Evolution is visible on the horizontal axis.
+But evolution, well, it evolves.
+What is a custom-built solution today, can become a product in a year.</p>
+<p>If we now have built the system too integrated, replacing it later becomes complex.
+And I don&rsquo;t mean microservices.
+Basic abstractions.
+Those we also have in a large single repo code base.</p>
+<p>We need to make sure we design the system with the right fracture planes in place.
+Between the different capabilities.
+This will make it easier to adapt later on.
+Because the reason we think we need to build it from scratch today are likely to be irrelevant in the future.
+Reversing this decision might become really expensive when we missed those fracture planes.</p>
+<p>Obviously this touches <a href="https://en.wikipedia.org/wiki/Domain-driven_design"  class="external-link" target="_blank" rel="noopener">Domain Driven Design</a>.
+An area we often miss when we build and run our organizations.</p>
+<h1 id="wait-thats-it">
+  Wait, that&rsquo;s it?
+  <a class="heading-link" href="#wait-thats-it">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>There are of course a lot of other factors.
+In addition to the value aspect discussed above, there are at least costs and risks associated.
+Will Larson writes about this in his <a href="https://lethain.com/build-vs-buy/"  class="external-link" target="_blank" rel="noopener">Build versus Buy</a> article.
+But I would argue they are secondary aspects.
+At least in the vast majority of cases.</p>
+<h2 id="costs">
+  Costs
+  <a class="heading-link" href="#costs">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><em>Costs</em> can become a problem in both cases, when we build <strong>and</strong> when we buy.
+In the build case I am sure we constantly underestimate the <strong>total cost of ownership</strong>.
+The amount of work required to keep the capability from deteriorating.
+The technical debt incurred by not working on the code.
+Not Updating libraries.
+Not Fixing security problems.
+Until we have to, and then it becomes a tricky problem.
+Likely the engineers that originally built this moved on to other teams or companies.
+We need to decide to either pay back an enormous amount of tech debt, rebuild it again, or buy it this time.</p>
+<p>But when we buy, <em>costs</em> can become as well.
+The first contract runs out, and we have to negotiate a new one.
+I mean: if we are the vendor, we would likely increase our price after the first contract runs out.
+We as the vendor are fully aware of the costs of change for the client.</p>
+<h2 id="risks">
+  Risks
+  <a class="heading-link" href="#risks">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>By using a vendor we also incur risks that would otherwise not be present.
+Risks of a vendor going bankrupt.
+Or being acquired.
+The management might change, and the new contract has a drastically increased price structure.</p>
+<p>But I think there will always be risks.
+In both cases actually: buying <strong>and</strong> building.
+But if we focus too much on the risks of buying, we underestimate the risks of building.
+And then suffer from the <strong>not invented here syndrome</strong></p>
+<h1 id="takeaways">
+  Takeaways
+  <a class="heading-link" href="#takeaways">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The most important part of this decision is to look at the value creation.
+Where and how is value (aka money) created in our business?
+Those in <em>genesis</em> we definitely build ourselves.
+And capabilities somewhere in or between <em>custom-built</em> and <em>product</em> are worth exploring further.</p>
+<p>With this at hand we should also be able to put a price tag on a certain capability.
+This price tag should allow us to compare offerings on the market.
+And assess our capability and willingness to invest into building it ourselves.</p>
+<p>But when we build, we have to use all the clever tech available to us.
+Of course, it is important to use good technologies, great algorithms and data structures.
+But I think they mainly control our cost structure.
+The bottom line.
+Use them where they bring the most value.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2024
+     Daniel Truemper 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="https://truemped.github.io/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  <script data-goatcounter="https://truemped.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -1,54 +1,10 @@
-<!doctype html><html lang=en><head><title>Onto new Horizons · all things considered...
-</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Daniel Truemper"><meta name=description content="The date slowly approached and then it just happened. After almost four years I left Zalando end of March. I joined Zalando as Senior Engineer in the search team. In this role I helped migrate the search systems from the old monolith (Jimmy) to a microservice based architecture. In those times, microservices where meant literally and a lot of them were created.
-The system was based on SolrCloud and basically a home-grown Kafka like messaging system based on SQS and DynamoDB."><meta name=keywords content="blog,developer,personal,engineering management,leadership"><meta name=twitter:card content="summary"><meta name=twitter:title content="Onto new Horizons"><meta name=twitter:description content="The date slowly approached and then it just happened. After almost four years I left Zalando end of March. I joined Zalando as Senior Engineer in the search team. In this role I helped migrate the search systems from the old monolith (Jimmy) to a microservice based architecture. In those times, microservices where meant literally and a lot of them were created.
-The system was based on SolrCloud and basically a home-grown Kafka like messaging system based on SQS and DynamoDB."><meta property="og:url" content="https://truemped.github.io/posts/onto-new-horizons/"><meta property="og:site_name" content="all things considered..."><meta property="og:title" content="Onto new Horizons"><meta property="og:description" content="The date slowly approached and then it just happened. After almost four years I left Zalando end of March. I joined Zalando as Senior Engineer in the search team. In this role I helped migrate the search systems from the old monolith (Jimmy) to a microservice based architecture. In those times, microservices where meant literally and a lot of them were created.
-The system was based on SolrCloud and basically a home-grown Kafka like messaging system based on SQS and DynamoDB."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-04-05T17:00:00+02:00"><meta property="article:modified_time" content="2020-04-05T17:00:00+02:00"><link rel=canonical href=https://truemped.github.io/posts/onto-new-horizons/><link rel=preload href=https://truemped.github.io/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://truemped.github.io/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=https://truemped.github.io/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://truemped.github.io/css/coder.min.38c4552ac40f9ae3408bad40358f654ebd8804412fe74ed56f2d6c8a7af82dd3.css integrity="sha256-OMRVKsQPmuNAi61ANY9lTr2IBEEv507Vby1sinr4LdM=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://truemped.github.io/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=https://truemped.github.io/images/favicon.svg sizes=any><link rel=icon type=image/png href=https://truemped.github.io/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://truemped.github.io/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=https://truemped.github.io/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=https://truemped.github.io/images/apple-touch-icon.png><link rel=manifest href=https://truemped.github.io/site.webmanifest><link rel=mask-icon href=https://truemped.github.io/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa-solid fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://truemped.github.io/>all things considered...
-</a><input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/about/>About Me</a></li><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://truemped.github.io/ideas-concepts/>Ideas & Concepts</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://truemped.github.io/posts/onto-new-horizons/>Onto new Horizons</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
-<time datetime=2020-04-05T17:00:00+02:00>April 5, 2020
-</time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
-3-minute read</span></div></div></header><div class=post-content><p>The date slowly approached and then it just happened. After almost four years I
-left Zalando end of March. I joined Zalando as Senior Engineer in the search
-team. In this role I helped migrate the search systems from the old monolith
-(<em>Jimmy</em>) to a microservice based architecture. In those times, microservices
-where meant literally and a lot of them were created.</p><p>The system was based on SolrCloud and basically a home-grown Kafka like
-messaging system based on SQS and DynamoDB. A lot of assumptions were baked in
-code. The first Black Friday we were live only on the mobile app. While this was
-successful, extending this system to other clients like the web was a huge
-undertaking. At this point, we decided to move to a much more simple, Kafka
-based intake pipeline and Elasticsearch as the main search index. Back then we
-felt this would be a much more sustainable architecture. And we were right. It
-still has not changed significantly but has been extended over time.</p><p>For my second Black Friday we were live with the new system on all user facing
-systems. From a technical point of view we were able to sustain all live
-traffic, up to 12k QPS. At this point this has almost been a disappointment as
-we had tested for even more traffic. This traffic number increased to 30k QPS on
-my last Black Friday. But this number became uninteresting over time. It was
-merely a matter of scaling the system enough.</p><p>Zalando also allowed me to transition into management. About two years ago I
-became Engineering Lead in the search department. This was one of my main
-reasons to join Zalando, so in that regard I achieved my goal. After a while I
-realized the size of the challenge ahead. I basically stopped writing code from
-one day to the next. I already reflected about this in my <a href=https://truemped.github.io/posts/retrospection/first-year/>first yearly</a>
-review as manager, if you are interested.</p><p>At some point my <a href=https://randsinrepose.com/archives/shields-down/ class=external-link target=_blank rel=noopener>shields went down</a>. I cannot say it was this specific
-meeting or that specific action someone took &ndash; or did not take. I almost left
-the company at that point, but then a lot of things changed. So much so that I
-got energized again and stayed another year. It was well worth it, I learned a
-lot and it helped me understand management much better.</p><p>Still, my shields never went up again completely. And then, at some point, an
-interesting opportunity came up. Interesting enough that I approached them and
-found out about their plans and how I might contribute. Many things matched, the
-interviews were great and I am now happy to say that I joined GetYourGuide on
-April 1st. I will be working as Engineering Manager in the Search and Discovery
-team and it&rsquo;s needless to say that the timing is insane. On-boarding in a new
-company during a global pandemic is interesting, to say the least. Moving into
-the travel industry at this point demands for a lot of positive thinking for the
-next year or two.</p><p>What I will miss are the people and colleagues I worked with. But new
-relationships will be developed and new bonds will be made. Once again I will
-help migrate a Search system out of the monolith (<em>FishFarm</em>). After working in
-management for two years now, I look forward to a change of scenery, new
-inspiration and new management styles. I now am at a point in my career in which
-I also want to get exposed to different types of management and widen my
-horizon.</p><p>Onward, always&mldr;</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
-2015 -
-2024
-Daniel Truemper
-·
-Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.</section></footer></main><script src=https://truemped.github.io/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script><script data-goatcounter=https://truemped.goatcounter.com/count async src=//gc.zgo.at/count.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>https://truemped.github.io/posts/2020/04/onto-new-horizons/</title>
+    <link rel="canonical" href="https://truemped.github.io/posts/2020/04/onto-new-horizons/">
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url=https://truemped.github.io/posts/2020/04/onto-new-horizons/">
+  </head>
+</html>

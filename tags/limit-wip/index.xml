@@ -10,17 +10,17 @@
     <atom:link href="https://truemped.github.io/tags/limit-wip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trunk Based Development: Stop PR Reviews!</title>
-      <link>https://truemped.github.io/posts/mgmt/trunk-based-development/</link>
+      <link>https://truemped.github.io/posts/2023/08/trunk-based-development/</link>
       <pubDate>Tue, 22 Aug 2023 19:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/mgmt/trunk-based-development/</guid>
-      <description>two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&#xA;Engineering effectiveness is a prominent topic. Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value. Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process. Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.</description>
+      <guid>https://truemped.github.io/posts/2023/08/trunk-based-development/</guid>
+      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu13324139568549620146.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp 800w,&#xA;            &#xA;                   &#xA;            &#xA;                   &#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Engineering effectiveness is a prominent topic.&#xA;Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value.&#xA;Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process.&#xA;Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.&#xA;I want to describe the challenges posed by conventional PR reviews and show the benefits of doing things differently.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Limiting Work In Progress</title>
-      <link>https://truemped.github.io/posts/mgmt/limiting-wip/</link>
+      <link>https://truemped.github.io/posts/2020/10/limiting-wip/</link>
       <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/mgmt/limiting-wip/</guid>
-      <description>Update: This post was trending on Hackernews in April 2021. See the discussion.&#xA;In many organizations today there is one thing that almost always is true: there are too many things done in parallel, there is too much work-in-progress, everyone is busy but nothing gets done. If this is so ubiquitous why is no one doing anything about it? Are people not aware or do they not know how to fix it?</description>
+      <guid>https://truemped.github.io/posts/2020/10/limiting-wip/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: This post was trending on Hackernews in April 2021. See the&#xA;&lt;a href=&#34;https://news.ycombinator.com/item?id=26759903&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;discussion&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;In many organizations today there is one thing that almost always is true: there&#xA;are too many things done in parallel, there is too much &lt;em&gt;work-in-progress&lt;/em&gt;,&#xA;everyone is busy but nothing gets done. If this is so ubiquitous why is no one&#xA;doing anything about it? Are people not aware or do they not know how to fix it?&#xA;This is so predominant, that it almost is too easy to just claim:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -10,10 +10,10 @@
     <atom:link href="https://truemped.github.io/tags/monolith/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Monolith to Microservice</title>
-      <link>https://truemped.github.io/posts/mgmt/monolith-to-microservice/</link>
+      <link>https://truemped.github.io/posts/2020/11/monolith-to-microservice/</link>
       <pubDate>Mon, 16 Nov 2020 11:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/mgmt/monolith-to-microservice/</guid>
-      <description>Why is moving from a monolithic architecture to a microservices based one so hard? And is it worth it? Often those projects happen in organizations that were successful in the past and now enter a phase of scaling. This can be scaling by adding lots and lots of developers, or by allowing individual scaling of sub-components, because the system is screaming under load and is getting more and more expensive to run.</description>
+      <guid>https://truemped.github.io/posts/2020/11/monolith-to-microservice/</guid>
+      <description>&lt;p&gt;Why is moving from a monolithic architecture to a microservices based one so&#xA;hard? And is it worth it? Often those projects happen in organizations that&#xA;were successful in the past and now enter a phase of scaling. This can be&#xA;scaling by adding lots and lots of developers, or by allowing individual scaling&#xA;of sub-components, because the system is screaming under load and is getting&#xA;more and more expensive to run.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

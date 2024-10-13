@@ -5,7 +5,7 @@
     <loc>https://truemped.github.io/</loc>
     <lastmod>2024-08-24T11:50:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/orga/on-writing-backwards/</loc>
+    <loc>https://truemped.github.io/posts/2024/08/on-writing-backwards/</loc>
     <lastmod>2024-08-24T11:50:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/posts/</loc>
@@ -26,13 +26,13 @@
     <loc>https://truemped.github.io/tags/limit-wip/</loc>
     <lastmod>2023-08-22T19:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/trunk-based-development/</loc>
+    <loc>https://truemped.github.io/posts/2023/08/trunk-based-development/</loc>
     <lastmod>2023-08-22T19:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/feature-flags/</loc>
     <lastmod>2023-03-06T22:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/on-feature-flags/</loc>
+    <loc>https://truemped.github.io/posts/2023/03/on-feature-flags/</loc>
     <lastmod>2023-03-06T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/software-engineering/</loc>
@@ -41,7 +41,7 @@
     <loc>https://truemped.github.io/tags/business/</loc>
     <lastmod>2022-08-06T21:05:45+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/buy-vs-build/</loc>
+    <loc>https://truemped.github.io/posts/2022/07/buy-vs-build/</loc>
     <lastmod>2022-08-06T21:05:45+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/strategy/</loc>
@@ -50,7 +50,7 @@
     <loc>https://truemped.github.io/tags/change/</loc>
     <lastmod>2022-03-30T17:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/engineering/cities-of-software/</loc>
+    <loc>https://truemped.github.io/posts/2022/03/cities-of-software/</loc>
     <lastmod>2022-03-30T17:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/event-streaming/</loc>
@@ -59,7 +59,7 @@
     <loc>https://truemped.github.io/tags/microservice/</loc>
     <lastmod>2022-03-30T17:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/a-year-of-silence/</loc>
+    <loc>https://truemped.github.io/posts/2022/03/a-year-of-silence/</loc>
     <lastmod>2022-03-03T14:00:00+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/small-batches/</loc>
@@ -71,13 +71,13 @@
     <loc>https://truemped.github.io/tags/high-performing-teams/</loc>
     <lastmod>2021-04-07T09:50:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/psychological-safety/</loc>
+    <loc>https://truemped.github.io/posts/2021/04/psychological-safety/</loc>
     <lastmod>2021-04-07T09:50:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/psychological-safety/</loc>
     <lastmod>2021-04-07T09:50:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/engineering/tailscale/</loc>
+    <loc>https://truemped.github.io/posts/2021/02/tailscale/</loc>
     <lastmod>2021-02-16T09:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/vpn/</loc>
@@ -92,19 +92,19 @@
     <loc>https://truemped.github.io/tags/leadership/</loc>
     <lastmod>2020-12-28T17:50:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/leadership-is-language/</loc>
+    <loc>https://truemped.github.io/posts/2020/12/leadership-is-language/</loc>
     <lastmod>2020-12-28T17:50:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/monolith/</loc>
     <lastmod>2020-11-16T11:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/monolith-to-microservice/</loc>
+    <loc>https://truemped.github.io/posts/2020/11/monolith-to-microservice/</loc>
     <lastmod>2020-11-16T11:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/limiting-wip/</loc>
+    <loc>https://truemped.github.io/posts/2020/10/limiting-wip/</loc>
     <lastmod>2020-04-28T10:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/search/campaigns-in-elasticsearch/</loc>
+    <loc>https://truemped.github.io/posts/2020/04/campaigns-in-elasticsearch/</loc>
     <lastmod>2020-04-13T17:00:00+02:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/elasticsearch/</loc>
@@ -113,22 +113,22 @@
     <loc>https://truemped.github.io/tags/howto/</loc>
     <lastmod>2020-04-13T17:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/onto-new-horizons/</loc>
+    <loc>https://truemped.github.io/posts/2020/04/onto-new-horizons/</loc>
     <lastmod>2020-04-05T17:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/orga/aligning-through-writing-documents/</loc>
+    <loc>https://truemped.github.io/posts/2020/03/aligning-through-writing-documents/</loc>
     <lastmod>2020-03-06T16:30:00+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/alignment/</loc>
     <lastmod>2020-03-06T16:30:00+01:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/my-new-writing-habit/</loc>
+    <loc>https://truemped.github.io/posts/2020/02/my-new-writing-habit/</loc>
     <lastmod>2020-02-26T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/leading-people/</loc>
     <lastmod>2020-01-03T11:25:00+01:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/mgmt/providing-difficult-feedback/</loc>
+    <loc>https://truemped.github.io/posts/2020/01/providing-difficult-feedback/</loc>
     <lastmod>2020-01-03T11:25:00+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/radical-candor/</loc>
@@ -140,16 +140,16 @@
     <loc>https://truemped.github.io/tags/mgmt/</loc>
     <lastmod>2019-08-04T09:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/retrospection/first-year/</loc>
+    <loc>https://truemped.github.io/posts/2019/04/first-year/</loc>
     <lastmod>2019-08-04T09:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/new-year-resolutions-2019/</loc>
+    <loc>https://truemped.github.io/posts/2019/01/new-year-resolutions-2019/</loc>
     <lastmod>2019-01-23T17:30:00+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/new-year-resolutions/</loc>
     <lastmod>2019-01-23T17:30:00+01:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/favorite-talks/</loc>
+    <loc>https://truemped.github.io/posts/2019/01/favorite-talks/</loc>
     <lastmod>2019-01-13T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/about/</loc>
@@ -164,13 +164,13 @@
     <loc>https://truemped.github.io/tags/varnish/</loc>
     <lastmod>2016-02-01T12:15:09+01:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/infra/varnish-all-the-things/</loc>
+    <loc>https://truemped.github.io/posts/2016/02/varnish-all-the-things/</loc>
     <lastmod>2016-02-01T12:15:09+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/clojure/</loc>
     <lastmod>2015-07-29T10:19:47+01:00</lastmod>
   </url><url>
-    <loc>https://truemped.github.io/posts/search/elastic-dsl/</loc>
+    <loc>https://truemped.github.io/posts/2015/07/elastic-dsl/</loc>
     <lastmod>2015-07-29T10:19:47+01:00</lastmod>
   </url><url>
     <loc>https://truemped.github.io/tags/search/</loc>

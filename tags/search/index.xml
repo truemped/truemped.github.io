@@ -10,10 +10,10 @@
     <atom:link href="https://truemped.github.io/tags/search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Elasticsearch DSL-DSL</title>
-      <link>https://truemped.github.io/posts/search/elastic-dsl/</link>
+      <link>https://truemped.github.io/posts/2015/07/elastic-dsl/</link>
       <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/search/elastic-dsl/</guid>
-      <description>Elasticsearch is a search server based on Apache Lucene. As a developer it is easy to use, has an expressive query DSL and all is based on JSON serialization. Often though I find myself in a position where I need to adapt queries frequently and non-trivially, say in a demonstration in front of customers or product owners.&#xA;The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if I boost document types Y&amp;rdquo; and so on.</description>
+      <guid>https://truemped.github.io/posts/2015/07/elastic-dsl/</guid>
+      <description>&lt;p&gt;Elasticsearch is a search server based on Apache Lucene. As a developer it is&#xA;easy to use, has an expressive query DSL and all is based on JSON&#xA;serialization. Often though I find myself in a position where I need to adapt&#xA;queries frequently and non-trivially, say in a demonstration in front of&#xA;customers or product owners.&lt;/p&gt;&#xA;&lt;p&gt;The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the&#xA;ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if&#xA;I boost document types Y&amp;rdquo; and so on. While these are easy to add, two things&#xA;bother me: first, I need to come up with the queries during a presentation,&#xA;which adds pauses to the meetings. When I&amp;rsquo;m finished with the query the&#xA;discussion has evolved. Second, I don&amp;rsquo;t want to be the enabler. If they can&#xA;find out what they want without me it also means a faster feedback loop for&#xA;them. In brainstorming sessions it is easy to focus on arguments and skip the&#xA;sometimes lengthy query finding pauses. Win win for everyone it seems.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  On Feature Flags · all things considered...
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Daniel Truemper">
+<meta name="description" content="A post in which I describe my thoughts on feature flags. Why they are better than other ways of continuous delivery. How they make your organization better. More effective. And more successful.">
+<meta name="keywords" content="feature flags, engineering effectiveness, software engineering, technology">
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://truemped.github.io/posts/mgmt/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash.jpg">
+  <meta name="twitter:title" content="On Feature Flags">
+  <meta name="twitter:description" content="A post in which I describe my thoughts on feature flags. Why they are better than other ways of continuous delivery. How they make your organization better. More effective. And more successful.">
+
+<meta property="og:url" content="https://truemped.github.io/posts/2023/03/on-feature-flags/">
+  <meta property="og:site_name" content="all things considered...">
+  <meta property="og:title" content="On Feature Flags">
+  <meta property="og:description" content="A post in which I describe my thoughts on feature flags. Why they are better than other ways of continuous delivery. How they make your organization better. More effective. And more successful.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-06T22:00:00+02:00">
+    <meta property="article:modified_time" content="2023-03-06T22:00:00+02:00">
+    <meta property="article:tag" content="Feature Flags">
+    <meta property="article:tag" content="Engineering Effectiveness">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="og:image" content="https://truemped.github.io/posts/mgmt/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash.jpg">
+
+
+
+
+<link rel="canonical" href="https://truemped.github.io/posts/2023/03/on-feature-flags/">
+
+
+<link rel="preload" href="https://truemped.github.io/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://truemped.github.io/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://truemped.github.io/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="https://truemped.github.io/css/coder.min.aa5ef26fa979d6793724ae2dbd71efa94fd16cb1c5c7db3b6651f21f9892a5fd.css" integrity="sha256-ql7yb6l51nk3JK4tvXHvqU/RbLHFx9s7ZlHyH5iSpf0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="https://truemped.github.io/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+  
+  
+    
+    <link rel="stylesheet" href="https://truemped.github.io/css/site.min.0915f18709b4e94fd851da12960ae3eefedf449e13a734b434be6e790ed5659b.css" integrity="sha256-CRXxhwm06U/YUdoSlgrj7v7fRJ4TpzS0NL5ueQ7VZZs=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://truemped.github.io/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://truemped.github.io/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="https://truemped.github.io/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://truemped.github.io/images/apple-touch-icon.png">
+
+<link rel="manifest" href="https://truemped.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://truemped.github.io/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://truemped.github.io/">
+      all things considered...
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://truemped.github.io/about/">About Me</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://truemped.github.io/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://truemped.github.io/ideas-concepts/">Ideas &amp; Concepts</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://truemped.github.io/posts/2023/03/on-feature-flags/">
+              On Feature Flags
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-03-06T22:00:00&#43;02:00">
+                March 6, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://truemped.github.io/tags/feature-flags/">Feature Flags</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://truemped.github.io/tags/engineering-effectiveness/">Engineering Effectiveness</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://truemped.github.io/tags/software-engineering/">Software Engineering</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        
+
+
+
+
+
+
+
+<figure>
+    <img
+        
+            sizes="(min-width: 35em) 1200px, 100vw"
+            
+            srcset='
+            
+                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu11418894878726005926.webp 480w,
+            
+                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp 800w,
+            
+                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu1873825012940073363.webp 1200w,
+            
+                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu12824804519145094190.webp 1500w,
+            '
+
+            
+            
+            src="https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp"
+            
+
+        
+            alt="Photo by Marco Bianchetti on Unsplash"/> <figcaption>
+            <p>Photo by <a href="https://unsplash.com/@marcobian"  class="external-link" target="_blank" rel="noopener">Marco Bianchetti</a> on <a href="https://unsplash.com/photos/UOAD9U-TYxc"  class="external-link" target="_blank" rel="noopener">Unsplash</a></p>
+        </figcaption>
+</figure>
+
+<p>Continuous <em>delivery</em> is the holy grail of building software.
+Not just continuous integration, like running your whole test suite on every push or pull request.
+Deploying multiple times a day improves cycle times.</p>
+<p>But if you are still trying to make this happen in your organization.
+If you are still trying to workout the details of <a href="https://martinfowler.com/bliki/CanaryRelease.html"  class="external-link" target="_blank" rel="noopener">canary releases</a>, <a href="https://martinfowler.com/bliki/BlueGreenDeployment.html"  class="external-link" target="_blank" rel="noopener">Blue/Green</a> deployments, or traffic switching in Kubernetes: don&rsquo;t do it.
+Those ideas are great, but they have also aged.
+They require a lot of additional tooling and automation to get right.
+And knowing when a traffic switch of a new feature is successful, is non trivial.</p>
+<p>Spare the time investment and use it for something simple that scales across teams.
+That helps you reducing infrastructure costs, provides visibility for product managers.
+And in general that helps your organization deliver more features, faster, and safer.</p>
+<h1 id="feature-flags-at-scale">
+  Feature Flags at Scale
+  <a class="heading-link" href="#feature-flags-at-scale">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The truth is: a good feature flagging system can make <em>the</em> difference.
+Difference between meh, and great.
+Between a high performing team and one that struggles with delivery.
+And especially in an organization with multiple teams working on the same new feature.</p>
+<p>You&rsquo;ll argue that &ldquo;it&rsquo;s just a boolean condition&rdquo;!
+And yes, you are right.
+Just on or off.
+Or maybe A, B, or C.
+But if you look at feature flags beyond the single piece, it is much, much more.</p>
+<p>But the system I&rsquo;m going to describe now is much more than that.
+It is based on three basic capabilities:
+a mechanism to query the state of an identifiable flag,
+based on the current request data in combination with your customer data,
+and a way to activate a feature based on a percentage of said customer groups.</p>
+<p>With this basic set of capabilities you can achieve all the things outlined earlier.
+A staging system?
+Just a set of features activated for internal employees.
+Amazon Prime membership?
+Features enabled for all customers that have a certain property.
+Customized experiences in different countries?
+Just another property of users, their <em>country</em>.
+Testing new features that need development of multiple teams?
+Use the new &ldquo;staging&rdquo; feature.</p>
+<p>And finally flags and their usage helps you manage technical debt.
+When was the flag last active?
+Is that more than a few weeks back?
+Should we remove the code all together?
+Or is the flag part of an emergency procedure?
+You should probably make sure this still works as expected!
+On parts of the user base, of course.</p>
+<h1 id="delivering-features-at-scale">
+  Delivering Features at Scale
+  <a class="heading-link" href="#delivering-features-at-scale">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>How does this help in delivering features that cross team boundaries?
+Or even larger organizational boundaries?
+In a large organization is it not uncommon to have a lot of teams working on a large feature.
+Everyone has to deliver parts of the bigger picture.
+And everyone creates a feature branch.
+But in a large organization something else is present: heterogeneity.
+Different teams develop in different programming languages.
+A different framework.
+Or different engineering maturity.
+Some teams might have their local feature flagging solution.
+Or thought about configuration beyond ports their code listens on.</p>
+<p>Rolling out a new feature across teams now needs a lot of coordination.
+Maybe teams have a checklist or best practices for go-lives.
+But coordinating this globally involves keeping track of them from all involved teams.
+And build a plan on <em>who</em> needs to do <em>what</em> and by <em>when</em>.</p>
+<p>This comes at with two types of cost.
+First, the roll out now takes time from engineers.
+Time they cannot spend on something building the next feature.
+Instead, they help rolling out something that might have been developed two months ago.</p>
+<p>Second, and even more importantly: your feature might only be tested when you go live.
+I don&rsquo;t mean tested locally, by team X or Y or Z.
+I mean fully integrated, in a live environment, with live data.
+Only in the moment you put the feature in front of actual customers you see how it behaves.
+Of course you roll out the feature to only X% of your A/B testing group.
+But only then you discover defects.
+So you repeat the A/B test until the feature works.</p>
+<h1 id="how-the-parts-interact">
+  How the parts interact
+  <a class="heading-link" href="#how-the-parts-interact">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The system I&rsquo;m describing helps with feature releases.
+Especially across multiple teams.
+But the real magic is the integration with other systems.
+Specifically the integration with tracking, analytics, and experimentation.</p>
+<p>A feature flag is worth nothing if you cannot analyze the impact.
+Does the new feature work?
+Can the new version be activated for a larger part of the customer base?
+Is the new button color better than the old one?
+Are there any unforeseen side effects that influence adjacent KPIs?</p>
+<p>And of course the best part of the integration: multi-armed bandits!
+Can the analysis of different versions of a feature influence the feature selection?
+In e-commerce for example, think about different sales periods.
+Version A of a feature might work better during a sale event compared to version B.
+At the same time, version B is much better during non-sales events.</p>
+<p>But: why <strong>one</strong> system?
+First of all: any system is built on subsystems.
+So it is not really about one single code base or single deployment.
+Not about <em>one team</em> that should build it.
+Instead, take a look at how companies offer the functionality as a service.
+What do they <em>always</em> need?
+What features do all players in this market require from you?
+Exactly what I have outlined above.
+Feature flags to activate a feature based on rules.
+Tracking to collect usage data.
+Analytics to analyze the basic KPI tree of your business.
+And experimentation, to test new features against the current status quo.</p>
+<p>Some might provide integrations with other systems.
+Like Google Analytics, or BigQuery, or RedShift.
+But the SaaS companies need certain capabilities in order to guarantee correctness.
+Correctness of analytics and experimentation results.
+The only way they <em>can</em> guarantee this is by centralizing all of those parts in one system.
+And from there you might be able to export the data somewhere else.</p>
+<p>Popular solutions one can use are <a href="https://launchdarkly.com/"  class="external-link" target="_blank" rel="noopener">LaunchDarkly</a>, <a href="https://statsig.com/"  class="external-link" target="_blank" rel="noopener">StatSig</a>, or <a href="https://www.getunleash.io/"  class="external-link" target="_blank" rel="noopener">Unleash</a>.
+An interesting observation is that they basically provide a similar service, with a focus on the area from two different sides.
+The more engineering focused offerings added experimentation later.
+They have an emphasis on rolling out features safely.
+The more experimentation focused offerings advertise the safe rollouts later.
+Still, they all roughly have the same set of features.
+With nuances in how they are built.</p>
+<h1 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Long story short: in my opinion, don&rsquo;t invest time into canary releases or similar constructs.
+Using, leveraging, or <em>maybe</em> building a centralized feature flagging system pays off.
+In terms of actual costs for example a staging system that is obsolete.
+But also for increasing overall productivity of the organization.
+In delivering features and managing technical debt.
+And to increase developer productivity.
+Because they don&rsquo;t have to coordinate go-lives of features.</p>
+<p>Discuss and leave comments on <a href="https://news.ycombinator.com/item?id=35091792"  class="external-link" target="_blank" rel="noopener">hacker news</a>.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2015 -
+    
+    2024
+     Daniel Truemper 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="https://truemped.github.io/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  <script data-goatcounter="https://truemped.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
