@@ -20,3 +20,7 @@ enableRobotsTXT: true
 buildDrafts: true
 buildFuture: true
 buildExpired: false
+
+permalinks:
+  page:
+    /: /:year/:month/:slug

@@ -1,1 +1,2 @@
-minifyOutput: false
+disableXML: false
+minifyOutput: true

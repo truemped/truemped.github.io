@@ -23,7 +23,7 @@ jobs:
       - name: Build
         # remove --minify tag if you do not need it
         # docs: https://gohugo.io/hugo-pipes/minification/
-        run: hugo --environment=live --minify
+        run: hugo --environment=live
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
