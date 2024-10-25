@@ -1,19 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Business on all things considered...</title>
-    <link>https://truemped.github.io/tags/business/</link>
-    <description>Recent content in Business on all things considered...</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 06 Aug 2022 21:05:45 +0200</lastBuildDate>
-    <atom:link href="https://truemped.github.io/tags/business/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Buy versus Build</title>
-      <link>https://truemped.github.io/posts/2022/07/buy-vs-build/</link>
-      <pubDate>Tue, 26 Jul 2022 15:28:45 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2022/07/buy-vs-build/</guid>
-      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu10036057903675757488.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp 800w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu12004049385056749749.webp 1200w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu1668302165911667270.webp 1500w,&#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;Photo by Ivan Henao on Unsplash&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;Photo by &lt;a href=&#34;https://unsplash.com/@ivanchenao&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ivan Henao&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com/photos/04rZ7R1fKhY&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;This is maybe the most complex question that is never asked in the interview process in tech.&#xA;And often not even on a managerial level.&#xA;But: it is such an interesting one to discuss!&#xA;There might be no right or wrong.&#xA;But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Business on all things considered...</title><link>https://truemped.github.io/tags/business/</link><description>Recent content in Business on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 06 Aug 2022 21:05:45 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/business/index.xml" rel="self" type="application/rss+xml"/><item><title>Buy versus Build</title><link>https://truemped.github.io/posts/2022/07/buy-vs-build/</link><pubDate>Tue, 26 Jul 2022 15:28:45 +0200</pubDate><guid>https://truemped.github.io/posts/2022/07/buy-vs-build/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu10036057903675757488.webp 480w,
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp 800w,
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu12004049385056749749.webp 1200w,
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu1668302165911667270.webp 1500w,
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp"
+ 
+
+ 
+ alt="Photo by Ivan Henao on Unsplash"/> &lt;figcaption>
+ &lt;p>Photo by &lt;a href="https://unsplash.com/@ivanchenao" class="external-link" target="_blank" rel="noopener">Ivan Henao&lt;/a> on &lt;a href="https://unsplash.com/photos/04rZ7R1fKhY" class="external-link" target="_blank" rel="noopener">Unsplash&lt;/a>&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>This is maybe the most complex question that is never asked in the interview process in tech.
+And often not even on a managerial level.
+But: it is such an interesting one to discuss!
+There might be no right or wrong.
+But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.&lt;/p></description></item></channel></rss>

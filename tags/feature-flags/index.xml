@@ -1,19 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Feature Flags on all things considered...</title>
-    <link>https://truemped.github.io/tags/feature-flags/</link>
-    <description>Recent content in Feature Flags on all things considered...</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Mon, 06 Mar 2023 22:00:00 +0200</lastBuildDate>
-    <atom:link href="https://truemped.github.io/tags/feature-flags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>On Feature Flags</title>
-      <link>https://truemped.github.io/posts/2023/03/on-feature-flags/</link>
-      <pubDate>Mon, 06 Mar 2023 22:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2023/03/on-feature-flags/</guid>
-      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu11418894878726005926.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp 800w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu1873825012940073363.webp 1200w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu12824804519145094190.webp 1500w,&#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;Photo by Marco Bianchetti on Unsplash&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;Photo by &lt;a href=&#34;https://unsplash.com/@marcobian&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Marco Bianchetti&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com/photos/UOAD9U-TYxc&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Continuous &lt;em&gt;delivery&lt;/em&gt; is the holy grail of building software.&#xA;Not just continuous integration, like running your whole test suite on every push or pull request.&#xA;Deploying multiple times a day improves cycle times.&lt;/p&gt;&#xA;&lt;p&gt;But if you are still trying to make this happen in your organization.&#xA;If you are still trying to workout the details of &lt;a href=&#34;https://martinfowler.com/bliki/CanaryRelease.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;canary releases&lt;/a&gt;, &lt;a href=&#34;https://martinfowler.com/bliki/BlueGreenDeployment.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blue/Green&lt;/a&gt; deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.&#xA;Those ideas are great, but they have also aged.&#xA;They require a lot of additional tooling and automation to get right.&#xA;And knowing when a traffic switch of a new feature is successful, is non trivial.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Feature Flags on all things considered...</title><link>https://truemped.github.io/tags/feature-flags/</link><description>Recent content in Feature Flags on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 06 Mar 2023 22:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/feature-flags/index.xml" rel="self" type="application/rss+xml"/><item><title>On Feature Flags</title><link>https://truemped.github.io/posts/2023/03/on-feature-flags/</link><pubDate>Mon, 06 Mar 2023 22:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2023/03/on-feature-flags/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu11418894878726005926.webp 480w,
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp 800w,
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu1873825012940073363.webp 1200w,
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu12824804519145094190.webp 1500w,
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp"
+ 
+
+ 
+ alt="Photo by Marco Bianchetti on Unsplash"/> &lt;figcaption>
+ &lt;p>Photo by &lt;a href="https://unsplash.com/@marcobian" class="external-link" target="_blank" rel="noopener">Marco Bianchetti&lt;/a> on &lt;a href="https://unsplash.com/photos/UOAD9U-TYxc" class="external-link" target="_blank" rel="noopener">Unsplash&lt;/a>&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>Continuous &lt;em>delivery&lt;/em> is the holy grail of building software.
+Not just continuous integration, like running your whole test suite on every push or pull request.
+Deploying multiple times a day improves cycle times.&lt;/p>
+&lt;p>But if you are still trying to make this happen in your organization.
+If you are still trying to workout the details of &lt;a href="https://martinfowler.com/bliki/CanaryRelease.html" class="external-link" target="_blank" rel="noopener">canary releases&lt;/a>, &lt;a href="https://martinfowler.com/bliki/BlueGreenDeployment.html" class="external-link" target="_blank" rel="noopener">Blue/Green&lt;/a> deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.
+Those ideas are great, but they have also aged.
+They require a lot of additional tooling and automation to get right.
+And knowing when a traffic switch of a new feature is successful, is non trivial.&lt;/p></description></item></channel></rss>

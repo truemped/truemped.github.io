@@ -1,19 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Wiregard on all things considered...</title>
-    <link>https://truemped.github.io/tags/wiregard/</link>
-    <description>Recent content in Wiregard on all things considered...</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 16 Feb 2021 09:00:00 +0200</lastBuildDate>
-    <atom:link href="https://truemped.github.io/tags/wiregard/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tailscale</title>
-      <link>https://truemped.github.io/posts/2021/02/tailscale/</link>
-      <pubDate>Tue, 16 Feb 2021 09:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2021/02/tailscale/</guid>
-      <description>&lt;p&gt;Last Friday I got to know &lt;a href=&#34;https://tailscale.com&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tailscale&lt;/a&gt; by a complete coincidence. Someone I&#xA;follow on twitter mentioned it:&lt;/p&gt;&#xA;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like how git was compared to previous scm. And Tailscale is Wireguard&amp;#39;s Github. Makes it accessible to the masses.&lt;/p&gt;&amp;mdash; Carlo Cabanilla 🌻 (@clofresh) &lt;a href=&#34;https://twitter.com/clofresh/status/1360105546712576006?ref_src=twsrc%5Etfw&#34;&gt;February 12, 2021&lt;/a&gt;&lt;/blockquote&gt;&#xA;&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&#xA;&#xA;&#xA;&lt;p&gt;What can I say: it blew my mind! I always wanted to setup a VPN connection&#xA;between my droplet and my NAS at home for backups. But of course I was way too&#xA;lazy to configure OpenVPN or something similar. I knew about WireGuard and the&#xA;progress they were making, but had been too lazy to set this up myself. And so&#xA;along comes Tailscale, a fully integrated WireGuard setup and almost a &lt;em&gt;one&#xA;click installation&lt;/em&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wiregard on all things considered...</title><link>https://truemped.github.io/tags/wiregard/</link><description>Recent content in Wiregard on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 16 Feb 2021 09:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/wiregard/index.xml" rel="self" type="application/rss+xml"/><item><title>Tailscale</title><link>https://truemped.github.io/posts/2021/02/tailscale/</link><pubDate>Tue, 16 Feb 2021 09:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2021/02/tailscale/</guid><description>&lt;p>Last Friday I got to know &lt;a href="https://tailscale.com" class="external-link" target="_blank" rel="noopener">Tailscale&lt;/a> by a complete coincidence. Someone I
+follow on twitter mentioned it:&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like how git was compared to previous scm. And Tailscale is Wireguard&amp;#39;s Github. Makes it accessible to the masses.&lt;/p>&amp;mdash; Carlo Cabanilla 🌻 (@clofresh) &lt;a href="https://twitter.com/clofresh/status/1360105546712576006?ref_src=twsrc%5Etfw">February 12, 2021&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>What can I say: it blew my mind! I always wanted to setup a VPN connection
+between my droplet and my NAS at home for backups. But of course I was way too
+lazy to configure OpenVPN or something similar. I knew about WireGuard and the
+progress they were making, but had been too lazy to set this up myself. And so
+along comes Tailscale, a fully integrated WireGuard setup and almost a &lt;em>one
+click installation&lt;/em>.&lt;/p></description></item></channel></rss>

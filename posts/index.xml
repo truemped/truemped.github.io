@@ -1,159 +1,334 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on all things considered...</title>
-    <link>https://truemped.github.io/posts/</link>
-    <description>Recent content in Posts on all things considered...</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 24 Aug 2024 11:50:00 +0200</lastBuildDate>
-    <atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>On Writing Backwards</title>
-      <link>https://truemped.github.io/posts/2024/08/on-writing-backwards/</link>
-      <pubDate>Sat, 24 Aug 2024 10:30:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2024/08/on-writing-backwards/</guid>
-      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu12624266582730866106.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu585396451301511731.webp 800w,&#xA;            &#xA;                   https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu12017678945329112638.webp 1200w,&#xA;            &#xA;                   https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu16705054934747986509.webp 1500w,&#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu585396451301511731.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;Photo by Florian Klauer on Unsplash&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;Photo by &lt;a href=&#34;https://unsplash.com/@florianklauer&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Florian Klauer&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com/photos/black-fayorit-typewriter-with-printer-paper-mk7D-4UCfmg&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;After five years of working backwards, writing some and reading even more documents, I&amp;rsquo;ve gathered a few thoughts on why writing is hard and the mistakes I often see people making.&lt;/p&gt;&#xA;&lt;h2 id=&#34;on-working-backwards&#34;&gt;&#xA;  On Working Backwards&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#on-working-backwards&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&amp;ldquo;Working Backwards&amp;rdquo; is a concept developed at Amazon.&#xA;It focuses on starting from the customer and working backward to ensure solutions are relevant.&#xA;This is, of course, just a brief introduction.&#xA;If you&amp;rsquo;re interested in the details, I recommend reading &lt;a href=&#34;https://www.amazon.de/Working-Backwards-Insights-Stories-Secrets/dp/1529033829&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Working Backwards: Insights, Stories, and Secrets from Inside Amazon&lt;/a&gt; by Colin Bryar and Bill Carr.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Trunk Based Development: Stop PR Reviews!</title>
-      <link>https://truemped.github.io/posts/2023/08/trunk-based-development/</link>
-      <pubDate>Tue, 22 Aug 2023 19:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2023/08/trunk-based-development/</guid>
-      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu13324139568549620146.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp 800w,&#xA;            &#xA;                   &#xA;            &#xA;                   &#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Engineering effectiveness is a prominent topic.&#xA;Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value.&#xA;Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process.&#xA;Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.&#xA;I want to describe the challenges posed by conventional PR reviews and show the benefits of doing things differently.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>On Feature Flags</title>
-      <link>https://truemped.github.io/posts/2023/03/on-feature-flags/</link>
-      <pubDate>Mon, 06 Mar 2023 22:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2023/03/on-feature-flags/</guid>
-      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu11418894878726005926.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp 800w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu1873825012940073363.webp 1200w,&#xA;            &#xA;                   https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu12824804519145094190.webp 1500w,&#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;Photo by Marco Bianchetti on Unsplash&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;Photo by &lt;a href=&#34;https://unsplash.com/@marcobian&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Marco Bianchetti&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com/photos/UOAD9U-TYxc&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Continuous &lt;em&gt;delivery&lt;/em&gt; is the holy grail of building software.&#xA;Not just continuous integration, like running your whole test suite on every push or pull request.&#xA;Deploying multiple times a day improves cycle times.&lt;/p&gt;&#xA;&lt;p&gt;But if you are still trying to make this happen in your organization.&#xA;If you are still trying to workout the details of &lt;a href=&#34;https://martinfowler.com/bliki/CanaryRelease.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;canary releases&lt;/a&gt;, &lt;a href=&#34;https://martinfowler.com/bliki/BlueGreenDeployment.html&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Blue/Green&lt;/a&gt; deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.&#xA;Those ideas are great, but they have also aged.&#xA;They require a lot of additional tooling and automation to get right.&#xA;And knowing when a traffic switch of a new feature is successful, is non trivial.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Buy versus Build</title>
-      <link>https://truemped.github.io/posts/2022/07/buy-vs-build/</link>
-      <pubDate>Tue, 26 Jul 2022 15:28:45 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2022/07/buy-vs-build/</guid>
-      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu10036057903675757488.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp 800w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu12004049385056749749.webp 1200w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu1668302165911667270.webp 1500w,&#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;Photo by Ivan Henao on Unsplash&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;Photo by &lt;a href=&#34;https://unsplash.com/@ivanchenao&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ivan Henao&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com/photos/04rZ7R1fKhY&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;This is maybe the most complex question that is never asked in the interview process in tech.&#xA;And often not even on a managerial level.&#xA;But: it is such an interesting one to discuss!&#xA;There might be no right or wrong.&#xA;But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cities of Software</title>
-      <link>https://truemped.github.io/posts/2022/03/cities-of-software/</link>
-      <pubDate>Wed, 30 Mar 2022 17:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2022/03/cities-of-software/</guid>
-      <description>&lt;figure&gt;&#xA;    &lt;img&#xA;        &#xA;            sizes=&#34;(min-width: 35em) 1200px, 100vw&#34;&#xA;            &#xA;            srcset=&#39;&#xA;            &#xA;                   https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu16804506669958721228.webp 480w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu2778795131166939905.webp 800w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu6157307535233834437.webp 1200w,&#xA;            &#xA;                   https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu17564473676001689419.webp 1500w,&#xA;            &#39;&#xA;&#xA;            &#xA;            &#xA;            src=&#34;https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu2778795131166939905.webp&#34;&#xA;            &#xA;&#xA;        &#xA;            alt=&#34;Photo by Adrian Schwarz on Unsplash&#34;/&gt; &lt;figcaption&gt;&#xA;            &lt;p&gt;Photo by &lt;a href=&#34;https://unsplash.com/@aeschwarz&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adrian Schwarz&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com/photos/XS7q-baZrmE&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Cities are an interesting way to think about Software. Cities have foundations,&#xA;like infrastructure for cars, electricity. Housing for people to live and work.&#xA;Stores to sell and buy goods. Also, Cities are often referred to as an&#xA;&lt;em&gt;organism&lt;/em&gt;. Just like a large organization, a department, or a team are an&#xA;&lt;em&gt;organism&lt;/em&gt;. But these organisms are building software.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>A Year of Silence</title>
-      <link>https://truemped.github.io/posts/2022/03/a-year-of-silence/</link>
-      <pubDate>Thu, 03 Mar 2022 14:00:00 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2022/03/a-year-of-silence/</guid>
-      <description>&lt;p&gt;Well, that was a writer&amp;rsquo;s block. For about a year I&amp;rsquo;ve been planning to write a&#xA;response post to Mikio Braun&amp;rsquo;s &lt;a href=&#34;https://mikiobraun.wordpress.com/2021/04/05/creating-software-at-scale/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Everyone Is Still Terrible At Creating&#xA;Software&lt;/a&gt; post. It resonates a lot with me and has triggered myself into&#xA;completely overthinking my writing. I spent weeks and months over a number of&#xA;drafts, all connected. Never finished. And some are still just in my head.&lt;/p&gt;&#xA;&lt;p&gt;To be honest, right now it feels strange to think about how we could build&#xA;software better and how we might set up teams better so that they can actually&#xA;be successful. The events of the last week are beyond mind-blowing and the&#xA;impact on me, the industry, Europe, the World, is not yet clear in my opinion.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>On Psychological Safety</title>
-      <link>https://truemped.github.io/posts/2021/04/psychological-safety/</link>
-      <pubDate>Wed, 07 Apr 2021 09:50:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2021/04/psychological-safety/</guid>
-      <description>&lt;p&gt;More and more work involves collaboration. Multiple people working in a team on&#xA;the same &lt;em&gt;thing&lt;/em&gt; that is becoming ever more complex. What does this mean for an&#xA;organization? Information and knowledge, especially in the technology domain, is&#xA;becoming a commodity. All the best technical tools to build your next Google is&#xA;just a Google search away. In the age of digital products, market access is&#xA;getting cheaper every day. This increases the importance of the team and their&#xA;effectiveness as it becomes a company&amp;rsquo;s unique selling point.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tailscale</title>
-      <link>https://truemped.github.io/posts/2021/02/tailscale/</link>
-      <pubDate>Tue, 16 Feb 2021 09:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2021/02/tailscale/</guid>
-      <description>&lt;p&gt;Last Friday I got to know &lt;a href=&#34;https://tailscale.com&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tailscale&lt;/a&gt; by a complete coincidence. Someone I&#xA;follow on twitter mentioned it:&lt;/p&gt;&#xA;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like how git was compared to previous scm. And Tailscale is Wireguard&amp;#39;s Github. Makes it accessible to the masses.&lt;/p&gt;&amp;mdash; Carlo Cabanilla 🌻 (@clofresh) &lt;a href=&#34;https://twitter.com/clofresh/status/1360105546712576006?ref_src=twsrc%5Etfw&#34;&gt;February 12, 2021&lt;/a&gt;&lt;/blockquote&gt;&#xA;&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&#xA;&#xA;&#xA;&lt;p&gt;What can I say: it blew my mind! I always wanted to setup a VPN connection&#xA;between my droplet and my NAS at home for backups. But of course I was way too&#xA;lazy to configure OpenVPN or something similar. I knew about WireGuard and the&#xA;progress they were making, but had been too lazy to set this up myself. And so&#xA;along comes Tailscale, a fully integrated WireGuard setup and almost a &lt;em&gt;one&#xA;click installation&lt;/em&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Leadership is Language</title>
-      <link>https://truemped.github.io/posts/2020/12/leadership-is-language/</link>
-      <pubDate>Mon, 28 Dec 2020 17:50:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2020/12/leadership-is-language/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m currently reading &lt;a href=&#34;https://www.goodreads.com/book/show/42774083-leadership-is-language&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Leadership is language&lt;/a&gt; by L. David Marquet, the same&#xA;author of &lt;a href=&#34;https://www.goodreads.com/book/show/16158601-turn-the-ship-around&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Turn the Ship Around&lt;/a&gt;. In this book, Marquet describes the&#xA;different ways people communicate and how it influences the outcomes we get.&#xA;This should not be any news really, but the book explains in much more detail&#xA;how this happens. Especially when there is a power dynamic between the&#xA;participants of a conversation or meeting.&lt;/p&gt;&#xA;&lt;p&gt;The main theme across the book is the sinking of a ship called &lt;em&gt;El Faro&lt;/em&gt; caused&#xA;by a hurricane. The National Transportation Safety Board (NTSB) found the ship&#xA;and recovered it&amp;rsquo;s voice recorder. It contained the last 25 hours of&#xA;conversation on the bridge. The sad story is that the people on board were aware&#xA;of the dangerous situation but the environment created by the company and&#xA;captain did not allow for them to speak up. Seeing what they were getting into,&#xA;the subordinates were not capable of convincing the captain to change route. The&#xA;ship sank and all 35 people on board died.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Monolith to Microservice</title>
-      <link>https://truemped.github.io/posts/2020/11/monolith-to-microservice/</link>
-      <pubDate>Mon, 16 Nov 2020 11:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2020/11/monolith-to-microservice/</guid>
-      <description>&lt;p&gt;Why is moving from a monolithic architecture to a microservices based one so&#xA;hard? And is it worth it? Often those projects happen in organizations that&#xA;were successful in the past and now enter a phase of scaling. This can be&#xA;scaling by adding lots and lots of developers, or by allowing individual scaling&#xA;of sub-components, because the system is screaming under load and is getting&#xA;more and more expensive to run.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Limiting Work In Progress</title>
-      <link>https://truemped.github.io/posts/2020/10/limiting-wip/</link>
-      <pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2020/10/limiting-wip/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: This post was trending on Hackernews in April 2021. See the&#xA;&lt;a href=&#34;https://news.ycombinator.com/item?id=26759903&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;discussion&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;In many organizations today there is one thing that almost always is true: there&#xA;are too many things done in parallel, there is too much &lt;em&gt;work-in-progress&lt;/em&gt;,&#xA;everyone is busy but nothing gets done. If this is so ubiquitous why is no one&#xA;doing anything about it? Are people not aware or do they not know how to fix it?&#xA;This is so predominant, that it almost is too easy to just claim:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Campaigns in Elasticsearch</title>
-      <link>https://truemped.github.io/posts/2020/04/campaigns-in-elasticsearch/</link>
-      <pubDate>Mon, 13 Apr 2020 17:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2020/04/campaigns-in-elasticsearch/</guid>
-      <description>&lt;p&gt;In e-commerce search enabling dynamic prices or campaigns requires some&#xA;attributes to be more volatile than others. A discount on Black Friday that is&#xA;should only be valid between 7 PM and midnight. The flags that promote the&#xA;discount. The teasers on product listings showing what products will have a&#xA;discount, before the discount is in effect. Products that are only discounted&#xA;for a certain customer group.&lt;/p&gt;&#xA;&lt;p&gt;Traditionally this is solved by updating the documents in the search index.&#xA;Around the time new information has to go live, all affected documents are&#xA;updated. There are at least two huge problems with this approach. The first one&#xA;is that updating a large portion of the index takes time. During large sales&#xA;events this easily means updating the whole index. Sometimes more than once if&#xA;your intake pipelines contain loops, e.g. This creates a huge load onto the&#xA;system which at this point can already have a lot of users looking for the deals&#xA;to become active. User facing errors are the last thing you would tolerate at&#xA;that time.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Onto new Horizons</title>
-      <link>https://truemped.github.io/posts/2020/04/onto-new-horizons/</link>
-      <pubDate>Sun, 05 Apr 2020 17:00:00 +0200</pubDate>
-      <guid>https://truemped.github.io/posts/2020/04/onto-new-horizons/</guid>
-      <description>&lt;p&gt;The date slowly approached and then it just happened. After almost four years I&#xA;left Zalando end of March. I joined Zalando as Senior Engineer in the search&#xA;team. In this role I helped migrate the search systems from the old monolith&#xA;(&lt;em&gt;Jimmy&lt;/em&gt;) to a microservice based architecture. In those times, microservices&#xA;where meant literally and a lot of them were created.&lt;/p&gt;&#xA;&lt;p&gt;The system was based on SolrCloud and basically a home-grown Kafka like&#xA;messaging system based on SQS and DynamoDB. A lot of assumptions were baked in&#xA;code. The first Black Friday we were live only on the mobile app. While this was&#xA;successful, extending this system to other clients like the web was a huge&#xA;undertaking. At this point, we decided to move to a much more simple, Kafka&#xA;based intake pipeline and Elasticsearch as the main search index. Back then we&#xA;felt this would be a much more sustainable architecture. And we were right. It&#xA;still has not changed significantly but has been extended over time.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Aligning through writing documents</title>
-      <link>https://truemped.github.io/posts/2020/03/aligning-through-writing-documents/</link>
-      <pubDate>Thu, 05 Mar 2020 11:00:00 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2020/03/aligning-through-writing-documents/</guid>
-      <description>&lt;p&gt;Writing narratives and technical documents becomes a more and more relevant&#xA;skill to have when navigating today&amp;rsquo;s organizations. Often times successful&#xA;alignment between teams or even departments rely on this form of communication.&#xA;Personally I have seen how I was unable to convey my thoughts and ideas to a&#xA;wider audience simply because I was not able to write them down. Later I learned&#xA;that &lt;em&gt;only&lt;/em&gt; writing them down is not enough to form an alignment.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>My new writing habit</title>
-      <link>https://truemped.github.io/posts/2020/02/my-new-writing-habit/</link>
-      <pubDate>Wed, 26 Feb 2020 10:00:00 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2020/02/my-new-writing-habit/</guid>
-      <description>&lt;p&gt;My new habit is starting to form and shape itself. I started the new year with a&#xA;few little habits I want to establish and my writing habit slowly kicks in.&#xA;Originally I intended to take 30 minutes every day to write: my thoughts on this&#xA;blog, comment on documents in the company and finish my own documents.&lt;/p&gt;&#xA;&lt;p&gt;Until now I have mostly been the reading type of person. Back in school I&amp;rsquo;ve&#xA;spent a significant amount of money on books about programming. This helped me&#xA;to get into the field. Since I moved into management I noticed a similar kind of&#xA;learning path: I again bought &amp;ndash; and am still buying &amp;ndash; books on management and&#xA;leadership. This seems to be my learning habit and my way of getting into a&#xA;specific topic.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Providing Difficult Feedback</title>
-      <link>https://truemped.github.io/posts/2020/01/providing-difficult-feedback/</link>
-      <pubDate>Fri, 03 Jan 2020 11:25:00 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2020/01/providing-difficult-feedback/</guid>
-      <description>&lt;p&gt;When moving from an individual contributor role into management, the biggest&#xA;challenge for me was to provide &lt;strong&gt;difficult feedback&lt;/strong&gt;. This might have been&#xA;bigger for me compared to others as within a very short period of time a number&#xA;of my colleagues and peers suddenly started to report to me. Looking back at&#xA;2019 overcoming this has been my biggest personal achievement.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-is-ruinous-empathy&#34;&gt;&#xA;  What is ruinous empathy?&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#what-is-ruinous-empathy&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;One of the books I read in 2019 is &lt;strong&gt;Radical Candor&lt;/strong&gt;, a &amp;ldquo;new management&#xA;philosophy&amp;rdquo;. It separates management in two dimensions: care personally and&#xA;challenge directly. Based on these you can group management behaviour in four&#xA;groups: &lt;strong&gt;obnoxious aggression&lt;/strong&gt;, &lt;strong&gt;manipulative insincerity&lt;/strong&gt;, &lt;strong&gt;ruinous&#xA;empathy&lt;/strong&gt; and &lt;strong&gt;radical candor&lt;/strong&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>My first year in Management</title>
-      <link>https://truemped.github.io/posts/2019/04/first-year/</link>
-      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://truemped.github.io/posts/2019/04/first-year/</guid>
-      <description>&lt;p&gt;About a year ago I transitioned into management. I changed my role from Senior&#xA;Software Developer to Engineering Lead in Zalando. In this post I want to share&#xA;my experience, good and bad, things that went well, where I screwed up and what&#xA;I&amp;rsquo;m taking from it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-difficult-first-year&#34;&gt;&#xA;  A difficult first year&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#a-difficult-first-year&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;As my manager put it in my performance review: the last year was one of my most&#xA;challenging ones. And he was right. In theory my game plan was pretty &lt;em&gt;simple&lt;/em&gt;:&#xA;I became Engineering Lead for the team I was an engineer before. A well&#xA;functioning and I might say one of the most high performing teams I&amp;rsquo;ve ever&#xA;worked in. It did not take long though until the team dissolved itself. For one&#xA;member it was clear from the beginning that he would leave. But it did not take&#xA;long until the next engineer from this team said he would leave the company.&#xA;This was a real setback because I value him tremendously as an engineer and&#xA;enjoyed the interactions we had. Sadly he had made up his mind even before I&#xA;became manager and for me there was no way to keep him. Back then and still&#xA;today I was not under the impression that it was because of my transition.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>New Year Resolutions</title>
-      <link>https://truemped.github.io/posts/2019/01/new-year-resolutions-2019/</link>
-      <pubDate>Wed, 23 Jan 2019 17:30:00 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2019/01/new-year-resolutions-2019/</guid>
-      <description>&lt;p&gt;So here I am, again claiming to stick to blogging. This time I&amp;rsquo;ll start with a&#xA;look back at 2018 and my New Year resolutions that will make sure 2019 will be a&#xA;blast.&lt;/p&gt;&#xA;&lt;p&gt;Last year was a challenge for me as so many things happened that impacted my&#xA;&lt;strong&gt;work-life&lt;/strong&gt;. I transitioned into management and became &lt;strong&gt;Engineering Lead&lt;/strong&gt; in&#xA;the Search department at Zalando. I was surprised at how much I actually like&#xA;working with people. In my life as individual contributor I was mostly writing&#xA;code and argued about it. Now I enjoy understanding someone else&amp;rsquo;s motivation,&#xA;where she is coming from, what her goals are and how I might help her.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Favorite Talks</title>
-      <link>https://truemped.github.io/posts/2019/01/favorite-talks/</link>
-      <pubDate>Sun, 13 Jan 2019 10:00:00 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2019/01/favorite-talks/</guid>
-      <description>&lt;p&gt;Earlier this month Monica Lent published a list of&#xA;&lt;a href=&#34;https://monicalent.com/blog/2019/01/01/favorite-programming-talks/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tech talks that&amp;rsquo;ll change how you think&lt;/a&gt;. Every one on this list is awesome&#xA;and some have influenced me pretty heavily. Especially &lt;a href=&#34;https://www.infoq.com/presentations/Simple-Made-Easy&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Simple made Easy&lt;/a&gt; by&#xA;Rich Hickey. To these I&amp;rsquo;d like to add a few from my list of favorite talks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;full-stack-awareness&#34;&gt;&#xA;  Full Stack Awareness&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#full-stack-awareness&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;In this, Arthur Bergman rants about how everything is broken. We, as engineers,&#xA;are so used to just connect a few systems and the new feature is working. We&#xA;take so many things for granted that we forget how underlying systems down to&#xA;the operating system work.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Varnish All the Things</title>
-      <link>https://truemped.github.io/posts/2016/02/varnish-all-the-things/</link>
-      <pubDate>Mon, 01 Feb 2016 12:15:09 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2016/02/varnish-all-the-things/</guid>
-      <description>&lt;p&gt;My usual web application stack for the past years was based on  a nginx as&#xA;reverse proxy in front of a number of Python processes. Static resources were&#xA;served by nginx. Each Python process was stateless, state was stored in some&#xA;kind of database. If the processes needed some shared ephemeral state like&#xA;counters a local redis instance solved that. A battle tested common ground for&#xA;Python based web applications.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Elasticsearch DSL-DSL</title>
-      <link>https://truemped.github.io/posts/2015/07/elastic-dsl/</link>
-      <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2015/07/elastic-dsl/</guid>
-      <description>&lt;p&gt;Elasticsearch is a search server based on Apache Lucene. As a developer it is&#xA;easy to use, has an expressive query DSL and all is based on JSON&#xA;serialization. Often though I find myself in a position where I need to adapt&#xA;queries frequently and non-trivially, say in a demonstration in front of&#xA;customers or product owners.&lt;/p&gt;&#xA;&lt;p&gt;The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the&#xA;ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if&#xA;I boost document types Y&amp;rdquo; and so on. While these are easy to add, two things&#xA;bother me: first, I need to come up with the queries during a presentation,&#xA;which adds pauses to the meetings. When I&amp;rsquo;m finished with the query the&#xA;discussion has evolved. Second, I don&amp;rsquo;t want to be the enabler. If they can&#xA;find out what they want without me it also means a faster feedback loop for&#xA;them. In brainstorming sessions it is easy to focus on arguments and skip the&#xA;sometimes lengthy query finding pauses. Win win for everyone it seems.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on all things considered...</title><link>https://truemped.github.io/posts/</link><description>Recent content in Posts on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 24 Aug 2024 11:50:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>On Writing Backwards</title><link>https://truemped.github.io/posts/2024/08/on-writing-backwards/</link><pubDate>Sat, 24 Aug 2024 10:30:00 +0200</pubDate><guid>https://truemped.github.io/posts/2024/08/on-writing-backwards/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu12624266582730866106.webp 480w,
+ 
+ https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu585396451301511731.webp 800w,
+ 
+ https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu12017678945329112638.webp 1200w,
+ 
+ https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu16705054934747986509.webp 1500w,
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2024/08/on-writing-backwards/florian-klauer-vintage-typewriter-unsplash_hu585396451301511731.webp"
+ 
+
+ 
+ alt="Photo by Florian Klauer on Unsplash"/> &lt;figcaption>
+ &lt;p>Photo by &lt;a href="https://unsplash.com/@florianklauer" class="external-link" target="_blank" rel="noopener">Florian Klauer&lt;/a> on &lt;a href="https://unsplash.com/photos/black-fayorit-typewriter-with-printer-paper-mk7D-4UCfmg" class="external-link" target="_blank" rel="noopener">Unsplash&lt;/a>&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>After five years of working backwards, writing some and reading even more documents, I&amp;rsquo;ve gathered a few thoughts on why writing is hard and the mistakes I often see people making.&lt;/p>
+&lt;h2 id="on-working-backwards">
+ On Working Backwards
+ &lt;a class="heading-link" href="#on-working-backwards">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>&amp;ldquo;Working Backwards&amp;rdquo; is a concept developed at Amazon.
+It focuses on starting from the customer and working backward to ensure solutions are relevant.
+This is, of course, just a brief introduction.
+If you&amp;rsquo;re interested in the details, I recommend reading &lt;a href="https://www.amazon.de/Working-Backwards-Insights-Stories-Secrets/dp/1529033829" class="external-link" target="_blank" rel="noopener">Working Backwards: Insights, Stories, and Secrets from Inside Amazon&lt;/a> by Colin Bryar and Bill Carr.&lt;/p></description></item><item><title>Trunk Based Development: Stop PR Reviews!</title><link>https://truemped.github.io/posts/2023/08/trunk-based-development/</link><pubDate>Tue, 22 Aug 2023 19:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2023/08/trunk-based-development/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu13324139568549620146.webp 480w,
+ 
+ https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp 800w,
+ 
+ 
+ 
+ 
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp"
+ 
+
+ 
+ alt="two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)"/> &lt;figcaption>
+ &lt;p>two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>Engineering effectiveness is a prominent topic.
+Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value.
+Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process.
+Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.
+I want to describe the challenges posed by conventional PR reviews and show the benefits of doing things differently.&lt;/p></description></item><item><title>On Feature Flags</title><link>https://truemped.github.io/posts/2023/03/on-feature-flags/</link><pubDate>Mon, 06 Mar 2023 22:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2023/03/on-feature-flags/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu11418894878726005926.webp 480w,
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp 800w,
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu1873825012940073363.webp 1200w,
+ 
+ https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu12824804519145094190.webp 1500w,
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2023/03/on-feature-flags/marco-bianchetti-UOAD9U-TYxc-unsplash_hu17306968678499416416.webp"
+ 
+
+ 
+ alt="Photo by Marco Bianchetti on Unsplash"/> &lt;figcaption>
+ &lt;p>Photo by &lt;a href="https://unsplash.com/@marcobian" class="external-link" target="_blank" rel="noopener">Marco Bianchetti&lt;/a> on &lt;a href="https://unsplash.com/photos/UOAD9U-TYxc" class="external-link" target="_blank" rel="noopener">Unsplash&lt;/a>&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>Continuous &lt;em>delivery&lt;/em> is the holy grail of building software.
+Not just continuous integration, like running your whole test suite on every push or pull request.
+Deploying multiple times a day improves cycle times.&lt;/p>
+&lt;p>But if you are still trying to make this happen in your organization.
+If you are still trying to workout the details of &lt;a href="https://martinfowler.com/bliki/CanaryRelease.html" class="external-link" target="_blank" rel="noopener">canary releases&lt;/a>, &lt;a href="https://martinfowler.com/bliki/BlueGreenDeployment.html" class="external-link" target="_blank" rel="noopener">Blue/Green&lt;/a> deployments, or traffic switching in Kubernetes: don&amp;rsquo;t do it.
+Those ideas are great, but they have also aged.
+They require a lot of additional tooling and automation to get right.
+And knowing when a traffic switch of a new feature is successful, is non trivial.&lt;/p></description></item><item><title>Buy versus Build</title><link>https://truemped.github.io/posts/2022/07/buy-vs-build/</link><pubDate>Tue, 26 Jul 2022 15:28:45 +0200</pubDate><guid>https://truemped.github.io/posts/2022/07/buy-vs-build/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu10036057903675757488.webp 480w,
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp 800w,
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu12004049385056749749.webp 1200w,
+ 
+ https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu1668302165911667270.webp 1500w,
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2022/07/buy-vs-build/ivan-henao-04rZ7R1fKhY-unsplash_hu5960686868433815190.webp"
+ 
+
+ 
+ alt="Photo by Ivan Henao on Unsplash"/> &lt;figcaption>
+ &lt;p>Photo by &lt;a href="https://unsplash.com/@ivanchenao" class="external-link" target="_blank" rel="noopener">Ivan Henao&lt;/a> on &lt;a href="https://unsplash.com/photos/04rZ7R1fKhY" class="external-link" target="_blank" rel="noopener">Unsplash&lt;/a>&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>This is maybe the most complex question that is never asked in the interview process in tech.
+And often not even on a managerial level.
+But: it is such an interesting one to discuss!
+There might be no right or wrong.
+But it does reveal a lot about people&amp;rsquo;s thought processes and mental models they have collected.&lt;/p></description></item><item><title>Cities of Software</title><link>https://truemped.github.io/posts/2022/03/cities-of-software/</link><pubDate>Wed, 30 Mar 2022 17:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2022/03/cities-of-software/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu16804506669958721228.webp 480w,
+ 
+ https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu2778795131166939905.webp 800w,
+ 
+ https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu6157307535233834437.webp 1200w,
+ 
+ https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu17564473676001689419.webp 1500w,
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2022/03/cities-of-software/adrian-schwarz-XS7q-baZrmE-unsplash_hu2778795131166939905.webp"
+ 
+
+ 
+ alt="Photo by Adrian Schwarz on Unsplash"/> &lt;figcaption>
+ &lt;p>Photo by &lt;a href="https://unsplash.com/@aeschwarz" class="external-link" target="_blank" rel="noopener">Adrian Schwarz&lt;/a> on &lt;a href="https://unsplash.com/photos/XS7q-baZrmE" class="external-link" target="_blank" rel="noopener">Unsplash&lt;/a>&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>Cities are an interesting way to think about Software. Cities have foundations,
+like infrastructure for cars, electricity. Housing for people to live and work.
+Stores to sell and buy goods. Also, Cities are often referred to as an
+&lt;em>organism&lt;/em>. Just like a large organization, a department, or a team are an
+&lt;em>organism&lt;/em>. But these organisms are building software.&lt;/p></description></item><item><title>A Year of Silence</title><link>https://truemped.github.io/posts/2022/03/a-year-of-silence/</link><pubDate>Thu, 03 Mar 2022 14:00:00 +0100</pubDate><guid>https://truemped.github.io/posts/2022/03/a-year-of-silence/</guid><description>&lt;p>Well, that was a writer&amp;rsquo;s block. For about a year I&amp;rsquo;ve been planning to write a
+response post to Mikio Braun&amp;rsquo;s &lt;a href="https://mikiobraun.wordpress.com/2021/04/05/creating-software-at-scale/" class="external-link" target="_blank" rel="noopener">Everyone Is Still Terrible At Creating
+Software&lt;/a> post. It resonates a lot with me and has triggered myself into
+completely overthinking my writing. I spent weeks and months over a number of
+drafts, all connected. Never finished. And some are still just in my head.&lt;/p>
+&lt;p>To be honest, right now it feels strange to think about how we could build
+software better and how we might set up teams better so that they can actually
+be successful. The events of the last week are beyond mind-blowing and the
+impact on me, the industry, Europe, the World, is not yet clear in my opinion.&lt;/p></description></item><item><title>On Psychological Safety</title><link>https://truemped.github.io/posts/2021/04/psychological-safety/</link><pubDate>Wed, 07 Apr 2021 09:50:00 +0200</pubDate><guid>https://truemped.github.io/posts/2021/04/psychological-safety/</guid><description>&lt;p>More and more work involves collaboration. Multiple people working in a team on
+the same &lt;em>thing&lt;/em> that is becoming ever more complex. What does this mean for an
+organization? Information and knowledge, especially in the technology domain, is
+becoming a commodity. All the best technical tools to build your next Google is
+just a Google search away. In the age of digital products, market access is
+getting cheaper every day. This increases the importance of the team and their
+effectiveness as it becomes a company&amp;rsquo;s unique selling point.&lt;/p></description></item><item><title>Tailscale</title><link>https://truemped.github.io/posts/2021/02/tailscale/</link><pubDate>Tue, 16 Feb 2021 09:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2021/02/tailscale/</guid><description>&lt;p>Last Friday I got to know &lt;a href="https://tailscale.com" class="external-link" target="_blank" rel="noopener">Tailscale&lt;/a> by a complete coincidence. Someone I
+follow on twitter mentioned it:&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like how git was compared to previous scm. And Tailscale is Wireguard&amp;#39;s Github. Makes it accessible to the masses.&lt;/p>&amp;mdash; Carlo Cabanilla 🌻 (@clofresh) &lt;a href="https://twitter.com/clofresh/status/1360105546712576006?ref_src=twsrc%5Etfw">February 12, 2021&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+
+
+&lt;p>What can I say: it blew my mind! I always wanted to setup a VPN connection
+between my droplet and my NAS at home for backups. But of course I was way too
+lazy to configure OpenVPN or something similar. I knew about WireGuard and the
+progress they were making, but had been too lazy to set this up myself. And so
+along comes Tailscale, a fully integrated WireGuard setup and almost a &lt;em>one
+click installation&lt;/em>.&lt;/p></description></item><item><title>Leadership is Language</title><link>https://truemped.github.io/posts/2020/12/leadership-is-language/</link><pubDate>Mon, 28 Dec 2020 17:50:00 +0200</pubDate><guid>https://truemped.github.io/posts/2020/12/leadership-is-language/</guid><description>&lt;p>I&amp;rsquo;m currently reading &lt;a href="https://www.goodreads.com/book/show/42774083-leadership-is-language" class="external-link" target="_blank" rel="noopener">Leadership is language&lt;/a> by L. David Marquet, the same
+author of &lt;a href="https://www.goodreads.com/book/show/16158601-turn-the-ship-around" class="external-link" target="_blank" rel="noopener">Turn the Ship Around&lt;/a>. In this book, Marquet describes the
+different ways people communicate and how it influences the outcomes we get.
+This should not be any news really, but the book explains in much more detail
+how this happens. Especially when there is a power dynamic between the
+participants of a conversation or meeting.&lt;/p>
+&lt;p>The main theme across the book is the sinking of a ship called &lt;em>El Faro&lt;/em> caused
+by a hurricane. The National Transportation Safety Board (NTSB) found the ship
+and recovered it&amp;rsquo;s voice recorder. It contained the last 25 hours of
+conversation on the bridge. The sad story is that the people on board were aware
+of the dangerous situation but the environment created by the company and
+captain did not allow for them to speak up. Seeing what they were getting into,
+the subordinates were not capable of convincing the captain to change route. The
+ship sank and all 35 people on board died.&lt;/p></description></item><item><title>Monolith to Microservice</title><link>https://truemped.github.io/posts/2020/11/monolith-to-microservice/</link><pubDate>Mon, 16 Nov 2020 11:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2020/11/monolith-to-microservice/</guid><description>&lt;p>Why is moving from a monolithic architecture to a microservices based one so
+hard? And is it worth it? Often those projects happen in organizations that
+were successful in the past and now enter a phase of scaling. This can be
+scaling by adding lots and lots of developers, or by allowing individual scaling
+of sub-components, because the system is screaming under load and is getting
+more and more expensive to run.&lt;/p></description></item><item><title>Limiting Work In Progress</title><link>https://truemped.github.io/posts/2020/10/limiting-wip/</link><pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2020/10/limiting-wip/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>Update&lt;/strong>: This post was trending on Hackernews in April 2021. See the
+&lt;a href="https://news.ycombinator.com/item?id=26759903" class="external-link" target="_blank" rel="noopener">discussion&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;p>In many organizations today there is one thing that almost always is true: there
+are too many things done in parallel, there is too much &lt;em>work-in-progress&lt;/em>,
+everyone is busy but nothing gets done. If this is so ubiquitous why is no one
+doing anything about it? Are people not aware or do they not know how to fix it?
+This is so predominant, that it almost is too easy to just claim:&lt;/p></description></item><item><title>Campaigns in Elasticsearch</title><link>https://truemped.github.io/posts/2020/04/campaigns-in-elasticsearch/</link><pubDate>Mon, 13 Apr 2020 17:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2020/04/campaigns-in-elasticsearch/</guid><description>&lt;p>In e-commerce search enabling dynamic prices or campaigns requires some
+attributes to be more volatile than others. A discount on Black Friday that is
+should only be valid between 7 PM and midnight. The flags that promote the
+discount. The teasers on product listings showing what products will have a
+discount, before the discount is in effect. Products that are only discounted
+for a certain customer group.&lt;/p>
+&lt;p>Traditionally this is solved by updating the documents in the search index.
+Around the time new information has to go live, all affected documents are
+updated. There are at least two huge problems with this approach. The first one
+is that updating a large portion of the index takes time. During large sales
+events this easily means updating the whole index. Sometimes more than once if
+your intake pipelines contain loops, e.g. This creates a huge load onto the
+system which at this point can already have a lot of users looking for the deals
+to become active. User facing errors are the last thing you would tolerate at
+that time.&lt;/p></description></item><item><title>Onto new Horizons</title><link>https://truemped.github.io/posts/2020/04/onto-new-horizons/</link><pubDate>Sun, 05 Apr 2020 17:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2020/04/onto-new-horizons/</guid><description>&lt;p>The date slowly approached and then it just happened. After almost four years I
+left Zalando end of March. I joined Zalando as Senior Engineer in the search
+team. In this role I helped migrate the search systems from the old monolith
+(&lt;em>Jimmy&lt;/em>) to a microservice based architecture. In those times, microservices
+where meant literally and a lot of them were created.&lt;/p>
+&lt;p>The system was based on SolrCloud and basically a home-grown Kafka like
+messaging system based on SQS and DynamoDB. A lot of assumptions were baked in
+code. The first Black Friday we were live only on the mobile app. While this was
+successful, extending this system to other clients like the web was a huge
+undertaking. At this point, we decided to move to a much more simple, Kafka
+based intake pipeline and Elasticsearch as the main search index. Back then we
+felt this would be a much more sustainable architecture. And we were right. It
+still has not changed significantly but has been extended over time.&lt;/p></description></item><item><title>Aligning through writing documents</title><link>https://truemped.github.io/posts/2020/03/aligning-through-writing-documents/</link><pubDate>Thu, 05 Mar 2020 11:00:00 +0100</pubDate><guid>https://truemped.github.io/posts/2020/03/aligning-through-writing-documents/</guid><description>&lt;p>Writing narratives and technical documents becomes a more and more relevant
+skill to have when navigating today&amp;rsquo;s organizations. Often times successful
+alignment between teams or even departments rely on this form of communication.
+Personally I have seen how I was unable to convey my thoughts and ideas to a
+wider audience simply because I was not able to write them down. Later I learned
+that &lt;em>only&lt;/em> writing them down is not enough to form an alignment.&lt;/p></description></item><item><title>My new writing habit</title><link>https://truemped.github.io/posts/2020/02/my-new-writing-habit/</link><pubDate>Wed, 26 Feb 2020 10:00:00 +0100</pubDate><guid>https://truemped.github.io/posts/2020/02/my-new-writing-habit/</guid><description>&lt;p>My new habit is starting to form and shape itself. I started the new year with a
+few little habits I want to establish and my writing habit slowly kicks in.
+Originally I intended to take 30 minutes every day to write: my thoughts on this
+blog, comment on documents in the company and finish my own documents.&lt;/p>
+&lt;p>Until now I have mostly been the reading type of person. Back in school I&amp;rsquo;ve
+spent a significant amount of money on books about programming. This helped me
+to get into the field. Since I moved into management I noticed a similar kind of
+learning path: I again bought &amp;ndash; and am still buying &amp;ndash; books on management and
+leadership. This seems to be my learning habit and my way of getting into a
+specific topic.&lt;/p></description></item><item><title>Providing Difficult Feedback</title><link>https://truemped.github.io/posts/2020/01/providing-difficult-feedback/</link><pubDate>Fri, 03 Jan 2020 11:25:00 +0100</pubDate><guid>https://truemped.github.io/posts/2020/01/providing-difficult-feedback/</guid><description>&lt;p>When moving from an individual contributor role into management, the biggest
+challenge for me was to provide &lt;strong>difficult feedback&lt;/strong>. This might have been
+bigger for me compared to others as within a very short period of time a number
+of my colleagues and peers suddenly started to report to me. Looking back at
+2019 overcoming this has been my biggest personal achievement.&lt;/p>
+&lt;h2 id="what-is-ruinous-empathy">
+ What is ruinous empathy?
+ &lt;a class="heading-link" href="#what-is-ruinous-empathy">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>One of the books I read in 2019 is &lt;strong>Radical Candor&lt;/strong>, a &amp;ldquo;new management
+philosophy&amp;rdquo;. It separates management in two dimensions: care personally and
+challenge directly. Based on these you can group management behaviour in four
+groups: &lt;strong>obnoxious aggression&lt;/strong>, &lt;strong>manipulative insincerity&lt;/strong>, &lt;strong>ruinous
+empathy&lt;/strong> and &lt;strong>radical candor&lt;/strong>.&lt;/p></description></item><item><title>My first year in Management</title><link>https://truemped.github.io/posts/2019/04/first-year/</link><pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate><guid>https://truemped.github.io/posts/2019/04/first-year/</guid><description>&lt;p>About a year ago I transitioned into management. I changed my role from Senior
+Software Developer to Engineering Lead in Zalando. In this post I want to share
+my experience, good and bad, things that went well, where I screwed up and what
+I&amp;rsquo;m taking from it.&lt;/p>
+&lt;h2 id="a-difficult-first-year">
+ A difficult first year
+ &lt;a class="heading-link" href="#a-difficult-first-year">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>As my manager put it in my performance review: the last year was one of my most
+challenging ones. And he was right. In theory my game plan was pretty &lt;em>simple&lt;/em>:
+I became Engineering Lead for the team I was an engineer before. A well
+functioning and I might say one of the most high performing teams I&amp;rsquo;ve ever
+worked in. It did not take long though until the team dissolved itself. For one
+member it was clear from the beginning that he would leave. But it did not take
+long until the next engineer from this team said he would leave the company.
+This was a real setback because I value him tremendously as an engineer and
+enjoyed the interactions we had. Sadly he had made up his mind even before I
+became manager and for me there was no way to keep him. Back then and still
+today I was not under the impression that it was because of my transition.&lt;/p></description></item><item><title>New Year Resolutions</title><link>https://truemped.github.io/posts/2019/01/new-year-resolutions-2019/</link><pubDate>Wed, 23 Jan 2019 17:30:00 +0100</pubDate><guid>https://truemped.github.io/posts/2019/01/new-year-resolutions-2019/</guid><description>&lt;p>So here I am, again claiming to stick to blogging. This time I&amp;rsquo;ll start with a
+look back at 2018 and my New Year resolutions that will make sure 2019 will be a
+blast.&lt;/p>
+&lt;p>Last year was a challenge for me as so many things happened that impacted my
+&lt;strong>work-life&lt;/strong>. I transitioned into management and became &lt;strong>Engineering Lead&lt;/strong> in
+the Search department at Zalando. I was surprised at how much I actually like
+working with people. In my life as individual contributor I was mostly writing
+code and argued about it. Now I enjoy understanding someone else&amp;rsquo;s motivation,
+where she is coming from, what her goals are and how I might help her.&lt;/p></description></item><item><title>Favorite Talks</title><link>https://truemped.github.io/posts/2019/01/favorite-talks/</link><pubDate>Sun, 13 Jan 2019 10:00:00 +0100</pubDate><guid>https://truemped.github.io/posts/2019/01/favorite-talks/</guid><description>&lt;p>Earlier this month Monica Lent published a list of
+&lt;a href="https://monicalent.com/blog/2019/01/01/favorite-programming-talks/" class="external-link" target="_blank" rel="noopener">Tech talks that&amp;rsquo;ll change how you think&lt;/a>. Every one on this list is awesome
+and some have influenced me pretty heavily. Especially &lt;a href="https://www.infoq.com/presentations/Simple-Made-Easy" class="external-link" target="_blank" rel="noopener">Simple made Easy&lt;/a> by
+Rich Hickey. To these I&amp;rsquo;d like to add a few from my list of favorite talks.&lt;/p>
+&lt;h2 id="full-stack-awareness">
+ Full Stack Awareness
+ &lt;a class="heading-link" href="#full-stack-awareness">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>In this, Arthur Bergman rants about how everything is broken. We, as engineers,
+are so used to just connect a few systems and the new feature is working. We
+take so many things for granted that we forget how underlying systems down to
+the operating system work.&lt;/p></description></item><item><title>Varnish All the Things</title><link>https://truemped.github.io/posts/2016/02/varnish-all-the-things/</link><pubDate>Mon, 01 Feb 2016 12:15:09 +0100</pubDate><guid>https://truemped.github.io/posts/2016/02/varnish-all-the-things/</guid><description>&lt;p>My usual web application stack for the past years was based on a nginx as
+reverse proxy in front of a number of Python processes. Static resources were
+served by nginx. Each Python process was stateless, state was stored in some
+kind of database. If the processes needed some shared ephemeral state like
+counters a local redis instance solved that. A battle tested common ground for
+Python based web applications.&lt;/p></description></item><item><title>Elasticsearch DSL-DSL</title><link>https://truemped.github.io/posts/2015/07/elastic-dsl/</link><pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate><guid>https://truemped.github.io/posts/2015/07/elastic-dsl/</guid><description>&lt;p>Elasticsearch is a search server based on Apache Lucene. As a developer it is
+easy to use, has an expressive query DSL and all is based on JSON
+serialization. Often though I find myself in a position where I need to adapt
+queries frequently and non-trivially, say in a demonstration in front of
+customers or product owners.&lt;/p>
+&lt;p>The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the
+ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if
+I boost document types Y&amp;rdquo; and so on. While these are easy to add, two things
+bother me: first, I need to come up with the queries during a presentation,
+which adds pauses to the meetings. When I&amp;rsquo;m finished with the query the
+discussion has evolved. Second, I don&amp;rsquo;t want to be the enabler. If they can
+find out what they want without me it also means a faster feedback loop for
+them. In brainstorming sessions it is easy to focus on arguments and skip the
+sometimes lengthy query finding pauses. Win win for everyone it seems.&lt;/p></description></item></channel></rss>

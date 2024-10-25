@@ -1,19 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Clojure on all things considered...</title>
-    <link>https://truemped.github.io/tags/clojure/</link>
-    <description>Recent content in Clojure on all things considered...</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 29 Jul 2015 10:19:47 +0100</lastBuildDate>
-    <atom:link href="https://truemped.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Elasticsearch DSL-DSL</title>
-      <link>https://truemped.github.io/posts/2015/07/elastic-dsl/</link>
-      <pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate>
-      <guid>https://truemped.github.io/posts/2015/07/elastic-dsl/</guid>
-      <description>&lt;p&gt;Elasticsearch is a search server based on Apache Lucene. As a developer it is&#xA;easy to use, has an expressive query DSL and all is based on JSON&#xA;serialization. Often though I find myself in a position where I need to adapt&#xA;queries frequently and non-trivially, say in a demonstration in front of&#xA;customers or product owners.&lt;/p&gt;&#xA;&lt;p&gt;The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the&#xA;ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if&#xA;I boost document types Y&amp;rdquo; and so on. While these are easy to add, two things&#xA;bother me: first, I need to come up with the queries during a presentation,&#xA;which adds pauses to the meetings. When I&amp;rsquo;m finished with the query the&#xA;discussion has evolved. Second, I don&amp;rsquo;t want to be the enabler. If they can&#xA;find out what they want without me it also means a faster feedback loop for&#xA;them. In brainstorming sessions it is easy to focus on arguments and skip the&#xA;sometimes lengthy query finding pauses. Win win for everyone it seems.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clojure on all things considered...</title><link>https://truemped.github.io/tags/clojure/</link><description>Recent content in Clojure on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 29 Jul 2015 10:19:47 +0100</lastBuildDate><atom:link href="https://truemped.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml"/><item><title>Elasticsearch DSL-DSL</title><link>https://truemped.github.io/posts/2015/07/elastic-dsl/</link><pubDate>Wed, 29 Jul 2015 10:19:47 +0100</pubDate><guid>https://truemped.github.io/posts/2015/07/elastic-dsl/</guid><description>&lt;p>Elasticsearch is a search server based on Apache Lucene. As a developer it is
+easy to use, has an expressive query DSL and all is based on JSON
+serialization. Often though I find myself in a position where I need to adapt
+queries frequently and non-trivially, say in a demonstration in front of
+customers or product owners.&lt;/p>
+&lt;p>The questions are mostly similar: &amp;ldquo;what if I also filter for X&amp;rdquo;, &amp;ldquo;how does the
+ranking change, when I add a freshness function&amp;rdquo;, &amp;ldquo;do I get a better result if
+I boost document types Y&amp;rdquo; and so on. While these are easy to add, two things
+bother me: first, I need to come up with the queries during a presentation,
+which adds pauses to the meetings. When I&amp;rsquo;m finished with the query the
+discussion has evolved. Second, I don&amp;rsquo;t want to be the enabler. If they can
+find out what they want without me it also means a faster feedback loop for
+them. In brainstorming sessions it is easy to focus on arguments and skip the
+sometimes lengthy query finding pauses. Win win for everyone it seems.&lt;/p></description></item></channel></rss>
