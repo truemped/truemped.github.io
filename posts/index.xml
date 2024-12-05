@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on all things considered...</title><link>https://truemped.github.io/posts/</link><description>Recent content in Posts on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 24 Aug 2024 11:50:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>On Writing Backwards</title><link>https://truemped.github.io/posts/2024/08/on-writing-backwards/</link><pubDate>Sat, 24 Aug 2024 10:30:00 +0200</pubDate><guid>https://truemped.github.io/posts/2024/08/on-writing-backwards/</guid><description>&lt;figure>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on all things considered...</title><link>https://truemped.github.io/posts/</link><description>Recent content in Posts on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 04 Dec 2024 08:38:17 +0100</lastBuildDate><atom:link href="https://truemped.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Pioneers, Settlers, and Townplanners</title><link>https://truemped.github.io/posts/2024/12/pioneers-settlers-townplanners/</link><pubDate>Wed, 04 Dec 2024 08:38:17 +0100</pubDate><guid>https://truemped.github.io/posts/2024/12/pioneers-settlers-townplanners/</guid><description>&lt;figure>
+ &lt;img
+ 
+ sizes="(min-width: 35em) 1200px, 100vw"
+ 
+ srcset='
+ 
+ https://truemped.github.io/posts/2024/12/pioneers-settlers-townplanners/pioneers_hu14852941332411535860.webp 480w,
+ 
+ https://truemped.github.io/posts/2024/12/pioneers-settlers-townplanners/pioneers_hu11055398925360307470.webp 800w,
+ 
+ 
+ 
+ 
+ '
+
+ 
+ 
+ src="https://truemped.github.io/posts/2024/12/pioneers-settlers-townplanners/pioneers_hu11055398925360307470.webp"
+ 
+
+ 
+ alt="Dall-E-3: Create a visual for a blog post about &amp;lsquo;pioneers, settlers, and town planners&amp;rsquo;, a concept from Simon Wardley. Do this in a photorealistic way. Do not include people."/> &lt;figcaption>
+ &lt;p>Dall-E-3: Create a visual for a blog post about &amp;lsquo;pioneers, settlers, and town planners&amp;rsquo;, a concept from Simon Wardley. Do this in a photorealistic way. Do not include people.&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>One of the best teams I ever worked in had this concept embedded in the individuals.
+There were no formal roles, everyone was a Senior Software Engineer.
+But all three roles—Pioneer, Settler, and Townplanner—were clearly present.
+Everyone had their part.
+This organic distribution of roles was a key factor in the team&amp;rsquo;s success.&lt;/p></description></item><item><title>On Writing Backwards</title><link>https://truemped.github.io/posts/2024/08/on-writing-backwards/</link><pubDate>Sat, 24 Aug 2024 10:30:00 +0200</pubDate><guid>https://truemped.github.io/posts/2024/08/on-writing-backwards/</guid><description>&lt;figure>
  &lt;img
  
  sizes="(min-width: 35em) 1200px, 100vw"
@@ -179,10 +210,19 @@ just a Google search away. In the age of digital products, market access is
 getting cheaper every day. This increases the importance of the team and their
 effectiveness as it becomes a company&amp;rsquo;s unique selling point.&lt;/p></description></item><item><title>Tailscale</title><link>https://truemped.github.io/posts/2021/02/tailscale/</link><pubDate>Tue, 16 Feb 2021 09:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2021/02/tailscale/</guid><description>&lt;p>Last Friday I got to know &lt;a href="https://tailscale.com" class="external-link" target="_blank" rel="noopener">Tailscale&lt;/a> by a complete coincidence. Someone I
 follow on twitter mentioned it:&lt;/p>
-&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Oof, Tailscale is groundbreaking. Wireguard vpn itself is magic, kind of like how git was compared to previous scm. And Tailscale is Wireguard&amp;#39;s Github. Makes it accessible to the masses.&lt;/p>&amp;mdash; Carlo Cabanilla 🌻 (@clofresh) &lt;a href="https://twitter.com/clofresh/status/1360105546712576006?ref_src=twsrc%5Etfw">February 12, 2021&lt;/a>&lt;/blockquote>
-&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 
 
+
+&lt;a href="https://x.com/clofresh/status/1360105546712576006" target="_blank">
+ &lt;figure>
+ &lt;picture>
+ 
+ &lt;source srcset="https://truemped.github.io/tweets/clofresh/1360105546712576006.png">
+ &lt;img src="https://truemped.github.io/tweets/clofresh/1360105546712576006.png" alt="Image is of a tweet by clofresh click on the image to read the original tweet" defer class="lazyautosizes lazyloaded" data-sizes="auto" data-src="https://truemped.github.io/tweets/1360105546712576006.png" >
+ 
+ &lt;/picture>
+ &lt;/figure>
+&lt;/a>
 &lt;p>What can I say: it blew my mind! I always wanted to setup a VPN connection
 between my droplet and my NAS at home for backups. But of course I was way too
 lazy to configure OpenVPN or something similar. I knew about WireGuard and the
