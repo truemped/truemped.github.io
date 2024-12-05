@@ -12,7 +12,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v4
         with:
-          ref: 'source'
+          ref: ${{ github.head_ref }}
           submodules: 'recursive'
           fetch-depth: 0
 
