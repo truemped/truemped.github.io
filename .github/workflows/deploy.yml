@@ -1,18 +1,22 @@
-name: CI
-on: push
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Git checkout
         uses: actions/checkout@v4
         with:
           ref: 'source'
           submodules: 'recursive'
-
-      - name: Update theme
-        # (Optional)If you have the theme added as submodule, you can pull it and use the most updated version
-        run: git submodule update --init --recursive
+          fetch-depth: 0
 
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v3
