@@ -14,7 +14,7 @@ aliases:
 Last Friday I got to know [Tailscale][0] by a complete coincidence. Someone I
 follow on twitter mentioned it:
 
-{{< tweet user="clofresh" id="1360105546712576006" >}}
+{{< oldtweet user="clofresh" id="1360105546712576006" >}}
 
 What can I say: it blew my mind! I always wanted to setup a VPN connection
 between my droplet and my NAS at home for backups. But of course I was way too
