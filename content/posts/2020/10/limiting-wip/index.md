@@ -22,7 +22,7 @@ everyone is busy but nothing gets done. If this is so ubiquitous why is no one
 doing anything about it? Are people not aware or do they not know how to fix it?
 This is so predominant, that it almost is too easy to just claim:
 
-{{< tweet user="johncutlefish" id="1305436790157762563" >}}
+{{< oldtweet user="johncutlefish" id="1305436790157762563" >}}
 
 One aspect I keep getting back to is the notion of software engineering
 organizations as production lines. As engineer I certainly refused this notion
