@@ -89,11 +89,7 @@ But don't get me wrong, the idea behind it is obviously right: there rarely is
 this **one** root cause for an incident. Most of the time an incident happened
 because a number of factors were at play.
 
-But:
-
-{{< tweet user="ebowman" id="1144152536808611840" >}}
-
-And it's true. If the broader organization is not good at post-incident handling
+But when the broader organization is not good at post-incident handling
 and improving the systems, *not* doing 5-why's is an invitation for getting
 sloppy. And *even better if* states this plain and simple: whishful thinking.
 
