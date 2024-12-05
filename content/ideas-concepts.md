@@ -4,6 +4,8 @@ date: 2022-03-03T08:30:00+01:00
 draft: false
 comments: false
 images:
+aliases:
+  - "/ideas-concepts"
 ---
 
 I have come across a number of ideas and core concepts that have influenced my

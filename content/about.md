@@ -2,6 +2,9 @@
 title: "About Me"
 date: 2019-01-07T09:41:34+01:00
 lastmod: 2021-07-18T10:00:00+02:00
+aliases:
+  - "/about-me"
+  - "/about"
 ---
 
 I am an experienced Head of Engineering currently working at [Zalando][5].
