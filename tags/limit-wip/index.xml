@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Limit Wip on all things considered...</title><link>https://truemped.github.io/tags/limit-wip/</link><description>Recent content in Limit Wip on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 22 Aug 2023 19:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/limit-wip/index.xml" rel="self" type="application/rss+xml"/><item><title>Trunk Based Development: Stop PR Reviews!</title><link>https://truemped.github.io/posts/2023/08/trunk-based-development/</link><pubDate>Tue, 22 Aug 2023 19:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2023/08/trunk-based-development/</guid><description>&lt;figure>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Limit Wip on all things considered...</title><link>https://truemped.github.io/tags/limit-wip/</link><description>Recent content in Limit Wip on all things considered...</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 22 Aug 2023 19:00:00 +0200</lastBuildDate><atom:link href="https://truemped.github.io/tags/limit-wip/index.xml" rel="self" type="application/rss+xml"/><item><title>Trunk Based Development: Stop PR Reviews!</title><link>https://truemped.github.io/posts/2023/08/trunk-based-development/</link><pubDate>Tue, 22 Aug 2023 19:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2023/08/trunk-based-development/</guid><description>&lt;figure&gt;
  &lt;img
  
  sizes="(min-width: 35em) 1200px, 100vw"
  
  srcset='
  
- https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu13324139568549620146.webp 480w,
+ https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu_20ea7244dee1b752.webp 480w,
  
- https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp 800w,
+ https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu_2064f6c58fc67cda.webp 800w,
  
  
  
@@ -16,25 +16,25 @@
 
  
  
- src="https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu5727416054547182420.webp"
+ src="https://truemped.github.io/posts/2023/08/trunk-based-development/dalle-1692718678518_hu_2064f6c58fc67cda.webp"
  
 
  
- alt="two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)"/> &lt;figcaption>
- &lt;p>two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&lt;/p>
- &lt;/figcaption>
-&lt;/figure>
+ alt="two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)"/&gt; &lt;figcaption&gt;
+ &lt;p&gt;two people in front of a computer doing pair programming in the style of a picasso painting (DALLE)&lt;/p&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p>Engineering effectiveness is a prominent topic.
+&lt;p&gt;Engineering effectiveness is a prominent topic.
 Traditional Pull Request (PR) reviews show their limitations when it comes to efficiency, knowledge sharing, and delivering value.
 Instead, trunk based development, coupled with methodologies such as pair and mob programming, are a superior process.
 Along with the strategic utilization of feature flags, this methodology presents an alluring argument for a more agile and streamlined software delivery.
-I want to describe the challenges posed by conventional PR reviews and show the benefits of doing things differently.&lt;/p></description></item><item><title>Limiting Work In Progress</title><link>https://truemped.github.io/posts/2020/10/limiting-wip/</link><pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2020/10/limiting-wip/</guid><description>&lt;blockquote>
-&lt;p>&lt;strong>Update&lt;/strong>: This post was trending on Hackernews in April 2021. See the
-&lt;a href="https://news.ycombinator.com/item?id=26759903" class="external-link" target="_blank" rel="noopener">discussion&lt;/a>.&lt;/p>
-&lt;/blockquote>
-&lt;p>In many organizations today there is one thing that almost always is true: there
-are too many things done in parallel, there is too much &lt;em>work-in-progress&lt;/em>,
+I want to describe the challenges posed by conventional PR reviews and show the benefits of doing things differently.&lt;/p&gt;</description></item><item><title>Limiting Work In Progress</title><link>https://truemped.github.io/posts/2020/10/limiting-wip/</link><pubDate>Tue, 13 Oct 2020 10:00:00 +0200</pubDate><guid>https://truemped.github.io/posts/2020/10/limiting-wip/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: This post was trending on Hackernews in April 2021. See the
+&lt;a href="https://news.ycombinator.com/item?id=26759903" class="external-link" target="_blank" rel="noopener"&gt;discussion&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In many organizations today there is one thing that almost always is true: there
+are too many things done in parallel, there is too much &lt;em&gt;work-in-progress&lt;/em&gt;,
 everyone is busy but nothing gets done. If this is so ubiquitous why is no one
 doing anything about it? Are people not aware or do they not know how to fix it?
-This is so predominant, that it almost is too easy to just claim:&lt;/p></description></item></channel></rss>
+This is so predominant, that it almost is too easy to just claim:&lt;/p&gt;</description></item></channel></rss>
