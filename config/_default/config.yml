@@ -4,7 +4,7 @@
 baseURL: "https://truemped.github.io"
 title: "all things considered..."
 
-languagecode: "en"
+locale: "en"
 defaultcontentlanguage: "en"
 
 pagination.pagerSize: 20
